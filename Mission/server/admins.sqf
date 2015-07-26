@@ -7,33 +7,23 @@
 if(!X_Server) exitWith {};
 
 //Admin menu access levels
-moderators = ["32077894", //Krykiln
-				"87053254", //Shaneyport
-				"105267654", //Kaizee
-				"12793798", //Bane
-				"73698182", //unDead
-				"59344390", //Ian				
-				"2771014", //MiniDude
-                "91598150", //Rainforger
-                "90615878", // Killer4791
-				"92186310", //Jellygunner
-                "2264774", //Vesper
-				"76397766", //Alan
-				"11104390", //Reasoner
-				"92123142", // Sam, gwen & josh
-                "106336326"
-				]; 
+moderators = [
+	"0", // DUDE #1 
+	"0", // DUDE #2
+"0" // Add UIDs Above, dont Forget Comma
+]; 
 publicVariable "moderators"; 
            
-administrators = ["18519302", //Venny
-					"57199878", //Garey
-					"38204230" //JellaFish
-                    ];
+administrators = [
+	"0", // DUDE #1 
+	"0", // DUDE #2
+"0" // Add UIDs Above, dont Forget Comma
+];
 publicVariable "administrators";
 
-serverAdministrators = ["18836358", //Deadbeat
-					"19714694", //Pulse
-					"20243782", //Dom
-					"32879878" //Costlyy
-                    ]; 
+serverAdministrators = [
+	"76561198078201908", // Gr8 
+	"0", // nitro ?
+"0" // Add UIDs Above, dont Forget Comma
+]; 
 publicVariable "serverAdministrators";
