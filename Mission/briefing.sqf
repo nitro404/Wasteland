@@ -3,8 +3,8 @@
 //	@file Author: [404] Deadbeat, [404] Costlyy
 //	@file Created: 30th May 13
 
-player createDiarySubject ["404Games", "404Games Information"];
-player createDiarySubject ["Changelog", "404Games Change Log"];
+player createDiarySubject ["[COMMUNITY NAME HERE]", "[COMMUNITY NAME HERE] Information"];
+player createDiarySubject ["Changelog", "[COMMUNITY NAME HERE] Change Log"];
 player createDiarySubject ["Wasteland", "What is Wasteland?"];
 
 player createDiaryRecord["Changelog",
@@ -61,43 +61,39 @@ player createDiaryRecord["Changelog",
 ]
 ];
 
-player createDiaryRecord["404Games",
+player createDiaryRecord["[COMMUNITY NAME HERE]",
 [
 "Credits",
 "
-	404Games Team:<br/><br/>
-		Costlyy - Lead Developer<br/>
-		Deadbeat - Developer<br/>
-		Pulse - Developer<br/>
-		Domuk - Community Manager<br/><br/>
+	[COMMUNITY NAME HERE] Team:<br/><br/>
+		nitro glycerine - Lead Developer<br/>
+		GR8 - Developer<br/>
+		MORE STAFF HERE !<br/><br/>
     
-	404Games Testers:<br/><br/>
-		Jellafish<br/>
-		Smibbs<br/>
-		Gwen<br/>
-		Joshy Fagence<br/>
+	[COMMUNITY NAME HERE] Testers:<br/><br/>
+		TESTERS HERE ?<br/>
 "
 ]
 ];
 
-player createDiaryRecord["404Games",
+player createDiaryRecord["[COMMUNITY NAME HERE]",
 [
 "Bug and Cheat Reporting",
 "
 <br/>
-	Found a bug? Please report it at: http://www.404games.co.uk/bugs<br/><br/>
-	Suspect a player is hacking or exploiting? Please report it at: http://www.404games.co.uk/bans<br/><br/>
+	Found a bug? Please report it at: www.[COMMUNITY NAME HERE].com<br/><br/>
+	Suspect a player is hacking or exploiting? Please report it at: www.[COMMUNITY NAME HERE].com<br/><br/>
 "
 ]
 ];
 
-player createDiaryRecord["404Games",
+player createDiaryRecord["[COMMUNITY NAME HERE]",
 [
 "Teamspeak",
 "
 <br/>
 	There is a public Teamspeak 3 server available for players of this server.<br/><br/>
-	Teamspeak IP: ts.404games.co.uk<br/><br/>
+	Teamspeak IP: ts.[COMMUNITY NAME HERE].com<br/><br/>
 	Please join and say hello! (Please speak English)
 "
 ]
@@ -146,7 +142,7 @@ Q. Whats with the teapots and big bags?<br/>
 A. This game has a food and water system that you must stay on top of if you hope to survive. You can collect food and water from water barrels, food stands, or dead players bodies. Food and water will randomly spawn around the map. Other items that will randomly spawn are fuel cans for refueling vehicles, medkits for healing yourself, and repair kits for repairing vehicles. Each of these is a one-time-only use item.
 <br/><br/>
 Q. I saw someone breaking a rule, what do I do?<br/>
-A. Simply go into global chat and get the attention of one of the admins or visit www.404games.co.uk/forum and make a report if the offence is serious.
+A. Simply go into global chat and get the attention of one of the admins or visit www.[COMMUNITY NAME HERE].com and make a report if the offence is serious.
 <br/>
 "]
 ];
