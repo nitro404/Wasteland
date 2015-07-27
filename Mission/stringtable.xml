@@ -134,6 +134,9 @@
 		</Key>		
 		<Key ID="STR_WL_Errors_BeaconTooMany">
 			<English>YOU ARE ALREADY HAVE TOO MANY OF THAT OBJECT!</English>
-		</Key>						
+		</Key>
+		<Key ID="STR_WL_Errors_IllegalWeapon">
+			<English>ILLEGAL WEAPON DETECTED: %1</English>
+		</Key>
 	</Package>
 </Project>
