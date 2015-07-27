@@ -6,24 +6,21 @@
 
 if(!X_Server) exitWith {};
 
-//Admin menu access levels
+// Admin menu access levels (PID)
+
 moderators = [
-	"0", // DUDE #1 
-	"0", // DUDE #2
-"0" // Add UIDs Above, dont Forget Comma
+	"0"
 ]; 
 publicVariable "moderators"; 
-           
+
 administrators = [
-	"0", // DUDE #1 
-	"0", // DUDE #2
-"0" // Add UIDs Above, dont Forget Comma
+	"0"
 ];
 publicVariable "administrators";
 
 serverAdministrators = [
 	"76561198078201908", // Gr8 
-	"0", // nitro ?
-"0" // Add UIDs Above, dont Forget Comma
-]; 
+	"76561197983361980", // nitro glycerine / David Della Rocco
+	"76561198085238045" // Sponty
+];
 publicVariable "serverAdministrators";
