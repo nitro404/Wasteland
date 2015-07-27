@@ -10,8 +10,8 @@ if(!X_Server) exitWith {};
 
 moderators = [
 	"0"
-]; 
-publicVariable "moderators"; 
+];
+publicVariable "moderators";
 
 administrators = [
 	"0"
@@ -19,8 +19,9 @@ administrators = [
 publicVariable "administrators";
 
 serverAdministrators = [
-	"76561198078201908", // Gr8 
+	"76561198078201908", // Gr8
 	"76561197983361980", // nitro glycerine / David Della Rocco
-	"76561198085238045" // Sponty
+	"76561198085238045", // Sponty
+	"76561197962166875"  // Dropy
 ];
 publicVariable "serverAdministrators";
