@@ -1,5 +1,5 @@
 #include "addons\R3F_ARTY_AND_LOG\desc_include.h"
-loadScreen = "Loading.jpg";
+loadScreen = "Images\Loading.jpg";
 respawn="BASE";
 respawnDelay=15;
 disabledAI=1;
