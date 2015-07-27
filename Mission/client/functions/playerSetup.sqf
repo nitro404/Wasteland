@@ -64,17 +64,12 @@ _player addWeapon "Binocular";
 _player addrating 1000000;
 _player switchMove "amovpknlmstpsraswpstdnon_gear";
 
-thirstLevel = 100;
-hungerLevel = 100;
-
 _player setVariable["cmoney",100,false];
-_player setVariable["canfood",1,false];
 _player setVariable["medkits",0,false];
-_player setVariable["water",1,false];
-_player setVariable["fuel",0,false];
+_player setVariable["fuel",1,false];
 _player setVariable["repairkits",0,false];
 _player setVariable["fuelFull", 0, false];
-_player setVariable["fuelEmpty", 1, false];
+_player setVariable["fuelEmpty", 0, false];
 _player setVariable["bombs",false,false];
 _player setVariable["spawnBeacon",0,false];
 _player setVariable["camonet",0,false];

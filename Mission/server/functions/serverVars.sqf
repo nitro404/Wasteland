@@ -35,11 +35,11 @@ pvar_teamSwitchList = [];
 publicVariable "pvar_teamSwitchList";
 pvar_teamKillList = [];
 publicVariable "pvar_teamKillList";
-pvar_beaconListBlu = []; 
+pvar_beaconListBlu = [];
 publicVariable "pvar_beaconListBlu";
-pvar_beaconListRed = []; 
+pvar_beaconListRed = [];
 publicVariable "pvar_beaconListRed";
-pvar_beaconListIndep = []; 
+pvar_beaconListIndep = [];
 publicVariable "pvar_beaconListIndep";
 clientMissionMarkers = [];
 publicVariable "clientMissionMarkers";
@@ -51,7 +51,7 @@ currentInvites = [];
 publicVariable "currentInvites";
 
 "processVIP" addPublicVariableEventHandler {[_this] spawn server_VIPEscape};
-                  
+
 "PlayerCDeath" addPublicVariableEventHandler {_id = (_this select 1) spawn server_playerDied};
 
 currentStaticHelis = []; // Storage for the heli marker numbers so that we don't spawn wrecks on top of live helis
@@ -92,7 +92,7 @@ civilianVehicles = ["car_hatchback",
                     "Tractor",
                     "TT650_TK_EP1",
 					"TT650_Gue",
-					"M1030",               
+					"M1030",
                     "Kamaz",
                     "LadaLM",
                     "Lada1",
@@ -127,12 +127,10 @@ pickupList = ["Satelit",
 				"Fuel_can"];
 
 //Object List - Random Spawns.
-objectList = ["Land_Barrel_water",
-				"Land_prebehlavka",
+objectList = ["Land_prebehlavka",
 				"Land_leseni2x",
                 "Fort_Crate_wood",
                 "Land_CamoNet_NATO",
-				"Land_Barrel_water",
 				"Land_stand_small_EP1",
                 "Land_stand_small_EP1",
 				"Base_WarfareBBarrier10xTall",
@@ -172,7 +170,7 @@ objectList = ["Land_Barrel_water",
                 "Land_GuardShed",
                 "Land_tent_east",
 				"Land_ConcreteBlock"];
-                                         
+
 //Object List - Random Spawns.
 staticWeaponsList = ["M2StaticMG_US_EP1",
 				"DSHKM_TK_INS_EP1",
@@ -217,7 +215,7 @@ vehicleWeapons = [
                 "MakarovSD",
                 "AKS_74_U",
                 "UZI_EP1"];
-                
+
 MissionSpawnMarkers = [
             ["Mission_1",false],
             ["Mission_2",false],

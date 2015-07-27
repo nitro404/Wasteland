@@ -3,7 +3,7 @@
 //	@file Author: [404] Deadbeat, [404] Costlyy
 //	@file Created: 20/11/2012 05:13
 //	@file Description: Main config.
-                                                                                                
+
 //Gunstore Weapon List - Gun Store Base List
 // Type, Text name, classname, buy cost, sell amount
 weaponsArray = [
@@ -13,7 +13,7 @@ weaponsArray = [
 	[1, "M9 Silenced","M9SD",50,25],
     [1, "UZI Silenced","UZI_SD_EP1",85,35],
     [1, "Golden Revolver","revolver_gold_EP1",250,125],
-    
+
     // Shotguns & Rifles
     [2, "M1014","M1014",35,25],
 	[2, "Saiga 12K","Saiga12K",50,25],
@@ -29,7 +29,7 @@ weaponsArray = [
     [2, "Mk 17 CCO","SCAR_H_CQC_CCO",450,220],
     [2, "M14 AIM","M14_EP1",750,330],
     [2, "AA-12 Shotgun","AA12_PMC",1000,425],
-    
+
     // Sniper rifles
     [3, "Mk12 SPR","M4SPR",350,150],
     [3, "M24","M24",600,300],
@@ -39,14 +39,14 @@ weaponsArray = [
     [3, "DMR","DMR",1500,755],
     [3, "M107","m107",2000,1100],
     [3, "M110 TWS","M110_TWS_EP1",2500,2000],
-    
+
     // Machineguns
 	[4, "RPK","RPK_74",150,75],
     [4, "M249","M249_EP1",275,120],
     [4, "Mk 48 Mod","Mk_48",350,150],
     [4, "M60 Hog","M60A4_EP1",400,230],
     [4, "Pecheneg","Pecheneg",450,230],
-    
+
     // Anti-tank
     [5, "Carl Gustav","MAAWS",250,120],
     [5, "SMAW","SMAW",300,175],
@@ -57,7 +57,7 @@ weaponsArray = [
 
 //Gun Store Ammo List
 //Text name, classname, buy cost
-ammoArray = [    
+ammoArray = [
     ["5Rnd. 338 Lapua Magnum Clip","5Rnd_86x70_L115A1",30],
     ["5Rnd. M24 Clip","5Rnd_762x51_M24",20],
     ["6Rnd. Revolver Clip","6Rnd_45ACP",5],
@@ -73,9 +73,9 @@ ammoArray = [
     ["20Rnd. FN FAL","20Rnd_762x51_FNFAL",25],
     ["20Rnd. DMR","20Rnd_762x51_DMR",25],
     ["20Rnd. Mk17 / M110","20Rnd_762x51_B_SCAR",25],
-	["20Rnd. Mk17 SD","20Rnd_762x51_SB_SCAR",25], 
+	["20Rnd. Mk17 SD","20Rnd_762x51_SB_SCAR",25],
     ["20Rnd. AA-12 Slug","20Rnd_B_AA12_74Slug",30],
-    ["20Rnd. AA-12 Pellets","20Rnd_B_AA12_Pellets",50],   
+    ["20Rnd. AA-12 Pellets","20Rnd_B_AA12_Pellets",50],
     ["30Rnd. UZI Silenced","30Rnd_9x19_UZI_SD",10],
 	["30Rnd. AK","30Rnd_545x39_AK",8],
 	["30Rnd. AKM / Sa58","30Rnd_762x39_AK47",15],
@@ -86,10 +86,10 @@ ammoArray = [
 	["100Rnd. MK48 / M60 Belt","100Rnd_762x51_M240",30],
 	["100Rnd. Pencheng Belt","100Rnd_762x54_PK",50],
 	["200Rnd. M249 Belt","200Rnd_556x45_M249",50],
-    ["1 Carl-Gustav Shot","MAAWS_HEAT",200],  
+    ["1 Carl-Gustav Shot","MAAWS_HEAT",200],
     ["1 Anti-personnel RPG Rocket","OG7",350],
     ["1 Adv. RPG Rocket","PG7VR",200],
-    ["1 Basic RPG Rocket","PG7V",100],  
+    ["1 Basic RPG Rocket","PG7V",100],
     ["1 Anti-personnel SMAW Rocket","SMAW_HEDP",750],
     ["1 AT SMAW Rocket","SMAW_HEAA",250],
     ["1 Stinger Missile","Stinger",250],
@@ -109,14 +109,12 @@ accessoriesArray = [
 //General Store Item List
 //Display Name, Class Name, Description, Picture, Buy Price, Sell Price.
 generalStore = [
-	["Water","water",localize "STR_WL_ShopDescriptions_Water","client\icons\water.paa",30,15],
-	["Canned Food","canfood",localize "STR_WL_ShopDescriptions_CanFood","client\icons\cannedfood.paa",30,15],
 	["Repair Kit","repairkits",localize "STR_WL_ShopDescriptions_RepairKit","client\icons\briefcase.paa",1000,500],
 	["Medical Kit","medkits",localize "STR_WL_ShopDescriptions_MedKit","client\icons\medkit.paa",400,200],
 	["Jerry Can (Full)","fuelFull",localize "STR_WL_ShopDescriptions_fuelFull","client\icons\jerrycan.paa",150,75],
     ["Jerry Can (Empty)","fuelEmpty",localize "STR_WL_ShopDescriptions_fuelEmpty","client\icons\jerrycan.paa",50,25],
 	["Spawn Beacon","spawnBeacon",localize "STR_WL_ShopDescriptions_spawnBeacon","",3000,1500],
-    ["Camo Net", "camonet", localize "STR_WL_ShopDescriptions_Camo", "",300,150]  
+    ["Camo Net", "camonet", localize "STR_WL_ShopDescriptions_Camo", "",300,150]
 ];
 
 // Chernarus town and city array
@@ -126,7 +124,7 @@ cityList = [
 		["Town_1",200,"Prigorodki"],
 		["Town_2",200,"Pusta"],
 		["Town_3",600,"Elektro"],
-		["Town_4",200,"Kamyshovo"],			
+		["Town_4",200,"Kamyshovo"],
 		["Town_5",200,"Tulga"],
 		["Town_6",250,"Solnychniy"],
 		["Town_7",200,"Nizhnoye"],

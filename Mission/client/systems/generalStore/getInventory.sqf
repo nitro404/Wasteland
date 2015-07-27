@@ -32,20 +32,6 @@ playerInventory = [];
 _amount = 0;
 _index = 0;
 
-_amount = (player getVariable "canfood");
-for [{_x=1},{_x<=_amount},{_x=_x+1}] do
-{
-	playerInventory set [_index, "Canned Food"];
-	_index = _index + 1;
-};
-
-_amount = (player getVariable "water");
-for [{_x=1},{_x<=_amount},{_x=_x+1}] do
-{
-	playerInventory set [_index, "Water"];
-	_index = _index + 1;
-};
-
 _amount = (player getVariable "medkits");
 for [{_x=1},{_x<=_amount},{_x=_x+1}] do
 {

@@ -13,12 +13,12 @@ if(genStoreCart > (player getVariable "cmoney")) exitWith {hint "You do not have
 // Check if mutex lock is active.
 if(mutexScriptInProgress) exitWith {
 	player globalChat "ERROR: ALREADY PERFORMING ANOTHER ACTION!";
-};	
+};
 
 // Check if player is alive.
 if(!(alive player)) exitWith {
 	player globalChat "ERROR: YOU ARE CURRENTLY BUSY.";
-};	
+};
 
 mutexScriptInProgress = true;
 
@@ -43,47 +43,27 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 {
 	_itemText = _cartlist lbText _x;
     switch (_itemText) do {
-        
-        case "Water": {
-            if((player getVariable "water") + 1 <= 4) then {
-                player setVariable["water",(player getVariable "water") + 1,true];	
-            } else {
-                _price = 0;
-                {if(_x select 0 == "Water") then{_price = _x select 4;};}forEach generalStore;
-            	genStoreCart = genStoreCart - _price;    
-            };
-        };
-        
-		case "Canned Food":	{
-            if((player getVariable "canfood") + 1 <= 4) then {
-                player setVariable["canfood",(player getVariable "canfood") + 1,true];
-            } else {
-            	_price = 0;
-                {if(_x select 0 == "Canned Food") then{_price = _x select 4;};}forEach generalStore;
-            	genStoreCart = genStoreCart - _price;    
-            };
-        };
-        
+
 		case "Medical Kit": {
             if((player getVariable "medkits") + 1 <= 2) then {
                 player setVariable["medkits",(player getVariable "medkits") + 1,true];
             } else {
             	_price = 0;
                 {if(_x select 0 == "Medical Kit") then{_price = _x select 4;};}forEach generalStore;
-            	genStoreCart = genStoreCart - _price;    
+            	genStoreCart = genStoreCart - _price;
             };
         };
-        
+
 		case "Repair Kit": {
             if((player getVariable "repairkits") + 1 <= 2) then {
                 player setVariable["repairkits",(player getVariable "repairkits") + 1,true];
             } else {
             	_price = 0;
                 {if(_x select 0 == "Repair Kit") then{_price = _x select 4;};}forEach generalStore;
-            	genStoreCart = genStoreCart - _price;    
+            	genStoreCart = genStoreCart - _price;
             };
         };
-        
+
         case "Jerry Can (Full)": {
             if(((player getVariable "fuelFull") + 1 <= 1) AND ((player getVariable "fuelEmpty") + 1 <= 1)) then {
                 player setVariable["fuelFull",(player getVariable "fuelFull") + 1,true];
@@ -91,14 +71,14 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
             	if (!((player getVariable "fuelFull") + 1 <= 1)) then {
 	            	_price = 0;
 	                {if(_x select 0 == "Jerry Can (Full)") then{_price = _x select 4;};}forEach generalStore;
-	            	genStoreCart = genStoreCart - _price;    
+	            	genStoreCart = genStoreCart - _price;
                 } else {
                     player setVariable["fuelEmpty",0,true];
                     player setVariable["fuelFull",1,true];
                 };
             };
         };
-        
+
         case "Jerry Can (Empty)": {
             if(((player getVariable "fuelFull") + 1 <= 1) AND ((player getVariable "fuelEmpty") + 1 <= 1)) then {
                 player setVariable["fuelEmpty",(player getVariable "fuelEmpty") + 1,true];
@@ -106,7 +86,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
             	if (((player getVariable "fuelFull") + 1 <= 1)) then {
 	            	_price = 0;
 	                {if(_x select 0 == "Jerry Can (Empty)") then{_price = _x select 4;};}forEach generalStore;
-	            	genStoreCart = genStoreCart - _price;    
+	            	genStoreCart = genStoreCart - _price;
                 } else {
                     player setVariable["fuelEmpty",1,true];
                     player setVariable["fuelFull",0,true];
@@ -119,7 +99,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
             } else {
             	_price = 0;
                 {if(_x select 0 == "Spawn Beacon") then{_price = _x select 4;};}forEach generalStore;
-            	genStoreCart = genStoreCart - _price;    
+            	genStoreCart = genStoreCart - _price;
             };
         };
         case "Camo Net": {
@@ -128,7 +108,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
             } else {
             	_price = 0;
                 {if(_x select 0 == "Camo Net") then{_price = _x select 4;};}forEach generalStore;
-            	genStoreCart = genStoreCart - _price;    
+            	genStoreCart = genStoreCart - _price;
             };
         };
 	};

@@ -7,7 +7,7 @@
 if(!X_Client) exitWith {};
 
 // Disable player from killing in the spawn area.
-player enableSimulation false; 
+player enableSimulation false;
 removeAllWeapons player;
 
 // Start the loading screen ASAP.
@@ -58,7 +58,6 @@ waituntil {!(IsNull (findDisplay 46))};
 "publicVar_teamkillMessage" addPublicVariableEventHandler {if(local(_this select 1)) then {[] spawn teamkillMessage;};};
 
 //client Executes
-[] execVM "client\functions\initSurvival.sqf";
 [] execVM "client\systems\hud\playerHud.sqf";
 [] execVM "client\functions\createTownMarkers.sqf";
 [] execVM "client\functions\createGunStoreMarkers.sqf";

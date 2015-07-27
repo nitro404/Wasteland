@@ -16,7 +16,7 @@ class WastelandHud {
 	duration = 20;
 	name= "WastelandHud";
 	onLoad = "uiNamespace setVariable ['WastelandHud', _this select 0]";
-	
+
 	class controlsBackground {
 		class WastelandHud_Vehicle:w_RscText
 		{
@@ -46,7 +46,7 @@ class WastelandHud {
 			colorText[] = {1,1,1,1};
 			lineSpacing = 3;
 			colorBackground[] = {0,0,0,0};
-			text = "100 <img size='0.8' image='client\icons\food.paa'/><br/>100 <img size='0.8' image='client\icons\water.paa'/><br/>200 <img size='0.8' image='\CA\misc\data\icons\picture_money_CA.paa'/>";
+			text = "200 <img size='0.8' image='\CA\misc\data\icons\picture_money_CA.paa'/>";
 			shadow = 2;
 			class Attributes {
 				align = "right";

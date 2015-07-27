@@ -11,12 +11,12 @@ disableSerialization;
 // Check if mutex lock is active.
 if(mutexScriptInProgress) exitWith {
 	player globalChat "ERROR: ALREADY PERFORMING ANOTHER ACTION!";
-};	
+};
 
 // Check if player is alive.
 if(!(alive player)) exitWith {
 	player globalChat "ERROR: YOU ARE CURRENTLY BUSY.";
-};	
+};
 
 mutexScriptInProgress = true;
 
@@ -36,8 +36,6 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 	_itemText = _cartlist lbText _x;
 	switch (_itemText) do
 	{
-		case "Water": {player setVariable["water",(player getVariable "water") - 1,false];};
-		case "Canned Food": {player setVariable["canfood",(player getVariable "canfood") - 1,false];};
 		case "Medical Kit": {player setVariable["medkits",(player getVariable "medkits") - 1,false];};
 		case "Repair Kit": {player setVariable["repairkits",(player getVariable "repairkits") - 1,false];};
 		case "Jerry Can (Full)": {player setVariable["fuelFull",(player getVariable "fuelFull") - 1,false];};
