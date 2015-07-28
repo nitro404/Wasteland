@@ -109,7 +109,7 @@ if(damage _plane == 1) then {
 		_plane animate ["ramp_top",0];
 		_plane animate ["ramp_bottom",0];
 
-        _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Supply Drop Succesfull!</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The<t color='%4'> %3</t>, has relinquished the supplies.</t>", _missionType, _picture, _vehicleName, mainMissionColor, subTextColor];
+        _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Supply Drop Successful!</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The<t color='%4'> %3</t>, has relinquished the supplies.</t>", _missionType, _picture, _vehicleName, mainMissionColor, subTextColor];
 		[nil,nil,rHINT,_hint] call RE;
 
 	    _plane flyInHeight 1500;

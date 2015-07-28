@@ -20,7 +20,7 @@ _bannedWeapons = [
     "M68","MaverickLauncher","MissileLauncher","Mk82BombLauncher","Mk82BombLauncher_6","MLRS","R73Launcher","R73Launcher_2","RocketPods","S8Launcher","SidewinderLaucher","SidewinderLaucher_AH1Z",
     "SidewinderLaucher_AH64","SidewinderLaucher_F35","SmokeLauncher","SPG9","StingerLaucher","StingerLaucher_4x","StingerLauncher_twice","TOWLauncher","TOWLauncherSingle","TwinM134","TwinVickers","VikhrLauncher",
     "YakB","ZiS_S_53" ];
-    
+
 // TODO: Make mission vehicles sit in public arrays, then extrapolate the vehicles out of the cfgVehicles in full
 //  and just compare to make sure the selected vehicle is not in any of the mission arrays.
 _bannedVehicles = [
@@ -37,72 +37,54 @@ _bannedVehicles = [
     "T810_Open_ACR","T810_Open_Des_ACR","T810Repair_ACR","T810Repair_Des_ACR","Dingo_GL_DST_ACR","Dingo_GL_Wdl_ACR","Dingo_WDL_ACR","Dingo_DST_ACR",
     "LandRover_ACR","LandRover_Ambulance_ACR","LandRover_Ambulance_Des_ACR","Octavia_ACR","UAZ_Unarmed_ACR",
     "Mi171Sh_rockets_CZ_EP1","UH1H_TK_EP1","Su34","BAF_Apache_AH1_D","AH6J_EP1","Mi24_D_CZ_ACR","AW159_Lynx_BAF","M1114_AGS_ACR","M1114_DSK_ACR"];
-    
-    
-_currencyLimit = 10 * 1000; // 10k money limit for initial config.
-_moneyKickCeiling = 30 * 1000; // money kick ceiling - default value is 30k.
-_instantKick = false; // Kick the bastards immediately or taunght them a little?
-_moneyKick = true; // Kick players who greatly exceed the money limit? Note: THIS MAY LEAD TO FALSE-POSITIVES! YOU HAVE BEEN WARNED...
 
-func_tauntHacker = {                
+_instantKick = false; // Kick the bastards immediately or taunght them a little?
+
+func_tauntHacker = {
 	// Black their screen out and taunt them with silly messages! Mwahahahaha!
 	titleText ["", "BLACK IN", 0];
-	titleText ["ERROR: User performed an illegal operation. \n\n If the problem persists, contact your system administrator or stop using hacked items.","black"]; 
-	sleep 10; titleFadeOut 10; 
+	titleText ["ERROR: User performed an illegal operation. \n\n If the problem persists, contact your system administrator or stop using hacked items.","black"];
+	sleep 10; titleFadeOut 10;
 };
 
-
 while {true} do {
-     
 	// Re-enable input incase it has been disabled.
 	player enableSimulation true;
     disableUserInput false;
-	        
+
 	// Show the player incase they are trying to be a sneaky little neckbearded fuck.
 	player hideObject false;
 	[nil, player, "loc", rHideObject, false] call RE;
-    
+
     // Remove existing event handlers before adding them back.
     player removeAllEventHandlers "Killed";
     player removeAllEventHandlers "Respawn";
     player removeAllEventHandlers "handleDamage";
-    
+
     // Add event handlers back incase hacker has disabled them.
     if(!isNil "client_initEH") then { player removeEventHandler ["Respawn", client_initEH]; };
 	player addEventHandler ["Respawn", {[_this] call onRespawn;}];
 	player addEventHandler ["Killed", {[_this] call onKilled;}];
     player addEventHandler ["handleDamage", { _this select 2 }];
     player allowDamage true;
-    
-    // Get the player's money and ensure it is < 10k.
-	_money = player getVariable["cmoney",0];    
-	if (_money > _currencyLimit) then {
-    	if (_moneyKick AND _money > _moneyKickCeiling) then { 
-        	if (!_instantKick) then { [] call func_tauntHacker; };
-            endMission "LOSER";
-        } else {
-        	player setVariable["cmoney",_currencyLimit, true];
-        };
-	};
-      
-    { // Check for illegal weapons. 
+
+    { // Check for illegal weapons.
     	if (currentWeapon player == _x) exitWith {
         	// Firstly MITIGATE the damage by removing the infringing weaponry.
     		removeAllWeapons player;
-            if (!_instantKick) then { [] call func_tauntHacker; }; 
+            if (!_instantKick) then { [] call func_tauntHacker; };
             endMission "LOSER";
         };
     }forEach _bannedWeapons;
-    
-    { // Check for illegal vehicles. 
+
+    { // Check for illegal vehicles.
     	if ((typeOf (vehicle player)) == _x) then {
         	deleteVehicle (vehicle player);
             playSound "IncomingChallenge";
         	[] call func_tauntHacker;
         };
     }forEach _bannedVehicles;
-              	
-	// Loop speed not much of an issue clientside.
-	sleep 0.5; 
-};
 
+	// Loop speed not much of an issue clientside.
+	sleep 0.5;
+};
