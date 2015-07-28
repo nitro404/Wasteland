@@ -21,13 +21,13 @@ _serverCompiledScripts = [] execVM "server\functions\serverCompile.sqf";
 [] execVM "server\functions\antiCheatServer.sqf";
 waitUntil{scriptDone _serverCompiledScripts};
 
-diag_log format["WASTELAND SERVER - Server Complie Finished"];
+diag_log format["WASTELAND SERVER - Server Compile Finished"];
 
 #ifdef __DEBUG__
 #else
 //Execute Server Spawning.
 if (serverSpawning == 1) then {
-    diag_log format["WASTELAND SERVER - Initilizing Server Spawning"];
+    diag_log format["WASTELAND SERVER - Initializing Server Spawning"];
 	_vehSpawn = [] ExecVM "server\functions\vehicleSpawning.sqf";
 	waitUntil{sleep 0.1; scriptDone _vehSpawn};
     _objSpawn = [] ExecVM "server\functions\objectsSpawning.sqf";
@@ -42,7 +42,7 @@ if (serverSpawning == 1) then {
 #endif
 //Execute Server Missions.
 if (sideMissions == 1) then {
-	diag_log format["WASTELAND SERVER - Initilizing Missions"];
+	diag_log format["WASTELAND SERVER - Initializing Missions"];
     [] execVM "server\missions\sideMissionController.sqf";
     sleep 5;
     [] execVM "server\missions\mainMissionController.sqf";
