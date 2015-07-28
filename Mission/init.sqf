@@ -15,7 +15,7 @@ X_Server = false;
 X_Client = false;
 X_JIP = false;
 hitStateVar = false;
-versionName = "v3.0b";
+versionName = "0.0.1";
 
 if(isServer) then { X_Server = true;};
 if(!isDedicated) then { X_Client = true;};
@@ -38,9 +38,9 @@ if(X_Client) then {
 
 	//Wipe Group.
 	if(count units group player > 1) then
-	{  
+	{
 //		diag_log "Player Group Wiped";
-		[player] join grpNull;    
+		[player] join grpNull;
 	};
 
 	[] execVM "client\init.sqf";
