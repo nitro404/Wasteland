@@ -14,7 +14,8 @@
 #define groupManagementAcceptButton 55518
 #define groupManagementDeclineButton 55519
 #define groupManagementInviteText 55520
-            
+#define groupManagementPromoteButton 55521
+
 disableSerialization;
 				
 private ["_start","_dialog","_myGroup","_playerListBox","_groupListBox","_uid","_namestr","_index","_groupCreate","_groupInvite","_groupKick","_groupDisband","_groupLeaveButton","_inGroup","_isLeader","_name"];
@@ -33,6 +34,7 @@ _groupLeaveButton = _dialog displayCtrl groupManagementLeaveButton;
 _groupAcceptInvite = _dialog displayCtrl groupManagementAcceptButton;
 _groupDeclineInvite = _dialog displayCtrl groupManagementDeclineButton;
 _groupInviteText = _dialog displayCtrl groupManagementInviteText;
+_groupPromote = _dialog displayCtrl groupManagementPromoteButton;
 
 _groupInvite ctrlShow false;
 _groupKick ctrlShow false;
@@ -40,6 +42,7 @@ _groupDisband ctrlShow false;
 _groupLeaveButton ctrlShow false;
 _groupDeclineInvite ctrlShow false;
 _groupAcceptInvite ctrlShow false;
+_groupPromote ctrlShow false;
 _hasInvite = false;
 while{groupManagmentActive} do
 {
@@ -54,13 +57,16 @@ while{groupManagmentActive} do
 			_groupDisband ctrlShow true;
             _groupKick ctrlShow true;
 			_groupLeaveButton ctrlShow true;    
+			_groupPromote ctrlShow true;    
         } else {
-			_groupLeaveButton ctrlShow true;    
+			_groupLeaveButton ctrlShow true;
+			_groupPromote ctrlShow false;
         };
     } else {
     	_groupKick ctrlShow false;
 		_groupDisband ctrlShow false;
 		_groupLeaveButton ctrlShow false;    
+		_groupPromote ctrlShow false;
     };
     
     //Sort Invite Controls

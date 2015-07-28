@@ -8,6 +8,7 @@
 #define groupManagementAcceptButton 55518
 #define groupManagementDeclineButton 55519
 #define groupManagementInviteText 55520
+#define groupManagementPromoteButton 55521
 
 class GroupManagement {
 
@@ -110,6 +111,15 @@ class GroupManagement {
 			text = "Disband";
 			onButtonClick = "[] execVM 'client\systems\groups\disbandGroup.sqf'";
 			x = 0.3075; y = 0.300;
+			w = 0.125; h = 0.033 * safezoneH;
+			color[] = {0.95,0.1,0.1,1};
+		};
+		
+		class PromoteButton : w_RscButton {
+			idc = groupManagementPromoteButton;
+			text = "Promote";
+			onButtonClick = "[] execVM 'client\systems\groups\promotePlayer.sqf'";
+			x = 0.3075; y = 0.400;
 			w = 0.125; h = 0.033 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};
 		};
