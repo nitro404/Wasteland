@@ -2576,7 +2576,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=40;
+		items=41;
 		class Item0
 		{
 			position[]={8343.0654,26.779518,3340.9795};
@@ -2996,6 +2996,16 @@ class Mission
 			vehicle="An2_1_TK_CIV_EP1";
 			skill=0.60000002;
 			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers"";this addMagazine ""OG9_HE"";this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers"";this addMagazine ""OG9_HE"";this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";'] execVM ""vehiclerespawn.sqf"";";
+		};
+		class Item40
+		{
+			position[]={4488.9136,339,10336.087};
+			azimut=155;
+			id=170;
+			side="EMPTY";
+			vehicle="MQ9PredatorB";
+			skill=0.60000002;
+			init="veh = [this, 1200, 0, 0, FALSE, FALSE] execVM ""vehiclerespawn.sqf"";";
 		};
 	};
 	class Markers

@@ -7,38 +7,38 @@
 _switch = _this select 0;
 _button = _this select 1;
 
-switch(_switch) do 
+switch(_switch) do
 {
     case 0:{execVM "client\functions\spawnRandom.sqf"};
     case 1:{
-	    if(showBeacons) then { 	
+	    if(showBeacons) then {
 	    	[_button] execVM "client\functions\spawnOnBeacon.sqf"
 	    } else {
 	    	[_button] execVM "client\functions\spawnInTown.sqf"
-	    }; 
+	    };
     };
 };
 
 if(isNil{client_firstSpawn}) then {
 	client_firstSpawn = true;
 	[] execVM "client\functions\welcomeMessage.sqf";
-    
-    true spawn {      
+
+    true spawn {
         _startTime = floor(time);
         _result = 0;
 		waitUntil
-		{ 
+		{
 		    _currTime = floor(time);
-		    if(_currTime - _startTime >= 200) then 
+		    if(_currTime - _startTime >= 200) then
 		    {
-		    	_result = 1;    
+		    	_result = 1;
 		    };
 		    (_result == 1)
 		};
-        
+
         // Allow the player to drop money again now that 3 minutes have passed.
         player setVariable["canDrop",true,false];
-        
+
 		if(playerSide in [west, east]) then {
 			_found = false;
 			{
@@ -47,35 +47,35 @@ if(isNil{client_firstSpawn}) then {
 			if(!_found) then {
 				pvar_teamSwitchList set [count pvar_teamSwitchList, [playerUID, playerSide]];
 				publicVariable "pvar_teamSwitchList";
-                
+
                 _side = "";
                 if(str(playerSide) == "WEST") then {
                     _side = "Blufor";
                 };
-                
+
                 if(str(playerSide) == "EAST") then {
                     _side = "Opfor";
                 };
-                
+
 				titleText [format["You have been locked to %1",_side],"PLAIN",0];
 			};
 		};
 	};
 
 } else {
-	[] spawn {      
+	[] spawn {
         _startTime = floor(time);
         _result = 0;
 		waitUntil
-		{ 
+		{
 		    _currTime = floor(time);
-		    if(_currTime - _startTime >= 200) then 
+		    if(_currTime - _startTime >= 200) then
 		    {
-		    	_result = 1;    
+		    	_result = 1;
 		    };
 		    (_result == 1)
 		};
-        
+
         // Allow the player to drop money again now that 3 minutes have passed.
         player setVariable["canDrop",true,false];
     };
