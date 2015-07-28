@@ -17,30 +17,73 @@ class Mission
 		"caair_baf_ch_47f",
 		"CAAir_E_AH6J",
 		"CAWater",
-		"cawater2_fishing_boat"
+		"cawater2_fishing_boat",
+		"caair2_uh1y",
+		"CAWheeled2_TowingTractor",
+		"camisc_e",
+		"caweapons_baf",
+		"cawater2_fregata",
+		"caweapons",
+		"CAWater2_seafox",
+		"CAAir_E_UH60M",
+		"caair_e_an2",
+		"CAAir2_Pchela1T",
+		"camisc_e_wf",
+		"CATracked_E_M2A2_Bradley",
+		"caair_pmc_ka137",
+		"arma2_ka52",
+		"CATracked2_T90",
+		"CATracked",
+		"CAAir2_MV22",
+		"caair_e_ch_47f",
+		"caair_pmc_ka60",
+		"CAAir2_MQ9PredatorB",
+		"warfarebuildings",
+		"CAWheeled_E",
+		"CAWheeled2_MTVR"
 	};
 	addOnsAuto[]=
 	{
-		"CACharacters_BAF",
+		"cacharacters_e",
 		"cacharacters2",
 		"cacharacters_pmc",
-		"cacharacters_e",
 		"ca_modules_functions",
+		"cacharacters_baf"
 		"camisc3",
 		"caweapons_ammoboxes",
 		"cabuildings",
 		"CAWater",
 		"cawater2_fishing_boat",
+		"camisc_e",
+		"caweapons_baf",
+		"caweapons",
+		"CAAir_E_UH60M",
+		"CAAir_E_UH1H_EP1",
+		"caair_pmc_ka60",
+		"CAAir_E_AH6J",
+		"caair_e_ch_47f",
+		"CAAir_BAF",
+		"caair_e_an2",
+		"CAAir2_MV22",
+		"CAAir2_Pchela1T",
+		"camisc_e_wf",
+		"CATracked_E_M2A2_Bradley",
+		"CATracked2_T90",
+		"CATracked",
+		"CAAir2_MQ9PredatorB",
+		"warfarebuildings",
+		"CAWheeled_E",
+		"CAWheeled2_MTVR",
 		"chernarus"
 	};
 	randomSeed=10079095;
 	class Intel
 	{
-		briefingName="[COMMUNITY NAME HERE] Wasteland - Chernarus [v3.0b]";
+		briefingName="[COMMUNITY NAME HERE] Armored Fury Wasteland 0.0.1 - Chernarus";
 		briefingDescription="Wasteland is a harsh survival sandbox.";
 		resistanceWest=0;
-		startWeather=0.25;
-		forecastWeather=0.25;
+		startWeather=0;
+		forecastWeather=0;
 		year=2020;
 		month=7;
 		day=1;
@@ -2533,7 +2576,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=36;
+		items=40;
 		class Item0
 		{
 			position[]={8343.0654,26.779518,3340.9795};
@@ -2913,6 +2956,46 @@ class Mission
 			vehicle="PBX";
 			skill=0.60000002;
 			init="this setVariable[""newVehicle"",1,true];";
+		};
+		class Item36
+		{
+			position[]={4859.8096,339.08075,10223.537};
+			azimut=242;
+			id=166;
+			side="EMPTY";
+			vehicle="An2_TK_EP1";
+			skill=0.60000002;
+			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers"";this addMagazine ""OG9_HE"";this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers"";this addMagazine ""OG9_HE"";this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";'] execVM ""vehiclerespawn.sqf"";";
+		};
+		class Item37
+		{
+			position[]={4909.3608,339.08075,10142.637};
+			azimut=242;
+			id=167;
+			side="EMPTY";
+			vehicle="An2_TK_EP1";
+			skill=0.60000002;
+			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers"";this addMagazine ""OG9_HE"";this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers"";this addMagazine ""OG9_HE"";this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";'] execVM ""vehiclerespawn.sqf"";";
+		};
+		class Item38
+		{
+			position[]={4957.3633,339.08075,10058.884};
+			azimut=242;
+			id=168;
+			side="EMPTY";
+			vehicle="An2_2_TK_CIV_EP1";
+			skill=0.60000002;
+			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers"";this addMagazine ""OG9_HE"";this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers"";this addMagazine ""OG9_HE"";this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";'] execVM ""vehiclerespawn.sqf"";";
+		};
+		class Item39
+		{
+			position[]={4621.3252,8.954608,2568.4043};
+			azimut=130;
+			id=169;
+			side="EMPTY";
+			vehicle="An2_1_TK_CIV_EP1";
+			skill=0.60000002;
+			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers"";this addMagazine ""OG9_HE"";this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers"";this addMagazine ""OG9_HE"";this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";'] execVM ""vehiclerespawn.sqf"";";
 		};
 	};
 	class Markers
