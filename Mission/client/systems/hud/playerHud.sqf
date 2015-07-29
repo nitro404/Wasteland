@@ -24,7 +24,7 @@ while {true} do
     _playerMoney = player getVariable "cmoney";
 
     if (_playerMoney >= 10000) then {
-    	_playerMoney = "10k";
+    	_playerMoney = format["%1k", (_playerMoney / 1000)];
     };
 
     _vitals ctrlSetStructuredText parseText format ["%1 <img size='0.8' image='client\icons\health.paa'/><br/>%2 <img size='0.8' image='\CA\misc\data\icons\picture_money_CA.paa'/>", _health, _playerMoney];
