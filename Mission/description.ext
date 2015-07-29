@@ -1,10 +1,12 @@
 #include "addons\R3F_ARTY_AND_LOG\desc_include.h"
+
 loadScreen = "Images\Loading.jpg";
 respawn="BASE";
 respawnDelay=15;
 disabledAI=1;
 disableChannels[]={2};
 enableItemsDropping = 0;
+
 class Header
 {
 	gameType=COOP;
@@ -37,5 +39,107 @@ class RscTitles {
 };
 
 class CfgSounds {
-	sounds[] = {};	
+	sounds[] = {};
+};
+
+class CfgVehicles {
+	class Air;
+	class Plane;
+	class Helicopter;
+	class AH1_Base : Helicopter {
+		incommingMisslieDetectionSystem = 16;
+		lockDetectionSystem = "8 + 4";
+		soundLocked[] =           { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 2 };
+		soundIncommingMissile[] = { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 4 };
+	};
+	class Mi17_base : Helicopter {
+		incommingMisslieDetectionSystem = 16;
+		lockDetectionSystem = "8 + 4";
+		soundLocked[] =           { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 2 };
+		soundIncommingMissile[] = { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 4 };
+	};
+	class Mi24_Base : Helicopter {
+		incommingMisslieDetectionSystem = 16;
+		lockDetectionSystem = "8 + 4";
+		soundLocked[] =           { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 2 };
+		soundIncommingMissile[] = { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 4 };
+	};
+	class Kamov_Base : Helicopter {
+		incommingMisslieDetectionSystem = 16;
+		lockDetectionSystem = "8 + 4";
+		soundLocked[] =           { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 2 };
+		soundIncommingMissile[] = { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 4 };
+	};
+	class Ka60_Base_PMC : Helicopter {
+		incommingMisslieDetectionSystem = 16;
+		lockDetectionSystem = "8 + 4";
+		soundLocked[] =           { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 2 };
+		soundIncommingMissile[] = { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 4 };
+	};
+	class UH60_Base : Helicopter {
+		incommingMisslieDetectionSystem = 16;
+		lockDetectionSystem = "8 + 4";
+		soundLocked[] =           { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 2 };
+		soundIncommingMissile[] = { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 4 };
+	};
+	class AH6X_EP1 : Helicopter {
+		incommingMisslieDetectionSystem = 16;
+		lockDetectionSystem = "8 + 4";
+		soundLocked[] =           { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 2 };
+		soundIncommingMissile[] = { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 4 };
+	};
+	class AH6 : Helicopter {
+		incommingMisslieDetectionSystem = 16;
+		lockDetectionSystem = "8 + 4";
+		soundLocked[] =           { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 2 };
+		soundIncommingMissile[] = { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 4 };
+	};
+	class AH6_Base_EP1 : Helicopter {
+		incommingMisslieDetectionSystem = 16;
+		lockDetectionSystem = "8 + 4";
+		soundLocked[] =           { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 2 };
+		soundIncommingMissile[] = { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 4 };
+	};
+	class UH1_Base : Helicopter {
+		incommingMisslieDetectionSystem = 16;
+		lockDetectionSystem = "8 + 4";
+		soundLocked[] =           { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 2 };
+		soundIncommingMissile[] = { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 4 };
+	};
+	class MV22 : Plane {
+		incommingMisslieDetectionSystem = 16;
+		lockDetectionSystem = "8 + 4";
+		soundLocked[] =           { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 2 };
+		soundIncommingMissile[] = { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 4 };
+	};
+	class A10 : Plane {
+		incommingMisslieDetectionSystem = 16;
+		soundLocked[] =           { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 2 };
+		soundIncommingMissile[] = { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 4 };
+	};
+	class AV8B2 : Plane {
+		incommingMisslieDetectionSystem = 16;
+		soundLocked[] =           { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 2 };
+		soundIncommingMissile[] = { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 4 };
+	};
+	class F35_base : Plane {
+		incommingMisslieDetectionSystem = 16;
+		soundLocked[] =           { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 2 };
+		soundIncommingMissile[] = { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 4 };
+	};
+	class L39_base : Plane {
+		incommingMisslieDetectionSystem = 16;
+		soundLocked[] =           { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 2 };
+		soundIncommingMissile[] = { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 4 };
+	};
+	class Su25_base : Plane {
+		incommingMisslieDetectionSystem = 16;
+		soundLocked[] =           { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 2 };
+		soundIncommingMissile[] = { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 4 };
+	};
+	class Su34 : Plane {
+		incommingMisslieDetectionSystem = 16;
+		soundLocked[] =           { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 2 };
+		soundIncommingMissile[] = { "\ca\Tracked\Data\Sound\alarm_loop1", 0.00031599999, 4 };
+	};
 };
