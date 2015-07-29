@@ -20,7 +20,7 @@ _bannedVehicles = [
 	"F35B","F35","A10","A10_US_EP1","AH64D_EP1","AV8B","AV8B2","Su25_CDF","Su25_Ins","Su25_TK_EP1","Su39","Su34",
     "L39_2_ACR","L39_TK_EP1","L39_ACR","L39_TK_EP1","L39_TK_EP1",
     "AH1Z","AH64D","AH64D_Sidewinders","BAF_Apache_AH1_D","Ka52","Ka52Black",
-    "CruiseMissile1","CruiseMissile2","MQ9PredatorB","MQ9PredatorB_US_EP1","MLRS"
+    "CruiseMissile1","CruiseMissile2","MLRS"
 ];
 
 _instantKick = false; // Kick the bastards immediately or taunght them a little?

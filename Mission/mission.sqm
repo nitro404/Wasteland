@@ -48,7 +48,7 @@ class Mission
 		"cacharacters2",
 		"cacharacters_pmc",
 		"ca_modules_functions",
-		"cacharacters_baf"
+		"cacharacters_baf",
 		"camisc3",
 		"caweapons_ammoboxes",
 		"cabuildings",
@@ -2965,7 +2965,7 @@ class Mission
 			side="EMPTY";
 			vehicle="An2_TK_EP1";
 			skill=0.60000002;
-			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers"";this addMagazine ""OG9_HE"";this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers"";this addMagazine ""OG9_HE"";this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";'] execVM ""vehiclerespawn.sqf"";";
+			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";'] execVM ""vehiclerespawn.sqf"";";
 		};
 		class Item37
 		{
@@ -2975,7 +2975,7 @@ class Mission
 			side="EMPTY";
 			vehicle="An2_TK_EP1";
 			skill=0.60000002;
-			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers"";this addMagazine ""OG9_HE"";this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers"";this addMagazine ""OG9_HE"";this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";'] execVM ""vehiclerespawn.sqf"";";
+			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";'] execVM ""vehiclerespawn.sqf"";";
 		};
 		class Item38
 		{
@@ -2985,7 +2985,7 @@ class Mission
 			side="EMPTY";
 			vehicle="An2_2_TK_CIV_EP1";
 			skill=0.60000002;
-			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers"";this addMagazine ""OG9_HE"";this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers"";this addMagazine ""OG9_HE"";this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";'] execVM ""vehiclerespawn.sqf"";";
+			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";'] execVM ""vehiclerespawn.sqf"";";
 		};
 		class Item39
 		{
@@ -2995,7 +2995,7 @@ class Mission
 			side="EMPTY";
 			vehicle="An2_1_TK_CIV_EP1";
 			skill=0.60000002;
-			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers"";this addMagazine ""OG9_HE"";this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers"";this addMagazine ""OG9_HE"";this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";'] execVM ""vehiclerespawn.sqf"";";
+			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";'] execVM ""vehiclerespawn.sqf"";";
 		};
 		class Item40
 		{
