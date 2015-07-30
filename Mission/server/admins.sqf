@@ -24,6 +24,14 @@ serverAdministrators = [
 	"76561198085238045", // Sponty
 	"76561197962166875", // Dropy
 	"76561198067915453", // Mobley
-	"76561198041126769"  // Mawson
+	"76561198041126769", // Mawson
+	"76561198087899783", // Xinova
+	"76561198040557240", // Alpha Wing
+	"76561197973639507", // Corpsegrinder
+	"76561198026982182", // with_milk
+	"76561197960440011", // Spangler
+	"76561198041279329", // Drew
+	"76561198090673661", // Drew (Alt)
+
 ];
 publicVariable "serverAdministrators";
