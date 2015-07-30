@@ -23,6 +23,7 @@ serverAdministrators = [
 	"76561197983361980", // nitro glycerine / David Della Rocco
 	"76561198085238045", // Sponty
 	"76561197962166875", // Dropy
-	"76561198067915453"  // Mobley
+	"76561198067915453", // Mobley
+	"76561198041126769"  // Mawson
 ];
 publicVariable "serverAdministrators";
