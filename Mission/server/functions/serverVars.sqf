@@ -164,7 +164,6 @@ objectList = ["Land_prebehlavka",
                 "Hedgehog",
                 "Land_ConcreteRamp",
                 "Land_CncBlock_Stripes",
-                "Land_Campfire_burning",
                 "Land_GuardShed",
                 "Land_tent_east",
 				"Land_ConcreteBlock"];
