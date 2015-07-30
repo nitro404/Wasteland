@@ -72,6 +72,7 @@ _player setVariable["fuelFull", 0, false];
 _player setVariable["fuelEmpty", 0, false];
 _player setVariable["bombs",false,false];
 _player setVariable["spawnBeacon",0,false];
+_player setVariable["ShowNameAllies",false];
 _player setVariable["camonet",0,false];
 player setVariable["canDrop",false,false];
 
