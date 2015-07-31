@@ -35,6 +35,7 @@ serverAdministrators = [
 	"76561198090673661", // Drew (Alt)
 	"76561197992556451", // Tesla
 	"76561198011088596", // Skipwich
-	"76561197961014283"  // Yams
+	"76561197961014283", // Yams
+	"76561197980727745"  // Northern Petrol
 ];
 publicVariable "serverAdministrators";
