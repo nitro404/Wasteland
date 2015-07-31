@@ -4400,7 +4400,7 @@ class Mission
 		class Item231
 		{
 			position[]={12414.426,7.6185455,9532.2432};
-			name="Spawn_213#";
+			name="Spawn_213";
 			type="Empty";
 		};
 		class Item232
