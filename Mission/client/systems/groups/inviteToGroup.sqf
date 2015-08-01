@@ -3,7 +3,7 @@
 //	@file Author: [404] Deadbeat
 //	@file Created: 20/11/2012 05:19
 
-if(player != leader group player) exitWith {player globalChat format["you are not the leader and can't invite people"];};
+// if(player != leader group player) exitWith {player globalChat format["you are not the leader and can't invite people"];};
 
 #define groupManagementDialog 55510
 #define groupManagementPlayerList 55511
@@ -20,7 +20,7 @@ _playerData = _playerListBox lbData _index;
 _hasInvite = false;
 _check = 0;
 
-//Check selected data is valid   			
+//Check selected data is valid
 {if (str(_x) == _playerData) then {_target = _x;_check = 1;};}forEach playableUnits;
 
 diag_log "Invite to group: Before the checks";
@@ -36,7 +36,7 @@ if(_hasInvite) exitWith {player globalChat "This player already has a pending in
 diag_log "Invite to group: After the checks";
 
 currentInvites set [count currentInvites,[getPlayerUID player,getPlayerUID _target]];
-publicVariableServer "currentInvites"; 
+publicVariableServer "currentInvites";
 
 [nil,_target,"loc", rTITLETEXT, format["You have been invited to join %1's group",name player], "PLAIN", 0] call RE;
 
