@@ -2562,7 +2562,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=47;
+		items=61;
 		class Item0
 		{
 			position[]={8343.0654,26.779518,3340.9795};
@@ -3053,10 +3053,150 @@ class Mission
 			skill=0.60000002;
 			init="this addMagazine ""6Rnd_GBU12_AV8B""; this addMagazine ""6Rnd_GBU12_AV8B""; this addWeapon ""BombLauncher""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""6Rnd_GBU12_AV8B""; this addMagazine ""6Rnd_GBU12_AV8B""; this addWeapon ""BombLauncher"";'] execVM ""vehiclerespawn.sqf"";";
 		};
+		// Nizhnoye Repair Pad
+		class Item47
+		{
+			position[]={13058.483,5.2917943,8371.7148};
+			azimut=220;
+			id=177;
+			side="EMPTY";
+			vehicle="US_WarfareBVehicleServicePoint_Base_EP1";
+			skill=0.60000002;
+		};
+		class Item48
+		{
+			position[]={13046.684,5.7612219,8363.0957};
+			azimut=270;
+			special="NONE";
+			id=178;
+			side="EMPTY";
+			vehicle="HeliHRescue";
+			skill=0.60000002;
+		};
+		// Novy Lug Repair Pad
+		class Item49
+		{
+			position[]={9768.585,250.66502,11532.548};
+			azimut=220;
+			id=179;
+			side="EMPTY";
+			vehicle="US_WarfareBVehicleServicePoint_Base_EP1";
+			skill=0.60000002;
+		};
+		class Item50
+		{
+			position[]={9758.335,250.34344,11539.713};
+			azimut=270;
+			special="NONE";
+			id=180;
+			side="EMPTY";
+			vehicle="HeliHRescue";
+			skill=0.60000002;
+		};
+		// Gorka Repair Pad
+		class Item51
+		{
+			position[]={8559.3252,337.16565,8139.3813};
+			azimut=220;
+			id=181;
+			side="EMPTY";
+			vehicle="US_WarfareBVehicleServicePoint_Base_EP1";
+			skill=0.60000002;
+		};
+		class Item52
+		{
+			position[]={8547.5498,338.35522,8130.7603};
+			azimut=270;
+			special="NONE";
+			id=182;
+			side="EMPTY";
+			vehicle="HeliHRescue";
+			skill=0.60000002;
+		};
+		// Kamenka Repair Pad
+		class Item53
+		{
+			position[]={1637.2073,16.640907,2333.4792};
+			azimut=220;
+			id=183;
+			side="EMPTY";
+			vehicle="US_WarfareBVehicleServicePoint_Base_EP1";
+			skill=0.60000002;
+		};
+		class Item54
+		{
+			position[]={1650.2175,16.852453,2333.2717};
+			azimut=270;
+			special="NONE";
+			id=184;
+			side="EMPTY";
+			vehicle="HeliHRescue";
+			skill=0.60000002;
+		};
+		// Pustoshka Repair Pad
+		class Item55
+		{
+			position[]={3471.0764,317.47635,7546.8994};
+			azimut=220;
+			id=185;
+			side="EMPTY";
+			vehicle="US_WarfareBVehicleServicePoint_Base_EP1";
+			skill=0.60000002;
+		};
+		class Item56
+		{
+			position[]={3484.0869,316.55292,7546.6924};
+			azimut=270;
+			special="NONE";
+			id=186;
+			side="EMPTY";
+			vehicle="HeliHRescue";
+			skill=0.60000002;
+		};
+		// Rog Repair Pad
+		class Item57
+		{
+			position[]={10388.212,230.27567,4701.7549};
+			azimut=220;
+			id=187;
+			side="EMPTY";
+			vehicle="US_WarfareBVehicleServicePoint_Base_EP1";
+			skill=0.60000002;
+		};
+		class Item58
+		{
+			position[]={10401.223,227.73051,4701.5474};
+			azimut=270;
+			special="NONE";
+			id=188;
+			side="EMPTY";
+			vehicle="HeliHRescue";
+			skill=0.60000002;
+		};
+		// Petrovka Repair Pad
+		class Item59
+		{
+			position[]={5077.6133,208.15334,12204.026};
+			azimut=220;
+			id=189;
+			side="EMPTY";
+			vehicle="US_WarfareBVehicleServicePoint_Base_EP1";
+			skill=0.60000002;
+		};
+		class Item60
+		{
+			position[]={5066.4023,209.58841,12195.399};
+			azimut=270;
+			special="NONE";
+			id=190;
+			side="EMPTY";
+			vehicle="HeliHRescue";
+			skill=0.60000002;
+		};
 	};
 	class Markers
 	{
-		items=914;
+		items=921;
 		class Item0
 		{
 			position[]={10472.047,6,2300.7461};
@@ -8660,6 +8800,185 @@ class Mission
 			position[]={4153.1563,339,10882.086};
 			name="Spawn_731_1_1";
 			type="Empty";
+		};
+		// Nizhnoye Repair Pad
+		class Item914
+		{
+			position[]={13046.851,5.7819242,8362.0518};
+			name="repair1";
+			text="REPAIR CENTER";
+			type="n_service";
+			colorName="ColorBrown";
+		};
+		// Novy Lug Repair Pad
+		class Item915
+		{
+			position[]={9758.4971,250.30687,11538.706};
+			name="repair2";
+			text="REPAIR CENTER";
+			type="n_service";
+			colorName="ColorBrown";
+		};
+		// Gorka Repair Pad
+		class Item916
+		{
+			position[]={8547.6924,338.33026,8129.7183};
+			name="repair3";
+			text="REPAIR CENTER";
+			type="n_service";
+			colorName="ColorBrown";
+		};
+		// Kamenka Repair Pad
+		class Item917
+		{
+			position[]={1655.0125,16.846397,2331.7554};
+			name="repair4";
+			text="REPAIR CENTER";
+			type="n_service";
+			colorName="ColorBrown";
+		};
+		// Pustoshka Repair Pad
+		class Item918
+		{
+			position[]={3488.8818,316.30533,7545.1758};
+			name="repair5";
+			text="REPAIR CENTER";
+			type="n_service";
+			colorName="ColorBrown";
+		};
+		// Rog Repair Pad
+		class Item919
+		{
+			position[]={10406.018,226.61595,4700.0313};
+			name="repair6";
+			text="REPAIR CENTER";
+			type="n_service";
+			colorName="ColorBrown";
+		};
+		// Petrovka Repair Pad
+		class Item920
+		{
+			position[]={5065.9805,209.70178,12194.364};
+			name="repair7";
+			text="REPAIR CENTER";
+			type="n_service";
+			colorName="ColorBrown";
+		};
+	};
+	class Sensors
+	{
+		items=7;
+		// Nizhnoye Repair Pad
+		class Item0
+		{
+			position[]={13046.641,5.7617579,8363.1084};
+			a=10;
+			b=10;
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and (""helicopter"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0)";
+			expActiv="_xhandle= [(thislist select 0)] execVM ""reloadVehicle.sqf"";";
+			class Effects
+			{
+			};
+		};
+		// Novy Lug Repair Pad
+		class Item1
+		{
+			position[]={9758.2871,250.34268,11539.763};
+			a=10;
+			b=10;
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and (""helicopter"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0)";
+			expActiv="_xhandle= [(thislist select 0)] execVM ""reloadVehicle.sqf"";";
+			class Effects
+			{
+			};
+		};
+		// Gorka Repair Pad
+		class Item2
+		{
+			position[]={8547.4824,338.3555,8130.7749};
+			a=10;
+			b=10;
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and (""helicopter"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0)";
+			expActiv="_xhandle= [(thislist select 0)] execVM ""reloadVehicle.sqf"";";
+			class Effects
+			{
+			};
+		};
+		// Kamenka Repair Pad
+		class Item3
+		{
+			position[]={1650.1633,16.851662,2333.2681};
+			a=10;
+			b=10;
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and (""helicopter"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0)";
+			expActiv="_xhandle= [(thislist select 0)] execVM ""reloadVehicle.sqf"";";
+			class Effects
+			{
+			};
+		};
+		// Pustoshka Repair Pad
+		class Item4
+		{
+			position[]={3484.0327,316.55719,7546.6885};
+			a=10;
+			b=10;
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and (""helicopter"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0)";
+			expActiv="_xhandle= [(thislist select 0)] execVM ""reloadVehicle.sqf"";";
+			class Effects
+			{
+			};
+		};
+		// Rog Repair Pad
+		class Item5
+		{
+			position[]={10401.168,227.74214,4701.5439};
+			a=10;
+			b=10;
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and (""helicopter"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0)";
+			expActiv="_xhandle= [(thislist select 0)] execVM ""reloadVehicle.sqf"";";
+			class Effects
+			{
+			};
+		};
+		// Petrovka Repair Pad
+		class Item6
+		{
+			position[]={5066.3516,209.58176,12195.491};
+			a=10;
+			b=10;
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and (""helicopter"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0)";
+			expActiv="_xhandle= [(thislist select 0)] execVM ""reloadVehicle.sqf"";";
+			class Effects
+			{
+			};
 		};
 	};
 };
