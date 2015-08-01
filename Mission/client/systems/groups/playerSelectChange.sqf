@@ -27,7 +27,7 @@ _unitCount = count units group _target;
 
 if(_unitCount == 1) then {
 //	if(player == leader group player) then {
-//		_groupInvite ctrlShow true;
+		_groupInvite ctrlShow true;
 //	}
 //	else {
 //		_groupInvite ctrlShow false;
