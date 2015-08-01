@@ -7,7 +7,7 @@
 
 if(!X_Server) exitWith {};
 
-diag_log format["WASTELAND SERVER - Initilizing Server Compile"];
+diag_log format["WASTELAND SERVER - Initializing Server Compile"];
 
 //Main Mission Compiles
 mission_APC = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_APC.sqf";
