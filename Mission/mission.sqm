@@ -60,6 +60,7 @@ class Mission
 		"ca_l39",
 		"CAAir2_MQ9PredatorB",
 		"caair_e",
+		"camisc_e_wf",
 		"chernarus"
 	};
 	randomSeed=10079095;
@@ -2562,7 +2563,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=61;
+		items=63;
 		class Item0
 		{
 			position[]={8343.0654,26.779518,3340.9795};
@@ -3053,8 +3054,7 @@ class Mission
 			skill=0.60000002;
 			init="this addMagazine ""6Rnd_GBU12_AV8B""; this addMagazine ""6Rnd_GBU12_AV8B""; this addWeapon ""BombLauncher""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""6Rnd_GBU12_AV8B""; this addMagazine ""6Rnd_GBU12_AV8B""; this addWeapon ""BombLauncher"";'] execVM ""vehiclerespawn.sqf"";";
 		};
-		// Nizhnoye Repair Pad
-		class Item47
+		// Nizhnoye Repair Pad		class Item47
 		{
 			position[]={13058.483,5.2917943,8371.7148};
 			azimut=220;
@@ -3073,10 +3073,10 @@ class Mission
 			vehicle="HeliHRescue";
 			skill=0.60000002;
 		};
-		// Novy Lug Repair Pad
+		// Pobeda Dam Repair Pad
 		class Item49
 		{
-			position[]={9768.585,250.66502,11532.548};
+			position[]={9866.6768,133.1006,13317.771};
 			azimut=220;
 			id=179;
 			side="EMPTY";
@@ -3085,7 +3085,7 @@ class Mission
 		};
 		class Item50
 		{
-			position[]={9758.335,250.34344,11539.713};
+			position[]={9856.4268,131.94345,13324.936};
 			azimut=270;
 			special="NONE";
 			id=180;
@@ -3096,7 +3096,7 @@ class Mission
 		// Gorka Repair Pad
 		class Item51
 		{
-			position[]={8559.3252,337.16565,8139.3813};
+			position[]={9148.9941,384.14563,9226.1055};
 			azimut=220;
 			id=181;
 			side="EMPTY";
@@ -3105,7 +3105,7 @@ class Mission
 		};
 		class Item52
 		{
-			position[]={8547.5498,338.35522,8130.7603};
+			position[]={9137.2188,384.44476,9217.4844};
 			azimut=270;
 			special="NONE";
 			id=182;
@@ -3133,10 +3133,10 @@ class Mission
 			vehicle="HeliHRescue";
 			skill=0.60000002;
 		};
-		// Pustoshka Repair Pad
+		// Myshkino Repair Pad
 		class Item55
 		{
-			position[]={3471.0764,317.47635,7546.8994};
+			position[]={1755.4913,285.08423,7811.4033};
 			azimut=220;
 			id=185;
 			side="EMPTY";
@@ -3145,7 +3145,7 @@ class Mission
 		};
 		class Item56
 		{
-			position[]={3484.0869,316.55292,7546.6924};
+			position[]={1768.5021,285.68729,7811.1963};
 			azimut=270;
 			special="NONE";
 			id=186;
@@ -3153,10 +3153,10 @@ class Mission
 			vehicle="HeliHRescue";
 			skill=0.60000002;
 		};
-		// Rog Repair Pad
+		// Cap Golova Repair Pad
 		class Item57
 		{
-			position[]={10388.212,230.27567,4701.7549};
+			position[]={8014.8647,3.9992948,2889.8933};
 			azimut=220;
 			id=187;
 			side="EMPTY";
@@ -3165,7 +3165,7 @@ class Mission
 		};
 		class Item58
 		{
-			position[]={10401.223,227.73051,4701.5474};
+			position[]={8027.8755,4.9653406,2889.6858};
 			azimut=270;
 			special="NONE";
 			id=188;
@@ -3176,7 +3176,7 @@ class Mission
 		// Petrovka Repair Pad
 		class Item59
 		{
-			position[]={5077.6133,208.15334,12204.026};
+			position[]={4703.4746,211.42575,12390.566};
 			azimut=220;
 			id=189;
 			side="EMPTY";
@@ -3185,7 +3185,7 @@ class Mission
 		};
 		class Item60
 		{
-			position[]={5066.4023,209.58841,12195.399};
+			position[]={4692.2637,212.48523,12381.939};
 			azimut=270;
 			special="NONE";
 			id=190;
@@ -3193,10 +3193,30 @@ class Mission
 			vehicle="HeliHRescue";
 			skill=0.60000002;
 		};
+		// Vyshnoye Repair Pad
+		class Item61
+		{
+			position[]={7333.9575,250.34866,5992.8584};
+			azimut=220;
+			id=191;
+			side="EMPTY";
+			vehicle="US_WarfareBVehicleServicePoint_Base_EP1";
+			skill=0.60000002;
+		};
+		class Item62
+		{
+			position[]={7322.7466,252.30629,5984.2314};
+			azimut=270;
+			special="NONE";
+			id=192;
+			side="EMPTY";
+			vehicle="HeliHRescue";
+			skill=0.60000002;
+		};
 	};
 	class Markers
 	{
-		items=921;
+		items=922;
 		class Item0
 		{
 			position[]={10472.047,6,2300.7461};
@@ -8801,8 +8821,7 @@ class Mission
 			name="Spawn_731_1_1";
 			type="Empty";
 		};
-		// Nizhnoye Repair Pad
-		class Item914
+		// Nizhnoye Repair Pad		class Item914
 		{
 			position[]={13046.851,5.7819242,8362.0518};
 			name="repair1";
@@ -8810,10 +8829,10 @@ class Mission
 			type="n_service";
 			colorName="ColorBrown";
 		};
-		// Novy Lug Repair Pad
+		// Pobeda Dam Repair Pad
 		class Item915
 		{
-			position[]={9758.4971,250.30687,11538.706};
+			position[]={9856.5889,132.11086,13323.929};
 			name="repair2";
 			text="REPAIR CENTER";
 			type="n_service";
@@ -8822,7 +8841,7 @@ class Mission
 		// Gorka Repair Pad
 		class Item916
 		{
-			position[]={8547.6924,338.33026,8129.7183};
+			position[]={9137.3613,384.43088,9216.4424};
 			name="repair3";
 			text="REPAIR CENTER";
 			type="n_service";
@@ -8837,19 +8856,19 @@ class Mission
 			type="n_service";
 			colorName="ColorBrown";
 		};
-		// Pustoshka Repair Pad
+		// Myshkino Repair Pad
 		class Item918
 		{
-			position[]={3488.8818,316.30533,7545.1758};
+			position[]={1773.2969,285.86212,7809.6797};
 			name="repair5";
 			text="REPAIR CENTER";
 			type="n_service";
 			colorName="ColorBrown";
 		};
-		// Rog Repair Pad
+		// Cap Golova Repair Pad
 		class Item919
 		{
-			position[]={10406.018,226.61595,4700.0313};
+			position[]={8032.6704,5.1534977,2888.1697};
 			name="repair6";
 			text="REPAIR CENTER";
 			type="n_service";
@@ -8858,8 +8877,17 @@ class Mission
 		// Petrovka Repair Pad
 		class Item920
 		{
-			position[]={5065.9805,209.70178,12194.364};
+			position[]={4691.8418,212.60541,12380.904};
 			name="repair7";
+			text="REPAIR CENTER";
+			type="n_service";
+			colorName="ColorBrown";
+		};
+		// Vyshnoye Repair Pad
+		class Item921
+		{
+			position[]={7322.3247,252.4637,5983.1963};
+			name="repair8";
 			text="REPAIR CENTER";
 			type="n_service";
 			colorName="ColorBrown";
@@ -8867,7 +8895,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=7;
+		items=8;
 		// Nizhnoye Repair Pad
 		class Item0
 		{
@@ -8884,10 +8912,10 @@ class Mission
 			{
 			};
 		};
-		// Novy Lug Repair Pad
+		// Pobeda Dam Repair Pad
 		class Item1
 		{
-			position[]={9758.2871,250.34268,11539.763};
+			position[]={9856.3789,131.93533,13324.985};
 			a=10;
 			b=10;
 			activationBy="ANY";
@@ -8903,7 +8931,7 @@ class Mission
 		// Gorka Repair Pad
 		class Item2
 		{
-			position[]={8547.4824,338.3555,8130.7749};
+			position[]={9137.1514,384.4469,9217.499};
 			a=10;
 			b=10;
 			activationBy="ANY";
@@ -8932,10 +8960,10 @@ class Mission
 			{
 			};
 		};
-		// Pustoshka Repair Pad
+		// Myshkino Repair Pad
 		class Item4
 		{
-			position[]={3484.0327,316.55719,7546.6885};
+			position[]={1768.4479,285.6842,7811.1924};
 			a=10;
 			b=10;
 			activationBy="ANY";
@@ -8948,10 +8976,10 @@ class Mission
 			{
 			};
 		};
-		// Rog Repair Pad
+		// Cap Golova Repair Pad
 		class Item5
 		{
-			position[]={10401.168,227.74214,4701.5439};
+			position[]={8027.8208,4.9628367,2889.6824};
 			a=10;
 			b=10;
 			activationBy="ANY";
@@ -8967,7 +8995,23 @@ class Mission
 		// Petrovka Repair Pad
 		class Item6
 		{
-			position[]={5066.3516,209.58176,12195.491};
+			position[]={4692.2129,212.47626,12382.031};
+			a=10;
+			b=10;
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and (""helicopter"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0)";
+			expActiv="_xhandle= [(thislist select 0)] execVM ""reloadVehicle.sqf"";";
+			class Effects
+			{
+			};
+		};
+		// Vyshnoye Repair Pad
+		class Item7
+		{
+			position[]={7322.6958,252.30188,5984.3232};
 			a=10;
 			b=10;
 			activationBy="ANY";
