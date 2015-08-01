@@ -40,40 +40,26 @@ class Mission
 		"CAAir2_MQ9PredatorB",
 		"warfarebuildings",
 		"CAWheeled_E",
-		"CAWheeled2_MTVR"
+		"CAWheeled2_MTVR",
+		"caair_e",
+		"ca_l39"
 	};
 	addOnsAuto[]=
 	{
-		"cacharacters_e",
+		"CACharacters_BAF",
 		"cacharacters2",
 		"cacharacters_pmc",
+		"cacharacters_e",
 		"ca_modules_functions",
-		"cacharacters_baf",
 		"camisc3",
 		"caweapons_ammoboxes",
 		"cabuildings",
 		"CAWater",
 		"cawater2_fishing_boat",
-		"camisc_e",
-		"caweapons_baf",
-		"caweapons",
-		"CAAir_E_UH60M",
-		"CAAir_E_UH1H_EP1",
-		"caair_pmc_ka60",
-		"CAAir_E_AH6J",
-		"caair_e_ch_47f",
-		"CAAir_BAF",
 		"caair_e_an2",
-		"CAAir2_MV22",
-		"CAAir2_Pchela1T",
-		"camisc_e_wf",
-		"CATracked_E_M2A2_Bradley",
-		"CATracked2_T90",
-		"CATracked",
+		"ca_l39",
 		"CAAir2_MQ9PredatorB",
-		"warfarebuildings",
-		"CAWheeled_E",
-		"CAWheeled2_MTVR",
+		"caair_e",
 		"chernarus"
 	};
 	randomSeed=10079095;
@@ -1361,10 +1347,10 @@ class Mission
 				class Item0
 				{
 					position[]={6016.0107,305.79456,7815.5566};
-					azimut=328.64359;
+					azimut=328.64401;
 					id=91;
 					side="LOGIC";
-					vehicle="TK_CIV_Takistani04_EP1";
+					vehicle="LocationLogic";
 					leader=1;
 					skill=0.60000002;
 					text="generalStore2";
@@ -2576,7 +2562,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=41;
+		items=47;
 		class Item0
 		{
 			position[]={8343.0654,26.779518,3340.9795};
@@ -2973,7 +2959,7 @@ class Mission
 			azimut=242;
 			id=167;
 			side="EMPTY";
-			vehicle="An2_TK_EP1";
+			vehicle="An2_1_TK_CIV_EP1";
 			skill=0.60000002;
 			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";'] execVM ""vehiclerespawn.sqf"";";
 		};
@@ -2989,28 +2975,88 @@ class Mission
 		};
 		class Item39
 		{
-			position[]={4621.3252,8.954608,2568.4043};
-			azimut=130;
+			position[]={4764.3989,8.7569885,2608.7603};
+			azimut=210;
 			id=169;
 			side="EMPTY";
-			vehicle="An2_1_TK_CIV_EP1";
+			vehicle="An2_TK_EP1";
 			skill=0.60000002;
 			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";'] execVM ""vehiclerespawn.sqf"";";
 		};
 		class Item40
 		{
-			position[]={4488.9136,339,10336.087};
-			azimut=155;
+			position[]={11777.899,158.98399,12832.702};
+			azimut=112;
 			id=170;
+			side="EMPTY";
+			vehicle="L39_TK_EP1";
+			skill=0.60000002;
+			init="veh = [this, 1200, 0, 0, FALSE, FALSE] execVM ""vehiclerespawn.sqf"";";
+		};
+		class Item41
+		{
+			position[]={4799.6206,8.7569866,2589.196};
+			azimut=210;
+			id=171;
+			side="EMPTY";
+			vehicle="An2_1_TK_CIV_EP1";
+			skill=0.60000002;
+			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";'] execVM ""vehiclerespawn.sqf"";";
+		};
+		class Item42
+		{
+			position[]={4533.4526,339.07074,10786.9};
+			azimut=242;
+			id=172;
+			side="EMPTY";
+			vehicle="An2_TK_EP1";
+			skill=0.60000002;
+			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";'] execVM ""vehiclerespawn.sqf"";";
+		};
+		class Item43
+		{
+			position[]={4181.7612,339,10882.934};
+			azimut=150;
+			id=173;
 			side="EMPTY";
 			vehicle="MQ9PredatorB";
 			skill=0.60000002;
 			init="veh = [this, 1200, 0, 0, FALSE, FALSE] execVM ""vehiclerespawn.sqf"";";
 		};
+		class Item44
+		{
+			position[]={12051.179,158.85699,12608.107};
+			azimut=20;
+			id=174;
+			side="EMPTY";
+			vehicle="An2_1_TK_CIV_EP1";
+			skill=0.60000002;
+			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";'] execVM ""vehiclerespawn.sqf"";";
+		};
+		class Item45
+		{
+			position[]={12005.747,158.85703,12625.435};
+			azimut=20;
+			id=175;
+			side="EMPTY";
+			vehicle="An2_TK_EP1";
+			skill=0.60000002;
+			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";'] execVM ""vehiclerespawn.sqf"";";
+		};
+		class Item46
+		{
+			position[]={4615.7354,8.9249229,2570.6306};
+			azimut=119;
+			id=176;
+			side="EMPTY";
+			vehicle="C130J_US_EP1";
+			skill=0.60000002;
+			init="this addMagazine ""6Rnd_GBU12_AV8B""; this addMagazine ""6Rnd_GBU12_AV8B""; this addWeapon ""BombLauncher""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""6Rnd_GBU12_AV8B""; this addMagazine ""6Rnd_GBU12_AV8B""; this addWeapon ""BombLauncher"";'] execVM ""vehiclerespawn.sqf"";";
+		};
 	};
 	class Markers
 	{
-		items=906;
+		items=914;
 		class Item0
 		{
 			position[]={10472.047,6,2300.7461};
@@ -8566,6 +8612,54 @@ class Mission
 			name="Mission_50";
 			type="Empty";
 			colorName="ColorOrange";
+		};
+		class Item906
+		{
+			position[]={4517.9224,339.07074,10782.291};
+			name="Spawn_731_1";
+			type="Empty";
+		};
+		class Item907
+		{
+			position[]={4064.7534,339.01022,10848.585};
+			name="Spawn_742_1";
+			type="Empty";
+		};
+		class Item908
+		{
+			position[]={4095.4888,339,10772.276};
+			name="Spawn_743_1";
+			type="Empty";
+		};
+		class Item909
+		{
+			position[]={11995.182,158.85703,12627.534};
+			name="Spawn_731_2";
+			type="Empty";
+		};
+		class Item910
+		{
+			position[]={11994.623,158.85703,12628.094};
+			name="Spawn_731_2_1";
+			type="Empty";
+		};
+		class Item911
+		{
+			position[]={4189.6289,339,10821.728};
+			name="Spawn_740_1";
+			type="Empty";
+		};
+		class Item912
+		{
+			position[]={4128.6885,339.00745,10925.591};
+			name="Spawn_741_1";
+			type="Empty";
+		};
+		class Item913
+		{
+			position[]={4153.1563,339,10882.086};
+			name="Spawn_731_1_1";
+			type="Empty";
 		};
 	};
 };
