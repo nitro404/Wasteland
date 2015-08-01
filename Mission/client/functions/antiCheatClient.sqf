@@ -18,7 +18,7 @@ _bannedWeapons = [
 //  and just compare to make sure the selected vehicle is not in any of the mission arrays.
 _bannedVehicles = [
 	"F35B","F35","A10","A10_US_EP1","AH64D_EP1","AV8B","AV8B2","Su25_CDF","Su25_Ins","Su25_TK_EP1","Su39","Su34",
-    "L39_2_ACR","L39_TK_EP1","L39_ACR","L39_TK_EP1","L39_TK_EP1",
+    "L39_2_ACR","L39_ACR",
     "AH1Z","AH64D","AH64D_Sidewinders","BAF_Apache_AH1_D","Ka52","Ka52Black",
     "CruiseMissile1","CruiseMissile2","MLRS"
 ];
