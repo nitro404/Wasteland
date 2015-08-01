@@ -7,7 +7,7 @@
 
 if(!X_Server) exitWith {};
 
-diag_log format["WASTELAND SERVER - Initilizing Server Relations"];
+diag_log format["WASTELAND SERVER - Initializing Server Relations"];
 
 EAST setFriend [WEST, 0];
 EAST setFriend [EAST, 1];
