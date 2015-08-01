@@ -3054,7 +3054,8 @@ class Mission
 			skill=0.60000002;
 			init="this addMagazine ""6Rnd_GBU12_AV8B""; this addMagazine ""6Rnd_GBU12_AV8B""; this addWeapon ""BombLauncher""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""6Rnd_GBU12_AV8B""; this addMagazine ""6Rnd_GBU12_AV8B""; this addWeapon ""BombLauncher"";'] execVM ""vehiclerespawn.sqf"";";
 		};
-		// Nizhnoye Repair Pad		class Item47
+		// Nizhnoye Repair Pad
+		class Item47
 		{
 			position[]={13058.483,5.2917943,8371.7148};
 			azimut=220;
@@ -8821,7 +8822,8 @@ class Mission
 			name="Spawn_731_1_1";
 			type="Empty";
 		};
-		// Nizhnoye Repair Pad		class Item914
+		// Nizhnoye Repair Pad
+		class Item914
 		{
 			position[]={13046.851,5.7819242,8362.0518};
 			name="repair1";
