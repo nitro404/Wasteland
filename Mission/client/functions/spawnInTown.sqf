@@ -22,7 +22,7 @@ _buttonTwo = _display displayCtrl respawn_Town_Button2;
 _buttonThree = _display displayCtrl respawn_Town_Button3;
 _buttonFour = _display displayCtrl respawn_Town_Button4;
 
-switch(_switch) do 
+switch(_switch) do
 {
     case 0:
     {
@@ -34,7 +34,7 @@ switch(_switch) do
 				_pos = getMarkerPos (_x select 0);
 				_rad = _x select 1;
 				_pos = [_pos,5,_rad,1,0,0,0] call BIS_fnc_findSafePos;
-				_pos = [_pos select 0, _pos select 1, (_pos select 2) + 10];				
+				_pos = [_pos select 0, _pos select 1, (_pos select 2) + 10];
 				player setPos _pos;
 				respawnDialogActive = false;
 				closeDialog 0;
@@ -51,7 +51,7 @@ switch(_switch) do
 				_pos = getMarkerPos (_x select 0);
 				_rad = _x select 1;
 				_pos = [_pos,5,_rad,1,0,0,0] call BIS_fnc_findSafePos;
-				_pos = [_pos select 0, _pos select 1, (_pos select 2) + 10];			
+				_pos = [_pos select 0, _pos select 1, (_pos select 2) + 10];
 				player setPos _pos;
 				respawnDialogActive = false;
 				closeDialog 0;
@@ -68,7 +68,7 @@ switch(_switch) do
 				_pos = getMarkerPos (_x select 0);
 				_rad = _x select 1;
 				_pos = [_pos,5,_rad,1,0,0,0] call BIS_fnc_findSafePos;
-				_pos = [_pos select 0, _pos select 1, (_pos select 2) + 10];			
+				_pos = [_pos select 0, _pos select 1, (_pos select 2) + 10];
 				player setPos _pos;
 				respawnDialogActive = false;
 				closeDialog 0;
@@ -85,7 +85,7 @@ switch(_switch) do
 				_pos = getMarkerPos (_x select 0);
 				_rad = _x select 1;
 				_pos = [_pos,5,_rad,1,0,0,0] call BIS_fnc_findSafePos;
-				_pos = [_pos select 0, _pos select 1, (_pos select 2) + 10];			
+				_pos = [_pos select 0, _pos select 1, (_pos select 2) + 10];
 				player setPos _pos;
 				respawnDialogActive = false;
 				closeDialog 0;
@@ -102,7 +102,7 @@ switch(_switch) do
 				_pos = getMarkerPos (_x select 0);
 				_rad = _x select 1;
 				_pos = [_pos,5,_rad,1,0,0,0] call BIS_fnc_findSafePos;
-				_pos = [_pos select 0, _pos select 1, (_pos select 2) + 10];			
+				_pos = [_pos select 0, _pos select 1, (_pos select 2) + 10];
 				player setPos _pos;
 				respawnDialogActive = false;
 				closeDialog 0;
@@ -113,5 +113,5 @@ switch(_switch) do
 sleep 5;
 _mins = floor(60 * (daytime - floor(daytime)));
 [
-	"404 Wasteland",_townName,format ["%1:%3%2", floor(daytime), _mins, if(_mins < 10) then {"0"} else {""}]
+	"Armored Fury Wasteland",_townName,format ["%1:%3%2", floor(daytime), _mins, if(_mins < 10) then {"0"} else {""}]
 ] spawn BIS_fnc_infoText;
