@@ -35,6 +35,3 @@ aActionsIDs = aActionsIDs + [player addAction["Pickup Camo Net", "client\actions
 
 //Cancel action
 aActionsIDs = aActionsIDs + [player addAction[("<t color=""#FFFFFF"">Cancel Action</t>"), "noscript.sqf", 'doCancelAction = true;', 7, false, false, "", 'mutexScriptInProgress']];
-
-//Hide grave
-aActionsIDs = aActionsIDs + [player addAction[("<t color=""#21DE31"">Hide Grave</t>"), "client\functions\hideGrave.sqf", nil, 1, false, true, "", 'player distance (nearestObjects [player, ["Grave"],  5] select 0) < 2']];

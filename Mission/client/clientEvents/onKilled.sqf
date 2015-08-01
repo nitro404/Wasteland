@@ -4,19 +4,14 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-private["_dialog","_magazineArray","_control","_item","_val","_max"];
+private ["_player"];
+
+_player = (_this select 0) select 0;
+_killer = (_this select 0) select 1;
 
 if (isnil {_player getVariable "cmoney"}) then {
 	_player setVariable["cmoney",0,true];
 };
-
-_player = (_this select 0) select 0;
-_killer = (_this select 0) select 1;
-_playerMoney = _player getVariable["cmoney",0];
-
-_playerPos = getPosATL _player;
-_playerPos = [_playerPos select 0, _playerPos select 1, 0];
-_playerDir = getDir _player;
 
 // Close any active dialogs.
 closeDialog 0;
@@ -29,12 +24,12 @@ if (isServer) then {
 
 if(!local _player) exitwith {};
 
-// Don't know what smack whoever was on when they wrote THIS shit...
 if((_player != _killer) && (vehicle _player != vehicle _killer) && (playerSide == side _killer) && (str(playerSide) in ["WEST", "EAST"])) then {
 	pvar_PlayerTeamKiller = objNull;
 	if(_killer isKindOf "CAManBase") then {
 		pvar_PlayerTeamKiller = _killer;
-	} else {
+	}
+	else {
 		_veh = (_killer);
 		_trts = configFile >> "CfgVehicles" >> typeof _veh >> "turrets";
 		_paths = [[-1]];
@@ -69,6 +64,19 @@ if((_player != _killer) && (vehicle _player != vehicle _killer) && (playerSide =
 	};
 };
 
+if(isNull(pvar_PlayerTeamKiller) && (_player == _killer)) then {
+	_vehiclesNear = nearestObjects [_player, ["Car", "Tank"], 10];
+	if(count _vehiclesNear > 0) then {
+		_vehicle = _vehiclesNear select 0;
+		_driver = driver _vehicle;
+		if((side _driver) != Resistance) then {
+			if(speed _vehicle > 0 && !isNull _driver && {isPlayer _driver} && {side group _driver == side group _player}) then {
+				pvar_playerTeamKiller = _driver;
+			};
+		};
+	};
+};
+
 if(!isNull(pvar_PlayerTeamKiller)) then {
 	publicVar_teamkillMessage = pvar_PlayerTeamKiller;
 	publicVariable "publicVar_teamkillMessage";
@@ -76,12 +84,6 @@ if(!isNull(pvar_PlayerTeamKiller)) then {
 
 // Check if the player is allowed to drop items yet.
 if (player getVariable "canDrop") then {
-
-	if(_playerMoney > 0) then {
-		_newObject = "EvMoney" createVehicle (position _player);
-		_newObject setVariable ["owner", "world", true];
-	};
-
 	if((_player getVariable "medkits") > 0) then {
 		for "_i" from 1 to (_player getVariable "medkits") do {
 			_newObject = "CZ_VestPouch_EP1" createVehicle (position _player);
@@ -95,100 +97,8 @@ if (player getVariable "canDrop") then {
 	};
 };
 
-createGearDialog [_player, "RscDisplayGear"];
-_dialog = findDisplay 106;
-closeDialog 106;
-_magazineArray = [];
-
-//Primary Mags
-for "_i" from 109 to 120 do
-{
-	_control = _dialog displayCtrl _i;
-	_item = gearSlotData _control;
-	_val = gearSlotAmmoCount _control;
-	_max = getNumber (configFile >> "CfgMagazines" >> _item >> "count");
-	if (_item != "") then {
-		if (_val != _max) then {
-			_magazineArray set [count _magazineArray,[_item,_val]];
-		} else {
-			_magazineArray set [count _magazineArray,[_item,_val]];
-		};
-	};
-};
-
-//Secondary Mags
-for "_i" from 122 to 129 do
-{
-	_control = _dialog displayCtrl _i;
-	_item = gearSlotData _control;
-	_val = gearSlotAmmoCount _control;
-	_max = getNumber (configFile >> "CfgMagazines" >> _item >> "count");
-	if (_item != "") then {
-		if (_val != _max) then {
-			_magazineArray set [count _magazineArray,[_item,_val]];
-		} else {
-			_magazineArray set [count _magazineArray,[_item,_val]];
-		};
-	};
-};
-
-// Now that all of the details about the player's weapons and amgs have been recorded, strip them from the dead body.
-// This is to stop people looting the dead body before it disappears and duplicating weapons.
-_playerWeapons = weapons _player;
-removeAllWeapons _player;
-
-// hide the body asap.
-hideBody _player;
-
-// Create the tombstone objects.
-_graveBase = createVehicle ["Grave", _playerPos, [], 0, "NO_COLLIDE"];
-_graveBase setPosATL _playerPos; // setPos again because arma.
-_graveBase setDir _playerDir;
-
-// Disable damage for tombstones.
-_graveBase addEventHandler["handledamage", { false }];
-
-// Disable physics for the tombstone on all clients.
-_announce = [nil,_graveBase,"per",rENABLESIMULATION,false] call RE;
-
-// Create a loot container inside the grave.
-_tempContainer = createVehicle ["weaponHolder", getPosATL _graveBase, [], 0, "can_collide"];
-_containerLoc = getPosATL _tempContainer;
-_containerLoc = [((_containerLoc select 0) + 0),((_containerLoc select 1) + 0),0];
-_tempContainer setPosATL _containerLoc;
-
-// Make sure people can't move the objects around.
-_tempContainer setVariable ["R3F_LOG_disabled", true, true];
-_graveBase setVariable ["R3F_LOG_disabled", true, true];
-
-// Add the weapons that were on the player to the new weapon container.
-{
-    _tempContainer addWeaponCargoGlobal [_x,1];
-} forEach _playerWeapons;
-
-// Add the magazines that were on the player to the new weapon container.
-{
-	_currMagazine = _x select 0;
-	_currMagAmmoCount = _x select 1;
-
-    // TODO: Figure out how to use this once the magazine is inside the cargo container...
-    _currMagCapacity = (getNumber(configFile >> "CfgMagazines" >> _currMagazine >> "count"));
-    _newAmmoAmount = _currMagAmmoCount / _currMagCapacity;
-
-    _tempContainer addMagazineCargoGlobal [_currMagazine,1];
-} forEach _magazineArray;
-
 // Create the thread to blackout the user's screen when the respawn timer is low.
 true spawn {
 	waitUntil {playerRespawnTime < 2};
 	titleText ["", "BLACK OUT", 1];
-};
-
-// Grave cleanup after 15 minutes. This is to stop the spam of these across the map.
-[_graveBase, _tempContainer] spawn {
-	sleep 900; // 15 minutes.
-
-    // Prenthesis are VERY important here, otherwise it attempts to delete the whole _this array.
-    deleteVehicle (_this select 0);
-    deleteVehicle (_this select 1);
 };
