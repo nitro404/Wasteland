@@ -97,13 +97,14 @@ for "_iteration" from 1 to _lockDuration do {
 
 		player setVariable["spawnBeacon",0,true];
 
-		_playerPos = getPosATL player;
-		_placedBeacon = "Satelit" createVehicle (position player); _placedBeacon setPos _playerPos;
+//		_playerPos = getPosATL player;
+		_placedBeacon = "Satelit" createVehicle (position player);
+//		_placedBeacon setPos _playerPos;
 		_placedBeacon addEventHandler["handleDamage", {false}];
 		_placedBeacon setVariable["R3F_LOG_disabled", true];
 		_placedBeacon setVariable["faction",_playerSide,true];
-	    _placedBeacon setVariable["ownerName",_beaconOwner,true];
-	    _placedBeacon setVariable["ownerUID",_playerUID,true];
+		_placedBeacon setVariable["ownerName",_beaconOwner,true];
+		_placedBeacon setVariable["ownerUID",_playerUID,true];
 
       	// Disable physics for the spawn beacon globally and JIP
         _announce = [nil,_placedBeacon,"per",rENABLESIMULATION,false] call RE;
