@@ -36,9 +36,6 @@ if(isNil{client_firstSpawn}) then {
 		    (_result == 1)
 		};
 
-        // Allow the player to drop money again now that 3 minutes have passed.
-        player setVariable["canDrop",true,false];
-
 		if(playerSide in [west, east]) then {
 			_found = false;
 			{
@@ -66,17 +63,14 @@ if(isNil{client_firstSpawn}) then {
 	[] spawn {
         _startTime = floor(time);
         _result = 0;
-		waitUntil
-		{
-		    _currTime = floor(time);
-		    if(_currTime - _startTime >= 200) then
-		    {
-		    	_result = 1;
-		    };
-		    (_result == 1)
-		};
-
-        // Allow the player to drop money again now that 3 minutes have passed.
-        player setVariable["canDrop",true,false];
+	waitUntil
+	{
+	    _currTime = floor(time);
+	    if(_currTime - _startTime >= 200) then
+	    {
+	    	_result = 1;
+	    };
+	    (_result == 1)
+	};
     };
 };

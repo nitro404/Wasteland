@@ -32,30 +32,25 @@ if(mutexScriptInProgress) exitWith {
 	player globalChat "ERROR: ALREADY PERFORMING ANOTHER ACTION!";
 };
 
-// Check the player is allowed to drop money.
-if (!(player getVariable "canDrop")) exitWith {
-	player globalChat "YOU CANNOT DROP MONEY YET!";
-};	
-
 // Check if the amount selected is 0 or null.
 if(_moneyAmount < 1) exitWith {}; // Don't do anything if user selects 0 money to drop.
 
 ///// PROCESS DROP REQUEST /////
 
 mutexScriptInProgress = true;
-            	
+
 _prevState = animationState player;
-                
+
 if((vehicle player) == player) then {player playMove "AinvPknlMstpSnonWnonDnon_healed_1";};
-                
+
 for "_i" from 1 to _delayTime do {
-	if (doCancelAction) exitWith { 
-	    mutexScriptInProgress = false; 
-	    player switchMove _prevState; 
-    }; 
+	if (doCancelAction) exitWith {
+	    mutexScriptInProgress = false;
+	    player switchMove _prevState;
+    };
 	sleep 0.1;
-};       
-             
+};
+
 if (!(doCancelAction)) then {
 
 	_currPosition = getPosATL player;
@@ -66,8 +61,8 @@ if (!(doCancelAction)) then {
 } else {
 	hint format["Money drop cancelled."];
 	player switchMove _prevState;
-	
-};  
+
+};
 
 doCancelAction = false;
 mutexScriptInProgress = false;

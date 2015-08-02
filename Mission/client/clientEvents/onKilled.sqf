@@ -82,18 +82,31 @@ if(!isNull(pvar_PlayerTeamKiller)) then {
 	publicVariable "publicVar_teamkillMessage";
 };
 
-// Check if the player is allowed to drop items yet.
-if (player getVariable "canDrop") then {
-	if((_player getVariable "medkits") > 0) then {
-		for "_i" from 1 to (_player getVariable "medkits") do {
-			_newObject = "CZ_VestPouch_EP1" createVehicle (position _player);
-		};
+if((_player getVariable "medkits") > 0) then {
+	for "_i" from 1 to (_player getVariable "medkits") do {
+		_newObject = "CZ_VestPouch_EP1" createVehicle (position _player);
+		_newObject setVariable["R3F_LOG_disabled", true];
 	};
+};
 
-	if((_player getVariable "repairkits") > 0) then {
-		for "_i" from 1 to (_player getVariable "repairkits") do {
-			_newObject = "Suitcase" createVehicle (position _player);
-		};
+if((_player getVariable "repairkits") > 0) then {
+	for "_i" from 1 to (_player getVariable "repairkits") do {
+		_newObject = "Suitcase" createVehicle (position _player);
+		_newObject setVariable["R3F_LOG_disabled", true];
+	};
+};
+
+if((_player getVariable "camonet") > 0) then {
+	for "_i" from 1 to (_player getVariable "camonet") do {
+		_newObject = "CZ_Backpack_EP1" createVehicle (position _player);
+		_newObject setVariable["R3F_LOG_disabled", true];
+	};
+};
+
+if((_player getVariable "spawnBeacon") > 0) then {
+	for "_i" from 1 to (_player getVariable "spawnBeacon") do {
+		_newObject = "Satelit" createVehicle (position _player);
+		_newObject setVariable["R3F_LOG_disabled", true];
 	};
 };
 

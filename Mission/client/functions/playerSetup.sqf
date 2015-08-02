@@ -42,7 +42,6 @@ _player setVariable["fuelEmpty", 0, false];
 _player setVariable["spawnBeacon", 0, false];
 _player setVariable["ShowNameAllies", false];
 _player setVariable["camonet", 0, false];
-player setVariable["canDrop", false, false];
 
 [] execVM "client\functions\playerActions.sqf";
 
