@@ -1,5 +1,5 @@
 //	@file Version: 1.0
-//	@file Name: placeCammoNet.sqf
+//	@file Name: placeCamoNet.sqf
 //  @file Author: [404] Costlyy, [404] Pulse
 //	@file Created: 29th May 13
 

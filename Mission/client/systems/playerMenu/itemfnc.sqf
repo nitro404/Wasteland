@@ -39,7 +39,7 @@ switch(_switch) do {
                			[] call useMedicalKit;
 			};
 			case "camonet": {
-				[] call placeCammoNet;
+				[] call placeCamoNet;
 			};
 			case "spawnBeacon": {
 				[] call placeSpawnBeacon;

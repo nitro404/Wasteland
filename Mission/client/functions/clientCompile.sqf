@@ -17,7 +17,7 @@ spawnAction = compile preprocessFileLineNumbers "client\functions\spawnAction.sq
 placeSpawnBeacon = compile preprocessFileLineNumbers "client\systems\playerMenu\placeSpawnBeacon.sqf";
 refuelVehicle = compile preprocessFileLineNumbers "client\systems\playerMenu\refuel.sqf";
 repairVehicle = compile preprocessFile "client\systems\playerMenu\repair.sqf";
-placeCammoNet = compile preprocessFileLineNumbers "client\systems\playerMenu\placeCammoNet.sqf";
+placeCamoNet = compile preprocessFileLineNumbers "client\systems\playerMenu\placeCamoNet.sqf";
 useMedicalKit = compile preprocessFileLineNumbers "client\systems\playerMenu\useMedicalKit.sqf";
 
 // Sync client with server time
