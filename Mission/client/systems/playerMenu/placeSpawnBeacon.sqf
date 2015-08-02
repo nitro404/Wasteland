@@ -31,101 +31,102 @@ _activeBeacon = false;
 	if(str(_playerUID) == str(_x select 3)) then {
     	_activeBeacon = true;
     };
-    
+
 }forEach pvar_beaconListBlu;
 // PRECONDITION: Check that the player does not have a currently deployed spawn beacon (RED).
 {
     if(str(_playerUID) == str(_x select 3)) then {
-    	_activeBeacon = true;	
+    	_activeBeacon = true;
     };
 }forEach pvar_beaconListRed;
 
 // PRECONDITION: Check that the player does not have a currently deployed spawn beacon (Indep).
 {
     if(str(_playerUID) == str(_x select 3)) then {
-    	_activeBeacon = true;	
+    	_activeBeacon = true;
     };
 }forEach pvar_beaconListIndep;
 
-// Due to the 'Undefined behaviour' of exitWith inside loops, this is the workaround.
-if (_activeBeacon) exitWith {
-	player globalChat localize "STR_WL_Errors_BeaconActive";
+// Remove active beacon so you can deploy new
+if (_activeBeacon) then {
+        hint "Deactivating existing active spawn beacon.";
+        [_playerUID] execVM "client\functions\cleanBeaconArrays.sqf";
 };
-		
+
 player switchMove "AinvPknlMstpSlayWrflDnon_medic"; // Begin the full medic animation...
 
 mutexScriptInProgress = true;
 
 for "_iteration" from 1 to _lockDuration do {
-		
+
 	if(vehicle player != player) exitWith {
 		player globalChat localize "STR_WL_Errors_BeaconInVehicle";
         player action ["eject", vehicle player];
         mutexScriptInProgress = false;
-	};  
-    
+	};
+
     if (doCancelAction) exitWith {// Player selected "cancel action".
     	2 cutText ["", "PLAIN DOWN", 1];
         doCancelAction = false;
     	mutexScriptInProgress = false;
-	}; 
-    
+	};
+
     if (!(alive player)) exitWith {// If the player dies, revert state.
 		2 cutText ["Place spawn beacon interrupted...", "PLAIN DOWN", 1];
     	mutexScriptInProgress = false;
-	};	
-    		    
+	};
+
 	if(player distance _currObject > 5) exitWith { // If the player dies, revert state.
 		2 cutText ["Place spawn beacon interrupted...", "PLAIN DOWN", 1];
 		mutexScriptInProgress = false;
-	};                  
-                                                        	    
+	};
+
 	if (animationState player != "AinvPknlMstpSlayWrflDnon_medic") then { // Keep the player locked in medic animation for the full duration of the placement.
 		player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 	};
-    	    
+
 	_lockDuration = _lockDuration - 1;
 	_iterationPercentage = floor (_iteration / _totalDuration * 100);
-					    
+
 	2 cutText [format["Placing spawn beacon %1%2 complete", _iterationPercentage, _stringEscapePercent], "PLAIN DOWN", 1];
 	sleep 1;
-					    
+
 	if (_iteration >= _totalDuration) exitWith { // Sleep a little extra to show that place has completed.
 		sleep 1;
 		2 cutText ["", "PLAIN DOWN", 1];
-				            
+
 		player setVariable["spawnBeacon",0,true];
-				
+
 		_playerPos = getPosATL player;
 		_placedBeacon = "Satelit" createVehicle (position player); _placedBeacon setPos _playerPos;
 		_placedBeacon addEventHandler["handleDamage", {false}];
-		_placedBeacon setVariable["R3F_LOG_disabled", true];      
+		_placedBeacon setVariable["R3F_LOG_disabled", true];
 		_placedBeacon setVariable["faction",_playerSide,true];
 	    _placedBeacon setVariable["ownerName",_beaconOwner,true];
-	    _placedBeacon setVariable["ownerUID",_playerUID,true]; 
+	    _placedBeacon setVariable["ownerUID",_playerUID,true];
 
-      	// Disable physics for the spawn beacon globally and JIP      
+      	// Disable physics for the spawn beacon globally and JIP
         _announce = [nil,_placedBeacon,"per",rENABLESIMULATION,false] call RE;
-        
+
 	    _placedBeaconPos = getPos _placedBeacon;
-	   
+
 	    if(_playerSide == "WEST") then {
 	    	pvar_beaconListBlu set [count pvar_beaconListBlu,[_beaconOwner, _placedBeaconPos, 100, _playerUID]];
 	    	publicVariable "pvar_beaconListBlu";
 	    };
-	    
+
 	    if(_playerSide == "EAST") then {
 	    	pvar_beaconListRed set [count pvar_beaconListRed,[_beaconOwner, _placedBeaconPos, 100, _playerUID]];
 	    	publicVariable "pvar_beaconListRed";
 	    };
-        
+
         if(_playerSide == "GUER") then {
 	    	pvar_beaconListIndep set [count pvar_beaconListIndep,[_beaconOwner, _placedBeaconPos, 100, _playerUID]];
 	    	publicVariable "pvar_beaconListIndep";
 	    };
-	                  
-		mutexScriptInProgress = false;
-	};     
-};        		
 
-player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"; // Redundant reset of animation state to avoid getting locked in animation. 
+		mutexScriptInProgress = false;
+	};
+};
+
+player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"; // Redundant reset of animation state to avoid getting locked in animation.
