@@ -85,7 +85,7 @@ _find_occupied_towns = {
 
 		} forEach allUnits;
 
-		if ( _friendlyCount > 0 ) then {
+		if(_friendlyCount > 0) then {
 			_towns set [count _towns, [_name, _playerArray, (_enemyCount > 0)]];
 		};
 
@@ -98,41 +98,37 @@ _find_beacons = {
 	_beacons = _this select 0;
 	_result = [];
 
-	if(playerSide != resistance) then {
-		{
-			_centrePos = _x select 1;
-			_enemyCount = 0;
-			_beacon = _x;
-			_beaconSide = _x select 6;
-			_ownerId = _x select 3;
-			_squadIds = [];
+	{
+		_centrePos = _x select 1;
+		_enemyCount = 0;
+		_beacon = _x;
+		_beaconSide = _x select 6;
+		_ownerId = _x select 3;
+		_squadIds = [];
 
-			if ( str playerSide == "GUER" ) then {
-				{
-					_squadIds set [count _squadIds, (getPlayerUID _x)];
-				} forEach (units group player);
-			};
-
+		if(str playerSide == "GUER") then {
 			{
-				if( (getPosATL _x distance _centrePos) < _beaconBlockDistance ) then {
-					if( side _x == playerSide ) then {
-						if ( str playerSide == "GUER" && group _x != group player ) then {
-							_enemyCount = _enemyCount + 1;
-						};
-					}
-					else {
+				_squadIds set [count _squadIds, (getPlayerUID _x)];
+			} forEach (units group player);
+		};
+
+		{
+			if((getPosATL _x distance _centrePos) < _beaconBlockDistance) then {
+				if(side _x == playerSide) then {
+					if(str playerSide == "GUER" && group _x != group player) then {
 						_enemyCount = _enemyCount + 1;
 					};
+				}
+				else {
+					_enemyCount = _enemyCount + 1;
 				};
-
-			} forEach allUnits;
-
-			if ( str playerSide == _beaconSide && ( str playerSide != "GUER" || _ownerId in _squadIds ) ) then {
-				_result set [count _result, [_beacon, (_enemyCount > 0)]];
 			};
+		} forEach allUnits;
 
-		} forEach _beacons;
-	};
+		if(str playerSide == _beaconSide && (str playerSide != "GUER" || (_ownerId in _squadIds || (getPlayerUID player) == _ownerId))) then {
+			_result set [count _result, [_beacon, (_enemyCount > 0)]];
+		};
+	} forEach _beacons;
 
 	_result
 };
