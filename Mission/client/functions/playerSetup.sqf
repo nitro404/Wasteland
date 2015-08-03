@@ -37,7 +37,7 @@ _player setVariable["cmoney", 100, false];
 _player setVariable["medkits", 0, false];
 _player setVariable["fuel", 1, false];
 _player setVariable["repairkits", 0, false];
-_player setVariable["fuelFull", 0, false];
+_player setVariable["fuelFull", 1, false];
 _player setVariable["fuelEmpty", 0, false];
 _player setVariable["spawnBeacon", 0, false];
 _player setVariable["ShowNameAllies", false];
