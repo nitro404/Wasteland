@@ -45,8 +45,6 @@ publicVariable "currentDate";
 currentInvites = [];
 publicVariable "currentInvites";
 
-"processVIP" addPublicVariableEventHandler {[_this] spawn server_VIPEscape};
-
 "PlayerCDeath" addPublicVariableEventHandler {_id = (_this select 1) spawn server_playerDied};
 
 currentStaticHelis = []; // Storage for the heli marker numbers so that we don't spawn wrecks on top of live helis

@@ -12,16 +12,16 @@ private ["_MMarray","_lastMission","_randomIndex","_mission","_missionType","_ne
 diag_log format["WASTELAND SERVER - Started Main Mission State"];
 
 //Main Mission Array
-_MMarray = [[mission_SupplyDrop,"mission_SupplyDrop"],
-			[mission_APC,"mission_APC"],
-            [mission_Heli,"mission_Heli"],
-            [mission_LightArmVeh,"mission_LightArmVeh"],
-            [mission_LightTank,"mission_LightTank"],
-            [mission_MBT,"mission_MBT"],
-            [mission_Outpost,"mission_Outpost"],
-            [mission_RadarTruck,"mission_RadarTruck"],
-            [mission_VIP,"mission_VIP"]];
-            
+_MMarray = [
+    [mission_SupplyDrop,"mission_SupplyDrop"],
+	[mission_APC,"mission_APC"],
+    [mission_Heli,"mission_Heli"],
+    [mission_LightArmVeh,"mission_LightArmVeh"],
+    [mission_LightTank,"mission_LightTank"],
+    [mission_MBT,"mission_MBT"],
+    [mission_Outpost,"mission_Outpost"]
+];
+
 _lastMission = "nomission";
 while {true} do
 {
@@ -38,14 +38,14 @@ while {true} do
         _newMissionArray = _newMissionArray - ["REMOVETHISCRAP"];
         _randomIndex = (random (count _newMissionArray - 1));
         _missionType = _newMissionArray select _randomIndex select 1;
-        _mission = _newMissionArray select _randomIndex select 0;    
+        _mission = _newMissionArray select _randomIndex select 0;
     };
-    
+
 	_missionRunning = [] spawn _mission;
     diag_log format["WASTELAND SERVER - Execute New Main Mission: %1",_missionType];
     _hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Main Objective</t><br/><t align='center' color='%2'>------------------------------</t><br/><t color='%3' size='1.0'>Starting in %1 Minutes</t>", mainMissionDelayTime / 60, mainMissionColor, subTextColor];
 	[nil,nil,rHINT,_hint] call RE;
     _lastMission = _missionType;
 	waitUntil{sleep 0.1; scriptDone _missionRunning};
-    sleep 5; 
+    sleep 5;
 };
