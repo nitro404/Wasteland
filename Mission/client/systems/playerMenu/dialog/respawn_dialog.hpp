@@ -11,14 +11,14 @@
 #define respawn_PlayersInTown_Text2 3410
 #define respawn_PlayersInTown_Text3 3411
 #define respawn_PlayersInTown_Text4 3412
+#define respawn_More_Button 3413
 
+class RespawnSelectionDialog {
+	idd = respawn_dialog;
+	movingEnable = false;
+	enableSimulation = true;
+	onLoad = "uiNamespace setVariable ['RespawnSelectionDialog', _this select 0]";
 
-	class RespawnSelectionDialog {
-		idd = respawn_dialog;
-		movingEnable = false;
-		enableSimulation = true;
-		onLoad = "uiNamespace setVariable ['RespawnSelectionDialog', _this select 0]";
-	
 	class controlsBackground {
 
 		class MainBackground: w_RscPicture
@@ -91,7 +91,7 @@
 		class MissionUptimeText: w_RscText
 		{
 			idc = respawn_MissionUptime_Text;
-			text = "Mission Uptime: 00:00:00";
+			text = "Server Uptime: 00:00:00";
 
 			x = 0.562 * safezoneW + safezoneX;
 			y = 0.752 * safezoneH + safezoneY;
@@ -99,9 +99,9 @@
 			h = 0.025 * safezoneH;
 		};
 	};
-	
+
 	class controls {
-	
+
 		class PlayersInTown0: w_RscText
 		{
 			idc = respawn_PlayersInTown_Text0;
@@ -112,7 +112,7 @@
 			w = 0.230 * safezoneW;
 			h = 0.025 * safezoneH;
 		};
-		
+
 		class PlayersInTown1: w_RscText
 		{
 			idc = respawn_PlayersInTown_Text1;
@@ -123,7 +123,7 @@
 			w = 0.230 * safezoneW;
 			h = 0.025 * safezoneH;
 		};
-		
+
 		class PlayersInTown2: w_RscText
 		{
 			idc = respawn_PlayersInTown_Text2;
@@ -134,7 +134,7 @@
 			w = 0.230 * safezoneW;
 			h = 0.025 * safezoneH;
 		};
-		
+
 		class PlayersInTown3: w_RscText
 		{
 			idc = respawn_PlayersInTown_Text3;
@@ -145,7 +145,7 @@
 			w = 0.230 * safezoneW;
 			h = 0.025 * safezoneH;
 		};
-		
+
 		class PlayersInTown4: w_RscText
 		{
 			idc = respawn_PlayersInTown_Text4;
@@ -156,19 +156,31 @@
 			w = 0.230 * safezoneW;
 			h = 0.025 * safezoneH;
 		};
-		
-		class RandomSpawnButton: w_RscButton
+
+		class RandomSpawnButtonGround: w_RscButton
 		{
 			idc = -1;
 			onButtonClick = "[0] execVM 'client\functions\spawnAction.sqf'";
-			text = "Random";
+			text = "Random Ground";
 
-			x = 0.460* safezoneW + safezoneX;
+			x = 0.406 * safezoneW + safezoneX;
 			y = 0.310 * safezoneH + safezoneY;
 			w = 0.078 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-	
+
+		class RandomSpawnButtonHALO: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[2] execVM 'client\functions\spawnAction.sqf'";
+			text = "Random HALO";
+
+			x = 0.515 * safezoneW + safezoneX;
+			y = 0.310 * safezoneH + safezoneY;
+			w = 0.078 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+
 		class LoadTownsButton: w_RscButton
 		{
 			idc = -1;
@@ -192,7 +204,7 @@
 			w = 0.078 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-	
+
 		class TownButton0: w_RscButton
 		{
 			idc = respawn_Town_Button0;
@@ -253,6 +265,18 @@
 			h = 0.033 * safezoneH;
 		};
 
+		class MoreButton: w_RscButton
+		{
+			idc = respawn_More_Button;
+			onButtonClick = "[2] execVM 'client\functions\switchButtonNames.sqf'";
+			text = "More";
+
+			x = 0.461 * safezoneW + safezoneX;
+			y = 0.70 * safezoneH + safezoneY;
+			w = 0.078 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+
 		class BackToLobby: w_RscButton
 		{
 			idc = -1;
@@ -264,6 +288,6 @@
 			w = 0.078 * safezoneW;
 			h = 0.033 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};
-		};	
+		};
 	};
 };

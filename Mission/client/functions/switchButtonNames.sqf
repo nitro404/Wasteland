@@ -25,16 +25,22 @@ _textFour = _display displayCtrl respawn_PlayersInTown_Text4;
 if(_selectedButton == 0) then {
 	// Spawn in town buttons show
 	showBeacons = false;
-} else {
-	// Spawn at beacon buttons show
-	showBeacons = true;
+}
+else {
+	if(_selectedButton == 1) then {
+		// Spawn at beacon buttons show
+		showBeacons = true;
 
-    sleep 0.5;
-    
-    _blank = "";
-	_textZero ctrlSetText _blank;
-	_textOne ctrlSetText _blank;
-	_textTwo ctrlSetText _blank;
-	_textThree ctrlSetText _blank;
-	_textFour ctrlSetText _blank;
+		sleep 0.5;
+
+		_blank = "";
+		_textZero ctrlSetText _blank;
+		_textOne ctrlSetText _blank;
+		_textTwo ctrlSetText _blank;
+		_textThree ctrlSetText _blank;
+		_textFour ctrlSetText _blank;
+	}
+	else {
+		respawnPage = respawnPage + 1;
+	};
 };

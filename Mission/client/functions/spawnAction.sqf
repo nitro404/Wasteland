@@ -7,34 +7,37 @@
 _switch = _this select 0;
 _button = _this select 1;
 
-switch(_switch) do
-{
-    case 0:{execVM "client\functions\spawnRandom.sqf"};
-    case 1:{
-	    if(showBeacons) then {
-	    	[_button] execVM "client\functions\spawnOnBeacon.sqf"
-	    } else {
-	    	[_button] execVM "client\functions\spawnInTown.sqf"
-	    };
-    };
+switch(_switch) do {
+	case 0: {
+		execVM "client\functions\spawnRandomGround.sqf"
+	};
+	case 1: {
+		if(showBeacons) then {
+			[_button] execVM "client\functions\spawnOnBeacon.sqf"
+		}
+		else {
+			[_button] execVM "client\functions\spawnInTown.sqf"
+		};
+	};
+	case 2: {
+		execVM "client\functions\spawnRandomHALO.sqf"
+	};
 };
 
 if(isNil{client_firstSpawn}) then {
 	client_firstSpawn = true;
 	[] execVM "client\functions\welcomeMessage.sqf";
 
-    true spawn {
+	true spawn {
         _startTime = floor(time);
         _result = 0;
-		waitUntil
-		{
-		    _currTime = floor(time);
-		    if(_currTime - _startTime >= 200) then
-		    {
-		    	_result = 1;
-		    };
-		    (_result == 1)
+	waitUntil {
+		_currTime = floor(time);
+		if(_currTime - _startTime >= 200) then {
+			_result = 1;
 		};
+		(_result == 1)
+	};
 
 		if(playerSide in [west, east]) then {
 			_found = false;

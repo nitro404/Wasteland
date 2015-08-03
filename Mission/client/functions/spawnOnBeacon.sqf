@@ -10,6 +10,7 @@
 #define respawn_Town_Button2 3405
 #define respawn_Town_Button3 3406
 #define respawn_Town_Button4 3407
+
 disableSerialization;
 
 private ["_respawnPosition", "_switch", "_display", "_buttonZero", "_buttonOne", "_buttonTwo", "_buttonThree", "_buttonFour"];
@@ -23,159 +24,56 @@ _buttonTwo = _display displayCtrl respawn_Town_Button2;
 _buttonThree = _display displayCtrl respawn_Town_Button3;
 _buttonFour = _display displayCtrl respawn_Town_Button4;
 
-
 _respawnPosition = [];
 
-switch(_switch) do 
-{
-    case 0:{ // Button 0     
-		
-		{
-			if((ctrlText _buttonZero) == _x select 0) then {
-				_respawnPosition = _x select 1;
-		        _respawnPosition = [_respawnPosition,1,75,1,0,0,0] call BIS_fnc_findSafePos;
-		    };
-		}forEach pvar_beaconListBlu;
+_searchForBeacon = {
+	_button = _this select 0;
+	_allBeacons = pvar_beaconListBlu + pvar_beaconListRed + pvar_beaconListIndep;
+	_result = false;
 
-    	{
-			if((ctrlText _buttonZero) == _x select 0) then {
-				_respawnPosition = _x select 1;
-		        _respawnPosition = [_respawnPosition,1,75,1,0,0,0] call BIS_fnc_findSafePos;
-		    };
-		}forEach pvar_beaconListRed;
+	{
+		_playerName = _x select 0;
+		if ( ( ctrlText _button ) == _playerName ) then {
+			_result = _x;
+		};
+	} forEach _allBeacons;
 
-    	{   
-			if((ctrlText _buttonZero) == _x select 0) then {
-				_respawnPosition = _x select 1;
-		        _respawnPosition = [_respawnPosition,1,75,1,0,0,0] call BIS_fnc_findSafePos;
-		    };
-		}forEach pvar_beaconListIndep;
-        
-        2 cutText ["HALO jump activated. Open your chute before you hit the ground!", "PLAIN DOWN", 5];
-        player setPos [_respawnPosition select 0, _respawnPosition select 1, 1000]; // Stop the player appearing on the ground for a split second before the HALO 
-        [player, 1000] exec "ca\air2\halo\data\Scripts\HALO_init.sqs";    
-        respawnDialogActive = false;
-		closeDialog 0;
-    };
-    case 1:{ // Button 1
-		{
-			if(ctrlText _buttonOne == _x select 0) then {
-				_respawnPosition = _x select 1;
-		        _respawnPosition = [_respawnPosition,1,75,1,0,0,0] call BIS_fnc_findSafePos;
-		    };
-		}forEach pvar_beaconListBlu;
-		
-		{
-			if(ctrlText _buttonOne == _x select 0) then {
-				_respawnPosition = _x select 1;
-		        _respawnPosition = [_respawnPosition,1,75,1,0,0,0] call BIS_fnc_findSafePos;
-                
-		    };
-		}forEach pvar_beaconListRed;
-        
-        {
-			if(ctrlText _buttonOne == _x select 0) then {
-				_respawnPosition = _x select 1;
-		        _respawnPosition = [_respawnPosition,1,75,1,0,0,0] call BIS_fnc_findSafePos;
-		    };
-		}forEach pvar_beaconListIndep;
-		
-        2 cutText ["HALO jump activated. Open your chute before you hit the ground!", "PLAIN DOWN", 5];   
-		player setPos [_respawnPosition select 0, _respawnPosition select 1, 1000]; // Stop the player appearing on the ground for a split second before the HALO 
-        [player, 1000] exec "ca\air2\halo\data\Scripts\HALO_init.sqs";   
-        respawnDialogActive = false;
-		closeDialog 0;
-    };
-    case 2:{ // Button 2			    
-		{
-			if(ctrlText _buttonTwo == _x select 0) then {
-				_respawnPosition = _x select 1;
-		        _respawnPosition = [_respawnPosition,1,75,1,0,0,0] call BIS_fnc_findSafePos;
-		    };
-		}forEach pvar_beaconListBlu;
-		
-		{
-			if(ctrlText _buttonTwo == _x select 0) then {
-				_respawnPosition = _x select 1;
-		        _respawnPosition = [_respawnPosition,1,75,1,0,0,0] call BIS_fnc_findSafePos;
-		    };
-		}forEach pvar_beaconListRed;
-        
-        {
-			if(ctrlText _buttonTwo == _x select 0) then {
-				_respawnPosition = _x select 1;
-		        _respawnPosition = [_respawnPosition,1,75,1,0,0,0] call BIS_fnc_findSafePos;
-		    };
-		}forEach pvar_beaconListIndep;
-		    
-        2 cutText ["HALO jump activated. Open your chute before you hit the ground!", "PLAIN DOWN", 5];
-		player setPos [_respawnPosition select 0, _respawnPosition select 1, 1000]; // Stop the player appearing on the ground for a split second before the HALO 
-        [player, 1000] exec "ca\air2\halo\data\Scripts\HALO_init.sqs";   
-        respawnDialogActive = false;
-		closeDialog 0;
-    };
-    case 3:{ // Button 3
-		{
-			if(ctrlText _buttonThree == _x select 0) then {
-				_respawnPosition = _x select 1;
-		        _respawnPosition = [_respawnPosition,1,75,1,0,0,0] call BIS_fnc_findSafePos;
-		    };
-		}forEach pvar_beaconListBlu;
-		
-		{
-			if(ctrlText _buttonThree == _x select 0) then {
-				_respawnPosition = _x select 1;
-		        _respawnPosition = [_respawnPosition,1,75,1,0,0,0] call BIS_fnc_findSafePos;
-		    };
-		}forEach pvar_beaconListRed;
-        
-        {
-			if(ctrlText _buttonThree == _x select 0) then {
-				_respawnPosition = _x select 1;
-		        _respawnPosition = [_respawnPosition,1,75,1,0,0,0] call BIS_fnc_findSafePos;
-		    };
-		}forEach pvar_beaconListIndep;
-		
-        2 cutText ["HALO jump activated. Open your chute before you hit the ground!", "PLAIN DOWN", 5];
-		player setPos [_respawnPosition select 0, _respawnPosition select 1, 1000]; // Stop the player appearing on the ground for a split second before the HALO  
-        [player, 1000] exec "ca\air2\halo\data\Scripts\HALO_init.sqs";   
-        respawnDialogActive = false;
-		closeDialog 0;
-    };
-    case 4:{ // Button 4
-		player setPos _respawnPosition;		{
-			if(ctrlText _buttonFour == _x select 0) then {
-				_respawnPosition = _x select 1;
-		        _respawnPosition = [_respawnPosition,1,75,1,0,0,0] call BIS_fnc_findSafePos;
-		    };
-		}forEach pvar_beaconListBlu;
-		
-		{
-			if(ctrlText _buttonFour == _x select 0) then {
-				_respawnPosition = _x select 1;
-		        _respawnPosition = [_respawnPosition,1,75,1,0,0,0] call BIS_fnc_findSafePos;
-		    };
-		}forEach pvar_beaconListRed;
-        
-        {
-			if(ctrlText _buttonFour == _x select 0) then {
-				_respawnPosition = _x select 1;
-		        _respawnPosition = [_respawnPosition,1,75,1,0,0,0] call BIS_fnc_findSafePos;
-		    };
-		}forEach pvar_beaconListIndep;
-		    
-        2 cutText ["HALO jump activated. Open your chute before you hit the ground!", "PLAIN DOWN", 5];
-		player setPos [_respawnPosition select 0, _respawnPosition select 1, 1000]; // Stop the player appearing on the ground for a split second before the HALO 
-        [player, 1000] exec "ca\air2\halo\data\Scripts\HALO_init.sqs";   
-        respawnDialogActive = false;
-		closeDialog 0;
-    };
+	_result
 };
+
+_buttonClicked = false;
+
+switch(_switch) do {
+    case 0:{ _buttonClicked = _buttonZero };
+    case 1:{ _buttonClicked = _buttonOne };
+    case 2:{ _buttonClicked = _buttonTwo };
+    case 3:{ _buttonClicked = _buttonThree };
+    case 4:{ _buttonClicked = _buttonFour };
+};
+
+_beacon = [_buttonClicked] call _searchForBeacon;
+_respawnPosition = _beacon select 1;
+_respawnDir = _beacon select 4;
+
+2 cutText ["HALO jump activated. Open your chute before you hit the ground! Press E to detach chute.", "PLAIN DOWN", 5];
+[player, [_respawnPosition select 0, _respawnPosition select 1, 500], _respawnDir] execVM "client\functions\HALODir.sqf";
+respawnDialogActive = false;
+closeDialog 0;
 
 sleep 5;
 
 _mins = floor(60 * (daytime - floor(daytime)));
+
 [
-	"404 Wasteland","Spawn Beacon",
+	"[COMMUNITY NAME HERE]","Spawn Beacon",
 	format ["%1:%3%2", floor(daytime), _mins, if(_mins < 10) then {"0"} else {""}]
 ] spawn BIS_fnc_infoText;
+
+//Altimeter reading at top right
+while { ((getposATL player)select 2) > 1 } do {
+	hintsilent parseText format ["<t align='center' color='#00aa00' font='Zeppelin33' shadow='1' shadowColor='#000000' size='2'>Alt %1m</t>", round (getPosATL player select 2)];
+};
+
+if(((getposATL player)select 2) < 1) then {
+	hintsilent "";
+};
