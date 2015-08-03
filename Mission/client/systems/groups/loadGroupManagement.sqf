@@ -18,12 +18,14 @@
 
 disableSerialization;
 
-private ["_start","_dialog","_myGroup","_playerListBox","_groupListBox","_uid","_namestr","_index","_groupCreate","_groupInvite","_groupKick","_groupDisband","_groupLeaveButton","_inGroup","_isLeader","_name","_display"];
+private ["_start","_dialog","_myGroup","_playerListBox","_groupListBox","_uid","_namestr","_index","_groupCreate","_groupInvite","_groupKick","_groupDisband","_groupLeaveButton","_inGroup","_isLeader","_name"];
 
 closeDialog 0;
 _start = createDialog "GroupManagement";
 _dialog = findDisplay groupManagementDialog;
-_display displayAddEventHandler ["KeyDown", "_return = false; if(groupManagmentActive && (_this select 1) == 1) then {_return = true;}; _return"];
+if(!isNil "_display") then {
+    _display displayAddEventHandler ["KeyDown", "_return = false; if(groupManagmentActive && (_this select 1) == 1) then {_return = true;}; _return"];
+};
 groupManagmentActive = true;
 _playerListBox = _dialog displayCtrl groupManagementPlayerList;
 _groupListBox = _dialog displayCtrl groupManagementGroupList;
