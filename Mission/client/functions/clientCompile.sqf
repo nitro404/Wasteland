@@ -39,6 +39,8 @@ loadGunStore = compile preprocessFileLineNumbers "client\systems\gunStore\loadGu
 loadSellConfirm = compile preprocessFileLineNumbers "client\systems\gunStore\loadSellConfirm.sqf";
 sellWeaponConfirmed = compile preprocessFileLineNumbers "client\systems\gunStore\sellWeaponConfirmed.sqf";
 
+spawnBicycle = compile preprocessFileLineNumbers "client\systems\playerMenu\spawnBicycle.sqf";
+
 player groupChat "Client Compile Complete";
 sleep 1;
 playerCompiledScripts = true;

@@ -72,6 +72,20 @@ class playerSettings {
 			w = 0.125; h = 0.033 * safezoneH;
 		};
 
+		class SpawnBicyleButton : w_RscButton {
+			text = "Spawn Bicycle";
+			onButtonClick = "[] spawn spawnBicycle;";
+			x = 0.35; y = 0.54;
+			w = 0.125; h = 0.033 * safezoneH;
+		};
+
+		class FlipVehicleButton : w_RscButton {
+			text = "Flip Vehicle";
+			onButtonClick = "[] execVM 'client\systems\playerMenu\flipVehicle.sqf'";
+			x = 0.35; y = 0.60;
+			w = 0.125; h = 0.033 * safezoneH;
+		};
+
 		class moneyInput: w_RscCombo {
 			idc = money_value;
 			x = 0.625; y = 0.605;
