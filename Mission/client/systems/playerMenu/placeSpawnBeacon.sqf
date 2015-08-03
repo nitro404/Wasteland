@@ -10,7 +10,7 @@ if(mutexScriptInProgress) exitWith {
 	player globalChat localize "STR_WL_Errors_InProgress";
 };
 
-private["_stringEscapePercent","_totalDuration","_lockDuration","_iteration","_iterationPercentage","_playerPos","_placedBeacon", "_lockDuration", "_beaconOwner", "_placedBeaconPos", "_playerSide", "_playerUID", "_activeBeacon"];
+private["_stringEscapePercent","_totalDuration","_lockDuration","_iteration","_iterationPercentage","_playerPos","_placedBeacon", "_lockDuration", "_beaconOwner", "_placedBeaconPos", "_playerSide", "_playerUID", "_activeBeacon", "_playerDirVector","_beaconOffset","_beaconOffsetPos"];
 
 // PRECONDITION: Check that a player is not currently a car (driving)
 if(vehicle player != player) exitWith {
@@ -26,6 +26,7 @@ _playerSide = str(playerSide);
 _playerUID = getPlayerUID player;
 _activeBeacon = false;
 _playerDir = getDir player;
+_playerDirVector = vectorDir player;
 
 // PRECONDITION: Check that the player does not have a currently deployed spawn beacon (BLU).
 {
@@ -105,8 +106,10 @@ for "_iteration" from 1 to _lockDuration do {
 
 		_playerPos = getPosATL player;
 		_placedBeacon = "Satelit" createVehicle (position player);
-		_placedBeacon setPos _playerPos;
-		_placedBeacon setDir _playerDir  - 180;
+		_beaconOffset = [_playerDirVector, -1.75] call BIS_fnc_vectorMultiply;
+		_beaconOffsetPos = [_playerPos, _beaconOffset] call BIS_fnc_vectorAdd;
+		_placedBeacon setPosATL _beaconOffsetPos;
+		_placedBeacon setDir _playerDir - 180;
 		_placedBeacon addEventHandler["handleDamage", {false}];
 		_placedBeacon setVariable["R3F_LOG_disabled", true];
 		_placedBeacon setVariable["faction", _playerSide, true];
