@@ -40,8 +40,8 @@ _man3 addWeapon "RPG7V";
 _man3 addMagazine "30Rnd_762x39_AK47";
 _man3 addMagazine "30Rnd_762x39_AK47";
 _man3 addMagazine "30Rnd_762x39_AK47";
-_man4 addMagazine "30Rnd_762x39_AK47";
-_man4 addMagazine "30Rnd_762x39_AK47";
+_man3 addMagazine "30Rnd_762x39_AK47";
+_man3 addMagazine "30Rnd_762x39_AK47";
 _man3 addWeapon "AK_47_M";
 
 //Rifle_man
