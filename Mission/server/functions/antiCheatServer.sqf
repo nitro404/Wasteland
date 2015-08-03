@@ -6,7 +6,7 @@
 
 if(!X_Server) exitWith {};
 
-_instantKick = false; // Kick the nasty little scalliwags immediately or taunght them a little?
+_instantKick = false; // Kick the nasty little scalliwags immediately or taunt them a little?
 
 while {true} do {
     //Iterate through the playable object and set some values.
@@ -18,8 +18,8 @@ while {true} do {
         _x hideObject false;
         [nil, _x, "loc", rHideObject, false] call RE;
 
-	}forEach playableUnits;
+	} forEach playableUnits;
 
 	// Don't loop too fast, with 60+ people connected this might be quite straining.
-    sleep 3;
+    sleep 10;
 };
