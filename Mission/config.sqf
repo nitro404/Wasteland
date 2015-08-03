@@ -109,12 +109,12 @@ accessoriesArray = [
 //General Store Item List
 //Display Name, Class Name, Description, Picture, Buy Price, Sell Price.
 generalStore = [
-	["Repair Kit","repairkits",localize "STR_WL_ShopDescriptions_RepairKit","client\icons\briefcase.paa",1000,500],
-	["Medical Kit","medkits",localize "STR_WL_ShopDescriptions_MedKit","client\icons\medkit.paa",400,200],
-	["Jerry Can (Full)","fuelFull",localize "STR_WL_ShopDescriptions_fuelFull","client\icons\jerrycan.paa",150,75],
-	["Jerry Can (Empty)","fuelEmpty",localize "STR_WL_ShopDescriptions_fuelEmpty","client\icons\jerrycan.paa",50,25],
-	["Spawn Beacon","spawnBeacon",localize "STR_WL_ShopDescriptions_spawnBeacon","client\icons\satellite.paa",3000,1500],
-	["Camo Net", "camonet", localize "STR_WL_ShopDescriptions_Camo", "",300,150]
+	["Repair Kit", "repairkits", localize "STR_WL_ShopDescriptions_RepairKit","client\icons\briefcase.paa", 1000, 500],
+	["Medical Kit", "medkits", localize "STR_WL_ShopDescriptions_MedKit","client\icons\medkit.paa", 400, 200],
+	["Jerry Can (Full)", "fuelFull", localize "STR_WL_ShopDescriptions_fuelFull","client\icons\jerrycan.paa", 150, 75],
+	["Jerry Can (Empty)", "fuelEmpty", localize "STR_WL_ShopDescriptions_fuelEmpty","client\icons\jerrycan.paa", 50, 25],
+	["Spawn Beacon","spawnBeacon", localize "STR_WL_ShopDescriptions_spawnBeacon","client\icons\satellite.paa", 3000, 1500],
+	["Camo Net", "camonet", localize "STR_WL_ShopDescriptions_Camo", "client\icons\camonet.paa", 300, 150]
 ];
 
 // Chernarus town and city array
