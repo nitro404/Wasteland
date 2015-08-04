@@ -2,7 +2,7 @@
 //	@file Name: repair.sqf
 //  @file Author: [404] Costlyy
 //	@file Created: 29/01/2013 00:00
-//	@file Args: 
+//	@file Args:
 
 // Check if mutex lock is active.
 if(mutexScriptInProgress) exitWith {
@@ -25,61 +25,61 @@ if(_currVehicle isKindOf "Bicycle") exitWith {hint "You can't refuel a bicycle, 
 // PRECONDITION: Vehicle actually needs fuel.
 if((fuel _currVehicle) >= 0.99) exitWith {hint "Vehicle has full fuel tank, no point in refueling.";};
 
-_fuelAmount = 0.25;
+_fuelAmount = 1.0;
 
 switch true do {
-	case (_currVehicle isKindOf "Air"): {_fuelAmount = 0.10;};
-	case (_currVehicle isKindOf "Tank"): {_fuelAmount = 0.10;};
+	case (_currVehicle isKindOf "Air"): {_fuelAmount = 0.75;};
+	case (_currVehicle isKindOf "Tank"): {_fuelAmount = 0.25;};
 	case (_currVehicle isKindOf "Motorcycle"): {_fuelAmount = 0.75;};
 	case (_currVehicle isKindOf "ATV_Base_EP1"): {_fuelAmount = 0.75;};
 };
 
-mutexScriptInProgress = true;  
+mutexScriptInProgress = true;
 _currPlayerState = animationState player;
 player switchMove "AinvPknlMstpSlayWrflDnon_medic";
-    
+
 _totalDuration = 5; // 5 seconds duration
 _iterationAmount = _totalDuration;
-    
+
 for "_iteration" from 1 to _iterationAmount do {
-    
+
     if(vehicle player != player) exitWith { // Player is in a vehicle
 		2 cutText ["Vehicle refuel interrupted...", "PLAIN DOWN", 1];
-	};  
-            
+	};
+
   	if (doCancelAction) exitWith {// Player selected "cancel action".
 		2 cutText ["Vehicle refuel interrupted...", "PLAIN DOWN", 1];
    		player switchMove _currPlayerState;
         doCancelAction = false;
         mutexScriptInProgress = false; // Do this here to remove "Cancel Action" ASAP!
-	}; 
-            
+	};
+
 	if (!(alive player)) exitWith {// If the player dies, revert state.
 		2 cutText ["Vehicle refuel interrupted...", "PLAIN DOWN", 1];
 	};
-                
+
 	if(player distance _currVehicle > 5) exitWith { // If the player leaves, revert state.
 		2 cutText ["Vehicle refuel interrupted...", "PLAIN DOWN", 1];
-	}; 
-            
+	};
+
   	if (animationState player != "AinvPknlMstpSlayWrflDnon_medic") then { // Keep the player locked in medic animation for the full duration of the loop.
 		player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 	};
-            
+
    	_iterationAmount = _iterationAmount - 1;
 	_iterationPercentage = floor (_iteration / _totalDuration * 100);
-				    
-	2 cutText [format["Vehicle refuel %1%2 complete", _iterationPercentage, _stringEscapePercent], "PLAIN DOWN", 1];
+
+	2 cutText [format["Refuelling Vehicle (%1%2)", _iterationPercentage, _stringEscapePercent], "PLAIN DOWN", 1];
 	sleep 1;
-            
+
   	if (_iteration >= _totalDuration) exitWith { // Success conditions
    		sleep 1;
 		2 cutText ["", "PLAIN DOWN", 1];
     	player switchMove _currPlayerState;
-        
+
   		player setVariable["fuelFull",0,true];
 		player setVariable["fuelEmpty",1,true];
-        
+
         if(!(local _currVehicle)) then {
 			[nil, _currVehicle, "loc", rSPAWN, [_currVehicle, _fuelAmount], {(_this select 0) setFuel (fuel(_this select 0) + (_this select 1))}] call RE;
 		} else {
