@@ -29,7 +29,7 @@ _playerDir = getDir player;
 _playerDirVector = vectorDir player;
 
 // PRECONDITION: Check that a player is not currently over water (sea)
-if(surfaceIsWater _playerPos) exitWith {
+if(surfaceIsWater getPos player) exitWith {
 	player globalChat localize "STR_WL_Errors_BeaconOverWater";
 };
 
