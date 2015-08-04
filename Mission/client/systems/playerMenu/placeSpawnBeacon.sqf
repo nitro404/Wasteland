@@ -28,6 +28,11 @@ _activeBeacon = false;
 _playerDir = getDir player;
 _playerDirVector = vectorDir player;
 
+// PRECONDITION: Check that a player is not currently over water (sea)
+if(surfaceIsWater _playerPos) exitWith {
+	player globalChat localize "STR_WL_Errors_BeaconOverWater";
+};
+
 // PRECONDITION: Check that the player does not have a currently deployed spawn beacon (BLU).
 {
 	if(str(_playerUID) == str(_x select 3)) then {

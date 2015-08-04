@@ -127,7 +127,10 @@
 			<English>YOU CANNOT ENTER A VEHICLE WHILE PLACING A SPAWN BEACON!</English>
 		</Key>
 		<Key ID="STR_WL_Errors_BeaconTooMany">
-			<English>YOU ARE ALREADY HAVE TOO MANY OF THAT OBJECT!</English>
+			<English>YOU ALREADY HAVE TOO MANY OF THAT OBJECT!</English>
+		</Key>
+		<Key ID="STR_WL_Errors_BeaconOverWater">
+			<English>CANNOT PLACE SPAWN BEACONS OVER WATER!</English>
 		</Key>
 		<Key ID="STR_WL_Errors_IllegalWeapon">
 			<English>ILLEGAL WEAPON DETECTED: %1</English>
