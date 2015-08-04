@@ -96,7 +96,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 			    {
 	                closeDialog 0;
 	                hint "Click on map to teleport";
-	                onMapSingleClick "vehicle player setPos _pos; onMapSingleClick '';true;";
+	                onMapSingleClick "vehicle player setPos _pos; onMapSingleClick ''; true;";
                     openMap true;
 			    };
 	            case 4: //Money
@@ -148,6 +148,10 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
                         [_x, _safePos] execVM "server\spawning\boxCreation.sqf";
 
                     } forEach _nerfBoxes;
+			    };
+		    case 6: // Player Position
+			    {
+				hint format["Player Position: %1", str getPos player];
 			    };
 			};
 	    };
