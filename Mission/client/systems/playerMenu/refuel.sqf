@@ -25,7 +25,7 @@ if(_currVehicle isKindOf "Bicycle") exitWith {hint "You can't refuel a bicycle, 
 // PRECONDITION: Vehicle actually needs fuel.
 if((fuel _currVehicle) >= 0.99) exitWith {hint "Vehicle has full fuel tank, no point in refueling.";};
 
-_fuelAmount = 1.0;
+_fuelAmount = 0.5;
 
 switch true do {
 	case (_currVehicle isKindOf "Air"): {_fuelAmount = 0.75;};
