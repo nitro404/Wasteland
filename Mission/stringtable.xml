@@ -132,6 +132,9 @@
 		<Key ID="STR_WL_Errors_BeaconOverWater">
 			<English>CANNOT PLACE SPAWN BEACONS OVER WATER!</English>
 		</Key>
+		<Key ID="STR_WL_Errors_BeaconOutOfBounds">
+			<English>CANNOT PLACE SPAWN BEACONS OUTSIDE OF MAP BOUNDARIES!</English>
+		</Key>
 		<Key ID="STR_WL_Errors_IllegalWeapon">
 			<English>ILLEGAL WEAPON DETECTED: %1</English>
 		</Key>

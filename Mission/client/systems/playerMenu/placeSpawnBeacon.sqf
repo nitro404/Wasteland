@@ -28,6 +28,14 @@ _activeBeacon = false;
 _playerDir = getDir player;
 _playerDirVector = vectorDir player;
 
+// PRECONDITION: check that the player is not outside of the map boundaries for Chernarus.
+if(getPos player select 0 < 0 ||
+   getPos player select 0 > 15360 ||
+   getPos player select 1 < 0 ||
+   getPos player select 1 > 15360) exitWith {
+	player globalChat localize "STR_WL_Errors_BeaconOutOfBounds";
+};
+
 // PRECONDITION: Check that a player is not currently over water (sea)
 if(surfaceIsWater getPos player) exitWith {
 	player globalChat localize "STR_WL_Errors_BeaconOverWater";
