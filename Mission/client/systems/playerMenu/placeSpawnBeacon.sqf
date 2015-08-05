@@ -119,7 +119,7 @@ for "_iteration" from 1 to _lockDuration do {
 
 		_playerPos = getPosATL player;
 		_placedBeacon = "Satelit" createVehicle (position player);
-		_beaconOffset = [_playerDirVector, -1.75] call BIS_fnc_vectorMultiply;
+		_beaconOffset = [_playerDirVector, 1.75] call BIS_fnc_vectorMultiply;
 		_beaconOffsetPos = [_playerPos, _beaconOffset] call BIS_fnc_vectorAdd;
 		_placedBeacon setPosATL _beaconOffsetPos;
 		_placedBeacon setDir _playerDir - 180;

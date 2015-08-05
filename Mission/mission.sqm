@@ -8908,7 +8908,7 @@ class Mission
 			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
-			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and (""helicopter"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0)";
+			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and ((""helicopter"" countType thislist  > 0) or (""tank"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0))";
 			expActiv="_xhandle= [(thislist select 0)] execVM ""reloadVehicle.sqf"";";
 			class Effects
 			{
@@ -8924,7 +8924,7 @@ class Mission
 			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
-			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and (""helicopter"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0)";
+			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and ((""helicopter"" countType thislist  > 0) or (""tank"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0))";
 			expActiv="_xhandle= [(thislist select 0)] execVM ""reloadVehicle.sqf"";";
 			class Effects
 			{
@@ -8940,7 +8940,7 @@ class Mission
 			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
-			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and (""helicopter"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0)";
+			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and ((""helicopter"" countType thislist  > 0) or (""tank"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0))";
 			expActiv="_xhandle= [(thislist select 0)] execVM ""reloadVehicle.sqf"";";
 			class Effects
 			{
@@ -8956,7 +8956,7 @@ class Mission
 			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
-			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and (""helicopter"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0)";
+			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and ((""helicopter"" countType thislist  > 0) or (""tank"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0))";
 			expActiv="_xhandle= [(thislist select 0)] execVM ""reloadVehicle.sqf"";";
 			class Effects
 			{
@@ -8972,7 +8972,7 @@ class Mission
 			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
-			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and (""helicopter"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0)";
+			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and ((""helicopter"" countType thislist  > 0) or (""tank"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0))";
 			expActiv="_xhandle= [(thislist select 0)] execVM ""reloadVehicle.sqf"";";
 			class Effects
 			{
@@ -8988,7 +8988,7 @@ class Mission
 			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
-			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and (""helicopter"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0)";
+			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and ((""helicopter"" countType thislist  > 0) or (""tank"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0))";
 			expActiv="_xhandle= [(thislist select 0)] execVM ""reloadVehicle.sqf"";";
 			class Effects
 			{
@@ -9004,7 +9004,7 @@ class Mission
 			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
-			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and (""helicopter"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0)";
+			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and ((""helicopter"" countType thislist  > 0) or (""tank"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0))";
 			expActiv="_xhandle= [(thislist select 0)] execVM ""reloadVehicle.sqf"";";
 			class Effects
 			{
@@ -9020,7 +9020,7 @@ class Mission
 			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
-			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and (""helicopter"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0)";
+			expCond="this and ((getpos (thislist select 0)) select 2 < 16.0) and ((""helicopter"" countType thislist  > 0) or (""tank"" countType thislist  > 0) or (""car"" countType thislist  > 0) or (""boat"" countType thislist  > 0))";
 			expActiv="_xhandle= [(thislist select 0)] execVM ""reloadVehicle.sqf"";";
 			class Effects
 			{
