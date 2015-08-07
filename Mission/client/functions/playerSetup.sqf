@@ -5,6 +5,10 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
+private["_startingMoney"];
+
+_startingMoney = 800;
+
 _player = _this;
 
 _player setskill 0;
@@ -33,7 +37,9 @@ _player addWeapon "Binocular";
 _player addrating 1000000;
 _player switchMove "amovpknlmstpsraswpstdnon_gear";
 
-_player setVariable["cmoney", 100, false];
+if(isNil (_player getVariable["cmoney"]) || _player getVariable["cmoney"] < _startingMoney) then {
+	_player setVariable["cmoney", _startingMoney, false];
+};
 _player setVariable["medkits", 0, false];
 _player setVariable["fuel", 1, false];
 _player setVariable["repairkits", 0, false];
