@@ -4,23 +4,22 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-if(!X_Server) exitWith {};
+if(!X_Server) exitWith { };
 
-private ["_counter","_pos","_type","_num","_markerName","_marker","_amountOfVehicles","_hint"];
+private ["_counter", "_pos", "_type", "_num", "_markerName", "_marker", "_amountOfVehicles", "_hint"];
 
 _counter = 0;
 
-for "_i" from 1 to 510 do
-{
-	_pos = getMarkerPos format ["Spawn_%1", _i];
+for "_i" from 1 to 510 do {
+	_pos = getMarkerPos format["Spawn_%1", _i];
+	_num = floor(random 100);
 	_type = 0;
-    _num = floor (random 100);
-	if (_num < 100) then {_type = 0;};
-	if (_num < 15) then {_type = 1;};
-	if (_num < 5) then {_type = 2;};
+	if(_num < 70) then { _type = 1; };
+	if(_num < 20) then { _type = 2; };
+
 	[_pos, _type] call vehicleCreation;
 
 	_counter = _counter + 1;
 };
 
-diag_log format["WASTELAND SERVER - %1 Vehicles Spawned",_counter];
+diag_log format["WASTELAND SERVER - %1 Vehicles Spawned", _counter];

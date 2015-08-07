@@ -59,7 +59,6 @@ staticHeliWrecks = [
     "UH60_wreck_EP1"
 ];
 
-//Civilian Vehicle List - Random Spawns
 civilianVehicles = [
     "car_hatchback",
     "car_sedan",
@@ -92,11 +91,7 @@ civilianVehicles = [
     "LadaLM",
     "Lada1",
     "hilux1_civil_1_open",
-    "VolhaLimo_TK_CIV_EP1"
-];
-
-//Military Vehicle List - Random Spawns
-militaryVehicles = [
+    "VolhaLimo_TK_CIV_EP1",
     "UAZ_CDF",
     "SUV_PMC",
     "MTVR",
@@ -104,11 +99,11 @@ militaryVehicles = [
     "HMMWV",
     "HMMWV_Ambulance",
     "S1203_ambulance_EP1",
-    "GAZ_Vodnik_MedEvac"
+    "GAZ_Vodnik_MedEvac",
+    "Ikarus"
 ];
 
-//Armed Military Vehicle List - Random Spawns
-armedMilitaryVehicles = [
+militaryVehicles = [
     "ArmoredSUV_PMC",
     "Pickup_PK_GUE",
     "UAZ_MG_TK_EP1",
@@ -117,23 +112,43 @@ armedMilitaryVehicles = [
     "HMMWV_Armored",
     "HMMWV_MK19",
     "HMMWV_TOW",
-    "GAZ_Vodnik"
+    "GAZ_Vodnik",
+    "GAZ_Vodnik_HMG",
+    "M1135_ATGMV_EP1",
+    "M1126_ICV_MK19_EP1",
+    "M1126_ICV_M2_EP1",
+    "BTR40_MG_TK_GUE_EP1",
+    "BTR60_TK_EP1",
+    "BRDM2_CDF",
+    "BRDM2_ATGM_CDF",
+    "AAV",
+    "HMMWV_M998_CROWS_M2_DES_EP1",
+    "HMMWV_M998_CROWS_MK19_DES_EP1",
+    "HMMWV_Avenger",
+    "MtvrReammo",
+    "MtvrRefuel",
+    "MtvrRepair"
 ];
 
-//Item Config
-pickupList = [
-    "Satelit",
-    "EvMoney",
-    "Suitcase",
-    "Fuel_can"
+armedMilitaryVehicles = [
+    "T34",
+    "T55_TK_EP1",
+    "ZSU_TK_EP1",
+    "T72_RU",
+    "M6_EP1",
+    "M2A3_EP1",
+    "M113_TK_EP1",
+    "BMP2_CDF",
+    "BMP3",
+    "M1128_MGS_EP1",
+    "LAV25",
+    "BTR90"
 ];
 
-//Object List - Random Spawns.
 objectList = [
     "Land_prebehlavka",
     "Land_leseni2x",
     "Fort_Crate_wood",
-    "Land_CamoNet_NATO",
     "Base_WarfareBBarrier10xTall",
     "Base_WarfareBBarrier10x",
     "Base_WarfareBBarrier5x",
@@ -172,54 +187,72 @@ objectList = [
     "Land_ConcreteBlock"
 ];
 
-//Object List - Random Spawns.
 staticWeaponsList = [
     "M2StaticMG_US_EP1",
     "DSHKM_TK_INS_EP1",
     "BAF_L2A1_Tripod_D",
     "MK19_TriPod",
-    "KORD_high"
+    "AGS_UN_EP1",
+    "KORD_high",
+    "Stinger_Pod_US_EP1",
+    "Igla_AA_pod_East",
+    "Metis_TK_EP1",
+    "TOW_TriPod",
+    "ZU23_TK_GUE_EP1",
+    "SPG9_CDF"
 ];
 
-//Object List - Random Helis.
 staticHeliList = [
+    "UH1H_TK_EP1",
     "UH1H_TK_GUE_EP1",
-    "Mi17_Civilian",
-    "MV22",
+    "UH1Y",
+    "UH60M_EP1",
     "CH_47F_EP1",
-    "MH6J_EP1",
-    "UH60M_MEV_EP1",
-    "AH6X_EP1",
-    "BAF_Merlin_HC3_D",
-    "Ka137_MG_PMC"
+    "AH6J_EP1",
+    "Ka60_GL_PMC",
+    "Mi17_CDF",
+    "Mi17_TK_EP1",
+    "Mi171Sh_CZ_EP1",
+    "MV22"
 ];
 
-//Random Weapon List - Change this to what you want to spawn in cars.
 vehicleWeapons = [
+    "M16A2",
+    "M16A2GL",
+    "M4A1",
+    "M4A1_AIM_SD_camo",
+    "M4A1_HWS_GL_SD_Camo",
+    "M4A3_CCO_EP1",
     "AK_47_M",
     "AK_47_S",
     "AK_74",
-    "bizon",
-    "bizon_silenced",
-    "MP5SD",
-    "LeeEnfield",
-    "M1014",
-    "M16A2",
-    "M4A1",
-    "M79_EP1",
-    "MP5A5",
+    "AKS_74_kobra",
+    "M14_EP1",
     "Sa58V_EP1",
-    "Saiga12K",
-    "SCAR_L_CQC",
-    "M9",
-    "M9SD",
-    "revolver_EP1",
-    "Sa61_EP1",
+    "Sa58V_CCO_EP1",
+    "Sa58V_RCO_EP1",
+    "SCAR_L_STD_HOLO",
+    "SCAR_L_STD_EGLM_RCO",
+    "SCAR_H_CQC_CCO",
+    "FN_FAL",
+    "M240",
+    "M40A3",
+    "M249",
+    "M60A4_EP1",
+    "Mk_48",
+    "RPK_74",
+    "PK",
+    "Pecheneg",
+    "AA12_PMC",
     "huntingrifle",
-    "Mk13_EP1",
-    "MakarovSD",
-    "AKS_74_U",
-    "UZI_EP1"
+    "DMR",
+    "SVD",
+    "SVD_CAMO",
+    "KSVK",
+    "RPG7V",
+    "RPG18",
+    "M136",
+    "MAAWS"
 ];
 
 MissionSpawnMarkers = [
