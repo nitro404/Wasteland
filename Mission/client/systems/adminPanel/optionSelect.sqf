@@ -52,6 +52,11 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 					closeDialog 0;
 					execVM "client\systems\adminPanel\vehicleManagement.sqf";
 				};
+				case 2: // GCam
+				{
+					closeDialog 0;
+                                        execVM "addons\gcam\gcam.sqf";
+				};
 			};
 		};
 		case 1: //Administrator panel
@@ -72,6 +77,11 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 			    {
 					execVM "client\systems\adminPanel\playerTags.sqf";
 			    };
+				case 3: // GCam
+				{
+					closeDialog 0;
+                                        execVM "addons\gcam\gcam.sqf";
+				};
 			};
 		};
 	    case 2: //Server Administrator panel
@@ -103,7 +113,12 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 			    {
 					player setVariable["cmoney", (player getVariable "cmoney")+1000,true];
 			    };
-	            case 5: //Debug Menu
+		    case 5: // GCam
+			    {
+					closeDialog 0;
+                                        execVM "addons\gcam\gcam.sqf";
+			    };
+	            case 6: //Debug Menu
 			    {
 	            	closeDialog 0;
 	                execVM "client\systems\adminPanel\loadDebugMenu.sqf";
