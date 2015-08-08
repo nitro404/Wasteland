@@ -27,7 +27,7 @@ if(_type == 0) then {
 
 	//Set Cars Attributes
     _car setFuel((random 0.50) + 0.50);
-    _car setDamage((random 0.50) + 0.50);
+    _car setDamage((random 0.50));
     _car setDir(random 360.0);
 	_car setVelocity [0, 0, 1];
     [_car] call randomWeapons;
@@ -51,7 +51,7 @@ if(_type == 1) then {
 
 	//Set Cars Attributes
     _car setFuel((random 0.50) + 0.50);
-    _car setDamage((random 0.50) + 0.50);
+    _car setDamage((random 0.50));
     _car setDir(random 360.0);
     _car setVehicleAmmo((random 0.50) + 0.50);
 	_car setVelocity[0, 0, 1];
@@ -76,7 +76,7 @@ if(_type == 2) then {
 
 	//Set Cars Attributes
     _car setFuel((random 0.50) + 0.50);
-    _car setDamage((random 0.50) + 0.50);
+    _car setDamage((random 0.50));
     _car setDir(random 360.0);
     _car setVehicleAmmo((random 0.50) + 0.50);
 	_car setVelocity[0, 0, 1];
