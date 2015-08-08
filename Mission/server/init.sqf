@@ -40,9 +40,6 @@ if (serverSpawning == 1) then {
     _heliSpawn = [] ExecVM "server\functions\staticHeliSpawning.sqf";
     waitUntil { sleep 0.1; scriptDone _heliSpawn };
 
-    _heliSpawn = [] ExecVM "server\functions\staticHeliSpawning.sqf";
-    waitUntil { sleep 0.1; scriptDone _heliSpawn };
-
     _weaponCrateSpawning = [] ExecVM "server\functions\boxSpawning.sqf";
     waitUntil{ sleep 0.1; scriptDone _weaponCrateSpawning };
 
