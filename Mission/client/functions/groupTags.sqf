@@ -5,6 +5,8 @@
 
 private["_inGroup","_isLeader","_refresh","_distance","_myGroup","_tempArray","_icon"];
 
+#define __REFRESH 0.34
+
 _tempArray = [];
 
 while {true} do
