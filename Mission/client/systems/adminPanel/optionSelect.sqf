@@ -36,141 +36,168 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 		_debugSelect = _displayDebug displayCtrl debugMenu_option;
 	};
 
-	switch (_panelType) do
-	{
-	    case 0: //Moderator panel
-		{
-			switch (lbCurSel _modSelect) do
+	switch(_panelType) do {
+
+		// Moderator Panel
+		case 0: {
+			switch(lbCurSel _modSelect) do
 			{
-			    case 0: //Player Menu
-				{
-	                closeDialog 0;
+				// Player Menu
+				case 0: {
+					closeDialog 0;
 					execVM "client\systems\adminPanel\playerMenu.sqf";
 				};
-				case 1: //Basic Vehicle Menu
-				{
+
+				//Basic Vehicle Menu
+				case 1: {
 					closeDialog 0;
 					execVM "client\systems\adminPanel\vehicleManagement.sqf";
 				};
-				case 2: // GCam
-				{
+
+				// GCam
+				case 2: {
 					closeDialog 0;
-                                        execVM "addons\gcam\gcam.sqf";
+					execVM "addons\gcam\gcam.sqf";
 				};
 			};
 		};
-		case 1: //Administrator panel
-		{
-			switch (lbCurSel _adminSelect) do
-			{
-			    case 0: //Player Menu
-				{
-	                closeDialog 0;
+
+		// Administrator Panel
+		case 1: {
+			switch(lbCurSel _adminSelect) do {
+
+				// Player Menu
+				case 0: {
+					closeDialog 0;
 					execVM "client\systems\adminPanel\playerMenu.sqf";
 				};
-				case 1: //Full Vehicle Management
-				{
-	                closeDialog 0;
+
+				// Full Vehicle Management
+				case 1: {
+					closeDialog 0;
 					execVM "client\systems\adminPanel\vehicleManagement.sqf";
 				};
-			    case 2: //Tags
-			    {
+
+				// Tags
+				case 2:{
 					execVM "client\systems\adminPanel\playerTags.sqf";
-			    };
-				case 3: // GCam
-				{
+				};
+
+				// GCam
+				case 3: {
 					closeDialog 0;
-                                        execVM "addons\gcam\gcam.sqf";
+					execVM "addons\gcam\gcam.sqf";
 				};
 			};
 		};
-	    case 2: //Server Administrator panel
-	    {
-			switch (lbCurSel _serverAdminSelect) do
-			{
-			    case 0: //Player Menu
-				{
-	                closeDialog 0;
+
+		// Server Administrator Panel
+		case 2: {
+			switch(lbCurSel _serverAdminSelect) do {
+				// Player Menu
+				case 0: {
+					closeDialog 0;
 					execVM "client\systems\adminPanel\playerMenu.sqf";
 				};
-				case 1: //Full Vehicle Management
-				{
-	                closeDialog 0;
+
+				// Full Vehicle Management
+				case 1: {
+					closeDialog 0;
 					execVM "client\systems\adminPanel\vehicleManagement.sqf";
 				};
-			    case 2: //Tags
-			    {
+
+				// Tags
+				case 2: {
 					execVM "client\systems\adminPanel\playerTags.sqf";
-			    };
-			    case 3: //Teleport
-			    {
-	                closeDialog 0;
-	                hint "Click on map to teleport";
-	                onMapSingleClick "vehicle player setPos _pos; onMapSingleClick ''; true;";
-                    openMap true;
-			    };
-	            case 4: //Money
-			    {
-					player setVariable["cmoney", (player getVariable "cmoney")+1000,true];
-			    };
-		    case 5: // GCam
-			    {
+				};
+
+				// Teleport
+				case 3: {
 					closeDialog 0;
-                                        execVM "addons\gcam\gcam.sqf";
-			    };
-	            case 6: //Debug Menu
-			    {
-	            	closeDialog 0;
-	                execVM "client\systems\adminPanel\loadDebugMenu.sqf";
-			    };
+					hint "Click on map to teleport";
+					onMapSingleClick "vehicle player setPos _pos; onMapSingleClick ''; true;";
+					openMap true;
+				};
+
+				// Money
+				case 4: {
+					if(isNil player getVariable "cmoney") then {
+						player setVariable["cmoney", 1000, true];
+					}
+					else {
+						player setVariable["cmoney", (player getVariable "cmoney") + 1000, true];
+					};
+				};
+
+				// GCam
+				case 5: {
+					closeDialog 0;
+					execVM "addons\gcam\gcam.sqf";
+				};
+
+				// Debug Menu
+				case 6: {
+					closeDialog 0;
+					execVM "client\systems\adminPanel\loadDebugMenu.sqf";
+				};
 			};
-	    };
-	    case 3: //Debug panel
-	    {
-			switch (lbCurSel _debugSelect) do
-			{
-			    case 0: //Access Gun Store
-				{
-	                closeDialog 0;
+		};
+
+		// Debug Panel
+		case 3: {
+			switch (lbCurSel _debugSelect) do {
+
+				// Access Gun Store
+				case 0: {
+					closeDialog 0;
 					execVM "client\systems\gunStore\loadGunStore.sqf";
 				};
-				case 1: //Access General Store
-				{
-	                closeDialog 0;
+
+				// Access General Store
+				case 1: {
+					closeDialog 0;
 					execVM "client\systems\generalStore\loadGenStore.sqf";
 				};
-			    case 2: //Access Respawn Dialog
-			    {
-	                closeDialog 0;
+
+				// Access Respawn Dialog
+				case 2: {
+					closeDialog 0;
 					true spawn client_respawnDialog;
-			    };
-			    case 3: //Access Proving Grounds
-			    {
-	                closeDialog 0;
+				};
+
+				// Access Proving Grounds
+				case 3:  {
+					closeDialog 0;
 					createDialog "balca_debug_main";
-			    };
-	            case 4: //Restart Function
-			    {
-					hint format["Server FPS: %1",serverFPS];
-			    };
-	            case 5: //Test Function
-			    {
-					_nerfBoxes = ["basicUS","basicUS2","basicRU","basicRU2","basicGER","basicPMC","basicSpecial","basicSpecial2","basicSpecial3"];
-                    _playerLoc = getPos player;
+				};
 
-                    {
-                        _safePos = [_playerLoc, 1, 5, 1, 0, 60 * (pi / 180), 0] call BIS_fnc_findSafePos;
-                        [_x, _safePos] execVM "server\spawning\boxCreation.sqf";
+				// Restart Function
+				case 4: {
+					hint format["Server FPS: %1", serverFPS];
+				};
 
-                    } forEach _nerfBoxes;
-			    };
-		    case 6: // Player Position
-			    {
-				hint format["Player Position: %1", str getPos player];
-			    };
+				// Spawn Gun Crates
+				case 5: {
+
+					_weaponCrateTypes = ["basicUS", "basicUS2", "basicRU", "basicRU2", "basicGER", "basicPMC", "basicSpecial", "basicSpecial2", "basicSpecial3"];
+					_playerLocation = getPos player;
+
+					hint format["Spawning %1 Weapon Crates", count _weaponCrateTypes, str _playerLocation];
+
+					{
+						_safePosition = [_playerLocation, 1, 5, 1, 0, 60 * (pi / 180), 0] call BIS_fnc_findSafePos;
+						[_x, _safePosition] execVM "server\spawning\boxCreation.sqf";
+					} forEach _weaponCrateTypes;
+				};
+
+				// Player Position
+				case 6: {
+					hint format["Player Position: %1", str getPos player];
+				};
 			};
-	    };
+		};
 	};
-} else {
+}
+else {
   exit;
 };
