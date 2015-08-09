@@ -114,7 +114,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 	};
 };
 
-player setVariable["cmoney",_playerMoney - genStoreCart,false];
+player setVariable["cmoney",_playerMoney - genStoreCart, true];
 _playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];
 
 genStoreCart = 0;
