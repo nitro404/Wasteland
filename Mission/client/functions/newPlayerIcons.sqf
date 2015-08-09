@@ -12,6 +12,9 @@ FZF_IC_Icons =
 
     _pIcons = player getVariable "FZF_IC_Hud_pIcons";
     _showName1 = player getVariable "ShowNameAllies";
+    if(isNil {player getVariable "ShowNameAllies"}) then {
+        _showName1 = false;
+    };
 
     _make_icons = false;
     _remove_icon = false;
