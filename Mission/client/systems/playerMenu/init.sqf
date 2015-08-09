@@ -21,7 +21,13 @@ _mvalue = _Dialog displayCtrl money_value;
 _rogue = _Dialog displayCtrl rogue_text;
 _uptime = _Dialog displayCtrl uptime_text;
 _groupButton = _Dialog displayCtrl groupButton;
-_moneytext ctrlSetText format["%1", player getVariable "cmoney"];
+
+if(isNil {player getVariable "cmoney"}) then {
+	_moneytext ctrlSetText "0";
+}
+else {
+	_moneytext ctrlSetText format["%1", player getVariable "cmoney"];
+};
 
 _mIndex = _mvalue lbadd "$25"; _mvalue lbSetData [(lbSize _mvalue)-1, "20"];
 _mIndex = _mvalue lbadd "$50"; _mvalue lbSetData [(lbSize _mvalue)-1, "50"];
@@ -36,7 +42,6 @@ _mIndex = _mvalue lbadd "$3000"; _mvalue lbSetData [(lbSize _mvalue)-1, "3000"];
 _mIndex = _mvalue lbadd "$4000"; _mvalue lbSetData [(lbSize _mvalue)-1, "4000"];
 _mIndex = _mvalue lbadd "$5000"; _mvalue lbSetData [(lbSize _mvalue)-1, "5000"];
 
-if(str(playerSide) == "west" || str(playerSide) == "east") then
-{
+if(str(playerSide) == "west" || str(playerSide) == "east") then {
 	_groupButton ctrlShow false;
 };

@@ -6,10 +6,10 @@
 //	@file Args:
 
 disableSerialization;
-private["_ui","_hud"];
 
-while {true} do
-{
+private["_ui", "_hud", "_playerMoneyString"];
+
+while {true} do {
     1000 cutRsc ["WastelandHud","PLAIN"];
     _ui = uiNameSpace getVariable "WastelandHud";
     _vitals = _ui displayCtrl 3600;
@@ -21,13 +21,18 @@ while {true} do
     _health = round (_health * (10 ^ _decimalPlaces)) / (10 ^ _decimalPlaces);
     _health = 100 - (_health * 100);
 
-    _playerMoney = player getVariable "cmoney";
+    _playerMoneyString = player getVariable "cmoney";
 
-    if (_playerMoney >= 10000) then {
-    	_playerMoney = format["%1k", floor (_playerMoney / 1000)];
+    if(isNil {player getVariable "cmoney"}) then {
+        _playerMoneyString = "0";
+    }
+    else {
+        if(player getVariable "cmoney" >= 10000) then {
+        	_playerMoneyString = format["%1k", floor(_playerMoneyString / 1000)];
+        };
     };
 
-    _vitals ctrlSetStructuredText parseText format ["%1 <img size='0.8' image='client\icons\health.paa'/><br/>%2 <img size='0.8' image='\CA\misc\data\icons\picture_money_CA.paa'/>", _health, _playerMoney];
+    _vitals ctrlSetStructuredText parseText format ["%1 <img size='0.8' image='client\icons\health.paa'/><br/>%2 <img size='0.8' image='\CA\misc\data\icons\picture_money_CA.paa'/>", _health, _playerMoneyString];
     _vitals ctrlCommit 0;
 
     if(player != vehicle player) then

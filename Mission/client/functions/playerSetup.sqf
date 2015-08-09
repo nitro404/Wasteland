@@ -37,9 +37,15 @@ _player addWeapon "Binocular";
 _player addrating 1000000;
 _player switchMove "amovpknlmstpsraswpstdnon_gear";
 
-if(isNil (_player getVariable["cmoney"]) || _player getVariable["cmoney"] < _startingMoney) then {
+if(isNil {_player getVariable "cmoney"}) then {
 	_player setVariable["cmoney", _startingMoney, false];
+}
+else {
+	if(_player getVariable "cmoney" < _startingMoney) then {
+		_player setVariable["cmoney", _startingMoney, false];
+	};
 };
+
 _player setVariable["medkits", 0, false];
 _player setVariable["fuel", 1, false];
 _player setVariable["repairkits", 0, false];
