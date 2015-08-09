@@ -9,10 +9,6 @@ private ["_player"];
 _player = (_this select 0) select 0;
 _killer = (_this select 0) select 1;
 
-if (isnil {_player getVariable "cmoney"}) then {
-	_player setVariable["cmoney",0,true];
-};
-
 // Close any active dialogs.
 closeDialog 0;
 
