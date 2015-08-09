@@ -23,16 +23,16 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	_displayServerAdmin = uiNamespace getVariable "ServerAdminMenu";
 	_displayDebug = uiNamespace getVariable "DebugMenu";
 
-	if(!isNil "_displayMod") then {
+	if(!isNil {_displayMod}) then {
 		_modSelect = _displayMod displayCtrl modMenu_option;
 	};
-	if(!isNil "_displayAdmin") then {
+	if(!isNil {_displayAdmin}) then {
 		_adminSelect = _displayAdmin displayCtrl adminMenu_option;
 	};
-	if(!isNil "_displayServerAdmin") then {
+	if(!isNil {_displayServerAdmin}) then {
 		_serverAdminSelect = _displayServerAdmin displayCtrl serverAdminMenu_option;
 	};
-	if(!isNil "_displayDebug") then {
+	if(!isNil {_displayDebug}) then {
 		_debugSelect = _displayDebug displayCtrl debugMenu_option;
 	};
 
@@ -121,7 +121,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 
 				// Money
 				case 4: {
-					if(isNil player getVariable "cmoney") then {
+					if(isNil {player getVariable "cmoney"}) then {
 						player setVariable["cmoney", 1000, true];
 					}
 					else {
