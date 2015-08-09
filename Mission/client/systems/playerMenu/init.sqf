@@ -6,8 +6,8 @@
 
 
 #include "dialog\player_sys.sqf";
-if(isnil {player getVariable "cmoney"}) then {player setVariable["cmoney",0,true];};
-if(dialog) exitwith{};
+
+if(dialog) exitWith { };
 
 disableSerialization;
 
