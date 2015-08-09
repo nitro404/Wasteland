@@ -115,7 +115,12 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 				case 3: {
 					closeDialog 0;
 					hint "Click on map to teleport";
-					onMapSingleClick "vehicle player setPos _pos; onMapSingleClick ''; true;";
+					if(vehicle player isKindOf "Air") then {
+						onMapSingleClick "vehicle player setPosATL [_pos select 0, _pos select 1, getPosATL player select 2]; onMapSingleClick ''; true;";
+					}
+					else {
+						onMapSingleClick "vehicle player setPos _pos; onMapSingleClick ''; true;";
+					};
 					openMap true;
 				};
 
