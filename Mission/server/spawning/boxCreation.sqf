@@ -6,14 +6,14 @@
 
 if(!X_Server) exitWith { };
 
-private ["_selectedBox", "_selectedBoxPos", "_finishedBox", "_currBox"];
+private["_selectedBoxType", "_selectedBoxPosition", "_currBox"];
 
-_selectedBox = _this select 0;
-_selectedBoxPos = _this select 1;
+_selectedBoxType = _this select 0;
+_selectedBoxPosition = _this select 1;
 
-switch(_selectedBox) do {
+switch(_selectedBoxType) do {
     case "basicUS": {
-        _currBox = createVehicle["USBasicWeaponsBox", _selectedBoxPos, [], 30, "NONE"];
+        _currBox = createVehicle["USBasicWeaponsBox", _selectedBoxPosition, [], 0, "NONE"];
 
         clearMagazineCargoGlobal _currBox;
         clearWeaponCargoGlobal _currBox;
@@ -31,15 +31,15 @@ switch(_selectedBox) do {
         _currBox addMagazineCargoGlobal["30Rnd_556x45_Stanag", 100];
         _currBox addMagazineCargoGlobal["200Rnd_556x45_M249", 12];
         _currBox addMagazineCargoGlobal["5Rnd_762x51_M24", 24];
-        _currBox addMagazineCargoGlobal["HandGrenade", 10];
         _currBox addMagazineCargoGlobal["1Rnd_HE_M203", 16];
         _currBox addMagazineCargoGlobal["1Rnd_Smoke_M203", 16];
+        _currBox addMagazineCargoGlobal["HandGrenade", 10];
 
         _currBox addMagazineCargoGlobal["15Rnd_9x19_M9", 32];
         _currBox addMagazineCargoGlobal["15Rnd_9x19_M9SD", 32];
     };
     case "basicUS2": {
-        _currBox = createVehicle["USBasicWeaponsBox", _selectedBoxPos, [], 30, "NONE"];
+        _currBox = createVehicle["USBasicWeaponsBox", _selectedBoxPosition, [], 0, "NONE"];
 
         clearMagazineCargoGlobal _currBox;
         clearWeaponCargoGlobal _currBox;
@@ -61,17 +61,17 @@ switch(_selectedBox) do {
         _currBox addMagazineCargoGlobal["30Rnd_556x45_StanagSD", 50];
         _currBox addMagazineCargoGlobal["100Rnd_762x51_M240", 10];
         _currBox addMagazineCargoGlobal["5Rnd_762x51_M24", 24];
-        _currBox addMagazineCargoGlobal["HandGrenade", 10];
         _currBox addMagazineCargoGlobal["1Rnd_HE_M203", 10];
         _currBox addMagazineCargoGlobal["1Rnd_Smoke_M203", 10];
         _currBox addMagazineCargoGlobal["8Rnd_B_Beneli_74Slug", 24];
         _currBox addMagazineCargoGlobal["8Rnd_B_Beneli_Pellets", 24];
+        _currBox addMagazineCargoGlobal["HandGrenade", 10];
 
         _currBox addMagazineCargoGlobal["7Rnd_45ACP_1911", 32];
         _currBox addMagazineCargoGlobal["17Rnd_9x19_glock17", 32];
     };
     case "basicRU": {
-        _currBox = createVehicle["RUBasicWeaponsBox", _selectedBoxPos, [], 30, "NONE"];
+        _currBox = createVehicle["RUBasicWeaponsBox", _selectedBoxPosition, [], 0, "NONE"];
 
         clearMagazineCargoGlobal _currBox;
         clearWeaponCargoGlobal _currBox;
@@ -91,12 +91,12 @@ switch(_selectedBox) do {
         _currBox addMagazineCargoGlobal["8Rnd_9x18_MakarovSD", 24];
         _currBox addMagazineCargoGlobal["20Rnd_B_765x17_Ball", 24];
         _currBox addMagazineCargoGlobal["5Rnd_127x108_KSVK", 24];
-        _currBox addMagazineCargoGlobal["HandGrenade", 10];
         _currBox addMagazineCargoGlobal["1Rnd_HE_GP25", 24];
         _currBox addMagazineCargoGlobal["1Rnd_SMOKE_GP25", 24];
+        _currBox addMagazineCargoGlobal["HandGrenade", 10];
     };
     case "basicRU2": {
-        _currBox = createVehicle["RUBasicWeaponsBox", _selectedBoxPos, [], 30, "NONE"];
+        _currBox = createVehicle["RUBasicWeaponsBox", _selectedBoxPosition, [], 0, "NONE"];
 
         clearMagazineCargoGlobal _currBox;
         clearWeaponCargoGlobal _currBox;
@@ -109,21 +109,21 @@ switch(_selectedBox) do {
         _currBox addWeaponCargoGlobal["Saiga12K", 2];
         _currBox addWeaponCargoGlobal["SVD", 2];
 
-        _currBox addWeaponCargoGlobal["MakarovSD", 4];
         _currBox addWeaponCargoGlobal["Makarov", 4];
+        _currBox addWeaponCargoGlobal["MakarovSD", 4];
 
         _currBox addMagazineCargoGlobal["30Rnd_545x39_AK", 100];
         _currBox addMagazineCargoGlobal["30Rnd_762x39_AK47", 50];
         _currBox addMagazineCargoGlobal["10Rnd_762x54_SVD", 24];
-        _currBox addMagazineCargoGlobal["HandGrenade", 10];
         _currBox addMagazineCargoGlobal["8Rnd_B_Saiga12_74Slug", 24];
         _currBox addMagazineCargoGlobal["8Rnd_B_Saiga12_Pellets", 24];
+        _currBox addMagazineCargoGlobal["HandGrenade", 10];
 
         _currBox addMagazineCargoGlobal["8Rnd_9x18_Makarov", 24];
         _currBox addMagazineCargoGlobal["8Rnd_9x18_MakarovSD", 24];
     };
     case "basicGER": {
-        _currBox = createVehicle["GERBasicWeapons_EP1", _selectedBoxPos, [], 30, "NONE"];
+        _currBox = createVehicle["GERBasicWeapons_EP1", _selectedBoxPosition, [], 0, "NONE"];
 
         clearMagazineCargoGlobal _currBox;
         clearWeaponCargoGlobal _currBox;
@@ -148,7 +148,7 @@ switch(_selectedBox) do {
         _currBox addMagazineCargoGlobal["HandGrenade", 10];
     };
     case "basicPMC": {
-        _currBox = createVehicle["Ammobox_PMC", _selectedBoxPos, [], 30, "NONE"];
+        _currBox = createVehicle["Ammobox_PMC", _selectedBoxPosition, [], 0, "NONE"];
 
         clearMagazineCargoGlobal _currBox;
         clearWeaponCargoGlobal _currBox;
@@ -168,15 +168,15 @@ switch(_selectedBox) do {
         _currBox addMagazineCargoGlobal["20Rnd_B_AA12_HE", 12];
         _currBox addMagazineCargoGlobal["30Rnd_556x45_StanagSD", 24];
         _currBox addMagazineCargoGlobal["100Rnd_556x45_BetaCMag_airLock", 24];
-        _currBox addMagazineCargoGlobal["HandGrenade", 10];
         _currBox addMagazineCargoGlobal["1Rnd_HE_M203", 12];
         _currBox addMagazineCargoGlobal["1Rnd_Smoke_M203", 12];
+        _currBox addMagazineCargoGlobal["HandGrenade", 10];
 
-        _currBox addMagazineCargoGlobal["15Rnd_9x19_M9SD", 24];
         _currBox addMagazineCargoGlobal["15Rnd_9x19_M9", 24];
+        _currBox addMagazineCargoGlobal["15Rnd_9x19_M9SD", 24];
     };
     case "basicSpecial": {
-        _currBox = createVehicle["SpecialWeaponsBox", _selectedBoxPos, [], 30, "NONE"];
+        _currBox = createVehicle["SpecialWeaponsBox", _selectedBoxPosition, [], 0, "NONE"];
 
         clearMagazineCargoGlobal _currBox;
         clearWeaponCargoGlobal _currBox;
@@ -187,7 +187,6 @@ switch(_selectedBox) do {
         _currBox addWeaponCargoGlobal["SCAR_L_STD_EGLM_TWS", 2];
         _currBox addWeaponCargoGlobal["SCAR_H_LNG_Sniper", 2];
         _currBox addWeaponCargoGlobal["SCAR_H_LNG_Sniper_SD", 2];
-
         _currBox addWeaponCargoGlobal["M40A3", 2];
         _currBox addWeaponCargoGlobal["DMR", 2];
 
@@ -206,7 +205,7 @@ switch(_selectedBox) do {
         _currBox addMagazineCargoGlobal["30Rnd_9x19_UZI_SD", 24];
     };
     case "basicSpecial2": {
-        _currBox = createVehicle["SpecialWeaponsBox", _selectedBoxPos, [], 30, "NONE"];
+        _currBox = createVehicle["SpecialWeaponsBox", _selectedBoxPosition, [], 0, "NONE"];
 
         clearMagazineCargoGlobal _currBox;
         clearWeaponCargoGlobal _currBox;
@@ -231,7 +230,7 @@ switch(_selectedBox) do {
         _currBox addMagazineCargoGlobal["17Rnd_9x19_glock17", 24];
     };
     case "basicSpecial3": {
-        _currBox = createVehicle["TKBasicWeapons_EP1", _selectedBoxPos, [], 30, "NONE"];
+        _currBox = createVehicle["TKBasicWeapons_EP1", _selectedBoxPosition, [], 0, "NONE"];
 
         clearMagazineCargoGlobal _currBox;
         clearWeaponCargoGlobal _currBox;
@@ -249,7 +248,7 @@ switch(_selectedBox) do {
 
         _currBox addMagazineCargoGlobal["30Rnd_762x39_AK47", 50];
         _currBox addMagazineCargoGlobal["100Rnd_762x54_PK", 12];
-        _currBox addMagazineCargoGlobal["5x_22_LR_17_HMR", 25];
+        _currBox addMagazineCargoGlobal["5x_22_LR_17_HMR", 24];
         _currBox addMagazineCargoGlobal["64Rnd_9x19_SD_Bizon", 24];
         _currBox addMagazineCargoGlobal["20Rnd_762x51_FNFAL", 24];
         _currBox addMagazineCargoGlobal["10x_303", 50];
@@ -260,7 +259,7 @@ switch(_selectedBox) do {
         _currBox addMagazineCargoGlobal["7Rnd_45ACP_1911", 24];
     };
     case "mission_Mid_BAF": {
-        _currBox = createVehicle["BAF_BasicWeapons", _selectedBoxPos, [], 30, "NONE"];
+        _currBox = createVehicle["BAF_BasicWeapons", _selectedBoxPosition, [], 0, "NONE"];
 
         clearMagazineCargoGlobal _currBox;
         clearWeaponCargoGlobal _currBox;
@@ -282,12 +281,12 @@ switch(_selectedBox) do {
         _currBox addMagazineCargoGlobal["100Rnd_762x51_M240", 12];
         _currBox addMagazineCargoGlobal["1Rnd_HE_M203", 12];
         _currBox addMagazineCargoGlobal["1Rnd_Smoke_M203", 12];
-        _currBox addMagazineCargoGlobal["HandGrenade", 10];
         _currBox addMagazineCargoGlobal["200Rnd_556x45_L110A1", 12];
         _currBox addMagazineCargoGlobal["5Rnd_86x70_L115A1", 24];
         _currBox addMagazineCargoGlobal["20Rnd_762x51_DMR", 24];
         _currBox addMagazineCargoGlobal["20Rnd_762x51_FNFAL", 24];
         _currBox addMagazineCargoGlobal["10Rnd_762x54_SVD", 24];
+        _currBox addMagazineCargoGlobal["HandGrenade", 10];
 
         _currBox addMagazineCargoGlobal["15Rnd_9x19_M9", 32];
         _currBox addMagazineCargoGlobal["15Rnd_9x19_M9SD", 32];
