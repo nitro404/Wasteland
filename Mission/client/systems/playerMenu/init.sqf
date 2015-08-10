@@ -13,8 +13,7 @@ disableSerialization;
 
 private["_dialog", "_moneyText", "_moneyValue", "_rogue", "_uptime", "_frameRate", "_timeText", "_missionUptimeText"];
 
-_dialog = createDialog "playerSettings";
-_dialog displayAddEventHandler["KeyDown", "_return = false; if(playerMenuDialogActive && (_this select 1) == 1) then {_return = true;}; _return"];
+createDialog "playerSettings";
 
 playerMenuDialogActive = true;
 
@@ -44,7 +43,12 @@ while {playerMenuDialogActive} do {
 	_timeText = [time/60/60] call BIS_fnc_timeToString;
 	_uptime ctrlSetText format["Mission Uptime: %1", _timeText];
 
-	_frameRate ctrlSetText format["Server Frame Rate: %1", serverFPS];
+	if(isNil {serverFPS}) then {
+		_frameRate ctrlSetText "Server Frame Rate: 0";
+	}
+	else {
+		_frameRate ctrlSetText format["Server Frame Rate: %1", serverFPS];
+	};
 
 	sleep 0.1;
 }
