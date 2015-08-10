@@ -31,7 +31,7 @@ switch _key do {
     };
     // Tilde
     case 41: {
-        [] call loadPlayerMenu;
+        [] spawn loadPlayerMenu;
     };
     // E
 	case 18: {
