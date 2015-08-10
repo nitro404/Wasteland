@@ -11,37 +11,22 @@ if(dialog) exitWith { };
 
 disableSerialization;
 
-private["_Dialog","_moneytext","_mvalue","_rogue"];
+private["_dialog", "_moneyText", "_moneyValue", "_rogue"];
 
 _playerDialog = createDialog "playerSettings";
 
-_Dialog = findDisplay playersys_DIALOG;
-_moneytext = _Dialog displayCtrl money_text;
-_mvalue = _Dialog displayCtrl money_value;
-_rogue = _Dialog displayCtrl rogue_text;
-_uptime = _Dialog displayCtrl uptime_text;
-_groupButton = _Dialog displayCtrl groupButton;
+_dialog = findDisplay playersys_DIALOG;
+_moneyText = _dialog displayCtrl money_text;
+_moneyValue = _dialog displayCtrl money_value;
+_rogue = _dialog displayCtrl rogue_text;
+_uptime = _dialog displayCtrl uptime_text;
+_groupButton = _dialog displayCtrl groupButton;
 
 if(isNil {player getVariable "cmoney"}) then {
-	_moneytext ctrlSetText "0";
+	_moneyText ctrlSetText "0";
+	_moneyValue ctrlSetText "0";
 }
 else {
-	_moneytext ctrlSetText format["%1", player getVariable "cmoney"];
-};
-
-_mIndex = _mvalue lbadd "$25"; _mvalue lbSetData [(lbSize _mvalue)-1, "20"];
-_mIndex = _mvalue lbadd "$50"; _mvalue lbSetData [(lbSize _mvalue)-1, "50"];
-_mIndex = _mvalue lbadd "$100"; _mvalue lbSetData [(lbSize _mvalue)-1, "100"];
-_mIndex = _mvalue lbadd "$200"; _mvalue lbSetData [(lbSize _mvalue)-1, "200"];
-_mIndex = _mvalue lbadd "$300"; _mvalue lbSetData [(lbSize _mvalue)-1, "300"];
-_mIndex = _mvalue lbadd "$400"; _mvalue lbSetData [(lbSize _mvalue)-1, "400"];
-_mIndex = _mvalue lbadd "$500"; _mvalue lbSetData [(lbSize _mvalue)-1, "500"];
-_mIndex = _mvalue lbadd "$1000"; _mvalue lbSetData [(lbSize _mvalue)-1, "1000"];
-_mIndex = _mvalue lbadd "$2000"; _mvalue lbSetData [(lbSize _mvalue)-1, "2000"];
-_mIndex = _mvalue lbadd "$3000"; _mvalue lbSetData [(lbSize _mvalue)-1, "3000"];
-_mIndex = _mvalue lbadd "$4000"; _mvalue lbSetData [(lbSize _mvalue)-1, "4000"];
-_mIndex = _mvalue lbadd "$5000"; _mvalue lbSetData [(lbSize _mvalue)-1, "5000"];
-
-if(str(playerSide) == "west" || str(playerSide) == "east") then {
-	_groupButton ctrlShow false;
+	_moneyText ctrlSetText format["%1", player getVariable "cmoney"];
+	_moneyValue ctrlSetText format["%1", player getVariable "cmoney"];
 };

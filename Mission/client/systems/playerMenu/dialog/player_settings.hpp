@@ -8,7 +8,6 @@ class playerSettings {
 	onLoad = "[] execVM 'client\systems\playerMenu\item_list.sqf'";
 
 	class controlsBackground {
-
 		class MainBG : w_RscPicture {
 			idc = -1;
 			text = "\ca\ui\data\ui_background_controlers_ca.paa";
@@ -51,7 +50,6 @@ class playerSettings {
 	};
 
 	class controls {
-
 		class itemList : w_Rsclist {
 			idc = item_list;
 			x = 0.49; y = 0.200;
@@ -86,10 +84,11 @@ class playerSettings {
 			w = 0.125; h = 0.033 * safezoneH;
 		};
 
-		class moneyInput: w_RscCombo {
+		class moneyInput: w_RscEdit {
 			idc = money_value;
 			x = 0.625; y = 0.605;
-			w = .1; h = .030;
+			w = 0.10; h = 0.02 * safezoneH;
+			sizeEx = 0.03;
 		};
 
 		class DropcButton : w_RscButton {
@@ -135,6 +134,7 @@ class playerSettings {
 			x = 0.02; y = 0.55;
 			w = 0.125; h = 0.033 * safezoneH;
 		};
+
 		class btnDistanceInsane : w_RscButton {
 			text = "Insane";
 			onButtonClick = "setViewDistance 5000;";

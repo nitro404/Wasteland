@@ -10,7 +10,7 @@
 #define GET_CTRL(a) (GET_DISPLAY displayCtrl ##a)
 #define GET_SELECTED_DATA(a) ([##a] call {_idc = _this select 0; _selection = (lbSelection GET_CTRL(_idc) select 0); if(isNil {_selection}) then { _selection = 0 }; (GET_CTRL(_idc) lbData _selection)})
 
-private["_playerMenuDialog", "_playerMenuDialogMoneyText"];
+private["_playerMenuDialog", "_playerMenuDialogMoneyText", "_playerMenuDialogMoneyValue"];
 
 if(isNil {dropActive}) then { dropActive = false };
 if(isNil {MoneyInUse}) then { MoneyInUse = false };
@@ -18,13 +18,15 @@ if(isNil {player getVariable "cmoney"}) then {player setVariable["cmoney", 0, tr
 
 disableSerialization;
 
-_moneyAmount = parseNumber(GET_SELECTED_DATA(money_value));
+_moneyAmount = floor(parseNumber(ctrlText money_value));
+
+if(_moneyAmount < 1) exitWith {
+	hint format["You must enter a valid number!"];
+};
 
 if((player getVariable "cmoney" < _moneyAmount) OR (player getVariable "cmoney" < 0)) exitwith {
 	hint format["You don't have $%1 to drop!", _moneyAmount];
 };
-
-if(_moneyAmount < 1) exitWith { };
 
 if((vehicle player) != player) exitWith {
 	player globalChat "You can't drop money while in a vehicle.";
@@ -42,6 +44,7 @@ _playerMenuDialog = findDisplay playersys_DIALOG;
 
 if(!isNil {_playerMenuDialog}) then {
 	_playerMenuDialogMoneyText = _playerMenuDialog displayCtrl money_text;
+	_playerMenuDialogMoneyValue = _playerMenuDialog displayCtrl money_value;
 
 	if(!isNil {_playerMenuDialogMoneyText}) then {
 		if(isNil {player getVariable "cmoney"}) then {
@@ -49,6 +52,15 @@ if(!isNil {_playerMenuDialog}) then {
 		}
 		else {
 			_playerMenuDialogMoneyText ctrlSetText format["%1", player getVariable "cmoney"];
+		};
+	};
+
+	if(!isNil {_playerMenuDialogMoneyValue}) then {
+		if(isNil {player getVariable "cmoney"}) then {
+			_playerMenuDialogMoneyValue ctrlSetText "0";
+		}
+		else {
+			_playerMenuDialogMoneyValue ctrlSetText format["%1", player getVariable "cmoney"];
 		};
 	};
 };
