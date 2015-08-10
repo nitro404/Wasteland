@@ -40,6 +40,22 @@ class playerSettings {
 			w = 0.3; h = 0.05;
 		};
 
+		class ServerUptimeText : w_RscText {
+			idc = uptime_text;
+			sizeEx = 0.03;
+			text = "";
+			x = 0.06; y = 0.254;
+			w = 0.3; h = 0.05;
+		};
+
+		class ServerFrameRateText : w_RscText {
+			idc = frame_rate_text;
+			text = "";
+			sizeEx = 0.03;
+			x = 0.06; y = 0.193;
+			w = 0.3; h = 0.05;
+		};
+
 		class distanceText : w_RscText {
 			idc = view_range_text;
 			text = "View range:";

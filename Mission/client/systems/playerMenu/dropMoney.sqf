@@ -43,17 +43,7 @@ player setVariable["cmoney", (player getVariable "cmoney") - _moneyAmount, true]
 _playerMenuDialog = findDisplay playersys_DIALOG;
 
 if(!isNil {_playerMenuDialog}) then {
-	_playerMenuDialogMoneyText = _playerMenuDialog displayCtrl money_text;
 	_playerMenuDialogMoneyValue = _playerMenuDialog displayCtrl money_value;
-
-	if(!isNil {_playerMenuDialogMoneyText}) then {
-		if(isNil {player getVariable "cmoney"}) then {
-			_playerMenuDialogMoneyText ctrlSetText "0";
-		}
-		else {
-			_playerMenuDialogMoneyText ctrlSetText format["%1", player getVariable "cmoney"];
-		};
-	};
 
 	if(!isNil {_playerMenuDialogMoneyValue}) then {
 		if(isNil {player getVariable "cmoney"}) then {
