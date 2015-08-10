@@ -13,11 +13,8 @@ disableSerialization;
 
 private["_dialog", "_moneyText", "_moneyValue", "_rogue", "_uptime", "_frameRate", "_timeText", "_missionUptimeText"];
 
-//_playerDialog = createDialog "playerSettings";
-
-createDialog "playerSettings";
-_playerDialog = uiNamespace getVariable "playerSettings";
-_playerDialog displayAddEventHandler["KeyDown", "_return = false; if(playerMenuDialogActive && (_this select 1) == 1) then {_return = true;}; _return"];
+_dialog = createDialog "playerSettings";
+_dialog displayAddEventHandler["KeyDown", "_return = false; if(playerMenuDialogActive && (_this select 1) == 1) then {_return = true;}; _return"];
 
 playerMenuDialogActive = true;
 
