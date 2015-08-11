@@ -20,9 +20,17 @@ class RespawnSelectionDialog {
 	onLoad = "uiNamespace setVariable ['RespawnSelectionDialog', _this select 0]";
 
 	class controlsBackground {
+		class BackgroundImage: w_RscPicture {
+			idc = -1;
+			text = "Images\Respawn.jpg";
+			style = ST_PICTURE;
+			x = safezoneX;
+			y = safezoneY;
+			w = safezoneW;
+			h = safezoneH;
+		};
 
-		class MainBackground: w_RscPicture
-		{
+		class MainBackground: w_RscPicture {
 			idc = -1;
 			text = "\ca\ui\data\ui_background_controlers_ca.paa";
 
@@ -32,8 +40,7 @@ class RespawnSelectionDialog {
 			h = 0.650 * safezoneH;
 		};
 
-		class RespawnMenuTitle: w_RscText
-		{
+		class RespawnMenuTitle: w_RscText {
 			idc = -1;
 			text = "Respawn Menu";
 			sizeEx = 0.06;
@@ -44,8 +51,7 @@ class RespawnSelectionDialog {
 			h = 0.035 * safezoneH;
 		};
 
-		class RespawnStructuredText: w_RscStructuredText
-		{
+		class RespawnStructuredText: w_RscStructuredText {
 			idc = respawn_Content_Text;
 			text = "";
 
@@ -55,8 +61,7 @@ class RespawnSelectionDialog {
 			h = 0.060 * safezoneH;
 		};
 
-		class TopLine: w_RscPicture
-		{
+		class TopLine: w_RscPicture {
 			idc = -1;
 			text = "#(argb,8,8,3)color(1,1,1,1)";
 
@@ -66,8 +71,7 @@ class RespawnSelectionDialog {
 			h = 0.0025 * safezoneH;
 		};
 
-		class MiddleLine: w_RscPicture
-		{
+		class MiddleLine: w_RscPicture {
 			idc = -1;
 			text = "#(argb,8,8,3)color(1,1,1,1)";
 
@@ -77,8 +81,7 @@ class RespawnSelectionDialog {
 			h = 0.0025 * safezoneH;
 		};
 
-		class BottomLine: w_RscPicture
-		{
+		class BottomLine: w_RscPicture {
 			idc = -1;
 			text = "#(argb,8,8,3)color(1,1,1,1)";
 
@@ -88,8 +91,7 @@ class RespawnSelectionDialog {
 			h = 0.0025 * safezoneH;
 		};
 
-		class MissionUptimeText: w_RscText
-		{
+		class MissionUptimeText: w_RscText {
 			idc = respawn_MissionUptime_Text;
 			text = "Server Uptime: 00:00:00";
 
@@ -101,9 +103,7 @@ class RespawnSelectionDialog {
 	};
 
 	class controls {
-
-		class PlayersInTown0: w_RscText
-		{
+		class PlayersInTown0: w_RscText {
 			idc = respawn_PlayersInTown_Text0;
 			text = "";
 
@@ -113,8 +113,7 @@ class RespawnSelectionDialog {
 			h = 0.025 * safezoneH;
 		};
 
-		class PlayersInTown1: w_RscText
-		{
+		class PlayersInTown1: w_RscText {
 			idc = respawn_PlayersInTown_Text1;
 			text = "";
 
@@ -124,8 +123,7 @@ class RespawnSelectionDialog {
 			h = 0.025 * safezoneH;
 		};
 
-		class PlayersInTown2: w_RscText
-		{
+		class PlayersInTown2: w_RscText{
 			idc = respawn_PlayersInTown_Text2;
 			text = "";
 
@@ -135,8 +133,7 @@ class RespawnSelectionDialog {
 			h = 0.025 * safezoneH;
 		};
 
-		class PlayersInTown3: w_RscText
-		{
+		class PlayersInTown3: w_RscText {
 			idc = respawn_PlayersInTown_Text3;
 			text = "";
 
@@ -146,8 +143,7 @@ class RespawnSelectionDialog {
 			h = 0.025 * safezoneH;
 		};
 
-		class PlayersInTown4: w_RscText
-		{
+		class PlayersInTown4: w_RscText {
 			idc = respawn_PlayersInTown_Text4;
 			text = "";
 
@@ -157,8 +153,7 @@ class RespawnSelectionDialog {
 			h = 0.025 * safezoneH;
 		};
 
-		class RandomSpawnButtonGround: w_RscButton
-		{
+		class RandomSpawnButtonGround: w_RscButton {
 			idc = -1;
 			onButtonClick = "[0] execVM 'client\functions\spawnAction.sqf'";
 			text = "Random Ground";
@@ -169,8 +164,7 @@ class RespawnSelectionDialog {
 			h = 0.033 * safezoneH;
 		};
 
-		class RandomSpawnButtonHALO: w_RscButton
-		{
+		class RandomSpawnButtonHALO: w_RscButton {
 			idc = -1;
 			onButtonClick = "[2] execVM 'client\functions\spawnAction.sqf'";
 			text = "Random HALO";
@@ -181,8 +175,7 @@ class RespawnSelectionDialog {
 			h = 0.033 * safezoneH;
 		};
 
-		class LoadTownsButton: w_RscButton
-		{
+		class LoadTownsButton: w_RscButton {
 			idc = -1;
 			onButtonClick = "[0] execVM 'client\functions\switchButtonNames.sqf'";
 			text = "Towns";
@@ -193,8 +186,7 @@ class RespawnSelectionDialog {
 			h = 0.033 * safezoneH;
 		};
 
-		class LoadBeaconsButton: w_RscButton
-		{
+		class LoadBeaconsButton: w_RscButton {
 			idc = -1;
 			onButtonClick = "[1] execVM 'client\functions\switchButtonNames.sqf'";
 			text = "Beacons";
@@ -205,8 +197,7 @@ class RespawnSelectionDialog {
 			h = 0.033 * safezoneH;
 		};
 
-		class TownButton0: w_RscButton
-		{
+		class TownButton0: w_RscButton {
 			idc = respawn_Town_Button0;
 			onButtonClick = "[1,0] execVM 'client\functions\spawnAction.sqf'";
 			text = "";
@@ -217,8 +208,7 @@ class RespawnSelectionDialog {
 			h = 0.033 * safezoneH;
 		};
 
-		class TownButton1: w_RscButton
-		{
+		class TownButton1: w_RscButton {
 			idc = respawn_Town_Button1;
 			onButtonClick = "[1,1] execVM 'client\functions\spawnAction.sqf'";
 			text = "";
@@ -229,8 +219,7 @@ class RespawnSelectionDialog {
 			h = 0.033 * safezoneH;
 		};
 
-		class TownButton2: w_RscButton
-		{
+		class TownButton2: w_RscButton {
 			idc = respawn_Town_Button2;
 			onButtonClick = "[1,2] execVM 'client\functions\spawnAction.sqf'";
 			text = "";
@@ -241,8 +230,7 @@ class RespawnSelectionDialog {
 			h = 0.033 * safezoneH;
 		};
 
-		class TownButton3: w_RscButton
-		{
+		class TownButton3: w_RscButton {
 			idc = respawn_Town_Button3;
 			onButtonClick = "[1,3] execVM 'client\functions\spawnAction.sqf'";
 			text = "";
@@ -253,8 +241,7 @@ class RespawnSelectionDialog {
 			h = 0.033 * safezoneH;
 		};
 
-		class TownButton4: w_RscButton
-		{
+		class TownButton4: w_RscButton {
 			idc = respawn_Town_Button4;
 			onButtonClick = "[1,4] execVM 'client\functions\spawnAction.sqf'";
 			text = "";
@@ -265,8 +252,7 @@ class RespawnSelectionDialog {
 			h = 0.033 * safezoneH;
 		};
 
-		class MoreButton: w_RscButton
-		{
+		class MoreButton: w_RscButton {
 			idc = respawn_More_Button;
 			onButtonClick = "[2] execVM 'client\functions\switchButtonNames.sqf'";
 			text = "More";
@@ -277,8 +263,7 @@ class RespawnSelectionDialog {
 			h = 0.033 * safezoneH;
 		};
 
-		class BackToLobby: w_RscButton
-		{
+		class BackToLobby: w_RscButton {
 			idc = -1;
 			onButtonClick = "endMission 'LOSER'";
 			text = "Lobby";
