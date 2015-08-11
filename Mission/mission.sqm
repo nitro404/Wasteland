@@ -79,7 +79,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=131;
+		items=134;
 		class Item0
 		{
 			side="WEST";
@@ -2568,9 +2568,68 @@ class Mission
 				items=1;
 				class Item0
 				{
+					position[]={12892.953,174,4455.2231};
+					azimut=358.6969;
+					id=194;
+					side="LOGIC";
+					vehicle="CIV_Contractor1_BAF";
+					leader=1;
+					skill=0.60000002;
+					text="gs7";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this attachTo[fp13, [3.5,-1,0]]; removeAllWeapons this;";
+				};
+			};
+		};
+		class Item131
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3683.8315,310.98566,8909.1836};
+					azimut=151.632;
+					id=198;
+					side="LOGIC";
+					vehicle="CIV_Contractor1_BAF";
+					leader=1;
+					skill=0.60000002;
+					text="gs5";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this attachTo[fp11,[3.5,2.5,0.08]]; removeAllWeapons this;";
+				};
+			};
+		};
+		class Item132
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12245.327,17.191427,9545.2402};
+					azimut=151.632;
+					id=202;
+					side="LOGIC";
+					vehicle="CIV_Contractor1_BAF";
+					leader=1;
+					skill=0.60000002;
+					text="gs6";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this attachTo[fp12,[3.5,2.5,0.08]]; removeAllWeapons this;";
+				};
+			};
+		};
+		class Item133
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
 					position[]={2808.8745,277.14789,9963.2939};
-					azimut=0;
-					id=155;
+					id=203;
 					side="LOGIC";
 					vehicle="TK_CIV_Takistani04_EP1";
 					leader=1;
@@ -2583,7 +2642,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=64;
+		items=73;
 		class Item0
 		{
 			position[]={8343.0654,26.779518,3340.9795};
@@ -3246,6 +3305,107 @@ class Mission
 			skill=0.60000002;
 			text="fp10";
 			init="this setVariable [""R3F_LOG_disabled"", true]; this setVectorUp [0,-0.1,1];";
+		};
+		class Item64
+		{
+			position[]={12888.816,174,4456.4243};
+			special="NONE";
+			id=195;
+			side="EMPTY";
+			vehicle="Land_Campfire_burning";
+			leader=1;
+			skill=0.60000002;
+			text="fp13";
+			init="this setVariable [""R3F_LOG_disabled"", true];";
+		};
+		class Item65
+		{
+			position[]={12896.137,174,4454.2139};
+			azimut=309;
+			id=196;
+			side="EMPTY";
+			vehicle="USBasicAmmunitionBox";
+			skill=0.60000002;
+			text="g_ammo_7";
+			init="clearWeaponCargo this; clearMagazineCargo this; this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+		};
+		class Item66
+		{
+			position[]={12893.677,174,4456.084};
+			azimut=180;
+			id=197;
+			side="EMPTY";
+			vehicle="Land_bouda2_vnitrek";
+			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+		};
+		class Item67
+		{
+			position[]={3684.4731,310.98999,8914.3037};
+			azimut=140;
+			special="NONE";
+			id=199;
+			side="EMPTY";
+			vehicle="Land_Campfire_burning";
+			leader=1;
+			skill=0.60000002;
+			text="fp11";
+			init="this setVariable [""R3F_LOG_disabled"", true];";
+		};
+		class Item68
+		{
+			position[]={3681.688,310.84909,8906.0078};
+			azimut=45;
+			id=200;
+			side="EMPTY";
+			vehicle="USBasicAmmunitionBox";
+			skill=0.60000002;
+			text="g_ammo_5";
+			init="clearWeaponCargo this; clearMagazineCargo this; this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+		};
+		class Item69
+		{
+			position[]={3684.2515,310.98306,8908.7021};
+			azimut=278;
+			id=201;
+			side="EMPTY";
+			vehicle="Land_bouda2_vnitrek";
+			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+		};
+		class Item70
+		{
+			position[]={12245.969,16.635458,9550.3604};
+			azimut=140;
+			special="NONE";
+			id=203;
+			side="EMPTY";
+			vehicle="Land_Campfire_burning";
+			leader=1;
+			skill=0.60000002;
+			text="fp12";
+			init="this setVariable [""R3F_LOG_disabled"", true];";
+		};
+		class Item71
+		{
+			position[]={12243.184,17.692001,9542.0645};
+			azimut=45;
+			id=204;
+			side="EMPTY";
+			vehicle="USBasicAmmunitionBox";
+			skill=0.60000002;
+			text="g_ammo_6";
+			init="clearWeaponCargo this; clearMagazineCargo this; this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+		};
+		class Item72
+		{
+			position[]={12245.747,17.219893,9544.7588};
+			azimut=278;
+			id=205;
+			side="EMPTY";
+			vehicle="Land_bouda2_vnitrek";
+			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
 		};
 	};
 	class Markers

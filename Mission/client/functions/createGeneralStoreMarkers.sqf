@@ -6,7 +6,9 @@
 
 _generalStores = ["generalStore1", "generalStore2", "generalStore3", "generalStore4", "generalStore5", "generalStore6"];
 
-waitUntil {{!isNull(missionNamespace getVariable _x) && ((getPos(missionNamespace getVariable _x) distance [0,0,0]) > 100)} count _generalStores == count _generalStores}; {
+waitUntil {{!isNull(missionNamespace getVariable _x) && ((getPos(missionNamespace getVariable _x) distance [0,0,0]) > 100)} count _generalStores == count _generalStores};
+
+{
 	_unit = missionNamespace getVariable _x;
 
 	_markerName = format["marker_shop_title_%1",_x];
@@ -18,4 +20,3 @@ waitUntil {{!isNull(missionNamespace getVariable _x) && ((getPos(missionNamespac
 	_markerName setMarkerSizeLocal [1, 1];
 	_markerName setMarkerTextLocal "General Store";
 } forEach _generalStores;
-
