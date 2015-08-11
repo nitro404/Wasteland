@@ -79,7 +79,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=130;
+		items=131;
 		class Item0
 		{
 			side="WEST";
@@ -1348,10 +1348,10 @@ class Mission
 				class Item0
 				{
 					position[]={6016.0107,305.79456,7815.5566};
-					azimut=328.64401;
+					azimut=328.64359;
 					id=91;
 					side="LOGIC";
-					vehicle="LocationLogic";
+					vehicle="TK_CIV_Takistani04_EP1";
 					leader=1;
 					skill=0.60000002;
 					text="generalStore2";
@@ -2560,10 +2560,30 @@ class Mission
 				};
 			};
 		};
+		class Item130
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2808.8745,277.14789,9963.2939};
+					azimut=0;
+					id=155;
+					side="LOGIC";
+					vehicle="TK_CIV_Takistani04_EP1";
+					leader=1;
+					skill=0.60000002;
+					text="generalStore6";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this attachTo[fp10,[0,2,0]];";
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
-		items=63;
+		items=64;
 		class Item0
 		{
 			position[]={8343.0654,26.779518,3340.9795};
@@ -3213,6 +3233,19 @@ class Mission
 			side="EMPTY";
 			vehicle="HeliHRescue";
 			skill=0.60000002;
+		};
+		class Item63
+		{
+			position[]={2812.1284,277.48145,9956.9639};
+			azimut=-53.868099;
+			special="NONE";
+			id=193;
+			side="EMPTY";
+			vehicle="Land_Campfire_burning";
+			leader=1;
+			skill=0.60000002;
+			text="fp10";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this setVectorUp [0,-0.1,1];";
 		};
 	};
 	class Markers
