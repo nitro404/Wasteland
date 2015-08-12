@@ -2568,7 +2568,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12892.953,174,4455.2231};
+					position[]={12897.021,174,4456.21};
 					azimut=358.6969;
 					id=194;
 					side="LOGIC";
@@ -2588,7 +2588,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={3683.8315,310.98566,8909.1836};
+					position[]={3816.2803,315.73947,8942.3672};
 					azimut=151.632;
 					id=198;
 					side="LOGIC";
@@ -2608,9 +2608,9 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12245.327,17.191427,9545.2402};
+					position[]={12249.993,19.143929,9466.8965};
 					azimut=151.632;
-					id=202;
+					id=201;
 					side="LOGIC";
 					vehicle="CIV_Contractor1_BAF";
 					leader=1;
@@ -2629,7 +2629,7 @@ class Mission
 				class Item0
 				{
 					position[]={2808.8745,277.14789,9963.2939};
-					id=203;
+					id=2023;
 					side="LOGIC";
 					vehicle="TK_CIV_Takistani04_EP1";
 					leader=1;
@@ -2642,7 +2642,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=73;
+		items=72;
 		class Item0
 		{
 			position[]={8343.0654,26.779518,3340.9795};
@@ -3308,7 +3308,7 @@ class Mission
 		};
 		class Item64
 		{
-			position[]={12888.816,174,4456.4243};
+			position[]={12892.987,174,4456.7637};
 			special="NONE";
 			id=195;
 			side="EMPTY";
@@ -3320,7 +3320,7 @@ class Mission
 		};
 		class Item65
 		{
-			position[]={12896.137,174,4454.2139};
+			position[]={12900.632,173.98804,4454.5454};
 			azimut=309;
 			id=196;
 			side="EMPTY";
@@ -3331,7 +3331,7 @@ class Mission
 		};
 		class Item66
 		{
-			position[]={12893.677,174,4456.084};
+			position[]={12898.368,174,4456.5464};
 			azimut=180;
 			id=197;
 			side="EMPTY";
@@ -3341,7 +3341,7 @@ class Mission
 		};
 		class Item67
 		{
-			position[]={3684.4731,310.98999,8914.3037};
+			position[]={3817.9368,315.73947,8945.2324};
 			azimut=140;
 			special="NONE";
 			id=199;
@@ -3354,8 +3354,8 @@ class Mission
 		};
 		class Item68
 		{
-			position[]={3681.688,310.84909,8906.0078};
-			azimut=45;
+			position[]={3817.8933,315.73947,8941.7783};
+			azimut=295;
 			id=200;
 			side="EMPTY";
 			vehicle="USBasicAmmunitionBox";
@@ -3365,20 +3365,10 @@ class Mission
 		};
 		class Item69
 		{
-			position[]={3684.2515,310.98306,8908.7021};
-			azimut=278;
-			id=201;
-			side="EMPTY";
-			vehicle="Land_bouda2_vnitrek";
-			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
-		};
-		class Item70
-		{
-			position[]={12245.969,16.635458,9550.3604};
+			position[]={12246.294,19.058096,9468.9395};
 			azimut=140;
 			special="NONE";
-			id=203;
+			id=202;
 			side="EMPTY";
 			vehicle="Land_Campfire_burning";
 			leader=1;
@@ -3386,22 +3376,22 @@ class Mission
 			text="fp12";
 			init="this setVariable [""R3F_LOG_disabled"", true];";
 		};
-		class Item71
+		class Item70
 		{
-			position[]={12243.184,17.692001,9542.0645};
+			position[]={12250.623,19.380741,9463.502};
 			azimut=45;
-			id=204;
+			id=203;
 			side="EMPTY";
 			vehicle="USBasicAmmunitionBox";
 			skill=0.60000002;
 			text="g_ammo_6";
 			init="clearWeaponCargo this; clearMagazineCargo this; this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
 		};
-		class Item72
+		class Item71
 		{
-			position[]={12245.747,17.219893,9544.7588};
-			azimut=278;
-			id=205;
+			position[]={12250.65,19.174528,9466.2285};
+			azimut=230;
+			id=204;
 			side="EMPTY";
 			vehicle="Land_bouda2_vnitrek";
 			skill=0.60000002;
