@@ -3410,7 +3410,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=922;
+		items=914;
 		class Item0
 		{
 			position[]={10472.047,6,2300.7461};
@@ -3563,31 +3563,31 @@ class Mission
 		};
 		class Item25
 		{
-			position[]={4806.6226,8.9401455,2502.866};
+			position[]={4596.1626,8.3537941,2487.02};
 			name="Spawn_7";
 			type="Empty";
 		};
 		class Item26
 		{
-			position[]={4696.4448,9,2564.6689};
+			position[]={4679.7456,8.9441195,2599.1909};
 			name="Spawn_8";
 			type="Empty";
 		};
 		class Item27
 		{
-			position[]={5094.1982,8.977356,2325.1353};
+			position[]={4599.731,5.9590182,2394.6128};
 			name="Spawn_9";
 			type="Empty";
 		};
 		class Item28
 		{
-			position[]={5132.373,8.8999996,2311.1411};
+			position[]={4457.3682,6.479435,2512.72};
 			name="Spawn_10";
 			type="Empty";
 		};
 		class Item29
 		{
-			position[]={5151.8223,6,2091.2559};
+			position[]={4528.3242,5.992517,2328.5632};
 			name="Spawn_11";
 			type="Empty";
 		};
@@ -5069,31 +5069,31 @@ class Mission
 		};
 		class Item276
 		{
-			position[]={12464.598,159,12561.552};
+			position[]={12229.31,159,12585.823};
 			name="Spawn_259";
 			type="Empty";
 		};
 		class Item277
 		{
-			position[]={12191.01,159,12653.024};
+			position[]={12170.586,158.89999,12587.29};
 			name="Spawn_260";
 			type="Empty";
 		};
 		class Item278
 		{
-			position[]={11942.869,159,12724.646};
+			position[]={11973.531,158.88121,12654.837};
 			name="Spawn_261";
 			type="Empty";
 		};
 		class Item279
 		{
-			position[]={11919.438,142.69325,12970.692};
+			position[]={11240.556,190.43367,12157.035};
 			name="Spawn_262";
 			type="Empty";
 		};
 		class Item280
 		{
-			position[]={11922.498,137.66875,13201.079};
+			position[]={11137.458,200.61867,12169.018};
 			name="Spawn_263";
 			type="Empty";
 		};
@@ -7883,37 +7883,37 @@ class Mission
 		};
 		class Item745
 		{
-			position[]={4845.0576,339.08075,10218.743};
+			position[]={4759.8887,339,10294.61};
 			name="Spawn_731";
 			type="Empty";
 		};
 		class Item746
 		{
-			position[]={4868.0879,339.08075,10176.915};
+			position[]={4581.9917,339,10637.567};
 			name="Spawn_732";
 			type="Empty";
 		};
 		class Item747
 		{
-			position[]={4894.877,339.08075,10137.435};
+			position[]={4984.4736,338.99402,9929.6943};
 			name="Spawn_733";
 			type="Empty";
 		};
 		class Item748
 		{
-			position[]={4922.6055,339.08075,10093.255};
+			position[]={4970.6226,339,10152.997};
 			name="Spawn_734";
 			type="Empty";
 		};
 		class Item749
 		{
-			position[]={4947.0459,339.08075,10050.017};
+			position[]={4982.377,338.98999,9969.5742};
 			name="Spawn_735";
 			type="Empty";
 		};
 		class Item750
 		{
-			position[]={4999.2148,339,9999.7275};
+			position[]={5011.0737,338.99799,10004.559};
 			name="Spawn_736";
 			type="Empty";
 		};
@@ -7931,13 +7931,13 @@ class Mission
 		};
 		class Item753
 		{
-			position[]={4791.8193,338.98999,10337.7};
+			position[]={4813.9736,338.98999,10314.797};
 			name="Spawn_739";
 			type="Empty";
 		};
 		class Item754
 		{
-			position[]={4554.395,339,10721.933};
+			position[]={4611.9976,339,10654.934};
 			name="Spawn_740";
 			type="Empty";
 		};
@@ -7949,7 +7949,7 @@ class Mission
 		};
 		class Item756
 		{
-			position[]={4064.7534,339.01022,10848.585};
+			position[]={4803.3857,339,10278.157};
 			name="Spawn_742";
 			type="Empty";
 		};
@@ -8172,7 +8172,7 @@ class Mission
 		};
 		class Item792
 		{
-			position[]={4889.7969,9,2413.7659};
+			position[]={4849.686,9,2505.8723};
 			name="heliSpawn_8";
 			type="Empty";
 			colorName="ColorGreen";
@@ -8214,7 +8214,7 @@ class Mission
 		};
 		class Item798
 		{
-			position[]={12111.478,158.97487,12706.884};
+			position[]={12106.433,159.08449,12618.8};
 			name="heliSpawn_14";
 			type="Empty";
 			colorName="ColorGreen";
@@ -8235,7 +8235,7 @@ class Mission
 		};
 		class Item801
 		{
-			position[]={13307.346,63.564404,3232.9238};
+			position[]={4139.1201,339,10728.26};
 			name="heliSpawn_17";
 			type="Empty";
 			colorName="ColorGreen";
@@ -8256,7 +8256,7 @@ class Mission
 		};
 		class Item804
 		{
-			position[]={2664.1899,566.02362,14196.062};
+			position[]={4735.1968,339,10194.75};
 			name="heliSpawn_20";
 			type="Empty";
 			colorName="ColorGreen";
@@ -8277,7 +8277,7 @@ class Mission
 		};
 		class Item807
 		{
-			position[]={7241.978,366.00693,14138.807};
+			position[]={11944.71,159,12679.243};
 			name="heliSpawn_23";
 			type="Empty";
 			colorName="ColorGreen";
@@ -8967,56 +8967,8 @@ class Mission
 			type="Empty";
 			colorName="ColorOrange";
 		};
-		class Item906
-		{
-			position[]={4517.9224,339.07074,10782.291};
-			name="Spawn_731_1";
-			type="Empty";
-		};
-		class Item907
-		{
-			position[]={4064.7534,339.01022,10848.585};
-			name="Spawn_742_1";
-			type="Empty";
-		};
-		class Item908
-		{
-			position[]={4095.4888,339,10772.276};
-			name="Spawn_743_1";
-			type="Empty";
-		};
-		class Item909
-		{
-			position[]={11995.182,158.85703,12627.534};
-			name="Spawn_731_2";
-			type="Empty";
-		};
-		class Item910
-		{
-			position[]={11994.623,158.85703,12628.094};
-			name="Spawn_731_2_1";
-			type="Empty";
-		};
-		class Item911
-		{
-			position[]={4189.6289,339,10821.728};
-			name="Spawn_740_1";
-			type="Empty";
-		};
-		class Item912
-		{
-			position[]={4128.6885,339.00745,10925.591};
-			name="Spawn_741_1";
-			type="Empty";
-		};
-		class Item913
-		{
-			position[]={4153.1563,339,10882.086};
-			name="Spawn_731_1_1";
-			type="Empty";
-		};
 		// Nizhnoye Repair Pad
-		class Item914
+		class Item906
 		{
 			position[]={13046.851,5.7819242,8362.0518};
 			name="repair1";
@@ -9025,7 +8977,7 @@ class Mission
 			colorName="ColorBrown";
 		};
 		// Pobeda Dam Repair Pad
-		class Item915
+		class Item907
 		{
 			position[]={9856.5889,132.11086,13323.929};
 			name="repair2";
@@ -9034,7 +8986,7 @@ class Mission
 			colorName="ColorBrown";
 		};
 		// Gorka Repair Pad
-		class Item916
+		class Item908
 		{
 			position[]={9137.3613,384.43088,9216.4424};
 			name="repair3";
@@ -9043,7 +8995,7 @@ class Mission
 			colorName="ColorBrown";
 		};
 		// Kamenka Repair Pad
-		class Item917
+		class Item909
 		{
 			position[]={1655.0125,16.846397,2331.7554};
 			name="repair4";
@@ -9052,7 +9004,7 @@ class Mission
 			colorName="ColorBrown";
 		};
 		// Myshkino Repair Pad
-		class Item918
+		class Item910
 		{
 			position[]={1773.2969,285.86212,7809.6797};
 			name="repair5";
@@ -9061,7 +9013,7 @@ class Mission
 			colorName="ColorBrown";
 		};
 		// Cap Golova Repair Pad
-		class Item919
+		class Item911
 		{
 			position[]={8032.6704,5.1534977,2888.1697};
 			name="repair6";
@@ -9070,7 +9022,7 @@ class Mission
 			colorName="ColorBrown";
 		};
 		// Petrovka Repair Pad
-		class Item920
+		class Item912
 		{
 			position[]={4691.8418,212.60541,12380.904};
 			name="repair7";
@@ -9079,7 +9031,7 @@ class Mission
 			colorName="ColorBrown";
 		};
 		// Vyshnoye Repair Pad
-		class Item921
+		class Item913
 		{
 			position[]={7322.3247,252.4637,5983.1963};
 			name="repair8";
