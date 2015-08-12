@@ -16,7 +16,7 @@ _pos = _this select 0;
 if(_type == 0) then {
 	//Car Initilization, Pick Car Type.
     _cartype = civilianVehicles select (random (count civilianVehicles - 1));
-    _car = createVehicle [_cartype, _pos, [], 20, "None"];
+    _car = createVehicle [_cartype, _pos, [], 5, "None"];
     _car setpos [getpos _car select 0, getpos _car select 1, 0];
 	_car setVehicleInit "nul=[this, 300, 3600, 0, false] execVM 'server\functions\vehicle.sqf'";
 	processInitCommands;
@@ -40,7 +40,7 @@ if(_type == 0) then {
 if(_type == 1) then {
 	//Car Initilization, Pick Car Type.
     _cartype = militaryVehicles select (random (count militaryVehicles - 1));
-    _car = createVehicle [_cartype,_pos, [], 30, "None"];
+    _car = createVehicle [_cartype,_pos, [], 5, "None"];
     _car setpos [getpos _car select 0, getpos _car select 1, 0];
 	_car setVehicleInit "nul=[this, 300, 0, 0, false] execVM 'server\functions\vehicle.sqf'";
 	processInitCommands;
@@ -65,7 +65,7 @@ if(_type == 1) then {
 if(_type == 2) then {
 	//Car Initilization, Pick Car Type.
     _cartype = armedMilitaryVehicles select (random (count armedMilitaryVehicles - 1));
-    _car = createVehicle [_cartype, _pos, [], 30, "None"];
+    _car = createVehicle [_cartype, _pos, [], 5, "None"];
     _car setpos [getpos _car select 0, getpos _car select 1, 0];
     _car setVehicleInit "nul=[this, 300, 0, 0, false] execVM 'server\functions\vehicle.sqf'";
 	processInitCommands;
