@@ -3,8 +3,8 @@
 //	@file Author: [404] Deadbeat, [404] Costlyy
 //	@file Created: 30th May 13
 
-player createDiarySubject ["Event Horizon Gaming", "Event Horizon Gaming Information"];
-player createDiarySubject ["Changelog", "Rolling Thunder Wasteland Changelog"];
+player createDiarySubject ["Event Horizon Gaming", "Event Horizon Information"];
+player createDiarySubject ["Changelog", "Rolling Thunder Changelog"];
 player createDiarySubject ["Wasteland", "What Is Wasteland?"];
 
 player createDiaryRecord["Changelog",
@@ -14,12 +14,12 @@ player createDiaryRecord["Changelog",
 	Date: August 17, 2015<br/>
 	<br/>
 	General:<br/>
-		+ Removed food and water / hunger & thirst system.<br/>
+		+ Removed food and water / hunger &amp; thirst system.<br/>
 		+ Disabled dynamic weather.<br/>
 		+ Enabled full speed running with base pieces.<br/>
 		+ Disabled global communication channel.<br/>
 		+ Players now spawn with:<br/>
-			- Glock 17 & 4 magazines<br/>
+			- Glock 17 &amp; 4 magazines<br/>
 			- Binoculars<br/>
 			- GPS<br/>
 			- Full Fuel Can<br/>
@@ -57,18 +57,20 @@ player createDiaryRecord["Changelog",
 		+ Player money label and input field now update automatically.<br/>
 		+ Added server uptime and server frame rate information.<br/>
 	<br/>
+	Continued on next page...<br/>
 	Spawn System:<br/>
 		+ Added new and improved spawning system!<br/>
 		+ Added random HALO jump option to spawn menu.<br/>
 		+ Independent players can now spawn on beacons without requiring a group.<br/>
 		+ When spawning on a beacon you now face the direction the beacon was placed.<br/>
-		+ Added altimeter & help message for deploying parachute to all HALO jump options.<br/>
+		+ Added altimeter &amp; help message for deploying parachute to all HALO jump options.<br/>
 		+ Multiple pages of spawn locations can now be viewed in the spawn screen.<br/>
-		+ Spawn beacons now indicate their relative position & the direction they are facing.<br/>
+		+ Spawn beacons now indicate their relative position &amp; the direction they are facing.<br/>
 		+ Players can now place new spawn beacons (old ones are de-activated, but not removed from the world).<br/>
 		+ Spawn beacons are now placed in front of the player and no longer cause damage.<br/>
 		+ Added checks so spawn beacons cannot be placed over water or out of map boundaries.<br/>
 		+ Added E hotkey to remove parachute while HALO jumping or parachuting out of a vehicle.<br/>
+	<br/>
 	Repair Centers:<br/>
 		+ Added new repair centers:<br/>
 			- West of Petrovka<br/>
@@ -104,6 +106,8 @@ player createDiaryRecord["Changelog",
 			- North west airfield has 4 bi-plane spawns and Balota / north east airfield have 2 spawns.<br/>
 		+ Added C130J bomber with (2x) 6 GBU-12 bombs to Balota airfield.<br/>
 		+ Added MQ9 Predator Drone to north west airfield.<br/>
+	<br/>
+	Continued on next page...<br/>
 		+ Added L39ZA jet to north east airfield.<br/>
 			- Respawn timer for special air vehicles is set to 30 minutes.<br/>
 	<br/>
@@ -128,7 +132,7 @@ player createDiaryRecord["Event Horizon Gaming", [
 	Event Horizon Artists:<br/>
 		- with_milk<br/>
 	<br/>
-	Event Horizon Testers & Administrators:<br/>
+	Event Horizon Testers &amp; Administrators:<br/>
 		- Mawson<br/>
 		- Dropy<br/>
 		- U_T<br/>
