@@ -15,7 +15,7 @@ _num = floor (random 100);
 if(_num < 50) then { _car addWeaponCargoGlobal ["Binocular_Vector", 1]};
 if(_num < 15) then { _car addWeaponCargoGlobal ["NVgoggles", 1]};
 
-_numberOfRandomWeapons = (random 4) + 2;
+_numberOfRandomWeapons = (random 3) + 2;
 
 for "_i" from 1 to _numberOfRandomWeapons do {
 	//Get Random Gun From randomWeapons Array.
