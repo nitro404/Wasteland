@@ -5,6 +5,7 @@
 //	@file Args:
 
 #include "dialog\gunstoreDefines.sqf";
+
 disableSerialization;
 
 _gunshopDialog = createDialog "gunshopd";
@@ -17,7 +18,10 @@ _playerMoney CtrlsetText format["Cash: $%1", _money];
 
 gsLocation = str(_this select 0);
 
-if(gsLocation == "gs1") then {gsCrate = g_ammo_1;};
-if(gsLocation == "gs2") then {gsCrate = g_ammo_2;};
-if(gsLocation == "gs3") then {gsCrate = g_ammo_3;};
-if(gsLocation == "gs4") then {gsCrate = g_ammo_4;};
+if(gsLocation == "gs1") then { gsCrate = g_ammo_1; };
+if(gsLocation == "gs2") then { gsCrate = g_ammo_2; };
+if(gsLocation == "gs3") then { gsCrate = g_ammo_3; };
+if(gsLocation == "gs4") then { gsCrate = g_ammo_4; };
+if(gsLocation == "gs5") then { gsCrate = g_ammo_5; };
+if(gsLocation == "gs6") then { gsCrate = g_ammo_6; };
+if(gsLocation == "gs7") then { gsCrate = g_ammo_7; };
