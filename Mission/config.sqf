@@ -117,6 +117,21 @@ generalStore = [
 	["Camo Net", "camonet", localize "STR_WL_ShopDescriptions_Camo", "client\icons\camonet.paa", 300, 150]
 ];
 
+helicopterStore = [
+	["UH-1H Huey", 1000, "UH1H_TK_GUE_EP1"],
+	["MH6J Little Bird", 1200, "MH6J_EP1"],
+	["KA-137 (PK)", 2000, "Ka137_MG_PMC"],
+	["MH-60S Black Hawk", 2500, "MH60S"],
+	["UH-60M Black Hawk", 3000, "UH60M_EP1"],
+	["Merlin HC3", 3500, "BAF_Merlin_HC3_D"],
+	["CH-47F Chinook", 4000, "CH_47F_EP1"],
+	["Mi-8", 4500, "Mi17_Ins"],
+	["MV-22 Osprey", 5000, "MV22"],
+	["AH-6J Little Bird", 7000, "AH6J_EP1"],
+	["Ka-60 (M32)", 8000, "Ka60_GL_PMC"],
+	["UH-1Y Venom", 10000, "UH1Y"]
+];
+
 // Chernarus town and city array
 //Marker Name, Radius, City Name
 cityList = [

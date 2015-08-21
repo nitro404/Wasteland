@@ -79,7 +79,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=134;
+		items=137;
 		class Item0
 		{
 			side="WEST";
@@ -1335,7 +1335,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="generalStore1";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this attachTo[fp5,[0,-3,0]];";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this attachTo[fp5,[0,-3,0]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -1355,7 +1355,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="generalStore2";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this attachTo[fp6,[0,-3,0]];";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this attachTo[fp6,[0,-3,0]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -1375,7 +1375,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="generalStore3";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this attachTo[fp7,[0,-3,0]];";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this attachTo[fp7,[0,-3,0]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -1395,7 +1395,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="generalStore4";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this attachTo[fp8,[0,-3,0]];";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this attachTo[fp8,[0,-3,0]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -1415,7 +1415,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="generalStore5";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this attachTo[fp9,[0,-3,0]];";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this attachTo[fp9,[0,-3,0]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -2635,14 +2635,74 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="generalStore6";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this attachTo[fp10,[0,2,-0.3]];";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this attachTo[fp10,[0,2,-0.3]]; removeAllWeapons this;";
+				};
+			};
+		};
+		class Item134
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={7033.3799,259.89978,5309.646};
+					azimut=-83.618233;
+					id=206;
+					side="LOGIC";
+					vehicle="US_Soldier_Pilot_EP1";
+					leader=1;
+					skill=0.60000002;
+					text="helicopterStore1";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Helicopter Store</t>"", ""client\systems\HelicopterStore\loadHelicopterStore.sqf""]; this attachTo[fp14, [0, 1.25, -0.4]]; removeAllWeapons this;";
+				};
+			};
+		};
+		class Item135
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={8385.4766,324.64349,10525.035};
+					azimut=-83.618233;
+					id=207;
+					side="LOGIC";
+					vehicle="US_Soldier_Pilot_EP1";
+					leader=1;
+					skill=0.60000002;
+					text="helicopterStore2";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Helicopter Store</t>"", ""client\systems\HelicopterStore\loadHelicopterStore.sqf""]; this attachTo[fp15, [0, -1.25, -0.4]]; removeAllWeapons this;";
+				};
+			};
+		};
+		class Item136
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2399.5386,359.92896,7699.7397};
+					azimut=210;
+					id=210;
+					side="LOGIC";
+					vehicle="US_Soldier_Pilot_EP1";
+					leader=1;
+					skill=0.60000002;
+					text="helicopterStore3";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Helicopter Store</t>"", ""client\systems\HelicopterStore\loadHelicopterStore.sqf""]; this attachTo[fp16, [1, 0.5, -0.2]]; removeAllWeapons this;";
 				};
 			};
 		};
 	};
 	class Vehicles
 	{
-		items=72;
+		items=81;
 		class Item0
 		{
 			position[]={8343.0654,26.779518,3340.9795};
@@ -3071,7 +3131,7 @@ class Mission
 			side="EMPTY";
 			vehicle="L39_TK_EP1";
 			skill=0.60000002;
-			init="veh = [this, 1200, 0, 0, FALSE, FALSE] execVM ""vehiclerespawn.sqf"";";
+			init="veh = [this, 1800, 0, 0, FALSE, FALSE] execVM ""vehiclerespawn.sqf"";";
 		};
 		class Item41
 		{
@@ -3101,7 +3161,7 @@ class Mission
 			side="EMPTY";
 			vehicle="MQ9PredatorB";
 			skill=0.60000002;
-			init="veh = [this, 1200, 0, 0, FALSE, FALSE] execVM ""vehiclerespawn.sqf"";";
+			init="veh = [this, 1800, 0, 0, FALSE, FALSE] execVM ""vehiclerespawn.sqf"";";
 		};
 		class Item44
 		{
@@ -3131,7 +3191,7 @@ class Mission
 			side="EMPTY";
 			vehicle="C130J_US_EP1";
 			skill=0.60000002;
-			init="this addMagazine ""6Rnd_GBU12_AV8B""; this addMagazine ""6Rnd_GBU12_AV8B""; this addWeapon ""BombLauncher""; veh = [this, 600, 0, 0, FALSE, FALSE, 'this addMagazine ""6Rnd_GBU12_AV8B""; this addMagazine ""6Rnd_GBU12_AV8B""; this addWeapon ""BombLauncher"";'] execVM ""vehiclerespawn.sqf"";";
+			init="this addMagazine ""6Rnd_GBU12_AV8B""; this addMagazine ""6Rnd_GBU12_AV8B""; this addWeapon ""BombLauncher""; veh = [this, 1800, 0, 0, FALSE, FALSE, 'this addMagazine ""6Rnd_GBU12_AV8B""; this addMagazine ""6Rnd_GBU12_AV8B""; this addWeapon ""BombLauncher"";'] execVM ""vehiclerespawn.sqf"";";
 		};
 		// Nizhnoye Repair Pad
 		class Item47
@@ -3396,6 +3456,102 @@ class Mission
 			vehicle="Land_bouda2_vnitrek";
 			skill=0.60000002;
 			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+		};
+		class Item72
+		{
+			position[]={7032.6245,259.94183,5307.7339};
+			id=205;
+			side="EMPTY";
+			vehicle="Land_Campfire_burning";
+			skill=0.60000002;
+			text="fp14";
+			init="this setVariable [""R3F_LOG_disabled"", true];";
+		};
+		class Item73
+		{
+			position[]={8385.5684,325.23181,10526.229};
+			id=206;
+			side="EMPTY";
+			vehicle="Land_Campfire_burning";
+			skill=0.60000002;
+			text="fp15";
+			init="this setVariable [""R3F_LOG_disabled"", true];";
+		};
+		class Item74
+		{
+			position[]={7034.6704,260.15851,5317.0024};
+			azimut=280;
+			id=207;
+			side="EMPTY";
+			vehicle="HeliH";
+			skill=0.60000002;
+			text="helicopterStoreSpawn1";
+			init="this setVariable [""R3F_LOG_disabled"", true];";
+		};
+		class Item75
+		{
+			position[]={8374.2959,322.96817,10514.553};
+			azimut=270;
+			id=208;
+			side="EMPTY";
+			vehicle="HeliH";
+			skill=0.60000002;
+			text="helicopterStoreSpawn2";
+			init="this setVariable [""R3F_LOG_disabled"", true];";
+		};
+		class Item76
+		{
+			position[]={2397.9446,359.79462,7698.3413};
+			id=209;
+			side="EMPTY";
+			vehicle="Land_Campfire_burning";
+			skill=0.60000002;
+			text="fp16";
+			init="this setVariable [""R3F_LOG_disabled"", true];";
+		};
+		class Item77
+		{
+			position[]={2399.8792,360.17447,7707.5728};
+			azimut=315;
+			id=211;
+			side="EMPTY";
+			vehicle="HeliH";
+			skill=0.60000002;
+			text="helicopterStoreSpawn3";
+			init="this setVariable [""R3F_LOG_disabled"", true];";
+		};
+		class Item78
+		{
+			position[]={7044.1118,258.24606,5315.418};
+			azimut=100;
+			id=212;
+			side="EMPTY";
+			vehicle="Land_fort_artillery_nest";
+			leader=1;
+			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handledamage"", {false}];";
+		};
+		class Item79
+		{
+			position[]={2395.5935,360.01721,7712.0298};
+			azimut=315;
+			id=213;
+			side="EMPTY";
+			vehicle="Land_fort_artillery_nest";
+			leader=1;
+			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handledamage"", {false}];";
+		};
+		class Item80
+		{
+			position[]={8368.2666,322.94186,10514.592};
+			azimut=270;
+			id=214;
+			side="EMPTY";
+			vehicle="Land_fort_artillery_nest";
+			leader=1;
+			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handledamage"", {false}];";
 		};
 	};
 	class Markers
@@ -8183,7 +8339,7 @@ class Mission
 		};
 		class Item795
 		{
-			position[]={1766.0863,285.72403,7814.3008};
+			position[]={1839.4071,281.42514,7694.8501};
 			name="heliSpawn_11";
 			type="Empty";
 			colorName="ColorGreen";
@@ -8962,72 +9118,72 @@ class Mission
 		{
 			position[]={13046.851,5.7819242,8362.0518};
 			name="repair1";
-			text="REPAIR CENTER";
-			type="n_service";
-			colorName="ColorBrown";
+			text="Repair Center";
+			type="n_maint";
+			colorName="ColorBlue";
 		};
 		// Pobeda Dam Repair Pad
 		class Item907
 		{
 			position[]={9856.5889,132.11086,13323.929};
 			name="repair2";
-			text="REPAIR CENTER";
-			type="n_service";
-			colorName="ColorBrown";
+			text="Repair Center";
+			type="n_maint";
+			colorName="ColorBlue";
 		};
 		// Gorka Repair Pad
 		class Item908
 		{
 			position[]={9137.3613,384.43088,9216.4424};
 			name="repair3";
-			text="REPAIR CENTER";
-			type="n_service";
-			colorName="ColorBrown";
+			text="Repair Center";
+			type="n_maint";
+			colorName="ColorBlue";
 		};
 		// Kamenka Repair Pad
 		class Item909
 		{
 			position[]={1655.0125,16.846397,2331.7554};
 			name="repair4";
-			text="REPAIR CENTER";
-			type="n_service";
-			colorName="ColorBrown";
+			text="Repair Center";
+			type="n_maint";
+			colorName="ColorBlue";
 		};
 		// Myshkino Repair Pad
 		class Item910
 		{
 			position[]={1773.2969,285.86212,7809.6797};
 			name="repair5";
-			text="REPAIR CENTER";
-			type="n_service";
-			colorName="ColorBrown";
+			text="Repair Center";
+			type="n_maint";
+			colorName="ColorBlue";
 		};
 		// Cap Golova Repair Pad
 		class Item911
 		{
 			position[]={8032.6704,5.1534977,2888.1697};
 			name="repair6";
-			text="REPAIR CENTER";
-			type="n_service";
-			colorName="ColorBrown";
+			text="Repair Center";
+			type="n_maint";
+			colorName="ColorBlue";
 		};
 		// Petrovka Repair Pad
 		class Item912
 		{
 			position[]={4691.8418,212.60541,12380.904};
 			name="repair7";
-			text="REPAIR CENTER";
-			type="n_service";
-			colorName="ColorBrown";
+			text="Repair Center";
+			type="n_maint";
+			colorName="ColorBlue";
 		};
 		// Vyshnoye Repair Pad
 		class Item913
 		{
 			position[]={7322.3247,252.4637,5983.1963};
 			name="repair8";
-			text="REPAIR CENTER";
-			type="n_service";
-			colorName="ColorBrown";
+			text="Repair Center";
+			type="n_maint";
+			colorName="ColorBlue";
 		};
 	};
 	class Sensors

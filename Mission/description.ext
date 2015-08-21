@@ -27,6 +27,7 @@ class Header {
 #include "client\systems\adminPanel\dialog\VehicleManagement.hpp"
 #include "client\systems\playerMenu\dialog\respawn_dialog.hpp"
 #include "client\systems\playerMenu\dialog\teamkill_dialog.hpp"
+#include "client\systems\helicopterStore\dialog\helicopterStore_settings.hpp"
 #include "addons\proving_ground\PG_config.hpp"
 #include "addons\gcam\gcam_component.hpp"
 

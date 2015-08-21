@@ -39,6 +39,11 @@ loadGunStore = compile preprocessFileLineNumbers "client\systems\gunStore\loadGu
 loadSellConfirm = compile preprocessFileLineNumbers "client\systems\gunStore\loadSellConfirm.sqf";
 sellWeaponConfirmed = compile preprocessFileLineNumbers "client\systems\gunStore\sellWeaponConfirmed.sqf";
 
+// Helicopter Store Dialog compiles
+loadHelicopterStore = compile preprocessFileLineNumbers "client\systems\helicopterStore\loadHelicopterStore.sqf";
+PopulateHelicopterStore = compile preprocessFileLineNumbers "client\systems\helicopterStore\populateHelicopterStore.sqf";
+helicopterItemInfo = compile preprocessFileLineNumbers "client\systems\helicopterStore\itemInfo.sqf";
+
 spawnBicycle = compile preprocessFileLineNumbers "client\systems\playerMenu\spawnBicycle.sqf";
 
 player groupChat "Client Compile Complete";
