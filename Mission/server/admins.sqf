@@ -19,7 +19,6 @@ administrators = [
 publicVariable "administrators";
 
 serverAdministrators = [
-	"76561198078201908", // Gr8
 	"76561197983361980", // nitro glycerine / David Della Rocco
 	"76561198025070008", // nitro glycerine (Alt)
 	"76561198085238045", // Sponty
@@ -36,6 +35,8 @@ serverAdministrators = [
 	"76561197992556451", // Tesla
 	"76561198011088596", // Skipwich
 	"76561197961014283", // Yams
-	"76561197980727745"  // Northern Petrol
+	"76561197980727745", // Northern Petrol
+	"76561197969422593", // BRPC
+	"76561198028354532"  // jaeger
 ];
 publicVariable "serverAdministrators";
