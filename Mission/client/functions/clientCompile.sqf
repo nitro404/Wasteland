@@ -41,12 +41,15 @@ sellWeaponConfirmed = compile preprocessFileLineNumbers "client\systems\gunStore
 
 // Helicopter Store Dialog compiles
 loadHelicopterStore = compile preprocessFileLineNumbers "client\systems\helicopterStore\loadHelicopterStore.sqf";
-PopulateHelicopterStore = compile preprocessFileLineNumbers "client\systems\helicopterStore\populateHelicopterStore.sqf";
+populateHelicopterStore = compile preprocessFileLineNumbers "client\systems\helicopterStore\populateHelicopterStore.sqf";
 helicopterItemInfo = compile preprocessFileLineNumbers "client\systems\helicopterStore\itemInfo.sqf";
 
 spawnBicycle = compile preprocessFileLineNumbers "client\systems\playerMenu\spawnBicycle.sqf";
 
-player groupChat "Client Compile Complete";
-sleep 1;
-playerCompiledScripts = true;
+closestTown = compile preprocessFile "client\functions\closestTown.sqf";
+azimuthToBearing = compile preprocessFile "client\functions\azimuthToBearing.sqf";
+spawnInfoText = compile preprocessFileLineNumbers "client\functions\spawnInfoText.sqf";
 
+player groupChat "Client Compile Complete";
+
+playerCompiledScripts = true;

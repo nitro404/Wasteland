@@ -57,23 +57,14 @@ _respawnDir = _beacon select 4;
 
 2 cutText ["HALO jump activated. Open your chute before you hit the ground! Press E to detach chute.", "PLAIN DOWN", 5];
 [player, [_respawnPosition select 0, _respawnPosition select 1, 500], _respawnDir] execVM "client\functions\HALODir.sqf";
+
 respawnDialogActive = false;
 closeDialog 0;
 
-sleep 5;
-
-_mins = floor(60 * (daytime - floor(daytime)));
-
-[
-	"Rolling Thunder Wasteland","Spawn Beacon",
-	format ["%1:%3%2", floor(daytime), _mins, if(_mins < 10) then {"0"} else {""}]
-] spawn BIS_fnc_infoText;
-
-//Altimeter reading at top right
-while { ((getposATL player)select 2) > 1 } do {
+while { ((getposATL player) select 2) > 1 } do {
 	hintsilent parseText format ["<t align='center' color='#00aa00' font='Zeppelin33' shadow='1' shadowColor='#000000' size='2'>Alt %1m</t>", round (getPosATL player select 2)];
 };
 
-if(((getposATL player)select 2) < 1) then {
+if(((getposATL player) select 2) <= 1) then {
 	hintsilent "";
 };

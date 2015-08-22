@@ -18,22 +18,22 @@ _get_pos = {
 	if ( (_pos select 0) == 0 ) then {
 		_pos = getPosATL (missionNamespace getVariable _this);
 	};
-	
+
 	_pos;
 };
 
 {
 	_pos = (_x select 0) call _get_pos;
-	
+
 	_markerZone = format["%1_zone_%2",_prefix, _x select 0];
 	_marker = createMarkerLocal [_markerZone, _pos];
 	_marker setMarkerShapeLocal _marker_shape;
 	_marker setMarkerSizeLocal [_x select 1, _x select 1];
 	_marker setMarkerColorLocal _col_empty;
 	_marker setMarkerBrushLocal _marker_type;
-	_marker setMarkerAlphaLocal _marker_alpha;  
+	_marker setMarkerAlphaLocal _marker_alpha;
 
-	// Marker description    
+	// Marker description
 	_markerName = format["%1_title_%2",_prefix, _x select 0];
 	_marker = createMarkerLocal [_markerName, _pos];
 	_markerName setMarkerShapeLocal "ICON";
@@ -42,9 +42,9 @@ _get_pos = {
 	_markerName setMarkerSizeLocal [0.5,0.5];
 	_markerName setMarkerTextLocal "";
 	_markerName setMarkerAlphaLocal 0.1;
-	
+
 	if ( (_type select 0) != "" ) then {
-		// Store title    
+		// Store title
 		_markerName = format["%1_type_%2",_prefix, _x select 0];
 		_marker = createMarkerLocal [_markerName, _pos];
 		_markerName setMarkerShapeLocal "ICON";
@@ -53,7 +53,7 @@ _get_pos = {
 		_markerName setMarkerSizeLocal [1,1];
 		_markerName setMarkerTextLocal (_type select 0);
 	};
-	
+
 	_status set [_forEachIndex, "EMPTY"];
 
 } forEach _list;
@@ -62,7 +62,7 @@ _get_pos = {
 _setStatus = {
 	_index = _this select 0;
 	if(_status select _index == (_this select 1)) exitWith {};
-	
+
 	_pos   = (_list select _index) select 0;
 	_name  = (_list select _index) select 2;
 

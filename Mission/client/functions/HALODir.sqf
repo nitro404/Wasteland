@@ -8,3 +8,5 @@ _speed = 1;
 _player setVelocity [(_vel select 0) + (sin _dir * _speed), (_vel select 1) + (cos _dir * _speed), (_vel select 2)];
 
 [_player, _pos select 2] spawn bis_fnc_halo;
+
+[] spawn spawnInfoText;
