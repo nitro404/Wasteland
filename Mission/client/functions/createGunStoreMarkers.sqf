@@ -4,20 +4,6 @@
 //	@file Created: 28/11/2012 05:19
 //	@file Args:
 
-_gunStores = ["gs1", "gs2", "gs3", "gs4", "gs5", "gs6", "gs7"];
+_gunStores = [["gs1", 200], ["gs2", 200], ["gs3", 200], ["gs4", 200], ["gs5", 200], ["gs6", 200], ["gs7", 200]];
 
-waitUntil {{!isNull(missionNamespace getVariable _x) && ((getPos(missionNamespace getVariable _x) distance [0,0,0]) > 100)} count _gunStores == count _gunStores};
-
-{
-	_unit = missionNamespace getVariable _x;
-
-	_markerName = format["marker_shop_title_%1",_x];
-	deleteMarkerLocal _markerName;
-	_marker = createMarkerLocal [_markerName, getPos _unit];
-	_markerName setMarkerShapeLocal "ICON";
-	_markerName setMarkerTypeLocal "Dot";
-	_markerName setMarkerColorLocal "ColorRed";
-	_markerName setMarkerSizeLocal [1,1];
-	_markerName setMarkerTextLocal "Gun Store";
-
-} forEach _gunStores;
+[_gunStores, "Grid", "ColorBlue", 0.5, "ELLIPSE", "gs", ["Gun Store", "ColorRed"]] execVM "client\functions\createMarkers.sqf";
