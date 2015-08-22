@@ -2647,7 +2647,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={7033.3799,259.89978,5309.646};
+					position[]={8602.6016,264.01535,3910.6345};
 					azimut=-83.618233;
 					id=206;
 					side="LOGIC";
@@ -3459,7 +3459,7 @@ class Mission
 		};
 		class Item72
 		{
-			position[]={7032.6245,259.94183,5307.7339};
+			position[]={8601.8467,263.99368,3908.7224};
 			id=205;
 			side="EMPTY";
 			vehicle="Land_Campfire_burning";
@@ -3479,7 +3479,7 @@ class Mission
 		};
 		class Item74
 		{
-			position[]={7034.6704,260.15851,5317.0024};
+			position[]={8603.8916,264.19275,3917.991};
 			azimut=280;
 			id=207;
 			side="EMPTY";
@@ -3522,7 +3522,7 @@ class Mission
 		};
 		class Item78
 		{
-			position[]={7044.1118,258.24606,5315.418};
+			position[]={8613.333,264.22107,3916.4065};
 			azimut=100;
 			id=212;
 			side="EMPTY";
