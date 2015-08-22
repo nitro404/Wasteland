@@ -5,9 +5,9 @@
 //	@file Args:
 
 _helicopterStores = [
-	["helicopterStore1", 200, "Helicopter"],
-	["helicopterStore2", 200, "Helicopter"],
-	["helicopterStore3", 200, "Helicopter"]
+	["helicopterStore1", 200, "Helicopter Store"],
+	["helicopterStore2", 200, "Helicopter Store"],
+	["helicopterStore3", 200, "Helicopter Store"]
 ];
 
 [_helicopterStores, "Grid", "ColorBlue", 0.5, "ELLIPSE", "helicopter", ["Helicopter Store", "ColorYellow"]] execVM 'client\functions\createMarkers.sqf';
