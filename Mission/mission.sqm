@@ -9121,6 +9121,7 @@ class Mission
 			text="Repair Center";
 			type="n_maint";
 			colorName="ColorBlue";
+			shadow = true;
 		};
 		// Pobeda Dam Repair Pad
 		class Item907
@@ -9130,6 +9131,7 @@ class Mission
 			text="Repair Center";
 			type="n_maint";
 			colorName="ColorBlue";
+			shadow = true;
 		};
 		// Gorka Repair Pad
 		class Item908
@@ -9139,6 +9141,7 @@ class Mission
 			text="Repair Center";
 			type="n_maint";
 			colorName="ColorBlue";
+			shadow = true;
 		};
 		// Kamenka Repair Pad
 		class Item909
@@ -9148,6 +9151,7 @@ class Mission
 			text="Repair Center";
 			type="n_maint";
 			colorName="ColorBlue";
+			shadow = true;
 		};
 		// Myshkino Repair Pad
 		class Item910
@@ -9157,6 +9161,7 @@ class Mission
 			text="Repair Center";
 			type="n_maint";
 			colorName="ColorBlue";
+			shadow = true;
 		};
 		// Cap Golova Repair Pad
 		class Item911
@@ -9166,6 +9171,7 @@ class Mission
 			text="Repair Center";
 			type="n_maint";
 			colorName="ColorBlue";
+			shadow = true;
 		};
 		// Petrovka Repair Pad
 		class Item912
@@ -9175,6 +9181,7 @@ class Mission
 			text="Repair Center";
 			type="n_maint";
 			colorName="ColorBlue";
+			shadow = true;
 		};
 		// Vyshnoye Repair Pad
 		class Item913
@@ -9184,6 +9191,7 @@ class Mission
 			text="Repair Center";
 			type="n_maint";
 			colorName="ColorBlue";
+			shadow = true;
 		};
 	};
 	class Sensors
