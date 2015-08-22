@@ -3131,7 +3131,7 @@ class Mission
 			side="EMPTY";
 			vehicle="L39_TK_EP1";
 			skill=0.60000002;
-			init="veh = [this, 1800, 0, 0, FALSE, FALSE] execVM ""vehiclerespawn.sqf"";";
+			init="this addMagazine ""150Rnd_23mm_GSh23L""; this addMagazine ""150Rnd_23mm_GSh23L""; this addMagazine ""150Rnd_23mm_GSh23L""; veh = [this, 1800, 0, 0, FALSE, FALSE, 'this addMagazine ""150Rnd_23mm_GSh23L""; this addMagazine ""150Rnd_23mm_GSh23L""; this addMagazine ""150Rnd_23mm_GSh23L"";'] execVM ""vehiclerespawn.sqf"";";
 		};
 		class Item41
 		{
