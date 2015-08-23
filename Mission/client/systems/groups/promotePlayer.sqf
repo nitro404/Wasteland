@@ -1,5 +1,4 @@
-#define groupManagementDialog 55510
-#define groupManagementGroupList 55512
+#include "dialog\groupManagementDefines.sqf";
 
 disableSerialization;
 
@@ -7,6 +6,9 @@ private["_dialog", "_playerListBox", "_groupInvite", "_target", "_index", "_play
 
 _dialog = findDisplay groupManagementDialog;
 _groupListBox = _dialog displayCtrl groupManagementGroupList;
+_groupKickButton = _dialog displayCtrl groupManagementKickButton;
+_groupDisbandButton = _dialog displayCtrl groupManagementDisbandButton;
+_groupPromoteButton = _dialog displayCtrl groupManagementPromoteButton;
 
 _index = lbCurSel _groupListBox;
 _playerData = _groupListBox lbData _index;
@@ -21,7 +23,7 @@ _target = objNull;
 } forEach allUnits;
 
 if(_check == 0 || isNull _target) exitWith {
-	player globalChat "You must select someone to promote first! null or check";
+	player globalChat "You must select someone to promote first!";
 };
 
 if(_target == player) exitWith {
@@ -29,8 +31,12 @@ if(_target == player) exitWith {
 };
 
 if(count (toArray name _target) <= 0) exitWith {
-	player globalChat "You must select someone to promote first! 0 length";
+	player globalChat "You must select someone to promote first! Player has empty name.";
 };
+
+_groupKickButton ctrlShow false;
+_groupDisbandButton ctrlShow false;
+_groupPromoteButton ctrlShow false;
 
 (group _target) selectLeader _target;
 

@@ -4,13 +4,11 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-#define groupManagementDialog 55510
-#define groupManagementPlayerList 55511
-#define groupManagementInviteButton 55514
+#include "dialog\groupManagementDefines.sqf";
 
 disableSerialization;
 
-private["_dialog","_playerListBox","_groupInvite","_target","_index","_playerData","_check","_unitCount"];
+private["_dialog", "_playerListBox", "_groupInvite", "_target", "_index", "_playerData", "_check", "_unitCount"];
 
 _dialog = findDisplay groupManagementDialog;
 _playerListBox = _dialog displayCtrl groupManagementPlayerList;
@@ -20,8 +18,14 @@ _index = lbCurSel _playerListBox;
 _playerData = _playerListBox lbData _index;
 _check = 0;
 
-{if (str(_x) == _playerData) then {_target = _x;_check = 1;};}forEach playableUnits;
-if (_check == 0) exitWith{};
+{
+	if(str(_x) == _playerData) then {
+		_target = _x;
+		_check = 1;
+	};
+} forEach playableUnits;
+
+if(_check == 0) exitWith { };
 
 _unitCount = count units group _target;
 

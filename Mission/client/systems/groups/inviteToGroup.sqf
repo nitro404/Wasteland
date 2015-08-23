@@ -3,10 +3,9 @@
 //	@file Author: [404] Deadbeat
 //	@file Created: 20/11/2012 05:19
 
-// if(player != leader group player) exitWith {player globalChat format["you are not the leader and can't invite people"];};
+// if(player != leader group player) exitWith { player globalChat format["You are not the leader and can't invite people"]; };
 
-#define groupManagementDialog 55510
-#define groupManagementPlayerList 55511
+#include "dialog\groupManagementDefines.sqf";
 
 disableSerialization;
 

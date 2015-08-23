@@ -1,0 +1,11 @@
+#define groupManagementDialog 55510
+#define groupManagementPlayerList 55511
+#define groupManagementGroupList 55512
+#define groupManagementInviteButton 55514
+#define groupManagementKickButton 55515
+#define groupManagementDisbandButton 55516
+#define groupManagementLeaveButton 55517
+#define groupManagementAcceptButton 55518
+#define groupManagementDeclineButton 55519
+#define groupManagementInviteText 55520
+#define groupManagementPromoteButton 55521

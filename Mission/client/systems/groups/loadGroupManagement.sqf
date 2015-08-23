@@ -4,29 +4,22 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-#define groupManagementDialog 55510
-#define groupManagementPlayerList 55511
-#define groupManagementGroupList 55512
-#define groupManagementInviteButton 55514
-#define groupManagementKickButton 55515
-#define groupManagementDisbandButton 55516
-#define groupManagementLeaveButton 55517
-#define groupManagementAcceptButton 55518
-#define groupManagementDeclineButton 55519
-#define groupManagementInviteText 55520
-#define groupManagementPromoteButton 55521
+#include "dialog\groupManagementDefines.sqf";
 
 disableSerialization;
 
-private ["_start","_dialog","_myGroup","_playerListBox","_groupListBox","_uid","_namestr","_index","_groupCreate","_groupInvite","_groupKick","_groupDisband","_groupLeaveButton","_inGroup","_isLeader","_name"];
+private["_start", "_dialog", "_myGroup", "_playerListBox", "_groupListBox", "_uid", "_namestr", "_index", "_groupCreate", "_groupInvite", "_groupKick", "_groupDisband", "_groupLeaveButton", "_inGroup", "_isLeader", "_name"];
 
 closeDialog 0;
 _start = createDialog "GroupManagement";
 _dialog = findDisplay groupManagementDialog;
+
 if(!isNil "_display") then {
     _display displayAddEventHandler ["KeyDown", "_return = false; if(groupManagmentActive && (_this select 1) == 1) then {_return = true;}; _return"];
 };
+
 groupManagmentActive = true;
+
 _playerListBox = _dialog displayCtrl groupManagementPlayerList;
 _groupListBox = _dialog displayCtrl groupManagementGroupList;
 _groupInvite = _dialog displayCtrl groupManagementInviteButton;
@@ -46,71 +39,84 @@ _groupDeclineInvite ctrlShow false;
 _groupAcceptInvite ctrlShow false;
 _groupPromote ctrlShow false;
 _hasInvite = false;
-while{groupManagmentActive} do
-{
-    //Check if player has invite.
-    {if(_x select 1 == getPlayerUID player) then {_hasInvite = true};}forEach currentInvites;
 
-    //Member Controls
-    if(count units group player > 1) then
+while { groupManagmentActive } do {
+    // check if player has invite
     {
-        if(player == leader group player) then
-        {
+        if(_x select 1 == getPlayerUID player) then {
+            _hasInvite = true
+        };
+    } forEach currentInvites;
+
+    // member controls
+    if(count units group player > 1) then {
+        if(player == leader group player) then {
 			_groupDisband ctrlShow true;
             _groupKick ctrlShow true;
 			_groupLeaveButton ctrlShow true;
 			_groupPromote ctrlShow true;
-        } else {
+        }
+        else {
 			_groupLeaveButton ctrlShow true;
 			_groupPromote ctrlShow false;
         };
-    } else {
+    }
+    else {
     	_groupKick ctrlShow false;
 		_groupDisband ctrlShow false;
 		_groupLeaveButton ctrlShow false;
 		_groupPromote ctrlShow false;
     };
 
-    //Sort Invite Controls
-    if(_hasInvite) then
-    {
+    // sort invite controls
+    if(_hasInvite) then {
         _groupInviteText ctrlShow true;
         _groupAcceptInvite ctrlShow true;
         _groupDeclineInvite ctrlShow true;
 
-        //Get Invite Text and Set it.
-        {_invite = _x;if(_invite select 1 == getPlayerUID player) then {{if(_invite select 0 == getPlayerUID _x) then {_name = name(_x);};}forEach playableUnits;};}forEach currentInvites;
-        _groupInviteText ctrlSetStructuredText parseText (format ["Group Invite From<br/>%1",_name]);
+        // get invite text and set it
+        {
+            _invite = _x;
+            if(_invite select 1 == getPlayerUID player) then {
+                {
+                    if(_invite select 0 == getPlayerUID _x) then {
+                        _name = name(_x);
+                    };
+                } forEach playableUnits;
+            };
+        } forEach currentInvites;
 
-    } else {
+        _groupInviteText ctrlSetStructuredText parseText(format["Group Invite From<br/>%1", _name]);
+    }
+    else {
     	_groupAcceptInvite ctrlShow false;
         _groupDeclineInvite ctrlShow false;
         _groupInviteText ctrlShow false;
     };
 
-    //Update player list
+    // update player list
 	{
-		if(str(side _x) == str(playerSide)) then
-	    {
-	        if(getPlayerUID _x != getPlayerUID player) then
-	        {
-			    //Add to list
+		if(str(side _x) == str(playerSide)) then {
+	        if(getPlayerUID _x != getPlayerUID player) then {
+			    // add to list
 			    _namestr = name(_x);
 				_index = _playerListBox lbAdd _namestr;
-				_playerListBox lbSetData [_index, str(_x)];
+				_playerListBox lbSetData[_index, str(_x)];
 	        };
 	    };
-	}forEach playableUnits;
+	} forEach playableUnits;
 
-    //Update group player list
+    // update group player list
     {
     	_namestr = name(_x);
 		_index = _groupListBox lbAdd _namestr;
 		_groupListBox lbSetData [_index, str(_x)];
-    }forEach units group player;
+    } forEach units group player;
 
 	sleep 0.5;
+
     _hasInvite = false;
+
     lbClear _playerListBox;
     lbClear _groupListBox;
 }
