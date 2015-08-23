@@ -79,7 +79,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=138;
+		items=143;
 		class Item0
 		{
 			side="WEST";
@@ -2707,7 +2707,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12605.087,180.91464,4352.4751};
+					position[]={2655.6968,119.24622,2363.2529};
 					azimut=140.64359;
 					id=215;
 					side="LOGIC";
@@ -2719,10 +2719,110 @@ class Mission
 				};
 			};
 		};
+		class Item138
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={11500.971,242.3275,5494.8042};
+					azimut=140.64359;
+					id=218;
+					side="LOGIC";
+					vehicle="worker3";
+					leader=1;
+					skill=0.60000002;
+					text="buildingStore2";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Building Store</t>"", ""client\systems\buildingStore\loadBuildingStore.sqf""]; this attachTo[fp18, [0, -2, -0.1]];";
+				};
+			};
+		};
+		class Item139
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={5391.084,309.43359,5654.5122};
+					azimut=140.64359;
+					id=221;
+					side="LOGIC";
+					vehicle="worker3";
+					leader=1;
+					skill=0.60000002;
+					text="buildingStore3";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Building Store</t>"", ""client\systems\buildingStore\loadBuildingStore.sqf""]; this attachTo[fp19, [0, -2, -0.1]];";
+				};
+			};
+		};
+		class Item140
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={13405.818,86.682076,12988.147};
+					azimut=140.64359;
+					id=224;
+					side="LOGIC";
+					vehicle="worker3";
+					leader=1;
+					skill=0.60000002;
+					text="buildingStore4";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Building Store</t>"", ""client\systems\buildingStore\loadBuildingStore.sqf""]; this attachTo[fp20, [0, -2, -0.1]];";
+				};
+			};
+		};
+		class Item141
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={4077.8125,269.25256,12195.413};
+					azimut=140.64359;
+					id=227;
+					side="LOGIC";
+					vehicle="worker3";
+					leader=1;
+					skill=0.60000002;
+					text="buildingStore5";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Building Store</t>"", ""client\systems\buildingStore\loadBuildingStore.sqf""]; this attachTo[fp21, [0, -2, -0.1]];";
+				};
+			};
+		};
+		class Item142
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={7241.769,374.27771,9078.4678};
+					azimut=140.64359;
+					id=230;
+					side="LOGIC";
+					vehicle="worker3";
+					leader=1;
+					skill=0.60000002;
+					text="buildingStore6";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Building Store</t>"", ""client\systems\buildingStore\loadBuildingStore.sqf""]; this attachTo[fp22, [0, -2, -0.1]];";
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
-		items=83;
+		items=93;
 		class Item0
 		{
 			position[]={8343.0654,26.779518,3340.9795};
@@ -3583,7 +3683,7 @@ class Mission
 		};
 		class Item81
 		{
-			position[]={12602.637,180.93529,4353.1455};
+			position[]={2653.2466,119.37637,2363.9233};
 			azimut=310;
 			id=216;
 			side="EMPTY";
@@ -3594,13 +3694,123 @@ class Mission
 		};
 		class Item82
 		{
-			position[]={12598.457,181.11984,4365.6768};
+			position[]={2651.353,119.61239,2368.3965};
 			azimut=200;
 			id=217;
 			side="EMPTY";
 			vehicle="Sr_border";
 			skill=0.60000002;
 			text="buildingStoreSpawn1";
+			init="this setVariable[""R3F_LOG_disabled"", true];";
+		};
+		class Item83
+		{
+			position[]={11498.52,242.26567,5495.4746};
+			azimut=310;
+			id=219;
+			side="EMPTY";
+			vehicle="Land_Campfire_burning";
+			skill=0.60000002;
+			text="fp18";
+			init="this setVariable [""R3F_LOG_disabled"", true];";
+		};
+		class Item84
+		{
+			position[]={11496.627,242.13419,5499.9478};
+			azimut=200;
+			id=220;
+			side="EMPTY";
+			vehicle="Sr_border";
+			skill=0.60000002;
+			text="buildingStoreSpawn2";
+			init="this setVariable[""R3F_LOG_disabled"", true];";
+		};
+		class Item85
+		{
+			position[]={5388.6328,309.40851,5655.1826};
+			azimut=310;
+			id=222;
+			side="EMPTY";
+			vehicle="Land_Campfire_burning";
+			skill=0.60000002;
+			text="fp19";
+			init="this setVariable [""R3F_LOG_disabled"", true];";
+		};
+		class Item86
+		{
+			position[]={5385.7876,309.35464,5666.1968};
+			azimut=200;
+			id=223;
+			side="EMPTY";
+			vehicle="Sr_border";
+			skill=0.60000002;
+			text="buildingStoreSpawn3";
+			init="this setVariable[""R3F_LOG_disabled"", true];";
+		};
+		class Item87
+		{
+			position[]={13403.367,86.920303,12988.818};
+			azimut=310;
+			id=225;
+			side="EMPTY";
+			vehicle="Land_Campfire_burning";
+			skill=0.60000002;
+			text="fp20";
+			init="this setVariable [""R3F_LOG_disabled"", true];";
+		};
+		class Item88
+		{
+			position[]={13401.475,87.414543,12993.291};
+			azimut=200;
+			id=226;
+			side="EMPTY";
+			vehicle="Sr_border";
+			skill=0.60000002;
+			text="buildingStoreSpawn4";
+			init="this setVariable[""R3F_LOG_disabled"", true];";
+		};
+		class Item89
+		{
+			position[]={4074.6689,269.53766,12194.286};
+			azimut=310;
+			id=228;
+			side="EMPTY";
+			vehicle="Land_Campfire_burning";
+			skill=0.60000002;
+			text="fp21";
+			init="this setVariable [""R3F_LOG_disabled"", true];";
+		};
+		class Item90
+		{
+			position[]={4072.7764,269.07056,12198.759};
+			azimut=200;
+			id=229;
+			side="EMPTY";
+			vehicle="Sr_border";
+			skill=0.60000002;
+			text="buildingStoreSpawn5";
+			init="this setVariable[""R3F_LOG_disabled"", true];";
+		};
+		class Item91
+		{
+			position[]={7239.3179,374.10092,9079.1387};
+			azimut=310;
+			id=231;
+			side="EMPTY";
+			vehicle="Land_Campfire_burning";
+			skill=0.60000002;
+			text="fp22";
+			init="this setVariable [""R3F_LOG_disabled"", true];";
+		};
+		class Item92
+		{
+			position[]={7237.4253,373.96188,9083.6113};
+			azimut=200;
+			id=232;
+			side="EMPTY";
+			vehicle="Sr_border";
+			skill=0.60000002;
+			text="buildingStoreSpawn6";
 			init="this setVariable[""R3F_LOG_disabled"", true];";
 		};
 	};

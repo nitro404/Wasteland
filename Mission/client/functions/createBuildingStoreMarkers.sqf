@@ -5,11 +5,12 @@
 //	@file Args:
 
 _buildingStores = [
-	["buildingStore1", 200, "Building Store"]
-//	["buildingStore2", 200, "Building Store"],
-//	["buildingStore3", 200, "Building Store"],
-//	["buildingStore4", 200, "Building Store"],
-//	["buildingStore5", 200, "Building Store"]
+	["buildingStore1", 200, "Building Store"],
+	["buildingStore2", 200, "Building Store"],
+	["buildingStore3", 200, "Building Store"],
+	["buildingStore4", 200, "Building Store"],
+	["buildingStore5", 200, "Building Store"],
+	["buildingStore6", 200, "Building Store"]
 ];
 
 [_buildingStores, "Grid", "ColorBlue", 0.5, "ELLIPSE", "buildingStore", ["Building Store", "ColorGreen"]] execVM "client\functions\createMarkers.sqf";
