@@ -47,7 +47,7 @@ if(X_Client) then {
 };
 
 if(X_Server) then {
-	diag_log format ["############################# %1 #############################", missionName];
+	diag_log format ["[%1]", missionName];
 	#ifdef __DEBUG__
 	diag_log format ["T%1,DT%2,F%3", time, diag_tickTime, diag_frameno];
 	#endif

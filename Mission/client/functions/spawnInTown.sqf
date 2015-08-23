@@ -39,10 +39,9 @@ switch(_switch) do
 				respawnDialogActive = false;
 				closeDialog 0;
 			};
-		}forEach cityList;
+		} forEach townList;
     };
-    case 1:
-    {
+    case 1: {
         {
 			_name = _x select 2;
 			if(ctrlText _buttonOne == _name) then
@@ -56,10 +55,9 @@ switch(_switch) do
 				respawnDialogActive = false;
 				closeDialog 0;
 			};
-		}forEach cityList;
+		} forEach townList;
     };
-    case 2:
-    {
+    case 2: {
         {
 			_name = _x select 2;
 			if(ctrlText _buttonTwo == _name) then
@@ -73,10 +71,9 @@ switch(_switch) do
 				respawnDialogActive = false;
 				closeDialog 0;
 			};
-		}forEach cityList;
+		}forEach townList;
     };
-    case 3:
-    {
+    case 3: {
         {
 			_name = _x select 2;
 			if(ctrlText _buttonThree == _name) then
@@ -90,10 +87,9 @@ switch(_switch) do
 				respawnDialogActive = false;
 				closeDialog 0;
 			};
-		}forEach cityList;
+		}forEach townList;
     };
-    case 4:
-    {
+    case 4: {
         {
 			_name = _x select 2;
 			if(ctrlText _buttonFour == _name) then
@@ -107,7 +103,7 @@ switch(_switch) do
 				respawnDialogActive = false;
 				closeDialog 0;
 			};
-		} forEach cityList;
+		} forEach townList;
     };
 };
 

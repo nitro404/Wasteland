@@ -21,7 +21,7 @@
 waitUntil{!isnil "bis_fnc_init"};
 disableSerialization;
 
-private["_player","_city","_radius","_name","_enemyCount","_friendlyCount","_side","_dynamicControlsArray", "_enemyPresent","_tempArray", "_text", "_players", "_playerArray"];
+private["_player","_town","_radius","_name","_enemyCount","_friendlyCount","_side","_dynamicControlsArray", "_enemyPresent","_tempArray", "_text", "_players", "_playerArray"];
 
 createDialog "RespawnSelectionDialog";
 _display = uiNamespace getVariable "RespawnSelectionDialog";
@@ -89,7 +89,7 @@ _find_occupied_towns = {
 			_towns set [count _towns, [_name, _playerArray, (_enemyCount > 0)]];
 		};
 
-	} forEach cityList;
+	} forEach townList;
 
 	_towns
 };
@@ -249,10 +249,10 @@ while {respawnDialogActive} do
 		_result = [];
 		{
 			_name = _x select 0 select 0;
-			_city = _x select 0 select 5;
+			_town = _x select 0 select 5;
 			_blocked = _x select 1;
 
-			_result set [count _result, [_name, _city, _blocked]];
+			_result set [count _result, [_name, _town, _blocked]];
 		} forEach _beacons;
 		respawnPage = [_result, 5, respawnPage] call _show_buttons;
 	};

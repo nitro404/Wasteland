@@ -4,4 +4,4 @@
 //	@file Created: 28/11/2012 05:19
 //	@file Args:
 
-[cityList, "SolidBorder", "ColorBlack", 0.3, "ELLIPSE", "town", ["", ""]] execVM "client\functions\createMarkers.sqf";
+[townList, "SolidBorder", "ColorBlack", 0.3, "ELLIPSE", "town", ["", ""]] execVM "client\functions\createMarkers.sqf";
