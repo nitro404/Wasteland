@@ -132,6 +132,90 @@ helicopterStore = [
 	["UH-1Y Venom", 10000, "UH1Y"]
 ];
 
+buildingStore = [
+// -- Storage Crates ----------
+	["------------------Storage---------------", 0, "---"],
+	["Wooden Storage Crate", 200, "Fort_Crate_wood"],
+	["B.F. Storage Crate", 500, "Misc_cargo_cont_tiny"],
+// -- Base Walls ----------
+	["------------------Base Walls---------------", 0, "---"],
+	["H-Barrier: Large", 100, "Land_HBarrier_large"],
+	["H-Barrier: Single Cube", 50, "Land_HBarrier1"],
+	["Wall: Short (10 Long)", 100, "Base_WarfareBBarrier10x"],
+	["Wall: Short (5 Long)", 80, "Base_WarfareBBarrier5x"],
+	["Wall: Tall (10 Long)", 150, "Base_WarfareBBarrier10xTall"],
+// -- Base Fortifications ----------
+	["------------------Base Fortifications---------------", 0, "---"],
+	["Barrack", 120, "Barrack2"],
+	["Bunker (Camo Net)", 140, "Land_Fort_Watchtower"],
+	["Camp", 120, "WarfareBCamp"],
+	["Earthen Rampart", 80, "Land_fort_rampart"],
+	["Depot", 200, "WarfareBDepot"],
+// -- Base Misc ----------
+	["------------------Base Misc---------------", 0, "---"],
+	["Camo Net", 60, "Land_CamoNet_NATO"],
+	["Dirt hump 1", 80, "Land_Dirthump03"],
+	["Dirt hump 2", 40, "Land_Dirthump02"],
+	["Gate", 60, "ZavoraAnim"],
+	["Hedgehog Steel", 100, "Hedgehog"],
+	["Med Tent", 100, "MASH"],
+	["Razor Wire", 750, "Fort_RazorWire"],
+	["Scaffolding: 2 story", 100, "Land_Misc_Scaffolding"],
+	["Scaffolding: 4 story", 200, "Land_leseni4x"],
+// -- Cargo Containers ----------
+	["------------------Cargo Containers---------------", 0, "---"],
+	["Cargo Container: 2x Tall", 100, "Land_Misc_Cargo2B"],
+	["Cargo Container: Closed", 50, "Misc_Cargo1B_military"],
+	["Cargo Container: Open", 75, "Misc_Cargo1Bo_military"],
+// -- Concrete Items ----------
+	["------------------Concrete Items---------------", 0, "---"],
+	["Concrete Block", 60, "Land_ConcreteBlock"],
+	["Concrete Pipe", 60, "Land_Misc_ConcPipeline_EP1"],
+	["Concrete Ramp: Big", 60, "Land_ConcreteRamp"],
+	["Concrete Ramp: Small", 60, "RampConcrete"],
+	["Concrete Stack", 60, "Misc_concrete_High"],
+	["Concrete Wall", 40, "Concrete_Wall_EP1"],
+	["Dragons Teeth", 100, "Hhedgehog_concreteBig"],
+	["Dragons Teeth: Long", 160, "Hhedgehog_concrete"],
+// -- Ladders & Stairs ----------
+	["------------------Ladders & Stairs---------------", 0, "---"],
+	["Illumination Tower", 100, "Land_Ind_IlluminantTower"],
+	["Ladder: Short", 60, "Land_ladder_half"],
+	["Ladder: Tall", 80, "Land_ladder"],
+	["Radio Tower", 140, "Land_radar_EP1"],
+	["Staircase", 100, "Land_A_Castle_Stairs_A"],
+// -- Sandbags ----------
+	["------------------Sandbags---------------", 0, "---"],
+	["Sandbag nest: Big", 150, "Land_fortified_nest_big"],
+	["Sandbag nest: Small", 100, "Land_fortified_nest_small_EP1"],
+	["Sandbag wall: Corner", 60, "Land_fort_bagfence_corner"],
+	["Sandbag wall: Long", 60, "Land_fort_bagfence_long"],
+	["Sandbag wall: Short", 60, "Land_BagFenceShort"],
+	["Sandbag round: Large", 60, "Land_fort_bagfence_round"],
+	["Sandbag round: Small", 60, "Land_BagFenceRound"],
+// -- Wooden Items ----------
+	["------------------Wooden Items---------------", 0, "---"],
+	["Wood Board Stack", 20, "Land_Ind_BoardsPack2"],
+	["Wood GuardShed", 20, "Land_GuardShed"],
+	["Wood Ramp", 20, "Land_WoodenRamp"],
+	["Wood Ramp Arc", 30, "Land_prebehlavka"],
+// -- Static Weapons ----------
+	["------------------Static Weapons---------------", 0, "---"],
+	["DSHKM", 500, "DSHKM_CDF"],
+	["Igla Pod", 3500, "Igla_AA_pod_East"],
+	["KORD", 500, "KORD_high"],
+	["L2A1 High", 550, "BAF_L2A1_Tripod_D"],
+	["M240 Bunker", 350, "WarfareBMGNest_M240_US_EP1"],
+	["M2 Tripod", 550, "M2HD_mini_TriPod"],
+	["Metis Tripod", 2000, "Metis"],
+	["MK19", 600, "MK19_TriPod"],
+	["M2 High", 600, "M2StaticMG"],
+	["SPG9 Tripod", 700, "SPG9_CDF"],
+	["Stinger Pod", 4000, "Stinger_Pod"],
+	["TOW Tripod", 4000, "TOW_TriPod"],
+	["ZU23", 2000, "ZU23_CDF"]
+];
+
 // Chernarus town and city array
 //Marker Name, Radius, City Name
 cityList = [
@@ -183,4 +267,5 @@ cityList = [
 		["Town_45",200,"Nadezhdino"],
 		["Town_46",200,"Dubrovka"]
 ];
+
 cityLocations = [];

@@ -79,7 +79,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=137;
+		items=138;
 		class Item0
 		{
 			side="WEST";
@@ -2699,10 +2699,30 @@ class Mission
 				};
 			};
 		};
+		class Item137
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12605.087,180.91464,4352.4751};
+					azimut=140.64359;
+					id=215;
+					side="LOGIC";
+					vehicle="worker3";
+					leader=1;
+					skill=0.60000002;
+					text="buildingStore1";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Building Store</t>"", ""client\systems\buildingStore\loadBuildingStore.sqf""]; this attachTo[fp17, [0, -2, -0.1]];";
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
-		items=81;
+		items=83;
 		class Item0
 		{
 			position[]={8343.0654,26.779518,3340.9795};
@@ -3560,6 +3580,28 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handledamage"", {false}];";
+		};
+		class Item81
+		{
+			position[]={12602.637,180.93529,4353.1455};
+			azimut=310;
+			id=216;
+			side="EMPTY";
+			vehicle="Land_Campfire_burning";
+			skill=0.60000002;
+			text="fp17";
+			init="this setVariable [""R3F_LOG_disabled"", true];";
+		};
+		class Item82
+		{
+			position[]={12598.457,181.11984,4365.6768};
+			azimut=200;
+			id=217;
+			side="EMPTY";
+			vehicle="Sr_border";
+			skill=0.60000002;
+			text="buildingStoreSpawn1";
+			init="this setVariable[""R3F_LOG_disabled"", true];";
 		};
 	};
 	class Markers

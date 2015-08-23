@@ -23,29 +23,36 @@ useMedicalKit = compile preprocessFileLineNumbers "client\systems\playerMenu\use
 // Sync client with server time
 timeSync = compile preprocessFileLineNumbers "client\functions\clientTimeSync.sqf";
 
-// Update scripts
+// Update Scripts
 updateMissionsMarkers = compile preprocessFileLineNumbers "client\functions\updatePlayerMissionMarkers.sqf";
 updateRadarMarkers = compile preprocessFileLineNumbers "client\functions\updatePlayerRadarMarkers.sqf";
 updateTeamKiller = compile preprocessFileLineNumbers "client\functions\updateTeamKiller.sqf";
 
-// Team-kill system
+// Team-Kill System
 teamkillAction = compile preprocessFileLineNumbers "client\functions\doTeamKillAction.sqf";
 teamkillMessage = compile preprocessFileLineNumbers "client\functions\showTeamKillMessage.sqf";
 
-// Dialog compiles
+// General & Gun Store Dialog
 client_respawnDialog = compile preprocessFileLineNumbers "client\functions\loadRespawnDialog.sqf";
 loadGeneralStore = compile preprocessFileLineNumbers "client\systems\generalStore\loadGenStore.sqf";
 loadGunStore = compile preprocessFileLineNumbers "client\systems\gunStore\loadGunStore.sqf";
 loadSellConfirm = compile preprocessFileLineNumbers "client\systems\gunStore\loadSellConfirm.sqf";
 sellWeaponConfirmed = compile preprocessFileLineNumbers "client\systems\gunStore\sellWeaponConfirmed.sqf";
 
-// Helicopter Store Dialog compiles
+// Helicopter Store Dialog
 loadHelicopterStore = compile preprocessFileLineNumbers "client\systems\helicopterStore\loadHelicopterStore.sqf";
 populateHelicopterStore = compile preprocessFileLineNumbers "client\systems\helicopterStore\populateHelicopterStore.sqf";
 helicopterItemInfo = compile preprocessFileLineNumbers "client\systems\helicopterStore\itemInfo.sqf";
 
+// Building Store Dialog
+loadBuildingStore = compile preprocessFileLineNumbers "client\systems\buildingStore\loadBuildingStore.sqf";
+populateBuildingStore = compile preprocessFileLineNumbers "client\systems\buildingStore\populateBuildingStore.sqf";
+buildingItemInfo = compile preprocessFileLineNumbers "client\systems\buildingStore\itemInfo.sqf";
+
+// Bicycle Spawn Script
 spawnBicycle = compile preprocessFileLineNumbers "client\systems\playerMenu\spawnBicycle.sqf";
 
+// Utility Scripts
 closestTown = compile preprocessFile "client\functions\closestTown.sqf";
 azimuthToBearing = compile preprocessFile "client\functions\azimuthToBearing.sqf";
 spawnInfoText = compile preprocessFileLineNumbers "client\functions\spawnInfoText.sqf";
