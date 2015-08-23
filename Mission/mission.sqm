@@ -756,7 +756,7 @@ class Mission
 					position[]={-4947.6074,415.3299,16365.771};
 					id=42;
 					side="GUER";
-					vehicle="GUE_Soldier_Scout";
+					vehicle="CDF_Soldier_Sniper";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
@@ -832,7 +832,7 @@ class Mission
 					position[]={-4940.7842,415.60233,16365.961};
 					id=46;
 					side="GUER";
-					vehicle="GUE_Soldier_Scout";
+					vehicle="CDF_Soldier_Sniper";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
@@ -965,7 +965,7 @@ class Mission
 					position[]={-4926.7568,416.25104,16372.406};
 					id=53;
 					side="GUER";
-					vehicle="GUE_Soldier_Scout";
+					vehicle="CDF_Soldier_Sniper";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
@@ -1041,7 +1041,7 @@ class Mission
 					position[]={-4920.8809,416.36264,16372.406};
 					id=57;
 					side="GUER";
-					vehicle="GUE_Soldier_Scout";
+					vehicle="CDF_Soldier_Sniper";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
@@ -2229,7 +2229,7 @@ class Mission
 					position[]={-4948.9141,415.73029,16338.553};
 					id=137;
 					side="GUER";
-					vehicle="GUE_Soldier_Scout";
+					vehicle="CDF_Soldier_Sniper";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
@@ -2305,7 +2305,7 @@ class Mission
 					position[]={-4942.0908,415.42575,16338.742};
 					id=141;
 					side="GUER";
-					vehicle="GUE_Soldier_Scout";
+					vehicle="CDF_Soldier_Sniper";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
@@ -2438,7 +2438,7 @@ class Mission
 					position[]={-4928.0635,415.08249,16345.188};
 					id=148;
 					side="GUER";
-					vehicle="GUE_Soldier_Scout";
+					vehicle="CDF_Soldier_Sniper";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
@@ -2514,7 +2514,7 @@ class Mission
 					position[]={-4922.1875,414.9614,16345.188};
 					id=152;
 					side="GUER";
-					vehicle="GUE_Soldier_Scout";
+					vehicle="CDF_Soldier_Sniper";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
