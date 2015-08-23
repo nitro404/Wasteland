@@ -6,7 +6,7 @@
 //	@file Args:
 
 
-private["_handled", "_faceCP", "_faceVP"];
+private["_handled", "_faceCP", "_faceVP", "_playerNamesVisible"];
 
 _key     = _this select 1;
 _shift   = _this select 2;
@@ -25,11 +25,8 @@ switch _key do {
 
     // Left Windows Key
     case 219: {
-        player setVariable ["ShowNameAllies", true];
-        [] spawn {
-            sleep 5;
-            player setVariable ["ShowNameAllies", false];
-        };
+        _playerNamesVisible = player getVariable["ShowNameAllies", false];
+        player setVariable["ShowNameAllies", !_playerNamesVisible];
     };
 
     // Tilde
