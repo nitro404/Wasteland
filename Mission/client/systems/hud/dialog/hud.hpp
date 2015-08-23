@@ -11,13 +11,14 @@
 
 class WastelandHud {
 	idd = -1;
-    fadeout=0;
-    fadein=0;
+    fadeout = 0;
+    fadein = 0;
 	duration = 20;
-	name= "WastelandHud";
-	onLoad = "uiNamespace setVariable ['WastelandHud', _this select 0]";
+	name = "WastelandHud";
+	onLoad = "uiNamespace setVariable['WastelandHud', _this select 0]";
 
 	class controlsBackground {
+
 		class WastelandHud_Vehicle:w_RscText {
 			idc = hud_vehicle_idc;
 			type = CT_STRUCTURED_TEXT;
@@ -34,6 +35,7 @@ class WastelandHud {
 				align = "right";
 			};
 		};
+
 		class WastelandHud_Status:w_RscText {
 			idc = hud_status_idc;
 			type = CT_STRUCTURED_TEXT;
@@ -50,5 +52,26 @@ class WastelandHud {
 				align = "right";
 			};
 		};
+
+		class WastelandHud_Watermark {
+			idc = -1;
+			x = safeZoneX + 0.01125;
+			y = safeZoneY + safeZoneH - 0.1125;
+			w = 0.35 * safeZoneW;
+			h = 0.057 * safeZoneH;
+			class Attributes {
+				color = "#20FFFFFF";
+				align = "left";
+				valign = "middle";
+			};
+			font = "EtelkaNarrowMediumPro";
+			colorBackground[] = {0, 0, 0, 0};
+			shadow = 0; 
+			size = 0.06 * safeZoneH;
+			type = 13;
+			style = 0;
+			text="Event Horizon Gaming";
+		};
+
 	};
 };
