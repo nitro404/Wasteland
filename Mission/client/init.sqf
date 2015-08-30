@@ -4,7 +4,7 @@
 //@file Created: 20/11/2012 05:19
 //@file Description: The client init.
 
-if(!X_Client) exitWith {};
+if(!X_Client) exitWith { };
 
 // Disable player from killing in the spawn area.
 player enableSimulation false;
@@ -25,8 +25,8 @@ currentRadarMarkers = [];
 playerCompiledScripts = false;
 playerSetupComplete = false;
 
-waitUntil {!isNull player};
-waitUntil{time > 2};
+waitUntil { !isNull player };
+waitUntil { time > 2 };
 
 //Call client compile list.
 player call compile preprocessFileLineNumbers "client\functions\clientCompile.sqf";
@@ -40,7 +40,7 @@ if(!(playerSide in [west, east, resistance])) then {
 player call playerSetup;
 
 //Setup player events.
-if(!isNil "client_initEH") then {player removeEventHandler ["Respawn", client_initEH];};
+if(!isNil "client_initEH") then { player removeEventHandler["Respawn", client_initEH]; };
 player addEventHandler ["Respawn", {[_this] call onRespawn;}];
 player addEventHandler ["Killed", {[_this] call onKilled;}];
 
@@ -48,16 +48,15 @@ player addEventHandler ["Killed", {[_this] call onKilled;}];
 [] execVM "client\clientEvents\onMouseWheel.sqf";
 
 //Setup Key Handler
-waituntil {!(IsNull (findDisplay 46))};
-(findDisplay 46) displaySetEventHandler ["KeyDown", "_this call onKeyPress"];
+waituntil { !(IsNull (findDisplay 46)) };
+(findDisplay 46) displaySetEventHandler["KeyDown", "_this call onKeyPress"];
 
-"currentDate" addPublicVariableEventHandler {[] call timeSync};
-"clientMissionMarkers" addPublicVariableEventHandler {[] call updateMissionsMarkers};
-"clientRadarMarkers" addPublicVariableEventHandler {[] call updateRadarMarkers};
-"pvar_teamKillList" addPublicVariableEventHandler {[] call updateTeamKiller};
-"publicVar_teamkillMessage" addPublicVariableEventHandler {if(local(_this select 1)) then {[] spawn teamkillMessage;};};
+"currentDate" addPublicVariableEventHandler  { [] call timeSync };
+"clientMissionMarkers" addPublicVariableEventHandler { [] call updateMissionsMarkers };
+"clientRadarMarkers" addPublicVariableEventHandler { [] call updateRadarMarkers };
+"pvar_teamKillList" addPublicVariableEventHandler { [] call updateTeamKiller };
+"publicVar_teamkillMessage" addPublicVariableEventHandler { if(local(_this select 1)) then { [] spawn teamkillMessage; }; };
 
-//client Executes
 [] execVM "client\systems\hud\playerHud.sqf";
 [] execVM "client\functions\createTownMarkers.sqf";
 [] execVM "client\functions\createGunStoreMarkers.sqf";
@@ -67,10 +66,14 @@ waituntil {!(IsNull (findDisplay 46))};
 //true execVM "client\functions\loadAtmosphere.sqf"; // Set to false to disable dust, ash and wind
 [] call updateMissionsMarkers;
 [] call updateRadarMarkers;
-if (isNil "FZF_IC_INIT") then   {
+
+if(isNil "FZF_IC_INIT") then {
 	call compile preprocessFileLineNumbers "client\functions\newPlayerIcons.sqf";
 };
+
 sleep 1;
+
 true spawn playerSpawn;
+
 [] execVM "client\functions\antiCheatClient.sqf";
 [] spawn FZF_IC_INIT;
