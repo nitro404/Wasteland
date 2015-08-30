@@ -1,15 +1,20 @@
-#include "setup.sqf"
 //	@file Version: 1.0
 //	@file Name: serverCompile.sqf
 //	@file Author: [404] Deadbeat
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-if(!X_Server) exitWith {};
+if(!X_Server) exitWith { };
 
-diag_log format["WASTELAND SERVER - Initializing Server Compile"];
+#include "setup.sqf"
 
-//Main Mission Compiles
+diag_log format["WASTELAND SERVER - Compiling Server-Side Scripts..."];
+
+// Utility Scripts
+randomPosition = compile preprocessFileLineNumbers "server\functions\randomPosition.sqf";
+randomObject = compile preprocessFileLineNumbers "server\functions\randomObject.sqf";
+
+// Main Mission Scripts
 mission_APC = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_APC.sqf";
 mission_Heli = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_Heli.sqf";
 mission_LightArmVeh = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_LightArmVeh.sqf";
@@ -18,14 +23,14 @@ mission_MBT = compile preprocessFileLineNumbers "server\missions\mainMissions\mi
 mission_Outpost = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_Outpost.sqf";
 mission_SupplyDrop = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_SupplyDrop.sqf";
 
-//Side Mission Compiles
+// Side Mission Scripts
 mission_AirWreck = compile preprocessFileLineNumbers "server\missions\sideMissions\mission_AirWreck.sqf";
 mission_Truck = compile preprocessFileLineNumbers "server\missions\sideMissions\mission_Truck.sqf";
 mission_ReconVeh = compile preprocessFileLineNumbers "server\missions\sideMissions\mission_ReconVeh.sqf";
 mission_WepCache = compile preprocessFileLineNumbers "server\missions\sideMissions\mission_WepCache.sqf";
 mission_SmallHeli = compile preprocessFileLineNumbers "server\missions\sideMissions\mission_SmallHeli.sqf";
 
-//Factory Compiles
+// Factory Scripts
 createMissionLocation = compile preprocessFileLineNumbers "server\missions\factoryMethods\createMissionLocation.sqf";
 createClientMarker = compile preprocessFileLineNumbers "server\missions\factoryMethods\createClientMarker.sqf";
 createWaitCondition = compile preprocessFileLineNumbers "server\missions\factoryMethods\createWaitCondition.sqf";
@@ -38,21 +43,22 @@ createSupplyDrop = compile preprocessFileLineNumbers "server\missions\factoryMet
 createCargoItem = compile preprocessFileLineNumbers "server\missions\factoryMethods\createCargoItem.sqf";
 defendArea = compile preprocessFileLineNumbers "server\functions\defendArea.sqf";
 
-//Spawning Compiles
+// Spawning Scripts
 randomWeapons = compile preprocessFileLineNumbers "server\spawning\randomWeapon.sqf";
-vehicleCreation = compile preprocessFileLineNumbers "server\spawning\vehicleCreation.sqf";
-objectCreation = compile preprocessFileLineNumbers "server\spawning\objectCreation.sqf";
-staticGunCreation = compile preprocessFileLineNumbers "server\spawning\staticGunCreation.sqf";
-staticHeliCreation = compile preprocessFileLineNumbers "server\spawning\staticHeliCreation.sqf";
-fn_refillbox = compile preprocessFileLineNumbers "server\functions\fn_refillbox.sqf";
+spawnVehicle = compile preprocessFileLineNumbers "server\spawning\spawnVehicle.sqf";
+spawnWeaponCrate = compile preprocessFileLineNumbers "server\spawning\spawnWeaponCrate.sqf";
+spawnObject = compile preprocessFileLineNumbers "server\spawning\spawnObject.sqf";
+respawnVehicles = compile preprocessFileLineNumbers "server\functions\respawnVehicles.sqf";
 
-//Player Management
+// Player Management Scripts
 server_playerDied = compile preprocessFileLineNumbers "server\functions\serverPlayerDied.sqf";
 
-//Event handlers
+// Event Handlers
 createLootMoney = compile preprocessFileLineNumbers "server\functions\dropLoot.sqf";
 
-//.Net Compiles
+// ARMA2Net Scripts
 #ifdef __A2NET__
 arma2NetTime = compile preprocessFileLineNumbers "server\functions\netTime.sqf";
 #endif
+
+diag_log format["WASTELAND SERVER - Finished Compiling Server-Side Scripts!"];
