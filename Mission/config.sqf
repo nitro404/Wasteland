@@ -119,6 +119,11 @@ generalStore = [
 	["Camo Net", "camonet", localize "STR_WL_ShopDescriptions_Camo", "client\icons\camonet.paa", 300, 150]
 ];
 
+bicycleList = [
+	"MMT_Civ",
+	"Old_bike_TK_CIV_EP1"
+];
+
 helicopterStore = [
 	["UH-1H Huey", 1000, "UH1H_TK_GUE_EP1"],
 	["MH6J Little Bird", 1200, "MH6J_EP1"],
@@ -132,6 +137,125 @@ helicopterStore = [
 	["AH-6J Little Bird", 7000, "AH6J_EP1"],
 	["Ka-60 (M32)", 8000, "Ka60_GL_PMC"],
 	["UH-1Y Venom", 10000, "UH1Y"]
+];
+
+weaponBlacklist = [
+	// Bombs
+	"Mk82BombLauncher_6",
+	// Air to Ground Missiles
+	"MaverickLauncher",
+	"VikhrLauncher",
+	"Ch29Launcher",
+	"Ch29Launcher_Su34",
+	"CRV7_FAT",
+	"CRV7_HEPD",
+	"CRV7_PG",
+	// Air to Air Missiles
+	"SidewinderLaucher",
+	"SidewinderLaucher_AH1Z",
+	"SidewinderLaucher_AH64",
+	"SidewinderLaucher_F35",
+	"R73Launcher",
+	"R73Launcher_2",
+	// Artillery
+	"D30",
+	"M252",
+	"MLRS",
+	"GRAD",
+	// Jet Chaingun
+	"GAU12",
+	"GAU8"
+];
+
+vehicleBlacklist = [
+	// Attack Helicopters
+	"AH1Z",
+	"AH64D_EP1",
+	"AH64D",
+	"BAF_Apache_AH1_D",
+	"Ka52",
+	"Ka52Black",
+	// Jets / Planes
+	"A10_US_EP1",
+	"A10",
+	"AV8B2",
+	"AV8B",
+	"F35B",
+	"Chukar_EP1",
+	"Chukar",
+	// Artillery
+	"MAZ_543_SCUD_TK_EP1",
+	"GRAD_CDF",
+	"GRAD_TK_EP1",
+	"GRAD_INS",
+	"GRAD_RU",
+	"MLRS",
+	"M1129_MC_EP1",
+	"D30_TK_EP1",
+	"D30_CDF",
+	"D30_RU",
+	"D30_Ins",
+	"D30_TK_INS_EP1",
+	"D30_TK_GUE_EP1",
+	"M119",
+	"M119_US_EP1",
+	"2b14_82mm_CZ_EP1",
+	"2b14_82mm_INS",
+	"2b14_82mm_GUE",
+	"2b14_82mm_TK_GUE_EP1",
+	"2b14_82mm_TK_EP1",
+	"2b14_82mm",
+	"2b14_82mm_CDF",
+	"2b14_82mm_TK_INS_EP1",
+	"M252",
+	"M252_US_EP1",
+	// Desert Camouflage
+	"HMMWV_Avenger_DES_EP1",
+	"HMMWV_MK19_DES_EP1",
+	"HMMWV_TOW_DES_EP1",
+	"BAF_FV510_D",
+	"M1A1_US_DES_EP1",
+	"M1A2_US_TUSK_MG_EP1",
+	"MLRS_DES_EP1",
+	// Army of the Czech Republic
+	"Dingo_GL_DST_ACR",
+	"Dingo_GL_Wdl_ACR",
+	"Dingo_WDL_ACR",
+	"Dingo_DST_ACR",
+	"M1114_AGS_ACR",
+	"M1114_DSK_ACR",
+	"LandRover_ACR",
+	"LandRover_Ambulance_ACR",
+	"LandRover_Ambulance_Des_ACR",
+	"Octavia_ACR",
+	"UAZ_Unarmed_ACR",
+	"PBX_ACR",
+	"RM70_ACR",
+	"T810_Des_ACR",
+	"T810_ACR",
+	"T810Reammo_Des_ACR",
+	"T810Reammo_ACR",
+	"T810Refuel_ACR",
+	"T810Refuel_Des_ACR",
+	"T810A_Des_MG_ACR",
+	"T810A_MG_ACR",
+	"T810_Open_ACR",
+	"T810_Open_Des_ACR",
+	"T810Repair_ACR",
+	"T810Repair_Des_ACR",
+	"T72_ACR",
+	"BMP2_Des_ACR",
+	"BMP2_ACR",
+	"BRDM2_ACR",
+	"BRDM2_Desert_ACR",
+	"BVP1_TK_GUE_ACR",
+	"BVP1_TK_ACR",
+	"Pandur2_ACR",
+	"Mi24_D_CZ_ACR",
+	"L159_ACR",
+	"L39_ACR",
+	"L39_2_ACR",
+	"Rbs70_ACR"
 ];
 
 buildingStore = [
@@ -254,8 +378,8 @@ townList = [
 	["Town_30", 200, "Pogorevka"],
 	["Town_31", 200, "Rogovo"],
 	["Town_32", 200, "Kabanino"],
-	["Town_33", 300, "StarySobor"],
-	["Town_34", 200, "NovySobor"],
+	["Town_33", 300, "Stary Sobor"],
+	["Town_34", 200, "Novy Sobor"],
 	["Town_35", 200, "Vyshnoye"],
 	["Town_36", 250, "Mogilevka"],
 	["Town_37", 200, "Guglovo"],
