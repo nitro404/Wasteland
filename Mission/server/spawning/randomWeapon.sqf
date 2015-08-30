@@ -6,23 +6,33 @@
 
 if(!X_Server) exitWith { };
 
-private ["_car", "_mags", "_rnd", "_weapon", "_mag"];
+private["_vehicle", "_randomGear", "_weapon", "_magazine", "_numberOfRandomWeapons", "_currentRandomWeapon"];
 
-//Grabs carname from array in execVM
-_car = _this select 0;
+_vehicle = _this select 0;
 
-_num = floor (random 100);
-if(_num < 50) then { _car addWeaponCargoGlobal ["Binocular_Vector", 1]};
-if(_num < 15) then { _car addWeaponCargoGlobal ["NVgoggles", 1]};
+if(_vehicle isKindOf "Motorcycle" || _vehicle isKindOf "Bicycle") exitWith { };
+
+if(!(_vehicle isKindOf "Helicopter")) then {
+	_randomGear = floor(random 100);
+
+	if(_randomGear < 50) then {
+		_vehicle addWeaponCargoGlobal ["Binocular_Vector", 1];
+	};
+
+	if(_randomGear < 15) then {
+		_vehicle addWeaponCargoGlobal ["NVgoggles", 1];
+	};
+};
 
 _numberOfRandomWeapons = (random 3) + 2;
+_currentRandomWeapon = 0;
 
-for "_i" from 1 to _numberOfRandomWeapons do {
-	//Get Random Gun From randomWeapons Array.
+while { _currentRandomWeapon < _numberOfRandomWeapons } do {
 	_weapon = vehicleWeapons select (random (count vehicleWeapons - 1));
-	_mag = (getArray (configFile >> "Cfgweapons" >> _weapon >> "magazines")) select 0;
+	_magazine = (getArray (configFile >> "Cfgweapons" >> _weapon >> "magazines")) select 0;
 
-	//Add guns and magazines, note the Global at the end..
-	_car addMagazineCargoGlobal[_mag, (random 2) + 4];
-	_car addWeaponCargoGlobal[_weapon, 1];
+	_vehicle addMagazineCargoGlobal[_magazine, (random 2) + 4];
+	_vehicle addWeaponCargoGlobal[_weapon, 1];
+
+	_currentRandomWeapon = _currentRandomWeapon + 1;
 };
