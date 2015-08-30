@@ -14,7 +14,7 @@ _spawnDir = getDir player;
 _spawnPos = player modelToWorld [0, 3, 0];
 _spawnPos set [2, 0];
 
-userSpawnedBike = createVehicle ["MMT_USMC", _spawnPos, [], 0, "NONE"];
+userSpawnedBike = createVehicle [bicycleList select floor(random count bicycleList), _spawnPos, [], 0, "NONE"];
 userSpawnedBike setDir _spawnDir;
 userSpawnedBike setPosATL _spawnPos;
 
