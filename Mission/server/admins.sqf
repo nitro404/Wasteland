@@ -4,22 +4,20 @@
 //	@file Created: NA
 //	@file Args:
 
-if(!X_Server) exitWith {};
-
-// Admin menu access levels (PID)
+if(!X_Server) exitWith { };
 
 moderators = [
-	"0"
+
 ];
 publicVariable "moderators";
 
 administrators = [
-	"0"
+
 ];
 publicVariable "administrators";
 
 serverAdministrators = [
-	"76561197983361980", // nitro glycerine / David Della Rocco
+	"76561197983361980", // nitro glycerine
 	"76561198025070008", // nitro glycerine (Alt)
 	"76561198085238045", // Sponty
 	"76561197962166875", // Dropy
