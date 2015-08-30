@@ -61,6 +61,8 @@ _respawnDir = _beacon select 4;
 respawnDialogActive = false;
 closeDialog 0;
 
+sleep 0.1;
+
 while { ((getposATL player) select 2) > 1 } do {
 	hintsilent parseText format ["<t align='center' color='#00aa00' font='Zeppelin33' shadow='1' shadowColor='#000000' size='2'>Alt %1m</t>", round (getPosATL player select 2)];
 };
