@@ -35,6 +35,16 @@ if(count _nearestVehicles > 0) exitWith {
 			_helicopter setDir (getDir helicopterStoreSpawn);
 			_helicopter setVariable["R3F_LOG_disabled", false, true];
 
+			if(_helicopter isKindOf "Ka60_PMC") then {
+				_helicopter addMagazine "120Rnd_CMFlareMagazine";
+				_helicopter addWeapon "CMFlareLauncher";
+			};
+
+			if(_helicopter isKindOf "AH64D" || _vehicle isKindOf "AH64D_EP1") then {
+				_helicopter removeMagazineTurret["60Rnd_CMFlareMagazine", [-1]];
+				_helicopter addMagazineTurret["120Rnd_CMFlareMagazine", [-1]];
+			};
+
 			clearMagazineCargoGlobal _helicopter;
 			clearWeaponCargoGlobal _helicopter;
 
