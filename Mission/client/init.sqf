@@ -58,12 +58,17 @@ waituntil { !(IsNull (findDisplay 46)) };
 "publicVar_teamkillMessage" addPublicVariableEventHandler { if(local(_this select 1)) then { [] spawn teamkillMessage; }; };
 
 [] execVM "client\systems\hud\playerHud.sqf";
+
+sleep 0.1;
+
 [] execVM "client\functions\createTownMarkers.sqf";
 [] execVM "client\functions\createGunStoreMarkers.sqf";
 [] execVM "client\functions\createGeneralStoreMarkers.sqf";
 [] execVM "client\functions\createHelicopterStoreMarkers.sqf";
 [] execVM "client\functions\createBuildingStoreMarkers.sqf";
+
 //true execVM "client\functions\loadAtmosphere.sqf"; // Set to false to disable dust, ash and wind
+
 [] call updateMissionsMarkers;
 [] call updateRadarMarkers;
 

@@ -36,6 +36,7 @@ waitUntil {
 diag_log format["WASTELAND SERVER - Starting Vehicle Respawn Script"];
 
 [] spawn respawnVehicles;
+[] spawn respawnHelicopters;
 
 diag_log format["WASTELAND SERVER - Initializing Mission Controllers"];
 [] execVM "server\missions\sideMissionController.sqf";

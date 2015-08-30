@@ -6,7 +6,7 @@
 
 if(!X_Server) exitWith { };
 
-private["_townPosition", "_townRadius", "_townName", "_helicopterIndex", "_helicopterPosition"];
+private["_townPosition", "_townRadius", "_townName"];
 
 while { true } do {
 
@@ -22,19 +22,5 @@ while { true } do {
 		sleep 0.1;
 	} forEach townList;
 
-	_helicopterIndex = 0;
-
-	while { _helicopterIndex < numberOfHelicopterSpawns } do {
-		_helicopterPosition = getMarkerPos format["heliSpawn_%1", _helicopterIndex + 1;
-
-		if(count nearestObjects[_helicopterPosition, ["Helicopter"], 10] == 0) {
-			[_helicopterPosition], random 360.0, helicopterCategories] call spawnVehicle;
-		};
-
-		_helicopterIndex = _helicopterIndex + 1;
-
-		sleep 0.1;
-	};
-
-	sleep 60.0 - ((count townList) * 0.1) - (numberOfHelicopterSpawns * 0.1);
+	sleep 60.0 - ((count townList) * 0.1);
 };

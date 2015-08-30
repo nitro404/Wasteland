@@ -49,6 +49,7 @@ spawnVehicle = compile preprocessFileLineNumbers "server\spawning\spawnVehicle.s
 spawnWeaponCrate = compile preprocessFileLineNumbers "server\spawning\spawnWeaponCrate.sqf";
 spawnObject = compile preprocessFileLineNumbers "server\spawning\spawnObject.sqf";
 respawnVehicles = compile preprocessFileLineNumbers "server\functions\respawnVehicles.sqf";
+respawnHelicopters = compile preprocessFileLineNumbers "server\functions\respawnHelicopters.sqf";
 
 // Player Management Scripts
 server_playerDied = compile preprocessFileLineNumbers "server\functions\serverPlayerDied.sqf";
