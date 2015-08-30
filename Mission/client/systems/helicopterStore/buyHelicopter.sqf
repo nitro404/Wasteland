@@ -13,11 +13,11 @@ closeDialog helicopterStore_DIALOG;
 _selectedItem = lbCurSel _itemlist;
 _itemText = _itemlist lbText _selectedItem;
 
-_nearestVehicles = nearestObjects[getPos helicopterStoreSpawn, ["Car", "Motorcycle", "Tank", "Helicopter", "Plane", "Ship", "StaticWeapon"], 10];
+_nearestVehicles = nearestObjects[getPos helicopterStoreSpawn, ["Car", "Motorcycle", "Tank", "Helicopter", "Plane", "Ship", "StaticWeapon"], 8];
 
 if(count _nearestVehicles > 0) exitWith {
-	titleText["Helicopter purchase failed, spawn is currently blocked!", "PLAIN"];
-	titleFadeOut 3;
+	titleText[format["Helicopter purchase failed, spawn is currently blocked by %1!", typeOf (_nearestVehicles select 0)], "PLAIN"];
+	titleFadeOut 5;
 };
 
 {
