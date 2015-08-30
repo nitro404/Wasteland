@@ -2,14 +2,14 @@
 //	@file Name: spawnVehicle.sqf
 //	@file Author: nitro glycerine
 //	@file Created: 23/08/2015 11:13 PM
-//	@file Args: [position, direction, category] call spawnVehicle;
-//              ie. [[136, 289, 0], 125, helicopterCategories] call spawnVehicle;
-//              [position, direction, type, missionVehicle] call spawnVehicle;
-//              ie. [[260, 140, 0], 278, "AH6D", true] call spawnVehicle;
+//	@file Args: [position, direction, category, respawn, delay] call spawnVehicle;
+//              ie. [[136, 289, 0], 125, helicopterCategories, false, -1] call spawnVehicle;
+//              [position, direction, type, missionVehicle, respawn, delay] call spawnVehicle;
+//              ie. [[260, 140, 0], 278, "AH6D", true, false, -1] call spawnVehicle;
 
 if(!X_Server) exitWith { };
 
-private["_vehiclePosition", "_vehicleCategory", "_vehicleClassName", "_missionVehicle", "_vehicle"];
+private["_vehiclePosition", "_vehicleCategory", "_vehicleClassName", "_missionVehicle", "_respawnVehicle", "_vehicle", "_vehicleInit", "_magazineIndex"];
 
 if(count _this < 3) exitWith {
     diag_log format["spawnVehicle Error: Requires minimum of 3 arguments, received %1.", count _this]
@@ -20,6 +20,9 @@ _vehicleDirection = _this select 1;
 _vehicleCategory = nil;
 _vehicleClassName = nil;
 _missionVehicle = false;
+_respawnVehicle = false;
+_respawnDelay = 0;
+_vehicleInit = nil;
 
 if(typeName _vehiclePosition != "ARRAY") exitWith {
     diag_log format["spawnVehicle Arg0 Error: Invalid position argument - expected array, received %1.", typeName _vehiclePosition]
@@ -31,6 +34,28 @@ if(typeName _vehicleDirection != "SCALAR") exitWith {
 
 if(typeName (_this select 2) == "ARRAY") then {
     _vehicleCategory = _this select 2;
+
+    if(count _this > 3) then {
+        if(typeName (_this select 3) == "BOOL") then {
+            _respawnVehicle = _this select 3;
+
+            if(count _this > 4) then {
+                if(typeName (_this select 4) == "SCALAR") then {
+                    _respawnDelay = _this select 4;
+                }
+                else {
+                    if(true) exitWith {
+                        diag_log format["spawnVehicle Arg4 Error: Invalid respawn delay argument - expected scalar, received %1.", typeName (_this select 4)]
+                    };
+                };
+            };
+        }
+        else {
+            if(true) exitWith {
+                diag_log format["spawnVehicle Arg3 Error: Invalid respawn argument - expected bool, received %1.", typeName (_this select 3)]
+            };
+        };
+    };
 }
 else {
     if(typeName (_this select 2) == "STRING") then {
@@ -39,6 +64,28 @@ else {
         if(count _this > 3) then {
             if(typeName (_this select 3) == "BOOL") then {
                 _missionVehicle = _this select 3;
+
+                if(count _this > 4) then {
+                    if(typeName (_this select 4) == "BOOL") then {
+                        _respawnVehicle = _this select 4;
+
+                        if(count _this > 5) then {
+                            if(typeName (_this select 5) == "SCALAR") then {
+                                _respawnDelay = _this select 5;
+                            }
+                            else {
+                                if(true) exitWith {
+                                    diag_log format["spawnVehicle Arg5 Error: Invalid respawn delay argument - expected scalar, received %1.", typeName (_this select 4)]
+                                };
+                            };
+                        };
+                    }
+                    else {
+                        if(true) exitWith {
+                            diag_log format["spawnVehicle Arg4 Error: Invalid respawn argument - expected bool, received %1.", typeName (_this select 4)]
+                        };
+                    };
+                };
             }
             else {
                 if(true) exitWith {
@@ -62,15 +109,13 @@ _vehicle = createVehicle [_vehicleClassName, _vehiclePosition, [], 0, "NONE"];
 _vehicle setPos[getPos _vehicle select 0, getpos _vehicle select 1, 0];
 
 if(_vehicle isKindOf "Tank") then {
-
     if(_vehicle isKindOf "M2A3_EP1") then {
-        _vehicle setVehicleInit "this setObjectTexture[0, ""textures\M2\base_co.paa""]; this setObjectTexture[1, ""textures\M2\a3_co.paa""]; this setObjectTexture[2, ""textures\M2\ultralp_co.paa""];";
+        _vehicleInit = "this setObjectTexture[0, ""textures\M2\base_co.paa""]; this setObjectTexture[1, ""textures\M2\a3_co.paa""]; this setObjectTexture[2, ""textures\M2\ultralp_co.paa""];";
     };
 
     if(_vehicle isKindOf "M6_EP1") then {
-        _vehicle setVehicleInit "this setObjectTexture[0, ""textures\M2\base_co.paa""]; this setObjectTexture[1, ""textures\M2\a3_co.paa""]; this setObjectTexture[2, ""textures\M2\ultralp_co.paa""]; this setObjectTexture[3, ""textures\M2\base_co.paa""];";
+        _vehicleInit = "this setObjectTexture[0, ""textures\M2\base_co.paa""]; this setObjectTexture[1, ""textures\M2\a3_co.paa""]; this setObjectTexture[2, ""textures\M2\ultralp_co.paa""]; this setObjectTexture[3, ""textures\M2\base_co.paa""];";
     };
-
 };
 
 if(_vehicle isKindOf "Helicopter") then {
@@ -86,14 +131,41 @@ if(_vehicle isKindOf "Helicopter") then {
 };
 
 if(_vehicle isKindOf "Plane") then {
+    if(_vehicle isKindOf "C130J") then {
+        for "_magazineIndex" from 0 to 1 do {
+            _vehicle addMagazine "6Rnd_GBU12_AV8B";
+        };
+        _vehicle addWeapon "BombLauncher";
+    };
+
+    if(_vehicle isKindOf "An2_TK_EP1" || _vehicle isKindOf "An2_1_TK_CIV_EP1") then {
+        for "_magazineIndex" from 0 to 1 do {
+            _vehicle addMagazine "500Rnd_TwinVickers";
+        };
+        _vehicle addWeapon "TwinVickers";
+
+        for "_magazineIndex" from 0 to 15 do {
+            _vehicle addMagazine "OG9_HE";
+        };
+        _vehicle addWeapon "SPG9";
+    };
+
     if(_vehicle isKindOf "L39_TK_EP1") then {
-        _vehicle addMagazine "150Rnd_23mm_GSh23L";
-        _vehicle addMagazine "150Rnd_23mm_GSh23L";
-        _vehicle addMagazine "150Rnd_23mm_GSh23L";
+        for "_magazineIndex" from 0 to 2 do {
+            _vehicle addMagazine "150Rnd_23mm_GSh23L";
+        };
     };
 };
 
-processInitCommands;
+if(_respawnVehicle && _respawnDelay >= 0) then {
+    _vehicleInit = format["%1 veh = [this, %2] execVM ""server\functions\respawnVehicle.sqf"";", if(isNil "_vehicleInit") then { "" } else { _vehicleInit }, _respawnDelay]
+};
+
+if(!isNil "_vehicleInit") then {
+    _vehicle setVehicleInit _vehicleInit;
+
+    processInitCommands;
+};
 
 clearMagazineCargoGlobal _vehicle;
 clearWeaponCargoGlobal _vehicle;
