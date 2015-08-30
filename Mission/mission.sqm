@@ -42,15 +42,15 @@ class Mission
 		"CAWheeled_E",
 		"CAWheeled2_MTVR",
 		"caair_e",
-		"ca_l39"
+		"ca_l39",
+		"CAAir2_C130J"
 	};
 	addOnsAuto[]=
 	{
-		"CACharacters_BAF",
 		"cacharacters2",
-		"cacharacters_pmc",
-		"cacharacters_e",
 		"ca_modules_functions",
+		"cacharacters_baf",
+		"cacharacters_e",
 		"camisc3",
 		"caweapons_ammoboxes",
 		"cabuildings",
@@ -59,7 +59,7 @@ class Mission
 		"caair_e_an2",
 		"ca_l39",
 		"CAAir2_MQ9PredatorB",
-		"caair_e",
+		"CAAir2_C130J",
 		"camisc_e_wf",
 		"chernarus"
 	};
@@ -3805,7 +3805,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=129;
+		items=195;
 		class Item0
 		{
 			position[]={6704.1572,6,2619.647};
@@ -4216,7 +4216,7 @@ class Mission
 		};
 		class Item55
 		{
-			position[]={11497.804,317.32367,11327.962};
+			position[]={10975.947,233.64255,11511.825};
 			name="heliSpawn_1";
 			type="Empty";
 			colorName="ColorGreen";
@@ -4265,7 +4265,7 @@ class Mission
 		};
 		class Item62
 		{
-			position[]={4849.686,9,2505.8723};
+			position[]={4838.9072,9,2523.302};
 			name="heliSpawn_8";
 			type="Empty";
 			colorName="ColorGreen";
@@ -4279,7 +4279,7 @@ class Mission
 		};
 		class Item64
 		{
-			position[]={13045.77,5.8797569,8358.0898};
+			position[]={12752.104,9.360321,8188.8267};
 			name="heliSpawn_10";
 			type="Empty";
 			colorName="ColorGreen";
@@ -4321,14 +4321,14 @@ class Mission
 		};
 		class Item70
 		{
-			position[]={9028.5078,229.2364,3765.9204};
+			position[]={9037.7295,226.38014,3736.2832};
 			name="heliSpawn_16";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item71
 		{
-			position[]={4139.1201,339,10728.26};
+			position[]={4124.0513,338.99466,10685.401};
 			name="heliSpawn_17";
 			type="Empty";
 			colorName="ColorGreen";
@@ -4342,7 +4342,7 @@ class Mission
 		};
 		class Item73
 		{
-			position[]={11657.837,1.9731928,3166.2563};
+			position[]={13709.796,46.899067,2921.634};
 			name="heliSpawn_19";
 			type="Empty";
 			colorName="ColorGreen";
@@ -4377,7 +4377,7 @@ class Mission
 		};
 		class Item78
 		{
-			position[]={7229.5376,17.449545,3658.9277};
+			position[]={7556.1367,205.93471,4839.2969};
 			name="heliSpawn_24";
 			type="Empty";
 			colorName="ColorGreen";
@@ -4636,7 +4636,7 @@ class Mission
 		};
 		class Item115
 		{
-			position[]={7180.0874,244.25247,5286.7593};
+			position[]={6694.4028,225.04993,4660.3076};
 			name="Mission_37";
 			type="Empty";
 			colorName="ColorOrange";
@@ -4731,6 +4731,468 @@ class Mission
 			name="Mission_50";
 			type="Empty";
 			colorName="ColorOrange";
+		};
+		class Item129
+		{
+			position[]={6596.2402,81.155632,3421.9336};
+			name="heliSpawn_25";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item130
+		{
+			position[]={5142.458,8.9186668,2349.1265};
+			name="heliSpawn_26";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item131
+		{
+			position[]={4688.4351,8.8999996,2604.0579};
+			name="heliSpawn_27";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item132
+		{
+			position[]={3608.8047,6.2241263,2264.0017};
+			name="heliSpawn_28";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item133
+		{
+			position[]={1017.7517,6.2199111,2363.3589};
+			name="heliSpawn_29";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item134
+		{
+			position[]={1722.3765,155.62985,5172.2065};
+			name="heliSpawn_30";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item135
+		{
+			position[]={3022.7852,162.92003,3442.3606};
+			name="heliSpawn_31";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item136
+		{
+			position[]={5603.8257,138.59625,3448.636};
+			name="heliSpawn_32";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item137
+		{
+			position[]={4464.0884,174.94669,4119.4331};
+			name="heliSpawn_33";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item138
+		{
+			position[]={3361.1152,355.67773,10755.191};
+			name="heliSpawn_34";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item139
+		{
+			position[]={1956.4404,241.24013,12392.521};
+			name="heliSpawn_35";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item140
+		{
+			position[]={5016.8633,211.83566,12204.777};
+			name="heliSpawn_36";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item141
+		{
+			position[]={6781.7793,385.4856,11379.144};
+			name="heliSpawn_37";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item142
+		{
+			position[]={7499.9727,287.20358,11532.636};
+			name="heliSpawn_38";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item143
+		{
+			position[]={7282.5137,310.25464,10562.946};
+			name="heliSpawn_39";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item144
+		{
+			position[]={9327.1689,243.38324,11305.542};
+			name="heliSpawn_40";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item145
+		{
+			position[]={10112.747,138.38348,13452.171};
+			name="heliSpawn_41";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item146
+		{
+			position[]={3550.2336,338.97855,6926.2769};
+			name="heliSpawn_42";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item147
+		{
+			position[]={13082.754,15.318131,6640.9639};
+			name="heliSpawn_43";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item148
+		{
+			position[]={12205.218,196.10555,6957.1597};
+			name="heliSpawn_44";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item149
+		{
+			position[]={10196.598,254.78926,8775.9707};
+			name="heliSpawn_45";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item150
+		{
+			position[]={10526.123,155.87793,9237.0537};
+			name="heliSpawn_46";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item151
+		{
+			position[]={11416.356,76.45607,9492.3008};
+			name="heliSpawn_47";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item152
+		{
+			position[]={12119.747,27.716429,9965.3252};
+			name="heliSpawn_48";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item153
+		{
+			position[]={12060.265,125.15854,10805.528};
+			name="heliSpawn_49";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item154
+		{
+			position[]={12827.776,49.921936,10947.592};
+			name="heliSpawn_50";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item155
+		{
+			position[]={12710.139,67.052147,11597.729};
+			name="heliSpawn_51";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item156
+		{
+			position[]={13398.547,73.485367,13162.358};
+			name="heliSpawn_52";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item157
+		{
+			position[]={12346.902,131.96381,13086.356};
+			name="heliSpawn_53";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item158
+		{
+			position[]={10775.299,244.21764,12276.899};
+			name="heliSpawn_54";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item159
+		{
+			position[]={9799.5459,172.71678,10506.462};
+			name="heliSpawn_55";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item160
+		{
+			position[]={8666.9844,356.97495,10137.438};
+			name="heliSpawn_56";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item161
+		{
+			position[]={10405.086,7.7973561,1995.0402};
+			name="heliSpawn_57";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item162
+		{
+			position[]={3766.2249,307.25784,8259.1885};
+			name="heliSpawn_58";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item163
+		{
+			position[]={3039.8044,275.89966,9249.2314};
+			name="heliSpawn_59";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item164
+		{
+			position[]={5218.4023,360.30136,8317.6885};
+			name="heliSpawn_60";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item165
+		{
+			position[]={4829.5874,288.98059,6355.8145};
+			name="heliSpawn_61";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item166
+		{
+			position[]={3981.5776,245.58702,5077.3584};
+			name="heliSpawn_62";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item167
+		{
+			position[]={11573.19,62.60239,6563.0664};
+			name="heliSpawn_63";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item168
+		{
+			position[]={6667.4668,318.03336,7965.4907};
+			name="heliSpawn_64";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item169
+		{
+			position[]={6004.2529,148.78595,4856.0352};
+			name="heliSpawn_65";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item170
+		{
+			position[]={5481.5757,303.5463,10485.913};
+			name="heliSpawn_66";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item171
+		{
+			position[]={4604.271,339,10652.309};
+			name="heliSpawn_67";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item172
+		{
+			position[]={4982.9736,338.99185,9933.1221};
+			name="heliSpawn_68";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item173
+		{
+			position[]={4631.7573,339,9792.1104};
+			name="heliSpawn_69";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item174
+		{
+			position[]={12256.253,42.935364,8897.7119};
+			name="heliSpawn_70";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item175
+		{
+			position[]={13148.023,6.0829105,10317.645};
+			name="heliSpawn_71";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item176
+		{
+			position[]={10137.045,269.13489,5873.9092};
+			name="heliSpawn_72";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item177
+		{
+			position[]={10289.647,145.07602,7115.0811};
+			name="heliSpawn_73";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item178
+		{
+			position[]={9648.9678,313.47836,5995.8062};
+			name="heliSpawn_74";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item179
+		{
+			position[]={10326.312,14.177668,2633.2607};
+			name="heliSpawn_75";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item180
+		{
+			position[]={8665.7393,6.0549612,2363.9133};
+			name="heliSpawn_76";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item181
+		{
+			position[]={13167.072,5.0635586,3963.5923};
+			name="heliSpawn_77";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item182
+		{
+			position[]={12577.558,182.15833,4370.7007};
+			name="heliSpawn_78";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item183
+		{
+			position[]={3427.9097,224.28442,4163.5171};
+			name="heliSpawn_79";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item184
+		{
+			position[]={1852.2583,129.54187,3695.2542};
+			name="heliSpawn_80";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item185
+		{
+			position[]={6691.4614,365.60098,8986.8613};
+			name="heliSpawn_81";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item186
+		{
+			position[]={2819.7703,228.28217,5593.7886};
+			name="heliSpawn_82";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item187
+		{
+			position[]={9020.1826,138.6656,12479.737};
+			name="heliSpawn_83";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item188
+		{
+			position[]={12232.957,159,12592.035};
+			name="heliSpawn_84";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item189
+		{
+			position[]={1655.8673,160.01497,4316.0586};
+			name="heliSpawn_85";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item190
+		{
+			position[]={2995.1694,289.64407,8219.2236};
+			name="heliSpawn_86";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item191
+		{
+			position[]={4511.6025,323.54617,8906.8584};
+			name="heliSpawn_87";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item192
+		{
+			position[]={4623.4277,294.30725,7017.2969};
+			name="heliSpawn_88";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item193
+		{
+			position[]={6193.8857,315.65063,6321.4448};
+			name="heliSpawn_89";
+			type="Empty";
+			colorName="ColorGreen";
+		};
+		class Item194
+		{
+			position[]={7450.269,300.70041,7449.5215};
+			name="heliSpawn_90";
+			type="Empty";
+			colorName="ColorGreen";
 		};
 	};
 	class Sensors

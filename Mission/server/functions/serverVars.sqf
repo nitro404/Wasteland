@@ -41,7 +41,7 @@ publicVariable "currentInvites";
 
 "PlayerCDeath" addPublicVariableEventHandler {_id = (_this select 1) spawn server_playerDied};
 
-numberOfHelicopterSpawns = 24;
+numberOfHelicopterSpawns = 90;
 
 vehicleCategories = [
     ["Civilian", 25, [
