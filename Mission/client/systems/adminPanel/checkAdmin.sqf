@@ -7,27 +7,28 @@
 private ["_uid","_handle"];
 
 _uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
-    if ((_uid in moderators)) then {
-		execVM "client\systems\adminPanel\loadModeratorMenu.sqf";
-//        hint "Welcome Moderator";
-	};
-    if ((_uid in administrators)) then {
-		[] execVM "client\systems\adminPanel\loadAdministratorMenu.sqf";
-//        hint "Welcome Admin";
-	};
-    if ((_uid in serverAdministrators)) then {
 
-    	if ((_this select 0) == 1) then {
-        	closeDialog 0;
-			createDialog "balca_debug_main";
-        } else {
-        	execVM "client\systems\adminPanel\loadServerAdministratorMenu.sqf";
+if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
+    if((_uid in moderators)) then {
+        execVM "client\systems\adminPanel\loadModeratorMenu.sqf";
+    };
+
+    if((_uid in administrators)) then {
+        [] execVM "client\systems\adminPanel\loadAdministratorMenu.sqf";
+    };
+
+    if((_uid in serverAdministrators)) then {
+        if((_this select 0) == 1) then {
+            closeDialog 0;
+            createDialog "balca_debug_main";
+        }
+        else {
+            execVM "client\systems\adminPanel\loadServerAdministratorMenu.sqf";
         };
-//      	hint "Welcome Owner";
-	};
-} else {
+    };
+}
+else {
     sleep 1;
     _handle = player execVM "client\systems\adminPanel\checkAdmin2.sqf";
-    waitUntil {scriptDone _handle};
+    waitUntil { scriptDone _handle };
 };

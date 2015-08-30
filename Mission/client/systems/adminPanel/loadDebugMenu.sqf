@@ -4,7 +4,7 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-#define debugMenu_option 50003
+#include "dialog\debugMenuDefines.sqf"
 
 disableSerialization;
 

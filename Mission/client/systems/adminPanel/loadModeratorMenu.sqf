@@ -4,12 +4,15 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-#define modMenu_option 50005
+#include "dialog\modMenuDefines.sqf"
+
 disableSerialization;
 
-private ["_start","_panelOptions","_displayMod","_modSelect"];
+private ["_uid", "_start", "_panelOptions", "_displayMod", "_modSelect"];
+
 _uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
+
+if((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
 	_start = createDialog "ModMenu";
 
 	_displayMod = uiNamespace getVariable "ModMenu";
@@ -24,6 +27,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	{
 		_modSelect lbAdd _x;
 	} forEach _panelOptions;
-} else {
-  exit;
+}
+else {
+	exit;
 };

@@ -4,12 +4,15 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-#define serverAdminMenu_option 50007
+#include "dialog\serverAdminMenuDefines.sqf"
+
 disableSerialization;
 
-private ["_start","_panelOptions","_displayServerAdmin","_serverAdminSelect"];
+private["_uid", "_start","_panelOptions","_displayServerAdmin","_serverAdminSelect"];
+
 _uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
+
+if((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
 	_start = createDialog "ServerAdminMenu";
 
 	_displayServerAdmin = uiNamespace getVariable "ServerAdminMenu";
@@ -28,6 +31,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	{
 		_serverAdminSelect lbAdd _x;
 	} forEach _panelOptions;
-} else {
-  exit;
+}
+else {
+	exit;
 };

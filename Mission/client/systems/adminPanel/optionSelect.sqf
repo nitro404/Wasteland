@@ -4,10 +4,10 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-#define serverAdminMenu_option 50007
-#define modMenu_option 50005
-#define debugMenu_option 50003
-#define adminMenu_option 50001
+#include "dialog\serverAdminMenuDefines.sqf"
+#include "dialog\modMenuDefines.sqf"
+#include "dialog\debugMenuDefines.sqf"
+#include "dialog\adminMenuDefines.sqf"
 
 disableSerialization;
 
@@ -183,16 +183,11 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 
 				// Spawn Gun Crates
 				case 5: {
-
-					_weaponCrateTypes = ["basicUS", "basicUS2", "basicRU", "basicRU2", "basicGER", "basicPMC", "basicSpecial", "basicSpecial2", "basicSpecial3"];
-					_playerLocation = getPos player;
-
-					hint format["Spawning %1 Weapon Crates", count _weaponCrateTypes, str _playerLocation];
+					hint format["Spawning %1 Weapon Crates at %2.", count weaponCrateTypes, str getPos player];
 
 					{
-						_safePosition = [_playerLocation, 1, 5, 1, 0, 60 * (pi / 180), 0] call BIS_fnc_findSafePos;
-						[_x, _safePosition] execVM "server\spawning\boxCreation.sqf";
-					} forEach _weaponCrateTypes;
+						[getPos player, _x] execVM "server\spawning\spawnWeaponCrate.sqf";
+					} forEach weaponCrateTypes;
 				};
 
 				// Player Position
@@ -204,5 +199,5 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	};
 }
 else {
-  exit;
+	exit;
 };

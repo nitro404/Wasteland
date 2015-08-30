@@ -1,15 +1,4 @@
-
-#define vehicleManagementDialog 12000
-#define vehicleManagementListBox 12001
-#define vehicleManagementVehicleCount 12002
-#define vehicleWeaponsText 12003
-#define vehicleUsersText 12004
-#define vehicleDamageText 12005
-#define vehicleSpeedText 12006
-#define vehicleManagementCivButton 12007
-#define vehicleManagementHeliButton 12008
-#define vehicleManagementPlaneButton 12009
-#define vehicleManagementTankButton 12010
+#include "vehicleManagementDefines.sqf"
 
 class VehicleManagement {
 
@@ -19,7 +8,7 @@ class VehicleManagement {
 	onLoad = "[4] execVM 'client\systems\adminPanel\populateVehicles.sqf'";
 
 	class controlsBackground {
-		
+
 		class MainBackground: w_RscPicture
 		{
 			idc = -1;
@@ -94,9 +83,9 @@ class VehicleManagement {
 			h = 0.030 * safezoneH;
 		};
 	};
-	
+
 	class controls {
-		
+
 		class vehicleListBox: w_RscListbox
 		{
 			idc = vehicleManagementListBox;
@@ -106,7 +95,7 @@ class VehicleManagement {
 			w = 0.32875 * safezoneW;
 			h = 0.250 * safezoneH;
 		};
-		
+
 		class civButton: w_RscButton
 		{
 			idc = vehicleManagementCivButton;

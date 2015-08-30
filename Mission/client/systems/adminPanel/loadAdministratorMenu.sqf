@@ -4,7 +4,8 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-#define adminMenu_option 50001
+#include "dialog\adminMenuDefines.sqf"
+
 disableSerialization;
 
 private ["_start","_panelOptions","_adminSelect","_displayAdmin"];
