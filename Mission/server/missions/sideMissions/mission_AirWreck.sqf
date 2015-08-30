@@ -68,7 +68,8 @@ waitUntil
     _currTime = floor(time);
 	#endif
     if(_currTime - _startTime >= sideMissionTimeout) then {_result = 1;};
-    {if((isPlayer _x) AND (_x distance _box <= missionRadiusTrigger)) then {_playerPresent = true};}forEach playableUnits;
+//    {if((isPlayer _x) AND (_x distance _box <= missionRadiusTrigger)) then {_playerPresent = true};}forEach playableUnits;
+    {if((isPlayer _x)) then {_playerPresent = true};}forEach playableUnits;
     _unitsAlive = ({alive _x} count units CivGrpS);
 //    (_result == 1) OR ((_playerPresent) AND (_unitsAlive < 1)) OR ((damage _box) == 1)
     (_result == 1) OR ((_playerPresent) AND (_unitsAlive < 1))
