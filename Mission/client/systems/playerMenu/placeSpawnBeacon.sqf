@@ -134,10 +134,10 @@ for "_iteration" from 1 to _lockDuration do {
 
 		_placedBeaconPos = getPos _placedBeacon;
 		_closestTown = [_placedBeaconPos] call compile preprocessFile "client\functions\closestTown.sqf";
-		_directionToTown = [_closestTown select 0, _placedBeaconPos] call BIS_fnc_dirTo;
+		_directionToTown = [getMarkerPos (_closestTown select 0), _placedBeaconPos] call BIS_fnc_dirTo;
 		_directionToTownStr = [_directionToTown, false] call compile preprocessFile "client\functions\azimuthToBearing.sqf";
 		_goingDirStr = [_playerDir, false] call compile preprocessFile "client\functions\azimuthToBearing.sqf";
-		_relativePosition = format['%1 of %2 facing %3', _directionToTownStr, _closestTown select 1, _goingDirStr];
+		_relativePosition = format['%1 of %2 facing %3', _directionToTownStr, _closestTown select 2, _goingDirStr];
 
 		if(_playerSide == "WEST") then {
 			pvar_beaconListBlu set [count pvar_beaconListBlu, [_beaconOwner, _placedBeaconPos, 100, _playerUID, _playerDir, _relativePosition, _playerSide]];
