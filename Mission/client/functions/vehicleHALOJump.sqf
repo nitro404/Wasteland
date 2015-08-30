@@ -3,7 +3,7 @@ player removeWeapon "ParachuteWest";
 
 2 cutText ["HALO jump initialized. Use MOUSEWHEEL to open Your parachute! Press E to detach chute.", "PLAIN DOWN", 5];
 
-sleep 0.25;
+sleep 0.5;
 
 player spawn bis_fnc_halo;
 
