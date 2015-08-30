@@ -3805,7 +3805,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=195;
+		items=202;
 		class Item0
 		{
 			position[]={6704.1572,6,2619.647};
@@ -3972,6 +3972,7 @@ class Mission
 			position[]={1911.6917,6.1490116,2248.2222};
 			name="Town_23";
 			type="Empty";
+			colorName="ColorRed";
 		};
 		class Item24
 		{
@@ -5193,6 +5194,69 @@ class Mission
 			name="heliSpawn_90";
 			type="Empty";
 			colorName="ColorGreen";
+		};
+		class Item195
+		{
+			position[]={13368.001,6,5447.4204};
+			name="Town_47";
+			text="Three Valleys";
+			type="x_art";
+			colorName="ColorBlack";
+			shadow=false;
+		};
+		class Item196
+		{
+			position[]={8126.6211,192.76459,11583.147};
+			name="Town_48";
+			text="West Gvozdno";
+			type="x_art";
+			colorName="ColorBlack";
+			shadow=false;
+		};
+		class Item197
+		{
+			position[]={12226.918,35.75938,6272.8901};
+			name="Town_49";
+			text="East Dolina";
+			type="x_art";
+			colorName="ColorBlack";
+			shadow=false;
+		};
+		class Item198
+		{
+			position[]={6367.6689,22.679432,3235.3784};
+			name="Town_50";
+			text="Vysota";
+			type="x_art";
+			colorName="ColorBlack";
+			shadow=false;
+		};
+		class Item199
+		{
+			position[]={4413.3813,170.51305,3942.5586};
+			name="Town_51";
+			text="South Kozlovka";
+			type="x_art";
+			colorName="ColorBlack";
+			shadow=false;
+		};
+		class Item200
+		{
+			position[]={9996.1934,152.72232,10374.194};
+			name="Town_52";
+			text="North Dubrovka";
+			type="x_art";
+			colorName="ColorBlack";
+			shadow=false;
+		};
+		class Item201
+		{
+			position[]={2982.5154,369.50998,6729.5762};
+			name="Town_53";
+			text="Pass Sosnovy";
+			type="x_art";
+			colorName="ColorBlack";
+			shadow=false;
 		};
 	};
 	class Sensors
