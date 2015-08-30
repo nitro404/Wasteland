@@ -71,7 +71,7 @@ switch(_switch) do
 				respawnDialogActive = false;
 				closeDialog 0;
 			};
-		}forEach townList;
+		} forEach townList;
     };
     case 3: {
         {
@@ -87,7 +87,7 @@ switch(_switch) do
 				respawnDialogActive = false;
 				closeDialog 0;
 			};
-		}forEach townList;
+		} forEach townList;
     };
     case 4: {
         {
@@ -107,4 +107,4 @@ switch(_switch) do
     };
 };
 
-[_randomLoc select 2] spawn spawnInfoText;
+[_townName] spawn spawnInfoText;
