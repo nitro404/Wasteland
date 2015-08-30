@@ -17,4 +17,4 @@ if(selectedBuildingStore == "buildingStore2") then { buildingStoreSpawn = buildi
 if(selectedBuildingStore == "buildingStore3") then { buildingStoreSpawn = buildingStoreSpawn3; };
 if(selectedBuildingStore == "buildingStore4") then { buildingStoreSpawn = buildingStoreSpawn4; };
 if(selectedBuildingStore == "buildingStore5") then { buildingStoreSpawn = buildingStoreSpawn5; };
-if(selectedBuildingStore == "buildingStore6") then { buildingStoreSpawn = buildingStoreSpawn5; };
+if(selectedBuildingStore == "buildingStore6") then { buildingStoreSpawn = buildingStoreSpawn6; };
