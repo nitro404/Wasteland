@@ -37,12 +37,12 @@ diag_log format["WASTELAND SERVER - Side Mission Resumed: %1",_missionType];
 //Vehicle Class, Posistion, Fuel, Ammo, Damage
 _vehicle = ["C130J_US_EP1",[(_randomPos select 0) + 50, (_randomPos select 1) + 50,0],0,0,1,"NONE"] call createMissionVehicle;
 
-_box = createVehicle ["USLaunchersBox",[(_randomPos select 0), (_randomPos select 1),0],[], 0, "NONE"];
-[_box,"mission_Side_USLaunchers"] call fn_refillbox;
+//_box = createVehicle ["USLaunchersBox",[(_randomPos select 0), (_randomPos select 1),0],[], 0, "NONE"];
+//[_box,"mission_Side_USLaunchers"] call fn_refillbox;
 
-_box2 = _nerfBoxes select (random (count _nerfBoxes - 1));
-_safePos = [_randomPos, 2, 10, 1, 0, 60 * (pi / 180), 0] call BIS_fnc_findSafePos;
-[_box2, _safePos] execVM "server\spawning\boxCreation.sqf";   
+//_box2 = _nerfBoxes select (random (count _nerfBoxes - 1));
+//_safePos = [_randomPos, 2, 10, 1, 0, 60 * (pi / 180), 0] call BIS_fnc_findSafePos;
+//[_box2, _safePos] execVM "server\spawning\boxCreation.sqf";
 
 _picture = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "picture");
 _vehicleName = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "displayName");
@@ -60,7 +60,7 @@ _startTime = floor(time);
 #endif
 waitUntil
 {
-    sleep 1; 
+    sleep 1;
 	_playerPresent = false;
 	#ifdef __A2NET__
 	_currTime = floor(netTime);
@@ -70,13 +70,14 @@ waitUntil
     if(_currTime - _startTime >= sideMissionTimeout) then {_result = 1;};
     {if((isPlayer _x) AND (_x distance _box <= missionRadiusTrigger)) then {_playerPresent = true};}forEach playableUnits;
     _unitsAlive = ({alive _x} count units CivGrpS);
-    (_result == 1) OR ((_playerPresent) AND (_unitsAlive < 1)) OR ((damage _box) == 1)
+//    (_result == 1) OR ((_playerPresent) AND (_unitsAlive < 1)) OR ((damage _box) == 1)
+    (_result == 1) OR ((_playerPresent) AND (_unitsAlive < 1))
 };
 
 if(_result == 1) then
 {
 	//Mission Failed.
-    deleteVehicle _box;
+ //   deleteVehicle _box;
     //deleteVehicle _box2;
     deleteVehicle _vehicle;
     {deleteVehicle _x;}forEach units CivGrps;

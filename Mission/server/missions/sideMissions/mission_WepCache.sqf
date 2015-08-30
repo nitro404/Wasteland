@@ -34,10 +34,10 @@ diag_log format["WASTELAND SERVER - Side Mission Resumed: %1",_missionType];
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
 
 _box = createVehicle ["RULaunchersBox",[(_randomPos select 0), (_randomPos select 1),0],[], 0, "NONE"];
-[_box,"mission_Side_USLaunchers"] call fn_refillbox;
+//[_box,"mission_Side_USLaunchers"] call fn_refillbox;
 
 _box2 = createVehicle ["RUSpecialWeaponsBox",[(_randomPos select 0), (_randomPos select 1) - 10,0],[], 0, "NONE"];
-[_box2,"mission_Side_USSpecial"] call fn_refillbox;
+//[_box2,"mission_Side_USSpecial"] call fn_refillbox;
 
 _hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Side Objective</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3' size='1.25'>%1</t><br/><t align='center' color='%3'>An enemy supply cache has been spotted!</t>", _missionType,  sideMissionColor, subTextColor];
 [nil,nil,rHINT,_hint] call RE;
@@ -53,7 +53,7 @@ _startTime = floor(time);
 #endif
 waitUntil
 {
-    sleep 1; 
+    sleep 1;
 	_playerPresent = false;
 	#ifdef __A2NET__
 	_currTime = floor(netTime);
