@@ -9,9 +9,6 @@
 
 if(!X_Server) exitWith { };
 
-sideMissions = 1;
-serverSpawning = 1;
-
 [] execVM "server\admins.sqf";
 [] execVM "server\functions\serverVars.sqf";
 _serverCompiledScripts = [] execVM "server\functions\serverCompile.sqf";
@@ -19,44 +16,30 @@ _serverCompiledScripts = [] execVM "server\functions\serverCompile.sqf";
 [] execVM "server\functions\relations.sqf";
 [] execVM "server\functions\serverTimeSync.sqf";
 [] execVM "server\functions\antiCheatServer.sqf";
-waitUntil{scriptDone _serverCompiledScripts};
+
+waitUntil {
+    sleep 0.1;
+    scriptDone _serverCompiledScripts
+};
 
 diag_log format["WASTELAND SERVER - Server Compile Finished"];
 
-#ifdef __DEBUG__
-#else
-if (serverSpawning == 1) then {
-    diag_log format["WASTELAND SERVER - Initializing Server Spawning"];
+diag_log format["WASTELAND SERVER - Spawning Initial Objects in Towns"];
 
-	_vehSpawn = [] ExecVM "server\functions\vehicleSpawning.sqf";
-	waitUntil { sleep 0.1; scriptDone _vehSpawn };
+_spawnInitialObjects = [] execVM "server\functions\spawnInitialObjects.sqf";
 
-    _objSpawn = [] ExecVM "server\functions\objectsSpawning.sqf";
-	waitUntil { sleep 0.1; scriptDone _objSpawn };
-
-    _gunSpawn = [] ExecVM "server\functions\staticGunSpawning.sqf";
-	waitUntil { sleep 0.1; scriptDone _gunSpawn };
-
-    _heliSpawn = [] ExecVM "server\functions\staticHeliSpawning.sqf";
-    waitUntil { sleep 0.1; scriptDone _heliSpawn };
-
-    _weaponCrateSpawning = [] ExecVM "server\functions\boxSpawning.sqf";
-    waitUntil{ sleep 0.1; scriptDone _weaponCrateSpawning };
-
-    _markerClean = [] ExecVM "server\functions\cleanMarkers.sqf";
-    waitUntil { sleep 0.1; scriptDone _markerClean };
+waitUntil {
+    sleep 0.25;
+    scriptDone _spawnInitialObjects
 };
-#endif
 
-if(sideMissions == 1) then {
-	diag_log format["WASTELAND SERVER - Initializing Missions"];
+diag_log format["WASTELAND SERVER - Starting Vehicle Respawn Script"];
 
-    [] execVM "server\missions\sideMissionController.sqf";
+[] spawn respawnVehicles;
 
-    sleep 5;
-
-    [] execVM "server\missions\mainMissionController.sqf";
-};
+diag_log format["WASTELAND SERVER - Initializing Mission Controllers"];
+[] execVM "server\missions\sideMissionController.sqf";
+[] execVM "server\missions\mainMissionController.sqf";
 
 if(isDedicated) then {
 	_id = [] execFSM "server\WastelandServClean.fsm";
