@@ -38,7 +38,7 @@ if(_delay > 0) then {
 _townNameLength = count (toArray _townName);
 if(_townNameLength <= 0) then {
 	_closestTown = [getPos player] call closestTown;
-	_directionFromTownAzimuth = [_closestTown select 0, getPos player] call BIS_fnc_dirTo;
+	_directionFromTownAzimuth = [getMarkerPos(_closestTown select 0), getPos player] call BIS_fnc_dirTo;
 	_directionFromTownBearing = [_directionFromTownAzimuth, true] call azimuthToBearing;
 };
 
@@ -49,6 +49,6 @@ if(_mins < 10) then {
 
 [
 	"Rolling Thunder Wasteland",
-	if(_townNameLength > 0) then { _townName } else { format["%1 of %2", _directionFromTownBearing, _closestTown select 1] },
+	if(_townNameLength > 0) then { _townName } else { format["%1 of %2", _directionFromTownBearing, _closestTown select 2] },
 	format["%1:%2%3", floor(daytime), _leadingZero, _mins]
 ] spawn BIS_fnc_infoText;
