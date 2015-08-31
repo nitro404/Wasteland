@@ -25,7 +25,8 @@ if((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministra
 		"Access Proving Grounds",
 		"Show Server FPS",
 		"Spawn Gun Crates",
-		"Player Position"
+		"Player Position",
+		"Object Information"
 	];
 
 	{

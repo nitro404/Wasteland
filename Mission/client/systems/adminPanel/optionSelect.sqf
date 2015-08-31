@@ -194,6 +194,14 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 				case 6: {
 					hint format["Player Position: %1", str getPos player];
 				};
+
+				// Object Information
+				case 7: {
+					_cursortarget = cursorTarget;
+					if(alive _cursortarget) then {
+						2 cutText [format["%1\nPosition: %2\nDirection: %3", typeOf _cursortarget, getPos _cursortarget, getDir _cursortarget], "PLAIN DOWN", 5];
+					}
+				};
 			};
 		};
 	};
