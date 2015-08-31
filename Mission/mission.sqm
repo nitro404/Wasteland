@@ -2822,7 +2822,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=85;
+		items=93;
 		class Item0
 		{
 			position[]={8343.0654,26.779518,3340.9795};
@@ -3721,6 +3721,94 @@ class Mission
 			skill=0.60000002;
 			text="buildingStoreSpawn6";
 			init="this setVariable[""R3F_LOG_disabled"", true];";
+		};
+		// Niznoye Medical Tent
+		class Item85
+		{
+			position[]={13056.1,-0.038123101,8373.7305};
+			azimut=220.52699;
+			id=225;
+			side="EMPTY";
+			vehicle="MASH";
+			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+		};
+		// Pobeda Dam Medical Tent
+		class Item86
+		{
+			position[]={9864.0596,-0.0922089,13319.6};
+			azimut=218.255;
+			id=226;
+			side="EMPTY";
+			vehicle="MASH";
+			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+		};
+		// Gorka Medical Tent
+		class Item87
+		{
+			position[]={9146.5303,0.0076599098,9228.0898};
+			azimut=220.394;
+			id=227;
+			side="EMPTY";
+			vehicle="MASH";
+			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+		};
+		// Kamenka Medical Tent
+		class Item88
+		{
+			position[]={1634.8,0.0288944,2335.3899};
+			azimut=220.45;
+			id=228;
+			side="EMPTY";
+			vehicle="MASH";
+			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+		};
+		// Myshkino Medical Tent
+		class Item89
+		{
+			position[]={1753.14,0.044250499,7813.4302};
+			azimut=221.23199;
+			id=229;
+			side="EMPTY";
+			vehicle="MASH";
+			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+		};
+		// Cap Golova Medical Tent
+		class Item90
+		{
+			position[]={8023.0298,-0.060568299,2906.6599};
+			azimut=143.20599;
+			id=230;
+			side="EMPTY";
+			vehicle="MASH";
+			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+		};
+		// Petrovka Medical Tent
+		class Item91
+		{
+			position[]={4700.96,-0.062560998,12392.5};
+			azimut=219.29401;
+			id=231;
+			side="EMPTY";
+			vehicle="MASH";
+			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+		};
+		// Vyshnoye Medical Tent
+		class Item92
+		{
+			position[]={7331.3599,-0.047897302,5994.6802};
+			azimut=219.601;
+			id=232;
+			side="EMPTY";
+			vehicle="MASH";
+			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
 		};
 	};
 	class Markers
