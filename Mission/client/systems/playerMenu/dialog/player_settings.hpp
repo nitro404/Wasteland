@@ -86,6 +86,20 @@ class playerSettings {
 			w = 0.125; h = 0.033 * safezoneH;
 		};
 
+		class EarplugsButton : w_RscButton {
+			text = "Earplugs";
+			onButtonClick = "[] call toggleEarplugs;";
+			x = 0.35; y = 0.42;
+			w = 0.125; h = 0.033 * safezoneH;
+		};
+
+		class PlayerNamesButton : w_RscButton {
+			text = "Player Names";
+			onButtonClick = "[] call togglePlayerNames;";
+			x = 0.35; y = 0.48;
+			w = 0.125; h = 0.033 * safezoneH;
+		};
+
 		class SpawnBicyleButton : w_RscButton {
 			text = "Spawn Bicycle";
 			onButtonClick = "[] spawn spawnBicycle;";
@@ -95,7 +109,7 @@ class playerSettings {
 
 		class FlipVehicleButton : w_RscButton {
 			text = "Flip Vehicle";
-			onButtonClick = "[] execVM 'client\systems\playerMenu\flipVehicle.sqf'";
+			onButtonClick = "[] call flipVehicle;";
 			x = 0.35; y = 0.60;
 			w = 0.125; h = 0.033 * safezoneH;
 		};

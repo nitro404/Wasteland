@@ -19,6 +19,9 @@ refuelVehicle = compile preprocessFileLineNumbers "client\systems\playerMenu\ref
 repairVehicle = compile preprocessFile "client\systems\playerMenu\repair.sqf";
 placeCamoNet = compile preprocessFileLineNumbers "client\systems\playerMenu\placeCamoNet.sqf";
 useMedicalKit = compile preprocessFileLineNumbers "client\systems\playerMenu\useMedicalKit.sqf";
+togglePlayerNames = compile preprocessFileLineNumbers "client\systems\playerMenu\togglePlayerNames.sqf";
+toggleEarplugs = compile preprocessFileLineNumbers "client\systems\playerMenu\toggleEarplugs.sqf";
+flipVehicle = compile preprocessFileLineNumbers "client\systems\playerMenu\flipVehicle.sqf";
 
 // Sync client with server time
 timeSync = compile preprocessFileLineNumbers "client\functions\clientTimeSync.sqf";

@@ -52,8 +52,12 @@ _player setVariable["repairkits", 0, false];
 _player setVariable["fuelFull", 1, false];
 _player setVariable["fuelEmpty", 0, false];
 _player setVariable["spawnBeacon", 0, false];
-_player setVariable["ShowNameAllies", false];
+_player setVariable["ShowNameAllies", false, false];
 _player setVariable["camonet", 0, false];
+
+if(isNil {_player getVariable "earplugs"}) then {
+	_player setVariable["earplugs", false, false];
+};
 
 [] execVM "client\functions\playerActions.sqf";
 

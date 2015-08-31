@@ -25,8 +25,7 @@ switch _key do {
 
     // Left Windows Key
     case 219: {
-        _playerNamesVisible = player getVariable["ShowNameAllies", false];
-        player setVariable["ShowNameAllies", !_playerNamesVisible];
+        [] call togglePlayerNames;
     };
 
     // Tilde
