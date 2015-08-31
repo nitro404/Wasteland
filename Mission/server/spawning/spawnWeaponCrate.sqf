@@ -99,7 +99,7 @@ if(_weaponCrateType == "RULaunchers") exitWith {
 };
 
 if(_weaponCrateType == "DemoCrate") exitWith {
-    _weaponCrate = createVehicle["BAF_IEDBox", _weaponCratePosition, [], 0, "NONE"];
+    _weaponCrate = createVehicle["USOrdnanceBox", _weaponCratePosition, [], 0, "NONE"];
 
     clearMagazineCargoGlobal _weaponCrate;
     clearWeaponCargoGlobal _weaponCrate;
@@ -152,7 +152,7 @@ if(_weaponCrateType == "USSniper") exitWith {
 };
 
 if(_weaponCrateType == "RUSniper") exitWith {
-    _weaponCrate = createVehicle["RUBasicAmmunitionBox", _weaponCratePosition, [], 0, "NONE"];
+    _weaponCrate = createVehicle["RUOrdnanceBox", _weaponCratePosition, [], 0, "NONE"];
 
     clearMagazineCargoGlobal _weaponCrate;
     clearWeaponCargoGlobal _weaponCrate;
