@@ -5216,7 +5216,7 @@ class Mission
 		{
 			position[]={8126.6211,192.76459,11583.147};
 			name="Town_48";
-			text="West Gvozdno";
+			text="Devil's Pit";
 			type="x_art";
 			colorName="ColorBlack";
 			shadow=false;
@@ -5243,7 +5243,7 @@ class Mission
 		{
 			position[]={4413.3813,170.51305,3942.5586};
 			name="Town_51";
-			text="South Kozlovka";
+			text="Windy Valley";
 			type="x_art";
 			colorName="ColorBlack";
 			shadow=false;
