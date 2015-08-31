@@ -398,5 +398,6 @@ townList = [
 	["Town_50", 85, "Vysota"],
 	["Town_51", 120, "South Kozlovka"],
 	["Town_52", 180, "North Dubrovka"],
-	["Town_53", 65, "Pass Sosnovy"]
+	["Town_53", 65, "Pass Sosnovy"],
+	["Town_54", 70, "Mogilevka Pass"]
 ];

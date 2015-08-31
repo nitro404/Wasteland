@@ -3805,7 +3805,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=202;
+		items=203;
 		class Item0
 		{
 			position[]={6704.1572,6,2619.647};
@@ -5254,6 +5254,15 @@ class Mission
 			position[]={2982.5154,369.50998,6729.5762};
 			name="Town_53";
 			text="Pass Sosnovy";
+			type="x_art";
+			colorName="ColorBlack";
+			shadow=false;
+		};
+		class Item202
+		{
+			position[]={8409.9395,140.01753,4947.6973};
+			name="Town_54";
+			text="Mogilevka Pass";
 			type="x_art";
 			colorName="ColorBlack";
 			shadow=false;
