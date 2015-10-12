@@ -8,9 +8,11 @@
 
 disableSerialization;
 
-private ["_dialog","_playerListBox","_spectateButton","_switch","_index","_modSelect","_playerData","_target","_check","_spectating","_camadm","_rnum","_warnText","_targetUID","_playerName"];
+private ["_dialog", "_playerListBox", "_spectateButton", "_switch", "_index", "_modSelect", "_playerData", "_target", "_check", "_spectating", "_camadm", "_rnum", "_warnText", "_targetUID", "_playerName"];
+
 _uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
+
+if((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
 	_dialog = findDisplay playerMenuDialog;
 	_playerListBox = _dialog displayCtrl playerMenuPlayerList;
 	_spectateButton = _dialog displayCtrl playerMenuSpectateButton;
@@ -29,8 +31,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 
 	if (_check == 0) then {exit;};
 
-	switch (_switch) do
-	{
+	switch (_switch) do {
 	    case 0: //Spectate
 		{
 			_spectating = ctrlText _spectateButton;
@@ -87,8 +88,8 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	        {
 			    if(_x select 0 == _targetUID) then
 			    {
-			    	pvar_teamSwitchList set [_forEachIndex, "REMOVETHISCRAP"];
-					pvar_teamSwitchList = pvar_teamSwitchList - ["REMOVETHISCRAP"];
+			    	pvar_teamSwitchList set [_forEachIndex, objNull];
+					pvar_teamSwitchList = pvar_teamSwitchList - [objNull];
 			        publicVariableServer "pvar_teamSwitchList";
 
 	                _target setVehicleInit format["if (name player == ""%1"") then {client_firstSpawn = nil;};",name _target];
@@ -107,8 +108,8 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	        {
 			    if(_x select 0 == _targetUID) then
 			    {
-			    	pvar_teamKillList set [_forEachIndex, "REMOVETHISCRAP"];
-					pvar_teamKillList = pvar_teamKillList - ["REMOVETHISCRAP"];
+			    	pvar_teamKillList set [_forEachIndex, objNull];
+					pvar_teamKillList = pvar_teamKillList - [objNull];
 			        publicVariableServer "pvar_teamKillList";
 
 	                player setVehicleInit format["if isServer then {publicVariable 'pvar_teamKillList';};"];

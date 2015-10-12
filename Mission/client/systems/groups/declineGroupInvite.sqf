@@ -7,8 +7,8 @@
 
 {
 	if(getPlayerUID player == _x select 1) then {
-	        currentInvites set [_forEachIndex, "TEMP"];
-	        currentInvites = currentInvites - ["TEMP"];
+	        currentInvites set [_forEachIndex, objNull];
+	        currentInvites = currentInvites - [objNull];
 	        publicVariableServer "currentInvites";
 	};
 } forEach currentInvites;

@@ -4,7 +4,7 @@
 //	@file Created: 30/08/2015 1:50 PM
 //	@file Args:
 
-if(!X_Server) exitWith { };
+if(!isServer) exitWith { };
 
 private["_vehicle", "_respawnDelay", "_desertedTime", "_monitorVehicle", "_result", "_vehiclePosition", "_vehicleDirection", "_vehicleType", "_dead", "_nodelay", "_startTime", "_currTime", "_timeout"];
 

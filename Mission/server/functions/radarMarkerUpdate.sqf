@@ -19,18 +19,18 @@ while {_runLoop} do {
 
 	// find state
     _enemyCount = 0;
-    _friendlyCount = 0; 
- 	{          
-        _currSide = side _x; 
-        
+    _friendlyCount = 0;
+ 	{
+        _currSide = side _x;
+
     	if ((isPlayer _x) AND (str(_currSide) == _playerSide) AND _x distance _radarStationPos < 350) then {
             _friendlyCount = _friendlyCount + 1;
         };
         if ((isPlayer _x) AND (str(_currSide) != _playerSide) AND _x distance _radarStationPos < 350) then {
         	_enemyCount = _enemyCount + 1;
-        };                                   
+        };
     }forEach playableUnits;
-    
+
     if(_friendlyCount == 0 AND _enemyCount == 0 ) then {
     	_markerState = 0; // default - nothing
     };
@@ -47,14 +47,14 @@ while {_runLoop} do {
    	{
     	if(_x select 0 == _uniqueID) then {
         	_stillAlive = true;
-            
+
             // delete current marker from server
-            clientRadarMarkers set [_forEachIndex, "REMOVETHISCRAP"];
-			clientRadarMarkers = clientRadarMarkers - ["REMOVETHISCRAP"]; 
-              
+            clientRadarMarkers set [_forEachIndex, objNull];
+			clientRadarMarkers = clientRadarMarkers - [objNull];
+
             // put updated marker in with updated state
 			clientRadarMarkers set [count clientRadarMarkers,[_uniqueID,_radarStationPos,_playerSide, _markerState]];
-			publicVariable "clientRadarMarkers"; 
+			publicVariable "clientRadarMarkers";
         };
     }forEach clientRadarMarkers;
 

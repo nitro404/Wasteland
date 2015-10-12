@@ -87,8 +87,8 @@ for "_iteration" from 1 to _actionDuration do {
 
 		{
 	    	if(_x select 0 == _uniqueID) then {
-		    	clientRadarMarkers set [_forEachIndex, "REMOVETHISCRAP"];
-				clientRadarMarkers = clientRadarMarkers - ["REMOVETHISCRAP"];
+		    	clientRadarMarkers set [_forEachIndex, objNull];
+				clientRadarMarkers = clientRadarMarkers - [objNull];
 		        publicVariableServer "clientRadarMarkers";
 		    };
 		}forEach clientRadarMarkers;

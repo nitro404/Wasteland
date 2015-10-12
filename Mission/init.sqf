@@ -6,10 +6,13 @@
 //	@file Args:
 
 #include "setup.sqf"
-if (isnil "RE") then {[] execVM "\ca\Modules\MP\data\scripts\MPframework.sqf"};
+
+if(isnil "RE") then {
+	[] execVM "\ca\Modules\MP\data\scripts\MPframework.sqf"
+};
 
 StartProgress = false;
-enableSaving[false,false];
+enableSaving[false, false];
 
 X_Server = false;
 X_Client = false;
@@ -29,17 +32,13 @@ true spawn {
 	};
 };
 
-//init Wasteland Core
 [] execVM "config.sqf";
 [] execVM "briefing.sqf";
 
 if(X_Client) then {
 	waitUntil {player == player};
 
-	//Wipe Group.
-	if(count units group player > 1) then
-	{
-//		diag_log "Player Group Wiped";
+	if(count units group player > 1) then {
 		[player] join grpNull;
 	};
 
@@ -48,14 +47,16 @@ if(X_Client) then {
 
 if(X_Server) then {
 	diag_log format ["[%1]", missionName];
+
 	#ifdef __DEBUG__
 	diag_log format ["T%1,DT%2,F%3", time, diag_tickTime, diag_frameno];
 	#endif
-    diag_log format["WASTELAND SERVER - Initilizing Server"];
+
+	diag_log format["WASTELAND SERVER - Initilizing Server"];
+
 	[] execVM "server\init.sqf";
 };
 
-//init 3rd Party Scripts
 [] execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
 [] execVM "addons\proving_Ground\init.sqf";
 // [0.1, 0.5, 0.5] execVM "addons\scripts\DynamicWeatherEffects.sqf";
