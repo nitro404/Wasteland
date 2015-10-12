@@ -29,18 +29,20 @@ diag_log format["WASTELAND SERVER - Spawning Initial Objects in Towns"];
 _spawnInitialObjects = [] execVM "server\functions\spawnInitialObjects.sqf";
 
 waitUntil {
-    sleep 0.25;
+    sleep 0.5;
     scriptDone _spawnInitialObjects
 };
 
-diag_log format["WASTELAND SERVER - Starting Vehicle Respawn Script"];
+diag_log format["WASTELAND SERVER - Starting Vehicle Respawn Scripts"];
 
 [] spawn respawnVehicles;
 [] spawn respawnHelicopters;
 
 diag_log format["WASTELAND SERVER - Initializing Mission Controllers"];
-[] execVM "server\missions\sideMissionController.sqf";
-[] execVM "server\missions\mainMissionController.sqf";
+
+{
+    [missionTypes select _forEachIndex] spawn missionController;
+} forEach missionTypes;
 
 if(isDedicated) then {
 	_id = [] execFSM "server\WastelandServClean.fsm";

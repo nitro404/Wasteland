@@ -6,7 +6,7 @@
 
 #include "setup.sqf"
 
-if(!X_Server) exitWith {  };
+if(!X_Server) exitWith { };
 
 diag_log format["WASTELAND SERVER - Initializing Server Variables"];
 
@@ -15,9 +15,7 @@ missionStartTime = 0;
 netTime = 0;
 #endif
 
-sideMissionPos = "";
-mainMissionPos = "";
-
+missionNumber = 1;
 currentVehicles = [];
 publicVariable "currentVehicles";
 pvar_teamSwitchList = [];
@@ -380,4 +378,23 @@ MissionSpawnMarkers = [
     ["Mission_48", false],
     ["Mission_49", false],
     ["Mission_50", false]
+];
+
+missionTypes = [
+    ["Main Battle Tank Mission", 0, 600, 1800, [
+        ["BAF_FV510_W", "T90", "M1A2_TUSK_MG"]
+    ]],
+    ["Armored Personnel Carrier Mission", 0, 300, 1800, [
+        ["BMP3", "M2A3_EP1", "M6_EP1"]
+    ]],
+    ["Anti-Air Mission", 0, 900, 1800, [
+        ["2S6M_Tunguska"]
+    ]],
+    ["Attack Helicopter Mission", 0, 1200, 1800, [
+        ["Mi171Sh_rockets_CZ_EP1", "Mi17_rockets_RU"],
+        ["Mi24_D", "Mi24_D_TK_EP1"],
+        ["Mi24_V"],
+        ["Mi24_P"]
+    ]],
+    ["Geo Cache Mission", 1, 300, 2, 3, ["BasicGER", "BasicRU", "BasicUS", "GuerillaCache", "BasicTerrorist", "DemoCrate", "RUSniper", "USLaunchers", "RULaunchers"]]
 ];

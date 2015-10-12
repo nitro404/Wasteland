@@ -2,24 +2,25 @@
 //	@file Name: createMissionLocation.sqf
 //	@file Author: [404] Deadbeat
 //	@file Created: 26/1/2013 15:19
+//	@file Args: [] call createMissionLocation;
+//      @file Return: [missionPosition, missionSpawnMarkerIndex]
 
-if(!isServer) exitwith {};
+if(!isServer) exitWith { };
 
-private["_GotLoc","_randomIndex","_selectedMarker","_returnData"];
+private["_validMarker", "_missionSpawnMarkerIndex", "_missionSpawnMarkerInfo", "_selectedMarker", "_missionSpawnData"];
 
-_GotLoc = false;
-while {!_GotLoc} do 
-{
-	_randomIndex = random (count MissionSpawnMarkers - 1);
+_validMarker = false;
 
-	//If the index of the mission markers array is false then break the loop and finish up doing the mission
-	if (!((MissionSpawnMarkers select _randomIndex) select 1)) then 
-	{
-		_selectedMarker = MissionSpawnMarkers select _randomIndex select 0;
-		_randomPos = getMarkerPos _selectedMarker;
-        _returnData = [_randomPos,_randomIndex];
-		MissionSpawnMarkers select _randomIndex set[1, true];
-		_GotLoc = true;
+while { !_validMarker } do {
+	_missionSpawnMarkerIndex = floor (random count MissionSpawnMarkers);
+	_missionSpawnMarkerInfo = MissionSpawnMarkers select _missionSpawnMarkerIndex;
+
+	if(!(_missionSpawnMarkerInfo select 1)) then {
+		_selectedMarker = _missionSpawnMarkerInfo select 0;
+		_missionSpawnData = [getMarkerPos _selectedMarker, _missionSpawnMarkerIndex];
+		_missionSpawnMarkerInfo set[1, true];
+		_validMarker = true;
 	};
 };
-_returnData
+
+_missionSpawnData
