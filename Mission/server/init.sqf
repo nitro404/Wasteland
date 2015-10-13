@@ -45,5 +45,5 @@ diag_log format["WASTELAND SERVER - Initializing Mission Controllers"];
 } forEach missionTypes;
 
 if(isDedicated) then {
-	_id = [] execFSM "server\WastelandServClean.fsm";
+// TODO: add new cleanup script
 };
