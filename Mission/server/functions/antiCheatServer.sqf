@@ -4,7 +4,7 @@
 //	@file Created: 03/05/13
 //	@file Args:
 
-if(!X_Server) exitWith { };
+if(!isServer) exitWith { };
 
 while { true } do {
 

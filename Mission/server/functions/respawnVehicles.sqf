@@ -4,7 +4,7 @@
 //	@file Created: 29/08/2015 5:50 PM
 //	@file Args: [] spawn respawnVehicles;
 
-if(!X_Server) exitWith { };
+if(!isServer) exitWith { };
 
 private["_townPosition", "_townRadius", "_townName"];
 

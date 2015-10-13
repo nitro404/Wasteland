@@ -6,7 +6,7 @@
 
 #include "setup.sqf"
 
-if(!X_Server) exitWith { };
+if(!isServer) exitWith { };
 
 diag_log format["WASTELAND SERVER - Initializing Server Variables"];
 

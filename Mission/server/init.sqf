@@ -7,7 +7,7 @@
 
 #include "setup.sqf"
 
-if(!X_Server) exitWith { };
+if(!isServer) exitWith { };
 
 [] execVM "server\admins.sqf";
 [] execVM "server\functions\serverVars.sqf";

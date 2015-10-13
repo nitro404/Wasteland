@@ -7,7 +7,7 @@
 //              [position, direction, type, missionVehicle, respawn, delay] call spawnVehicle;
 //              ie. [[260, 140, 0], 278, "AH6D", true, false, -1] call spawnVehicle;
 
-if(!X_Server) exitWith { };
+if(!isServer) exitWith { };
 
 private["_vehiclePosition", "_vehicleCategory", "_vehicleClassName", "_missionVehicle", "_respawnVehicle", "_vehicle", "_vehicleInit", "_magazineIndex"];
 

@@ -4,7 +4,7 @@
 //@file Created: 20/11/2012 05:19
 //@file Description: The client init.
 
-if(!X_Client) exitWith { };
+if(isDedicated) exitWith { };
 
 // Disable player from killing in the spawn area.
 player enableSimulation false;

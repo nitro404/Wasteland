@@ -3,7 +3,8 @@
 //	@file Author: [404] Pulse, [404] Costlyy
 //	@file Created: 20/11/2012 05:19
 #include "setup.sqf"
-if(!X_Server) exitWith {};
+
+if(!isServer) exitWith { };
 
 private["_newObject"];
 _player = _this select 0;
@@ -17,12 +18,12 @@ _player setVariable["processedDeath",time];
 
 //diag_log format["Checking KILLER and PLAYER..."];
 
-if (((str(side _killer)) == "GUER") AND ((str(side _player)) == "GUER")) then { 
-	//diag_log format["Killer and Player are INDEPENDENT."]; 
+if (((str(side _killer)) == "GUER") AND ((str(side _player)) == "GUER")) then {
+	//diag_log format["Killer and Player are INDEPENDENT."];
     {
     	if ((vehicle _killer) == _x) then {
         	//diag_log format["Found the killer, adding score..."];
-        	_x addScore 2; 
+        	_x addScore 2;
         };
     } forEach playableUnits;
 } else {

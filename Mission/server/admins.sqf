@@ -4,7 +4,7 @@
 //	@file Created: NA
 //	@file Args:
 
-if(!X_Server) exitWith { };
+if(!isServer) exitWith { };
 
 moderators = [
 

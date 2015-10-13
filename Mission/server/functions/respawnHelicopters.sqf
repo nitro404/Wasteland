@@ -4,7 +4,7 @@
 //	@file Created: 30/08/2015 1:43 AM
 //	@file Args: [] spawn respawnHelicopters;
 
-if(!X_Server) exitWith { };
+if(!isServer) exitWith { };
 
 private["_helicopterIndex", "_helicopterPosition"];
 

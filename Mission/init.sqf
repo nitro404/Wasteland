@@ -14,29 +14,25 @@ if(isnil "RE") then {
 StartProgress = false;
 enableSaving[false, false];
 
-X_Server = false;
-X_Client = false;
 X_JIP = false;
 hitStateVar = false;
 versionName = "0.0.1";
 
-if(isServer) then { X_Server = true;};
-if(!isDedicated) then { X_Client = true;};
-if(isNull player) then {X_JIP = true;};
+if(isNull player) then { X_JIP = true; };
 
 true spawn {
 	if(!isDedicated) then {
 		titleText ["Setting up player...", "BLACK", 0];
-		waitUntil {player == player};
-		client_initEH = player addEventHandler ["Respawn", {removeAllWeapons (_this select 0);}];
+		waitUntil { player == player };
+		client_initEH = player addEventHandler ["Respawn", { removeAllWeapons (_this select 0); }];
 	};
 };
 
 [] execVM "config.sqf";
 [] execVM "briefing.sqf";
 
-if(X_Client) then {
-	waitUntil {player == player};
+if(!isDedicated) then {
+	waitUntil { player == player };
 
 	if(count units group player > 1) then {
 		[player] join grpNull;
@@ -45,7 +41,7 @@ if(X_Client) then {
 	[] execVM "client\init.sqf";
 };
 
-if(X_Server) then {
+if(isServer) then {
 	diag_log format ["[%1]", missionName];
 
 	#ifdef __DEBUG__

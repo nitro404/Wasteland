@@ -4,7 +4,7 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args: Element 0 = Vehicle.
 
-if(!X_Server) exitWith { };
+if(!isServer) exitWith { };
 
 private["_vehicle", "_maxMagazines", "_maxWeapons", "_randomGear", "_weapon", "_magazineArray", "_magazine", "_numberOfRandomWeapons", "_currentMagazine", "_numberOfMagazines", "_totalMagazines"];
 

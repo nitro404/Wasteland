@@ -7,7 +7,7 @@
 //              [position, direction, type] call spawnWeaponCrate;
 //              ie. [[38, 142, 0], 27, "RUSniper"] call spawnWeaponCrate;
 
-if(!X_Server) exitWith { };
+if(!isServer) exitWith { };
 
 private["_weaponCrateType", "_weaponCrateCategory", "_weaponCratePosition", "_weaponCrate"];
 

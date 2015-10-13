@@ -7,7 +7,7 @@
 //              [position, direction, type] call spawnObject;
 //              ie. [[317, 255, 0], 167, "KORD"] call spawnObject;
 
-if(!X_Server) exitWith { };
+if(!isServer) exitWith { };
 
 private["_objectPosition", "_objectCategory", "_objectClassName", "_object"];
 

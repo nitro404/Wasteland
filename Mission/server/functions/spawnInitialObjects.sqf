@@ -4,7 +4,7 @@
 //	@file Created: 26/08/2015 5:21 PM
 //	@file Args: [] call spawnInitialObjects;
 
-if(!X_Server) exitWith { };
+if(!isServer) exitWith { };
 
 private["_townPosition", "_townRadius", "_townName", "_numberOfVehicles", "_numberOfBuildings", "_numberOfStationaryWeapons", "_numberOfWeaponCrates", "_totalVehicles", "_totalWeaponCrates", "_totalBuildings", "_totalStationaryWeapons", "_currentObjectIndex"];
 

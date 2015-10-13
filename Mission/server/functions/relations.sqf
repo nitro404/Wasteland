@@ -5,7 +5,7 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-if(!X_Server) exitWith {};
+if(!isServer) exitWith { };
 
 diag_log format["WASTELAND SERVER - Initializing Server Relations"];
 
