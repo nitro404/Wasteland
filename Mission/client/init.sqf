@@ -19,7 +19,6 @@ groupManagmentActive = false;
 pvar_PlayerTeamKiller = objNull;
 doCancelAction = false;
 currentMissionsMarkers = [];
-currentRadarMarkers = [];
 
 //Initialization Variables
 playerCompiledScripts = false;
@@ -53,7 +52,6 @@ waituntil { !(IsNull (findDisplay 46)) };
 
 "currentDate" addPublicVariableEventHandler { [] call timeSync };
 "clientMissionMarkers" addPublicVariableEventHandler { [] call updateMissionsMarkers };
-"clientRadarMarkers" addPublicVariableEventHandler { [] call updateRadarMarkers };
 "pvar_teamKillList" addPublicVariableEventHandler { [] call updateTeamKiller };
 "publicVar_teamkillMessage" addPublicVariableEventHandler { if(local(_this select 1)) then { [] spawn teamkillMessage; }; };
 
@@ -70,7 +68,6 @@ sleep 0.1;
 //true execVM "client\functions\loadAtmosphere.sqf"; // Set to false to disable dust, ash and wind
 
 [] call updateMissionsMarkers;
-[] call updateRadarMarkers;
 
 if(isNil "FZF_IC_INIT") then {
 	call compile preprocessFileLineNumbers "client\functions\newPlayerIcons.sqf";

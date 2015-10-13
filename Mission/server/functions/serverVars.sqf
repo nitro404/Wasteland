@@ -30,8 +30,6 @@ pvar_beaconListIndep = [];
 publicVariable "pvar_beaconListIndep";
 clientMissionMarkers = [];
 publicVariable "clientMissionMarkers";
-clientRadarMarkers = [];
-publicVariable "clientRadarMarkers";
 currentDate = [];
 publicVariable "currentDate";
 currentInvites = [];

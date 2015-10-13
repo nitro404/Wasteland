@@ -28,7 +28,6 @@ timeSync = compile preprocessFileLineNumbers "client\functions\clientTimeSync.sq
 
 // Update Scripts
 updateMissionsMarkers = compile preprocessFileLineNumbers "client\functions\updatePlayerMissionMarkers.sqf";
-updateRadarMarkers = compile preprocessFileLineNumbers "client\functions\updatePlayerRadarMarkers.sqf";
 updateTeamKiller = compile preprocessFileLineNumbers "client\functions\updateTeamKiller.sqf";
 
 // Team-Kill System
