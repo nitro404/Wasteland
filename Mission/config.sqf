@@ -290,6 +290,7 @@ buildingStore = [
 	["Razor Wire", 750, "Fort_RazorWire"],
 	["Scaffolding: 2 story", 100, "Land_Misc_Scaffolding"],
 	["Scaffolding: 4 story", 200, "Land_leseni4x"],
+	["Search Light", 10, "SearchLight"],
 // -- Cargo Containers ----------
 	["------------------Cargo Containers---------------", 0, "---"],
 	["Cargo Container: 2x Tall", 100, "Land_Misc_Cargo2B"],
