@@ -352,6 +352,7 @@ indestructibleBuildings = [
 	"Land_Ind_TankSmall",
 	"Land_Ind_TankSmall2",
 	"Land_Ind_TankSmall2_EP1",
+	"Land_Ind_FuelStation_Feed_Ep1",
 	"Land_Fuel_tank_stairs",
 	"Land_A_BuildingWIP",
 	"Land_A_Castle_Bastion",
