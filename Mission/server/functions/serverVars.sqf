@@ -198,7 +198,7 @@ weaponCrateCategories = [
 ];
 
 stationaryWeaponCategories = [
-    ["Machine Guns", 30, [
+    ["Machine Guns", 32, [
         // Tall Tripods
         ["DSHKM_CDF", "KORD_high", "BAF_L2A1_Tripod_W", "M2StaticMG"],
         // Mini-Tripods
@@ -223,10 +223,6 @@ stationaryWeaponCategories = [
         ["Igla_AA_pod_East", "Stinger_Pod"],
         // ZU-23
         ["ZU23_CDF"]
-    ]],
-    ["Misc", 2, [
-        // Searchlight
-        ["SearchLight"]
     ]]
 ];
 
