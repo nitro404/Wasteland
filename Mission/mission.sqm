@@ -1255,7 +1255,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="gs1";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Gun Store</t>"", ""client\systems\gunStore\loadGunStore.sqf""]; this attachTo[fp1,[-1.5,0,0]]; removeAllWeapons this;";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Gun Store</t>"", ""client\systems\gunStore\loadGunStore.sqf""]; this attachTo[fp1,[-1.5,0,0]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -1275,7 +1275,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="gs4";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Gun Store</t>"", ""client\systems\gunStore\loadGunStore.sqf""]; this attachTo[fp3,[3.5,2.5,0.08]]; removeAllWeapons this;";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Gun Store</t>"", ""client\systems\gunStore\loadGunStore.sqf""]; this attachTo[fp3,[3.5,2.5,0.08]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -1295,7 +1295,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="gs3";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Gun Store</t>"", ""client\systems\gunStore\loadGunStore.sqf""]; this attachTo[fp4,[4,-0.6,-0.04]]; removeAllWeapons this;";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Gun Store</t>"", ""client\systems\gunStore\loadGunStore.sqf""]; this attachTo[fp4,[4,-0.6,-0.04]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -1315,7 +1315,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="gs2";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Gun Store</t>"", ""client\systems\gunStore\loadGunStore.sqf""]; this attachTo[fp2, [3.5,-1,0]]; removeAllWeapons this;";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Gun Store</t>"", ""client\systems\gunStore\loadGunStore.sqf""]; this attachTo[fp2, [3.5,-1,0]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -1335,7 +1335,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="generalStore1";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""client\systems\generalStore\loadGenStore.sqf""]; this attachTo[fp5,[0,-3,0]]; removeAllWeapons this;";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""client\systems\generalStore\loadGenStore.sqf""]; this attachTo[fp5,[0,-3,0]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -1355,7 +1355,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="generalStore2";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""client\systems\generalStore\loadGenStore.sqf""]; this attachTo[fp6,[0,-3,0]]; removeAllWeapons this;";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""client\systems\generalStore\loadGenStore.sqf""]; this attachTo[fp6,[0,-3,0]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -1375,7 +1375,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="generalStore3";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""client\systems\generalStore\loadGenStore.sqf""]; this attachTo[fp7,[0,-3,0]]; removeAllWeapons this;";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""client\systems\generalStore\loadGenStore.sqf""]; this attachTo[fp7,[0,-3,0]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -1395,7 +1395,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="generalStore4";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""client\systems\generalStore\loadGenStore.sqf""]; this attachTo[fp8,[0,-3,0]]; removeAllWeapons this;";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""client\systems\generalStore\loadGenStore.sqf""]; this attachTo[fp8,[0,-3,0]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -1415,7 +1415,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="generalStore5";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""client\systems\generalStore\loadGenStore.sqf""]; this attachTo[fp9,[0,-3,0]]; removeAllWeapons this;";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""client\systems\generalStore\loadGenStore.sqf""]; this attachTo[fp9,[0,-3,0]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -2576,7 +2576,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="gs7";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Gun Store</t>"", ""client\systems\gunStore\loadGunStore.sqf""]; this attachTo[fp13, [3.5,-1,-0.08]]; removeAllWeapons this;";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Gun Store</t>"", ""client\systems\gunStore\loadGunStore.sqf""]; this attachTo[fp13, [3.5,-1,-0.08]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -2596,7 +2596,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="gs5";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Gun Store</t>"", ""client\systems\gunStore\loadGunStore.sqf""]; this attachTo[fp11,[3.5,2.5,-0.2]]; removeAllWeapons this;";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Gun Store</t>"", ""client\systems\gunStore\loadGunStore.sqf""]; this attachTo[fp11,[3.5,2.5,-0.2]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -2616,7 +2616,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="gs6";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Gun Store</t>"", ""client\systems\gunStore\loadGunStore.sqf""]; this attachTo[fp12,[-1.5,2.0,0]]; removeAllWeapons this;";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Gun Store</t>"", ""client\systems\gunStore\loadGunStore.sqf""]; this attachTo[fp12,[-1.5,2.0,0]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -2635,7 +2635,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="generalStore6";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""client\systems\generalStore\loadGenStore.sqf""]; this attachTo[fp10,[0,2,-0.3]]; removeAllWeapons this;";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""client\systems\generalStore\loadGenStore.sqf""]; this attachTo[fp10,[0,2,-0.3]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -2655,7 +2655,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="helicopterStore1";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Helicopter Store</t>"", ""client\systems\helicopterStore\loadHelicopterStore.sqf""]; this attachTo[fp14, [0, 1.25, -0.4]]; removeAllWeapons this;";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Helicopter Store</t>"", ""client\systems\helicopterStore\loadHelicopterStore.sqf""]; this attachTo[fp14, [0, 1.25, -0.4]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -2675,7 +2675,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="helicopterStore2";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Helicopter Store</t>"", ""client\systems\helicopterStore\loadHelicopterStore.sqf""]; this attachTo[fp15, [0, -1.25, -0.4]]; removeAllWeapons this;";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Helicopter Store</t>"", ""client\systems\helicopterStore\loadHelicopterStore.sqf""]; this attachTo[fp15, [0, -1.25, -0.4]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -2695,7 +2695,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="helicopterStore3";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Helicopter Store</t>"", ""client\systems\helicopterStore\loadHelicopterStore.sqf""]; this attachTo[fp16, [1, 0.5, -0.2]]; removeAllWeapons this;";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Helicopter Store</t>"", ""client\systems\helicopterStore\loadHelicopterStore.sqf""]; this attachTo[fp16, [1, 0.5, -0.2]]; removeAllWeapons this;";
 				};
 			};
 		};
@@ -2715,7 +2715,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="buildingStore1";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Building Store</t>"", ""client\systems\buildingStore\loadBuildingStore.sqf""]; this attachTo[fp17, [0, -2, -0.1]];";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Building Store</t>"", ""client\systems\buildingStore\loadBuildingStore.sqf""]; this attachTo[fp17, [0, -2, -0.1]];";
 				};
 			};
 		};
@@ -2735,7 +2735,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="buildingStore2";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Building Store</t>"", ""client\systems\buildingStore\loadBuildingStore.sqf""]; this attachTo[fp18, [0, -2, -0.1]];";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Building Store</t>"", ""client\systems\buildingStore\loadBuildingStore.sqf""]; this attachTo[fp18, [0, -2, -0.1]];";
 				};
 			};
 		};
@@ -2755,7 +2755,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="buildingStore3";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Building Store</t>"", ""client\systems\buildingStore\loadBuildingStore.sqf""]; this attachTo[fp19, [0, -2, -0.1]];";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Building Store</t>"", ""client\systems\buildingStore\loadBuildingStore.sqf""]; this attachTo[fp19, [0, -2, -0.1]];";
 				};
 			};
 		};
@@ -2775,7 +2775,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="buildingStore4";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Building Store</t>"", ""client\systems\buildingStore\loadBuildingStore.sqf""]; this attachTo[fp20, [0, -2, -0.1]];";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Building Store</t>"", ""client\systems\buildingStore\loadBuildingStore.sqf""]; this attachTo[fp20, [0, -2, -0.1]];";
 				};
 			};
 		};
@@ -2795,7 +2795,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="buildingStore5";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Building Store</t>"", ""client\systems\buildingStore\loadBuildingStore.sqf""]; this attachTo[fp21, [0, -2, -0.1]];";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Building Store</t>"", ""client\systems\buildingStore\loadBuildingStore.sqf""]; this attachTo[fp21, [0, -2, -0.1]];";
 				};
 			};
 		};
@@ -2815,7 +2815,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="buildingStore6";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Building Store</t>"", ""client\systems\buildingStore\loadBuildingStore.sqf""]; this attachTo[fp22, [0, -2, -0.1]];";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Building Store</t>"", ""client\systems\buildingStore\loadBuildingStore.sqf""]; this attachTo[fp22, [0, -2, -0.1]];";
 				};
 			};
 		};
@@ -2845,7 +2845,7 @@ class Mission
 			vehicle="USBasicAmmunitionBox";
 			skill=0.60000002;
 			text="g_ammo_1";
-			init="clearWeaponCargo this; clearMagazineCargo this; this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="clearWeaponCargo this; clearMagazineCargo this; this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item2
 		{
@@ -2856,7 +2856,7 @@ class Mission
 			vehicle="Land_sara_hasic_zbroj";
 			skill=0.60000002;
 			text="gs1_hangar";
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item3
 		{
@@ -2880,7 +2880,7 @@ class Mission
 			vehicle="USBasicAmmunitionBox";
 			skill=0.60000002;
 			text="g_ammo_4";
-			init="clearWeaponCargo this; clearMagazineCargo this; this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="clearWeaponCargo this; clearMagazineCargo this; this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item5
 		{
@@ -2890,7 +2890,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_bouda2_vnitrek";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item6
 		{
@@ -2914,7 +2914,7 @@ class Mission
 			vehicle="USBasicAmmunitionBox";
 			skill=0.60000002;
 			text="g_ammo_3";
-			init="clearWeaponCargo this; clearMagazineCargo this; this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="clearWeaponCargo this; clearMagazineCargo this; this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item8
 		{
@@ -2923,7 +2923,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_bouda2_vnitrek";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item9
 		{
@@ -2946,7 +2946,7 @@ class Mission
 			vehicle="USBasicAmmunitionBox";
 			skill=0.60000002;
 			text="g_ammo_2";
-			init="clearWeaponCargo this; clearMagazineCargo this; this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="clearWeaponCargo this; clearMagazineCargo this; this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item11
 		{
@@ -2956,7 +2956,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_bouda2_vnitrek";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item12
 		{
@@ -3231,7 +3231,7 @@ class Mission
 			side="EMPTY";
 			vehicle="US_WarfareBVehicleServicePoint_Base_EP1";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item40
 		{
@@ -3252,7 +3252,7 @@ class Mission
 			side="EMPTY";
 			vehicle="US_WarfareBVehicleServicePoint_Base_EP1";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item42
 		{
@@ -3273,7 +3273,7 @@ class Mission
 			side="EMPTY";
 			vehicle="US_WarfareBVehicleServicePoint_Base_EP1";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item44
 		{
@@ -3294,7 +3294,7 @@ class Mission
 			side="EMPTY";
 			vehicle="US_WarfareBVehicleServicePoint_Base_EP1";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item46
 		{
@@ -3315,7 +3315,7 @@ class Mission
 			side="EMPTY";
 			vehicle="US_WarfareBVehicleServicePoint_Base_EP1";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item48
 		{
@@ -3336,7 +3336,7 @@ class Mission
 			side="EMPTY";
 			vehicle="US_WarfareBVehicleServicePoint_Base_EP1";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item50
 		{
@@ -3357,7 +3357,7 @@ class Mission
 			side="EMPTY";
 			vehicle="US_WarfareBVehicleServicePoint_Base_EP1";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item52
 		{
@@ -3378,7 +3378,7 @@ class Mission
 			side="EMPTY";
 			vehicle="US_WarfareBVehicleServicePoint_Base_EP1";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item54
 		{
@@ -3424,7 +3424,7 @@ class Mission
 			vehicle="USBasicAmmunitionBox";
 			skill=0.60000002;
 			text="g_ammo_7";
-			init="clearWeaponCargo this; clearMagazineCargo this; this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="clearWeaponCargo this; clearMagazineCargo this; this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item58
 		{
@@ -3434,7 +3434,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_bouda2_vnitrek";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item59
 		{
@@ -3458,7 +3458,7 @@ class Mission
 			vehicle="USBasicAmmunitionBox";
 			skill=0.60000002;
 			text="g_ammo_5";
-			init="clearWeaponCargo this; clearMagazineCargo this; this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="clearWeaponCargo this; clearMagazineCargo this; this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item61
 		{
@@ -3482,7 +3482,7 @@ class Mission
 			vehicle="USBasicAmmunitionBox";
 			skill=0.60000002;
 			text="g_ammo_6";
-			init="clearWeaponCargo this; clearMagazineCargo this; this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="clearWeaponCargo this; clearMagazineCargo this; this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item63
 		{
@@ -3492,7 +3492,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_bouda2_vnitrek";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item64
 		{
@@ -3566,7 +3566,7 @@ class Mission
 			vehicle="Land_fort_artillery_nest";
 			leader=1;
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handledamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item71
 		{
@@ -3577,7 +3577,7 @@ class Mission
 			vehicle="Land_fort_artillery_nest";
 			leader=1;
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handledamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item72
 		{
@@ -3588,7 +3588,7 @@ class Mission
 			vehicle="Land_fort_artillery_nest";
 			leader=1;
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handledamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		class Item73
 		{
@@ -3731,7 +3731,7 @@ class Mission
 			side="EMPTY";
 			vehicle="MASH";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		// Pobeda Dam Medical Tent
 		class Item86
@@ -3742,7 +3742,7 @@ class Mission
 			side="EMPTY";
 			vehicle="MASH";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		// Gorka Medical Tent
 		class Item87
@@ -3753,7 +3753,7 @@ class Mission
 			side="EMPTY";
 			vehicle="MASH";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		// Kamenka Medical Tent
 		class Item88
@@ -3764,7 +3764,7 @@ class Mission
 			side="EMPTY";
 			vehicle="MASH";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		// Myshkino Medical Tent
 		class Item89
@@ -3775,7 +3775,7 @@ class Mission
 			side="EMPTY";
 			vehicle="MASH";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		// Cap Golova Medical Tent
 		class Item90
@@ -3786,7 +3786,7 @@ class Mission
 			side="EMPTY";
 			vehicle="MASH";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		// Petrovka Medical Tent
 		class Item91
@@ -3797,7 +3797,7 @@ class Mission
 			side="EMPTY";
 			vehicle="MASH";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		// Vyshnoye Medical Tent
 		class Item92
@@ -3808,7 +3808,7 @@ class Mission
 			side="EMPTY";
 			vehicle="MASH";
 			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 	};
 	class Markers

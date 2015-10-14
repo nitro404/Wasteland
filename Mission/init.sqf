@@ -31,6 +31,13 @@ true spawn {
 [] execVM "config.sqf";
 [] execVM "briefing.sqf";
 
+_makeBuildingsIndestructible = [] execVM "shared\makeBuildingsIndestructible.sqf";
+
+waitUntil {
+	sleep 0.25;
+	scriptDone _makeBuildingsIndestructible
+};
+
 if(!isDedicated) then {
 	waitUntil { player == player };
 

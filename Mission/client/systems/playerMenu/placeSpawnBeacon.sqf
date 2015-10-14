@@ -30,9 +30,9 @@ _playerDirVector = vectorDir player;
 
 // PRECONDITION: check that the player is not outside of the map boundaries for Chernarus.
 if(getPos player select 0 < 0 ||
-   getPos player select 0 > 15360 ||
+   getPos player select 0 > worldDimensions select 0 ||
    getPos player select 1 < 0 ||
-   getPos player select 1 > 15360) exitWith {
+   getPos player select 1 > worldDimensions select 1) exitWith {
 	player globalChat localize "STR_WL_Errors_BeaconOutOfBounds";
 };
 
@@ -123,7 +123,7 @@ for "_iteration" from 1 to _lockDuration do {
 		_beaconOffsetPos = [_playerPos, _beaconOffset] call BIS_fnc_vectorAdd;
 		_placedBeacon setPosATL _beaconOffsetPos;
 		_placedBeacon setDir _playerDir - 180;
-		_placedBeacon addEventHandler["handleDamage", {false}];
+		_placedBeacon allowDamage false;
 		_placedBeacon setVariable["R3F_LOG_disabled", true];
 		_placedBeacon setVariable["faction", _playerSide, true];
 		_placedBeacon setVariable["ownerName", _beaconOwner, true];
