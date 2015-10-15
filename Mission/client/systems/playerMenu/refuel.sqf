@@ -69,7 +69,7 @@ for "_iteration" from 1 to _iterationAmount do {
 		2 cutText ["Vehicle refuel interrupted...", "PLAIN DOWN", 1];
 	};
 
-	if(player distance _currVehicle > 5) exitWith {
+	if(player distance _currVehicle > 10) exitWith {
 		2 cutText ["Vehicle refuel interrupted...", "PLAIN DOWN", 1];
 	};
 
