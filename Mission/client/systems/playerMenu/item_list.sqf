@@ -14,12 +14,12 @@ _dialog = findDisplay playersys_DIALOG;
 _itemList = _dialog displayCtrl item_list;
 
 if(player getVariable "fuelFull" == 1) then {
-	_itemListIndex = _itemList lbAdd "Fuel Can";
+	_itemListIndex = _itemList lbAdd "Jerry Can";
 	_itemList lbSetData [(lbSize _itemList)-1, "fuelFull"];
 };
 
 if(player getVariable "fuelEmpty" == 1) then {
-	_itemListIndex = _itemList lbAdd "Empty Fuel Can";
+	_itemListIndex = _itemList lbAdd "Empty Jerry Can";
 	_itemList lbSetData [(lbSize _itemList)-1, "fuelEmpty"];
 };
 if(player getVariable "camonet" > 0) then {

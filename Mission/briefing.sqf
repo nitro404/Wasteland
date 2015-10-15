@@ -22,7 +22,7 @@ player createDiaryRecord["Changelog",
 			- Glock 17 &amp; 4 magazines<br/>
 			- Binoculars<br/>
 			- GPS<br/>
-			- Full Fuel Can<br/>
+			- Full Jerry Can<br/>
 			- Minimum $800<br/>
 		+ Simplified money dropping / pickup to reduce exploits, no more animation or delay.<br/>
 		+ Added option for HALO jumping out of air vehicles to the bottom of the scroll menu.<br/>
@@ -33,7 +33,7 @@ player createDiaryRecord["Changelog",
 			- Replaced all medic skins with corpsman skin to fix reduced inventories.<br/>
 			- Replaced all field technician skins with saboteur skin to fix offset player sights.<br/>
 			- Replaced independent officer skin with better suited camo warlord skin.<br/>
-		+ Fuel cans now give 75% fuel for air vehicles, 25% for tanks and 50% for anything else.<br/>
+		+ Jerry cans now give 75% fuel for air vehicles, 25% for tanks and 50% for anything else.<br/>
 		+ Added group management to blu-for and op-for.<br/>
 		+ Other group members can now be promoted to leader.<br/>
 		+ Any member of a group can invite new players.<br/>
@@ -182,7 +182,6 @@ player createDiaryRecord["Wasteland",
 	If you spawn in an area with no vehicles or supplies in the immediate area, DO NOT just click respawn from the pause menu, chances are if you search an area of a few hundred meters, you will find something.<br/><br/>
 	Always be on the lookout for nightvision. Two pairs are located in the Large Cache, and there are pairs scattered throughout cars. You can also purchase them from the gunstores. Nighttime without them SUCKS, and if you have them, you can conduct stealth raids on enemy bases under the cover of complete darkness.<br/><br/>
 	When you set up a base, never leave your supplies unguarded, one guard will suffice, but it is recommended you have at least 2, maybe 3 guards at base at all times.<br/><br/>
-	The helicopter from the side mission spawns with no fuel, so do not make a mad dash for the chopper unless you are armed and plan to protect it, or have some fuel which can be found in the fuel truck, or in the palated barrels from the abandoned base.<br/>
 	There are very aggressive AI characters that spawn with most side missions and will protect the mission objectives with deadly force, be aware of them.<br/>
 "
 ]
