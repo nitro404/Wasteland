@@ -1,92 +1,105 @@
 //	@file Version: 1.0
 //	@file Name: repair.sqf
-//  @file Author: [404] Costlyy
+//  	@file Author: [404] Costlyy
 //	@file Created: 29/01/2013 00:00
-//	@file Args:
 
-// Check if mutex lock is active.
 if(mutexScriptInProgress) exitWith {
 	player globalChat localize "STR_WL_Errors_InProgress";
 };
 
-private["_currVehicle","_currVehicleType","_fuelAmount","_stringEscapePercent","_iteration","_loopSpeed","_iterationAmount","_iterationPercentage"];
+private["_currVehicle", "_fuelAmount", "_iteration", "_loopSpeed", "_iterationAmount", "_iterationPercentage"];
 
-_currVehicle = nearestObjects[player, ["LandVehicle", "Air", "Ship"], 5] select 0;
-_currVehicleType = typeOf _currVehicle;
-_stringEscapePercent = "%"; // Required to get the % sign into a formatted string.
-_iteration = 0;
+_currVehicle = nearestObjects[player, ["LandVehicle", "Air", "Ship"], 10] select 0;
 
-// PRECONDITION: Check player is not in a car (driver/passenger etc).
-if(vehicle player != player) exitWith { player globalChat localize "STR_WL_Errors_InVehicle"; };
-// PRECONDITION: Check for vehicle near-by, if exists then select closest.
-if(isNil{_currVehicle}) exitWith {hint "No vehicle within range";};
-// PRECONDITION: Vehicle accepts fuel.
-if(_currVehicle isKindOf "Bicycle") exitWith {hint "You can't refuel a bicycle, silly!";};
-// PRECONDITION: Vehicle actually needs fuel.
-if((fuel _currVehicle) >= 0.99) exitWith {hint "Vehicle has full fuel tank, no point in refueling.";};
+if(vehicle player != player) exitWith {
+	player globalChat localize "STR_WL_Errors_InVehicle";
+};
+
+if(isNil {_currVehicle}) exitWith {
+	hint "No vehicle within range.";
+};
+
+if(_currVehicle isKindOf "Bicycle") exitWith {
+	hint "Can't refuel bicycles!";
+};
+
+if((fuel _currVehicle) >= 0.99) exitWith {
+	hint "Vehicle is already fully fueled!";
+};
 
 _fuelAmount = 0.5;
 
-switch true do {
-	case (_currVehicle isKindOf "Air"): {_fuelAmount = 0.75;};
-	case (_currVehicle isKindOf "Tank"): {_fuelAmount = 0.25;};
-	case (_currVehicle isKindOf "Motorcycle"): {_fuelAmount = 0.75;};
-	case (_currVehicle isKindOf "ATV_Base_EP1"): {_fuelAmount = 0.75;};
+if(_currVehicle isKindOf "Air") then {
+	_fuelAmount = 0.75;
+};
+
+if(_currVehicle isKindOf "Tank") then {
+	_fuelAmount = 0.25;
+};
+
+if(_currVehicle isKindOf "Motorcycle") then {
+	_fuelAmount = 0.75;
+};
+
+if(_currVehicle isKindOf "ATV_Base_EP1") then {
+	_fuelAmount = 0.75;
 };
 
 mutexScriptInProgress = true;
 _currPlayerState = animationState player;
 player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 
-_totalDuration = 5; // 5 seconds duration
+_totalDuration = 5;
 _iterationAmount = _totalDuration;
+_iteration = 0;
 
 for "_iteration" from 1 to _iterationAmount do {
-
-    if(vehicle player != player) exitWith { // Player is in a vehicle
+	if(vehicle player != player) exitWith {
 		2 cutText ["Vehicle refuel interrupted...", "PLAIN DOWN", 1];
 	};
 
-  	if (doCancelAction) exitWith {// Player selected "cancel action".
+	if(doCancelAction) exitWith {
 		2 cutText ["Vehicle refuel interrupted...", "PLAIN DOWN", 1];
-   		player switchMove _currPlayerState;
-        doCancelAction = false;
-        mutexScriptInProgress = false; // Do this here to remove "Cancel Action" ASAP!
+			player switchMove _currPlayerState;
+		doCancelAction = false;
+		mutexScriptInProgress = false;
 	};
 
-	if (!(alive player)) exitWith {// If the player dies, revert state.
-		2 cutText ["Vehicle refuel interrupted...", "PLAIN DOWN", 1];
-	};
-
-	if(player distance _currVehicle > 5) exitWith { // If the player leaves, revert state.
+	if(!(alive player)) exitWith {
 		2 cutText ["Vehicle refuel interrupted...", "PLAIN DOWN", 1];
 	};
 
-  	if (animationState player != "AinvPknlMstpSlayWrflDnon_medic") then { // Keep the player locked in medic animation for the full duration of the loop.
+	if(player distance _currVehicle > 5) exitWith {
+		2 cutText ["Vehicle refuel interrupted...", "PLAIN DOWN", 1];
+	};
+
+	if (animationState player != "AinvPknlMstpSlayWrflDnon_medic") then {
 		player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 	};
 
-   	_iterationAmount = _iterationAmount - 1;
+	_iterationAmount = _iterationAmount - 1;
 	_iterationPercentage = floor (_iteration / _totalDuration * 100);
 
-	2 cutText [format["Refuelling Vehicle (%1%2)", _iterationPercentage, _stringEscapePercent], "PLAIN DOWN", 1];
+	2 cutText [format["Refuelling Vehicle (%1%2)", _iterationPercentage, "%"], "PLAIN DOWN", 1];
+
 	sleep 1;
 
-  	if (_iteration >= _totalDuration) exitWith { // Success conditions
-   		sleep 1;
+	if(_iteration >= _totalDuration) exitWith {
+		sleep 1;
+
 		2 cutText ["", "PLAIN DOWN", 1];
-    	player switchMove _currPlayerState;
+		player switchMove _currPlayerState;
 
-  		player setVariable["fuelFull",0,true];
-		player setVariable["fuelEmpty",1,true];
+		player setVariable["fuelFull", 0, true];
+		player setVariable["fuelEmpty", 1, true];
 
-        if(!(local _currVehicle)) then {
+		if(!(local _currVehicle)) then {
 			[nil, _currVehicle, "loc", rSPAWN, [_currVehicle, _fuelAmount], {(_this select 0) setFuel (fuel(_this select 0) + (_this select 1))}] call RE;
-		} else {
+		}
+		else {
 			_currVehicle setFuel ((fuel _currVehicle) + _fuelAmount);
 		};
-   	};
+	};
 };
 
 mutexScriptInProgress = false;
-
