@@ -26,6 +26,10 @@ flipVehicle = compile preprocessFileLineNumbers "client\systems\playerMenu\flipV
 // Sync client with server time
 timeSync = compile preprocessFileLineNumbers "client\functions\clientTimeSync.sqf";
 
+if(!isServer) then {
+	craterCleanupManager = compile preprocessFileLineNumbers "client\functions\craterCleanupManager.sqf";
+};
+
 // Update Scripts
 updateMissionsMarkers = compile preprocessFileLineNumbers "client\functions\updatePlayerMissionMarkers.sqf";
 updateTeamKiller = compile preprocessFileLineNumbers "client\functions\updateTeamKiller.sqf";

@@ -11,17 +11,18 @@
 #define GET_CTRL(a) (GET_DISPLAY displayCtrl ##a)
 #define GET_SELECTED_DATA(a) ([##a] call {_idc = _this select 0;_selection = (lbSelection GET_CTRL(_idc) select 0);if (isNil {_selection}) then {_selection = 0};(GET_CTRL(_idc) lbData _selection)})
 
-if(isNil {dropActive}) then {dropActive = false};
+private["_switch", "_data", "_vehicle_type", "_pos"];
+
+if(isNil {dropActive}) then {
+	dropActive = false
+};
 
 disableSerialization;
-
-private["_switch","_data","_vehicle_type","_pos"];
 
 _switch = _this select 0;
 _data = GET_SELECTED_DATA(item_list);
 
 switch(_switch) do {
-	// Use item
 	case 0: {
 		closeDialog 0;
 
@@ -46,7 +47,6 @@ switch(_switch) do {
 			};
 		};
 	};
-	//Drop item
 	case 1: {
 		if(_data == "") exitWith {
         		player globalChat "YOU NEED TO SELECT AN ITEM TO DROP!";
@@ -56,51 +56,58 @@ switch(_switch) do {
         		player globalChat "YOU ARE CURRENTLY BUSY!";
        		};
 
-		_pos = getPosATL player;
-
-		//Drops the item and sets values & variables
 		switch(_data) do {
 			case "fuelFull": {
-				player setVariable["fuelFull", (player getVariable "fuelFull")-1, true];
-				_temp = "Fuel_can" createVehicle (position player);
-				_temp setVariable["fuel", true, true];
-				_temp setPos _pos;
-				_temp setVariable["R3F_LOG_disabled", true];
+				player setVariable["fuelFull", (player getVariable "fuelFull") - 1, true];
+				_item = "Fuel_can" createVehicle (position player);
+				_item setPos (getPosATL player);
+				_item setVariable["R3F_LOG_disabled", true];
+				_item setVariable["owner", getPlayerUID player, true];
+				_item setVariable["creationTime", time, true];
 			};
 			case "fuelEmpty": {
-				player setVariable["fuelEmpty", (player getVariable "fuelEmpty")-1, true];
-				_temp = "Fuel_can" createVehicle (position player);
-				_temp setVariable["fuel", false, true];
-				_temp setPos _pos;
-				_temp setVariable["R3F_LOG_disabled", true];
+				player setVariable["fuelEmpty", (player getVariable "fuelEmpty") - 1, true];
+				_item = "Fuel_can" createVehicle (position player);
+				_item setPos (getPosATL player);
+				_item setVariable["R3F_LOG_disabled", true];
+				_item setVariable["owner", getPlayerUID player, true];
+				_item setVariable["creationTime", time, true];
 			};
 			case "repairkits": {
-				player setVariable["repairkits", (player getVariable "repairkits")-1, true];
-				_temp = "Suitcase" createVehicle (position player);
-				_temp setPos _pos;
-				_temp setVariable["R3F_LOG_disabled", true];
+				player setVariable["repairkits", (player getVariable "repairkits") - 1, true];
+				_item = "Suitcase" createVehicle (position player);
+				_item setPos (getPosATL player);
+				_item setVariable["R3F_LOG_disabled", true];
+				_item setVariable["owner", getPlayerUID player, true];
+				_item setVariable["creationTime", time, true];
 			};
 			case "medkit": {
-				player setVariable["medkits", (player getVariable "medkits")-1, true];
-				_temp = "CZ_VestPouch_EP1" createVehicle (position player);
-				_temp setPos _pos;
-				_temp setVariable["R3F_LOG_disabled", true];
+				player setVariable["medkits", (player getVariable "medkits") - 1, true];
+				_item = "CZ_VestPouch_EP1" createVehicle (position player);
+				_item setPos (getPosATL player);
+				_item setVariable["R3F_LOG_disabled", true];
+				_item setVariable["owner", getPlayerUID player, true];
+				_item setVariable["creationTime", time, true];
 			};
 			case "camonet": {
-				player setVariable["camonet", (player getVariable "camonet")-1, true];
-				_temp = "CZ_Backpack_EP1" createVehicle (position player);
-				_temp setPos _pos;
-				_temp setVariable["R3F_LOG_disabled", true];
+				player setVariable["camonet", (player getVariable "camonet") - 1, true];
+				_item = "CZ_Backpack_EP1" createVehicle (position player);
+				_item setPos (getPosATL player);
+				_item setVariable["R3F_LOG_disabled", true];
+				_item setVariable["owner", getPlayerUID player, true];
+				_item setVariable["creationTime", time, true];
 			};
 			case "spawnBeacon": {
 				player setVariable["spawnBeacon", (player getVariable "spawnBeacon")-1,true];
-				_droppedBeacon = "Satelit" createVehicle (position player);
-				_droppedBeacon setVariable["spawnsRemaining", 100, true];
-				_droppedBeacon setVariable["faction","WORLD",true];
-				_droppedBeacon setVariable["R3F_LOG_disabled", true];
+				_item = "Satelit" createVehicle (position player);
+				_item setVariable["spawnsRemaining", 100, true];
+				_item setVariable["faction", "WORLD", true];
+				_item setVariable["R3F_LOG_disabled", true];
+				_item setVariable["owner", getPlayerUID player, true];
+				_item setVariable["creationTime", time, true];
 	    		};
 		};
 
-	        closeDialog 0; // To fix the listbox not updating properly.
+	        closeDialog 0;
 	};
 };

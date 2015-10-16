@@ -31,6 +31,8 @@ true spawn {
 [] execVM "config.sqf";
 [] execVM "briefing.sqf";
 
+cleanupObject = compile preprocessFileLineNumbers "shared\cleanupObject.sqf";
+
 _makeBuildingsIndestructible = [] execVM "shared\makeBuildingsIndestructible.sqf";
 
 waitUntil {
@@ -49,7 +51,7 @@ if(!isDedicated) then {
 };
 
 if(isServer) then {
-	diag_log format ["[%1]", missionName];
+	diag_log format ["WASTELAND SERVER - Starting Mission: %1", missionName];
 
 	#ifdef __DEBUG__
 	diag_log format ["T%1,DT%2,F%3", time, diag_tickTime, diag_frameno];

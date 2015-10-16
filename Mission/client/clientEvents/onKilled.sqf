@@ -4,21 +4,21 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-private ["_player"];
+private ["_player", "_killer"];
 
 _player = (_this select 0) select 0;
 _killer = (_this select 0) select 1;
 
-// Close any active dialogs.
 closeDialog 0;
 
 PlayerCDeath = [_player, _killer];
 publicVariable "PlayerCDeath";
+
 if (isServer) then {
 	_id = PlayerCDeath spawn serverPlayerDied;
 };
 
-if(!local _player) exitwith {};
+if(!local _player) exitwith { };
 
 if((_player != _killer) && (vehicle _player != vehicle _killer) && (playerSide == side _killer) && (str(playerSide) in ["WEST", "EAST"])) then {
 	pvar_PlayerTeamKiller = objNull;
@@ -82,6 +82,8 @@ if((_player getVariable "medkits") > 0) then {
 	for "_i" from 1 to (_player getVariable "medkits") do {
 		_newObject = "CZ_VestPouch_EP1" createVehicle (position _player);
 		_newObject setVariable["R3F_LOG_disabled", true];
+		_newObject setVariable["owner", getPlayerUID player, true];
+		_newObject setVariable["creationTime", time, true];
 	};
 };
 
@@ -89,6 +91,8 @@ if((_player getVariable "repairkits") > 0) then {
 	for "_i" from 1 to (_player getVariable "repairkits") do {
 		_newObject = "Suitcase" createVehicle (position _player);
 		_newObject setVariable["R3F_LOG_disabled", true];
+		_newObject setVariable["owner", getPlayerUID player, true];
+		_newObject setVariable["creationTime", time, true];
 	};
 };
 
@@ -96,6 +100,8 @@ if((_player getVariable "camonet") > 0) then {
 	for "_i" from 1 to (_player getVariable "camonet") do {
 		_newObject = "CZ_Backpack_EP1" createVehicle (position _player);
 		_newObject setVariable["R3F_LOG_disabled", true];
+		_newObject setVariable["owner", getPlayerUID player, true];
+		_newObject setVariable["creationTime", time, true];
 	};
 };
 
@@ -103,10 +109,11 @@ if((_player getVariable "spawnBeacon") > 0) then {
 	for "_i" from 1 to (_player getVariable "spawnBeacon") do {
 		_newObject = "Satelit" createVehicle (position _player);
 		_newObject setVariable["R3F_LOG_disabled", true];
+		_newObject setVariable["owner", getPlayerUID player, true];
+		_newObject setVariable["creationTime", time, true];
 	};
 };
 
-// Create the thread to blackout the user's screen when the respawn timer is low.
 true spawn {
 	waitUntil {playerRespawnTime < 2};
 	titleText ["", "BLACK OUT", 1];

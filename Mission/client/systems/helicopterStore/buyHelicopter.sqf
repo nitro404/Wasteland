@@ -34,6 +34,8 @@ if(count _nearestVehicles > 0) exitWith {
 			_helicopter setPosATL getPosATL helicopterStoreSpawn;
 			_helicopter setDir (getDir helicopterStoreSpawn);
 			_helicopter setVariable["R3F_LOG_disabled", false, true];
+			_helicopter setVariable["owner", getPlayerUID player, true];
+			_helicopter setVariable["creationTime", time, true];
 
 			if(_helicopter isKindOf "Ka60_PMC") then {
 				_helicopter addMagazine "120Rnd_CMFlareMagazine";

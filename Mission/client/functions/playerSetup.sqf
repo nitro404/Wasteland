@@ -76,9 +76,9 @@ player addAction["Take Spawn Beacon", "noscript.sqf", 'deleteVehicle (nearestobj
 
 player addAction["Pickup Money", "client\actions\pickupMoney.sqf", [], 1, false, false, "", 'count nearestobjects [player, ["EvMoney"],  5] > 0'];
 
-player addAction[("<t color=""#E01B1B"">Destroy Spawn Beacon</t>"), "client\actions\pickupBeacon.sqf", 1, 1, false, false, "", '_currBeacon = (nearestobjects [player, ["Satelit"], 5]) select 0; (_currBeacon getVariable "ownerUID") == (getPlayerUID player) || str(playerSide) == "GUER" || str(playerSide) != (_currBeacon getVariable "faction") || (_currBeacon getVariable "faction") == "WORLD"'];
+player addAction[("<t color=""#E01B1B"">Destroy Spawn Beacon</t>"), "client\actions\pickupBeacon.sqf", 1, 1, false, false, "", '_currBeacon = (nearestobjects [player, ["Satelit"], 5]) select 0; (_currBeacon getVariable "owner") == (getPlayerUID player) || str(playerSide) == "GUER" || str(playerSide) != (_currBeacon getVariable "faction") || (_currBeacon getVariable "faction") == "WORLD"'];
 
-player addAction[("<t color=""#21DE31"">Repack Spawn Beacon</t>"), "client\actions\pickupBeacon.sqf", 0, 1, false, false, "", '_currBeacon = (nearestobjects [player, ["Satelit"], 5]) select 0; (_currBeacon getVariable "ownerUID") == (getPlayerUID player) || str(playerSide) == "GUER" || str(playerSide) != (_currBeacon getVariable "faction") || (_currBeacon getVariable "faction") == "WORLD"'];
+player addAction[("<t color=""#21DE31"">Repack Spawn Beacon</t>"), "client\actions\pickupBeacon.sqf", 0, 1, false, false, "", '_currBeacon = (nearestobjects [player, ["Satelit"], 5]) select 0; (_currBeacon getVariable "owner") == (getPlayerUID player) || str(playerSide) == "GUER" || str(playerSide) != (_currBeacon getVariable "faction") || (_currBeacon getVariable "faction") == "WORLD"'];
 
 player addAction["Pickup Camo Net", "client\actions\pickupcamonet.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["Land_CamoNet_NATO"],  5] select 0) < 5 and (player getVariable "camonet")<1 '];
 

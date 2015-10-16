@@ -24,6 +24,18 @@ waitUntil {
 
 diag_log format["WASTELAND SERVER - Server Compile Finished"];
 
+diag_log format["WASTELAND SERVER - Initializing Mission Controllers"];
+
+{
+    [missionTypes select _forEachIndex] spawn missionController;
+} forEach missionTypes;
+
+if(isDedicated) then {
+    diag_log format["WASTELAND SERVER - Starting Cleanup Manager"];
+
+    [] spawn cleanupManager;
+};
+
 diag_log format["WASTELAND SERVER - Spawning Initial Objects in Towns"];
 
 _spawnInitialObjects = [] execVM "server\functions\spawnInitialObjects.sqf";
@@ -37,13 +49,3 @@ diag_log format["WASTELAND SERVER - Starting Vehicle Respawn Scripts"];
 
 [] spawn respawnVehicles;
 [] spawn respawnHelicopters;
-
-diag_log format["WASTELAND SERVER - Initializing Mission Controllers"];
-
-{
-    [missionTypes select _forEachIndex] spawn missionController;
-} forEach missionTypes;
-
-if(isDedicated) then {
-// TODO: add new cleanup script
-};

@@ -46,4 +46,8 @@ createLootMoney = compile preprocessFileLineNumbers "server\functions\dropLoot.s
 arma2NetTime = compile preprocessFileLineNumbers "server\functions\netTime.sqf";
 #endif
 
+if(isDedicated) then {
+	cleanupManager = compile preprocessFileLineNumbers "server\cleanupManager.sqf";
+};
+
 diag_log format["WASTELAND SERVER - Finished Compiling Server-Side Scripts!"];

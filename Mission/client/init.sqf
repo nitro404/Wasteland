@@ -67,6 +67,10 @@ sleep 0.1;
 
 //true execVM "client\functions\loadAtmosphere.sqf"; // Set to false to disable dust, ash and wind
 
+if(!isServer) then {
+    [] spawn craterCleanupManager;
+};
+
 [] call updateMissionsMarkers;
 
 if(isNil "FZF_IC_INIT") then {

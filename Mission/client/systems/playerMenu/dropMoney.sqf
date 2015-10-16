@@ -14,7 +14,10 @@ private["_playerMenuDialog", "_playerMenuDialogMoneyText", "_playerMenuDialogMon
 
 if(isNil {dropActive}) then { dropActive = false };
 if(isNil {MoneyInUse}) then { MoneyInUse = false };
-if(isNil {player getVariable "cmoney"}) then {player setVariable["cmoney", 0, true];};
+
+if(isNil {player getVariable "cmoney"}) then {
+	player setVariable["cmoney", 0, true];
+};
 
 disableSerialization;
 
@@ -32,11 +35,12 @@ if((vehicle player) != player) exitWith {
 	player globalChat "You can't drop money while in a vehicle.";
 };
 
-_currPosition = getPosATL player;
 _droppedCash = "Evmoney" createVehicle (position player);
-_droppedCash setPos _currPosition;
+_droppedCash setPos (getPosATL player);
 _droppedCash setVariable["money", _moneyAmount, true];
-_droppedCash setVariable["owner", "world", true];
+_droppedCash setVariable["R3F_LOG_disabled", true];
+_droppedCash setVariable["owner", getPlayerUID player, true];
+_droppedCash setVariable["creationTime", time, true];
 
 player setVariable["cmoney", (player getVariable "cmoney") - _moneyAmount, true];
 
