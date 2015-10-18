@@ -7,46 +7,39 @@ if(mutexScriptInProgress) exitWith {
 	player globalChat localize "STR_WL_Errors_InProgress";
 };
 
-private["_currVehicle", "_fuelAmount", "_iteration", "_loopSpeed", "_iterationAmount", "_iterationPercentage"];
+private["_vehicle", "_vehicleType", "_fuelAmount", "_playerState", "_iteration", "_loopSpeed", "_iterationAmount", "_iterationPercentage"];
 
-_currVehicle = nearestObjects[player, ["LandVehicle", "Air", "Ship"], 10] select 0;
+_vehicle = nearestObjects[player, ["LandVehicle", "Air", "Ship"], 10] select 0;
+_vehicleType = typeOf _vehicle;
 
 if(vehicle player != player) exitWith {
 	player globalChat localize "STR_WL_Errors_InVehicle";
 };
 
-if(isNil {_currVehicle}) exitWith {
-	hint "No vehicle within range.";
+if(isNil {_vehicle}) exitWith {
+	player globalChat "No vehicle within range.";
 };
 
-if(_currVehicle isKindOf "Bicycle") exitWith {
-	hint "Can't refuel bicycles!";
+if(_vehicle isKindOf "Bicycle") exitWith {
+	player globalChat "Can't refuel bicycles!";
 };
 
-if((fuel _currVehicle) >= 0.99) exitWith {
-	hint "Vehicle is already fully fueled!";
+if((fuel _vehicle) >= 0.99) exitWith {
+	player globalChat "Vehicle is already fully fueled!";
 };
 
 _fuelAmount = 0.5;
 
-if(_currVehicle isKindOf "Air") then {
+if( _vehicle isKindOf "Motorcycle" || _vehicle isKindOf "ATV_Base_EP1" || _vehicle isKindOf "Air") then {
 	_fuelAmount = 0.75;
 };
 
-if(_currVehicle isKindOf "Tank") then {
+if(_vehicle isKindOf "Tank") then {
 	_fuelAmount = 0.25;
 };
 
-if(_currVehicle isKindOf "Motorcycle") then {
-	_fuelAmount = 0.75;
-};
-
-if(_currVehicle isKindOf "ATV_Base_EP1") then {
-	_fuelAmount = 0.75;
-};
-
 mutexScriptInProgress = true;
-_currPlayerState = animationState player;
+_playerState = animationState player;
 player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 
 _totalDuration = 5;
@@ -60,7 +53,7 @@ for "_iteration" from 1 to _iterationAmount do {
 
 	if(doCancelAction) exitWith {
 		2 cutText ["Vehicle refuel interrupted...", "PLAIN DOWN", 1];
-			player switchMove _currPlayerState;
+			player switchMove _playerState;
 		doCancelAction = false;
 		mutexScriptInProgress = false;
 	};
@@ -69,7 +62,7 @@ for "_iteration" from 1 to _iterationAmount do {
 		2 cutText ["Vehicle refuel interrupted...", "PLAIN DOWN", 1];
 	};
 
-	if(player distance _currVehicle > 10) exitWith {
+	if(player distance _vehicle > 10) exitWith {
 		2 cutText ["Vehicle refuel interrupted...", "PLAIN DOWN", 1];
 	};
 
@@ -80,7 +73,7 @@ for "_iteration" from 1 to _iterationAmount do {
 	_iterationAmount = _iterationAmount - 1;
 	_iterationPercentage = floor (_iteration / _totalDuration * 100);
 
-	2 cutText [format["Refuelling Vehicle (%1%2)", _iterationPercentage, "%"], "PLAIN DOWN", 1];
+	2 cutText [format["Refuelling %1 (%2%3)", _vehicleType, _iterationPercentage, "%"], "PLAIN DOWN", 1];
 
 	sleep 1;
 
@@ -88,16 +81,16 @@ for "_iteration" from 1 to _iterationAmount do {
 		sleep 1;
 
 		2 cutText ["", "PLAIN DOWN", 1];
-		player switchMove _currPlayerState;
+		player switchMove _playerState;
 
 		player setVariable["fuelFull", 0, true];
 		player setVariable["fuelEmpty", 1, true];
 
-		if(!(local _currVehicle)) then {
-			[nil, _currVehicle, "loc", rSPAWN, [_currVehicle, _fuelAmount], {(_this select 0) setFuel (fuel(_this select 0) + (_this select 1))}] call RE;
+		if(!(local _vehicle)) then {
+			[nil, _vehicle, "loc", rSPAWN, [_vehicle, _fuelAmount], {(_this select 0) setFuel (fuel(_this select 0) + (_this select 1))}] call RE;
 		}
 		else {
-			_currVehicle setFuel ((fuel _currVehicle) + _fuelAmount);
+			_vehicle setFuel ((fuel _vehicle) + _fuelAmount);
 		};
 	};
 };
