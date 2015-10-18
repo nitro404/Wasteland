@@ -5,9 +5,9 @@
 //	@file Args:
 //      Edited to HALO/paradrop at random spawns
 
-waituntil {!isNil "bis_fnc_init"};
+waitUntil { !isNil "bis_fnc_init" };
 
-private ["_townName", "_randomLoc", "_pos"];
+private["_townName", "_randomLoc", "_pos"];
 
 _randomLoc = townList select (random (count townList - 1));
 _pos = getMarkerPos (_randomLoc select 0);

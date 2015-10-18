@@ -4,9 +4,9 @@
 //	@file Created: 28/11/2012 05:19
 //	@file Args:
 
-waituntil { !isNil "bis_fnc_init" };
+waitUntil { !isNil "bis_fnc_init" };
 
-private ["_townName", "_randomLoc", "_pos"];
+private["_townName", "_randomLoc", "_pos"];
 
 _randomLoc = townList select(random(count townList - 1));
 

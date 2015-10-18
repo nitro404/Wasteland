@@ -35,13 +35,6 @@ enteredVehicle = compile preprocessFileLineNumbers "shared\enteredVehicle.sqf";
 exitedVehicle = compile preprocessFileLineNumbers "shared\exitedVehicle.sqf";
 cleanupObject = compile preprocessFileLineNumbers "shared\cleanupObject.sqf";
 
-_makeBuildingsIndestructible = [] execVM "shared\makeBuildingsIndestructible.sqf";
-
-waitUntil {
-	sleep 0.25;
-	scriptDone _makeBuildingsIndestructible
-};
-
 if(!isDedicated) then {
 	waitUntil { player == player };
 
@@ -67,3 +60,10 @@ if(isServer) then {
 [] execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
 [] execVM "addons\proving_Ground\init.sqf";
 // [0.1, 0.5, 0.5] execVM "addons\scripts\DynamicWeatherEffects.sqf";
+
+_makeBuildingsIndestructible = [] execVM "shared\makeBuildingsIndestructible.sqf";
+
+waitUntil {
+	sleep 0.25;
+	scriptDone _makeBuildingsIndestructible
+};

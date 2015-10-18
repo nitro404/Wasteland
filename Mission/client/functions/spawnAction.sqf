@@ -4,8 +4,24 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args: [int(type of spawn)]
 
+private["_switch", "_button", "_playerUID", "_side", "_startTime", "_result", "_found", "_currTime"];
+
 _switch = _this select 0;
 _button = _this select 1;
+
+_playerUID = getPlayerUID player;
+
+_playerSpawning = false;
+
+if(!isNil "playerSpawning") then {
+	if(playerSpawning) then {
+		_playerSpawning = true;
+	}
+};
+
+if(_playerSpawning) exitWith { };
+
+playerSpawning = true;
 
 switch(_switch) do {
 	case 0: {
@@ -24,56 +40,68 @@ switch(_switch) do {
 	};
 };
 
-if(isNil{client_firstSpawn}) then {
+playerSpawning = false;
+
+if(isNil { client_firstSpawn }) then {
 	client_firstSpawn = true;
+
 	[] execVM "client\functions\welcomeMessage.sqf";
 
 	true spawn {
-        _startTime = floor(time);
-        _result = 0;
-	waitUntil {
-		_currTime = floor(time);
-		if(_currTime - _startTime >= 200) then {
-			_result = 1;
+		_startTime = floor(time);
+		_result = 0;
+
+		waitUntil {
+			_currTime = floor(time);
+
+			if(_currTime - _startTime >= 200) then {
+				_result = 1;
+			};
+
+			(_result == 1)
 		};
-		(_result == 1)
-	};
 
 		if(playerSide in [west, east]) then {
 			_found = false;
+
 			{
-				if(_x select 0 == playerUID) then {_found = true;};
+				if(_x select 0 == _playerUID) then {
+					_found = true;
+				};
 			} forEach pvar_teamSwitchList;
+
 			if(!_found) then {
-				pvar_teamSwitchList set [count pvar_teamSwitchList, [playerUID, playerSide]];
+				pvar_teamSwitchList set [count pvar_teamSwitchList, [_playerUID, playerSide]];
 				publicVariable "pvar_teamSwitchList";
 
-                _side = "";
-                if(str(playerSide) == "WEST") then {
-                    _side = "Blufor";
-                };
+				_side = "";
 
-                if(str(playerSide) == "EAST") then {
-                    _side = "Opfor";
-                };
+				if(str(playerSide) == "WEST") then {
+					_side = "Blufor";
+				};
 
-				titleText [format["You have been locked to %1",_side],"PLAIN",0];
+				if(str(playerSide) == "EAST") then {
+					_side = "Opfor";
+				};
+
+				titleText [format["You have been locked to %1", _side], "PLAIN", 0];
 			};
 		};
 	};
-
-} else {
+}
+else {
 	[] spawn {
-        _startTime = floor(time);
-        _result = 0;
-	waitUntil
-	{
-	    _currTime = floor(time);
-	    if(_currTime - _startTime >= 200) then
-	    {
-	    	_result = 1;
-	    };
-	    (_result == 1)
+		_startTime = floor(time);
+		_result = 0;
+
+		waitUntil {
+			_currTime = floor(time);
+
+			if(_currTime - _startTime >= 200) then {
+				_result = 1;
+			};
+
+			(_result == 1)
+		};
 	};
-    };
 };

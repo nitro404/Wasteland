@@ -18,7 +18,8 @@
 #define respawn_PlayersInTown_Text4 3412
 #define respawn_More_Button 3413
 
-waitUntil{!isnil "bis_fnc_init"};
+waitUntil{ !isNil "bis_fnc_init" };
+
 disableSerialization;
 
 private["_player","_town","_radius","_name","_enemyCount","_friendlyCount","_side","_dynamicControlsArray", "_enemyPresent","_tempArray", "_text", "_players", "_playerArray"];
