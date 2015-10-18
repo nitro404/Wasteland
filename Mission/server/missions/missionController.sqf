@@ -10,7 +10,7 @@ if(!isServer) exitWith { };
 
 private["_missionTypeInfo", "_missionFunctionType", "_missionFunction", "_vehicleList", "_vehicleClass", "_missionRewardPicture", "_minWeaponCrates", "_maxWeaponCrates", "_fullWeaponCrateList", "_numberOfWeaponCrates", "_weaponCrateSpawnList", "_activeMission"];
 
-_missionTypeInfo = _this select 1;
+_missionTypeInfo = _this select 0;
 _missionFunctionType = _missionTypeInfo select 2;
 
 _controllerDelay = (random 240) + 60;
