@@ -1,5 +1,5 @@
 //	@file Version: 1.0
-//	@file Name: cleanupManager.sqf
+//	@file Name: objectCleanupManager.sqf
 //	@file Author: nitro glycerine
 //	@file Created: 13/10/2015 6:25 PM
 

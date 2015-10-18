@@ -9,10 +9,10 @@
 
 if(!isServer) exitWith { };
 
-private["_vehiclePosition", "_vehicleCategory", "_vehicleClassName", "_missionVehicle", "_respawnVehicle", "_vehicle", "_vehicleInit", "_magazineIndex"];
+private["_vehiclePosition", "_vehicleCategory", "_vehicleClassName", "_missionVehicle", "_respawnVehicle", "_vehicle", "_vehicleInit", "_magazineIndex", "_invalidArgument"];
 
 if(count _this < 3) exitWith {
-    diag_log format["spawnVehicle Error: Requires minimum of 3 arguments, received %1.", count _this]
+    diag_log format["spawnVehicle Error: Requires minimum of 3 arguments, received %1.", count _this];
 };
 
 _vehiclePosition = _this select 0;
@@ -23,13 +23,14 @@ _missionVehicle = false;
 _respawnVehicle = false;
 _respawnDelay = 0;
 _vehicleInit = nil;
+_invalidArgument = false;
 
 if(typeName _vehiclePosition != "ARRAY") exitWith {
-    diag_log format["spawnVehicle Arg0 Error: Invalid position argument - expected array, received %1.", typeName _vehiclePosition]
+    diag_log format["spawnVehicle Arg0 Error: Invalid position argument - expected array, received %1.", typeName _vehiclePosition];
 };
 
 if(typeName _vehicleDirection != "SCALAR") exitWith {
-    diag_log format["spawnVehicle Arg1 Error: Invalid direction argument - expected scalar, received %1.", typeName _vehicleDirection]
+    diag_log format["spawnVehicle Arg1 Error: Invalid direction argument - expected scalar, received %1.", typeName _vehicleDirection];
 };
 
 if(typeName (_this select 2) == "ARRAY") then {
@@ -44,16 +45,16 @@ if(typeName (_this select 2) == "ARRAY") then {
                     _respawnDelay = _this select 4;
                 }
                 else {
-                    if(true) exitWith {
-                        diag_log format["spawnVehicle Arg4 Error: Invalid respawn delay argument - expected scalar, received %1.", typeName (_this select 4)]
-                    };
+                    diag_log format["spawnVehicle Arg4 Error: Invalid respawn delay argument - expected scalar, received %1.", typeName (_this select 4)];
+
+                    _invalidArgument = true;
                 };
             };
         }
         else {
-            if(true) exitWith {
-                diag_log format["spawnVehicle Arg3 Error: Invalid respawn argument - expected bool, received %1.", typeName (_this select 3)]
-            };
+            diag_log format["spawnVehicle Arg3 Error: Invalid respawn argument - expected bool, received %1.", typeName (_this select 3)];
+
+            _invalidArgument = true;
         };
     };
 }
@@ -74,32 +75,34 @@ else {
                                 _respawnDelay = _this select 5;
                             }
                             else {
-                                if(true) exitWith {
-                                    diag_log format["spawnVehicle Arg5 Error: Invalid respawn delay argument - expected scalar, received %1.", typeName (_this select 4)]
-                                };
+                                diag_log format["spawnVehicle Arg5 Error: Invalid respawn delay argument - expected scalar, received %1.", typeName (_this select 4)];
+
+                                _invalidArgument = true;
                             };
                         };
                     }
                     else {
-                        if(true) exitWith {
-                            diag_log format["spawnVehicle Arg4 Error: Invalid respawn argument - expected bool, received %1.", typeName (_this select 4)]
-                        };
+                        diag_log format["spawnVehicle Arg4 Error: Invalid respawn argument - expected bool, received %1.", typeName (_this select 4)];
+
+                        _invalidArgument = true;
                     };
                 };
             }
             else {
-                if(true) exitWith {
-                    diag_log format["spawnVehicle Arg3 Error: Invalid mission vehicle argument - expected bool, received %1.", typeName (_this select 3)]
-                };
+                diag_log format["spawnVehicle Arg3 Error: Invalid mission vehicle argument - expected bool, received %1.", typeName (_this select 3)];
+
+                _invalidArgument = true;
             };
         };
     }
     else {
-        if(true) exitWith {
-            diag_log format["spawnVehicle Arg2 Error: Invalid category / type argument - expected array or string, received %1.", typeName (_this select 2)]
-        };
+        diag_log format["spawnVehicle Arg2 Error: Invalid category / type argument - expected array or string, received %1.", typeName (_this select 2)];
+
+        _invalidArgument = true;
     };
 };
+
+if(_invalidArgument) exitWith { };
 
 if(isNil "_vehicleClassName") then {
     _vehicleClassName = [_vehicleCategory] call randomObject;
@@ -107,6 +110,12 @@ if(isNil "_vehicleClassName") then {
 
 _vehicle = createVehicle [_vehicleClassName, _vehiclePosition, [], 0, "NONE"];
 _vehicle setPos[getPos _vehicle select 0, getpos _vehicle select 1, 0];
+_vehicle addEventHandler["GetIn", { [_this] call enteredVehicle; } ];
+_vehicle addEventHandler["GetOut", { [_this] call exitedVehicle; } ];
+
+if(_missionVehicle) then {
+    _vehicle setVariable["missionVehicle", true, true];
+};
 
 if(_vehicle isKindOf "Tank") then {
     if(_vehicle isKindOf "M2A3_EP1") then {

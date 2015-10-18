@@ -17,5 +17,7 @@ _spawnPos set [2, 0];
 bicycle = createVehicle [bicycleList select floor(random count bicycleList), _spawnPos, [], 0, "NONE"];
 bicycle setDir _spawnDir;
 bicycle setPosATL _spawnPos;
-bicycle setVariable["owner", _playerUID, true];
+bicycle setVariable["owner", getPlayerUID player, true];
 bicycle setVariable["creationTime", time, true];
+bicycle addEventHandler["GetIn", { [_this] call enteredVehicle; } ];
+bicycle addEventHandler["GetOut", { [_this] call exitedVehicle; } ];

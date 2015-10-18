@@ -31,15 +31,16 @@ diag_log format["WASTELAND SERVER - Initializing Mission Controllers"];
 {
 	_numberOfControllers = (missionTypes select _forEachIndex) select 0;
 
-	for "_controllerIndex" from 0 to _numberOfControllers do {
+	for "_controllerIndex" from 1 to _numberOfControllers do {
 		[missionTypes select _forEachIndex] spawn missionController;
 	};
 } forEach missionTypes;
 
 if(isDedicated) then {
-	diag_log format["WASTELAND SERVER - Starting Cleanup Manager"];
+	diag_log format["WASTELAND SERVER - Starting Cleanup Managers"];
 
-	[] spawn cleanupManager;
+	[] spawn objectCleanupManager;
+	[] spawn vehicleCleanupManager;
 };
 
 diag_log format["WASTELAND SERVER - Spawning Initial Objects in Towns"];

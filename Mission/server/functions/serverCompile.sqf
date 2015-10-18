@@ -47,7 +47,10 @@ arma2NetTime = compile preprocessFileLineNumbers "server\functions\netTime.sqf";
 #endif
 
 if(isDedicated) then {
-	cleanupManager = compile preprocessFileLineNumbers "server\cleanupManager.sqf";
+	cleanupVehicle = compile preprocessFileLineNumbers "server\functions\cleanupVehicle.sqf";
+
+	objectCleanupManager = compile preprocessFileLineNumbers "server\functions\objectCleanupManager.sqf";
+	vehicleCleanupManager = compile preprocessFileLineNumbers "server\functions\vehicleCleanupManager.sqf";
 };
 
 diag_log format["WASTELAND SERVER - Finished Compiling Server-Side Scripts!"];

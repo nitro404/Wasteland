@@ -375,7 +375,7 @@ MissionSpawnMarkers = [
 ];
 
 missionTypes = [
-    [2, "Main Battle Tank Mission", 0, 600, 1800, [
+    [1, "Main Battle Tank Mission", 0, 600, 1800, [
         ["BAF_FV510_W", "T90", "M1A2_TUSK_MG"]
     ]],
     [1, "Armored Personnel Carrier Mission", 0, 300, 1800, [
@@ -390,5 +390,97 @@ missionTypes = [
         ["Mi24_V"],
         ["Mi24_P"]
     ]],
-    [2, "Geo Cache Mission", 1, 300, 2, 3, ["BasicGER", "BasicRU", "BasicUS", "GuerillaCache", "BasicTerrorist", "DemoCrate", "RUSniper", "USLaunchers", "RULaunchers"]]
+    [1, "Geo Cache Mission", 1, 300, 2, 3, ["BasicGER", "BasicRU", "BasicUS", "GuerillaCache", "BasicTerrorist", "DemoCrate", "RUSniper", "USLaunchers", "RULaunchers"]]
+];
+
+specialVehicles = [
+    // Ammo Trucks
+    "MtvrReammo",
+    "WarfareReammoTruck_Gue",
+    "UralReammo_TK_EP1",
+    "UralReammo_INS",
+    "UralReammo_CDF",
+    "KamazReammo",
+    "V3S_Reammo_TK_Gue_EP1",
+    // Fuel Trucks
+    "MtvrRefuel",
+    "UralRefuel_INS",
+    "UralRefuel_TK_EP1",
+    "UralRefuel_CDF",
+    "KamazRefuel",
+    "V3S_Refuel_TK_GUE_EP1",
+    // Repair Trucks
+    "MtvrRepair",
+    "UralRepair_CDF",
+    "UralRepair_INS",
+    "UralRepair_TK_EP1",
+    "KamazRepair",
+    "V3S_Repair_TK_GUE_EP1",
+    // Ambulances
+    "HMMWV_Ambulance",
+    "S1203_ambulance_EP1",
+    "GAZ_Vodnik_MedEvac",
+    "M1133_MEV_EP1",
+    "M113Ambul_TK_EP1",
+    "BMP2_Ambul_INS",
+    "BMP2_Ambul_CDF",
+    // Armored Personnel Carriers
+    "LAV25",
+    "BTR90",
+    "BMP2_CDF",
+    "BMP2_TK_EP1",
+    "BMP2_INS",
+    "BMP2_Gue",
+    "BMP2_UN_EP1",
+    "BMP3",
+    "M2A2_EP1",
+    "M2A3_EP1",
+    "M6_EP1",
+    // Anti-Air
+    "ZSU_TK_EP1",
+    "ZSU_CDF",
+    "ZSU_INS",
+    "2S6M_Tunguska",
+    // Main Battle Tanks
+    "M1128_MGS_EP1",
+    "T72_TK_EP1",
+    "T72_Gue",
+    "T72_CDF",
+    "T72_RU",
+    "T72_INS",
+    "BAF_FV510_W",
+    "BAF_FV510_D",
+    "T90",
+    "M1A1",
+    "M1A1_US_DES_EP1",
+    "M1A2_TUSK_MG",
+    "M1A2_US_TUSK_MG_EP1",
+    // Attack Helicopters
+    "Mi171Sh_rockets_CZ_EP1",
+    "Mi17_rockets_RU",
+    "Mi24_D",
+    "Mi24_D_TK_EP1",
+    "Mi24_V",
+    "Mi24_P",
+    "Ka52",
+    "Ka52Black",
+    "AW159_Lynx_BAF",
+    "AH1Z",
+    "AH64D",
+    "AH64D_EP1",
+    "BAF_Apache_AH1_D",
+    // Jets
+    "MQ9PredatorB",
+    "MQ9PredatorB_US_EP1",
+    "L39_TK_EP1",
+    "Su39",
+    "Su25_INS",
+    "Su25_CDF",
+    "Su25_TK_EP1",
+    "Su34",
+    "A10",
+    "A10_US_EP1",
+    "AV8B",
+    "AV8B2",
+    "F35B"
 ];

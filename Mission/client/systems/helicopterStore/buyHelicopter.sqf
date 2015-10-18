@@ -36,6 +36,8 @@ if(count _nearestVehicles > 0) exitWith {
 			_helicopter setVariable["R3F_LOG_disabled", false, true];
 			_helicopter setVariable["owner", getPlayerUID player, true];
 			_helicopter setVariable["creationTime", time, true];
+			_helicopter addEventHandler["GetIn", { [_this] call enteredVehicle; } ];
+			_helicopter addEventHandler["GetOut", { [_this] call exitedVehicle; } ];
 
 			if(_helicopter isKindOf "Ka60_PMC") then {
 				_helicopter addMagazine "120Rnd_CMFlareMagazine";

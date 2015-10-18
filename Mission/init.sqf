@@ -31,6 +31,8 @@ true spawn {
 [] execVM "config.sqf";
 [] execVM "briefing.sqf";
 
+enteredVehicle = compile preprocessFileLineNumbers "shared\enteredVehicle.sqf";
+exitedVehicle = compile preprocessFileLineNumbers "shared\exitedVehicle.sqf";
 cleanupObject = compile preprocessFileLineNumbers "shared\cleanupObject.sqf";
 
 _makeBuildingsIndestructible = [] execVM "shared\makeBuildingsIndestructible.sqf";
