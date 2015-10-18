@@ -6,6 +6,6 @@
 
 private["_droppedCash"];
 
-_droppedCash = "Evmoney" createVehicle ((_this select 0) select 0);
+_droppedCash = "Evmoney" createVehicle (position (_this select 0 select 0));
 _droppedCash setVariable["money", 100, true];
 _droppedCash setVariable["creationTime", time, true];
