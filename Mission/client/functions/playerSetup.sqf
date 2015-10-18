@@ -5,7 +5,7 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-private["_startingMoney"];
+private["_player", "_startingMoney"];
 
 _startingMoney = 800;
 
@@ -17,7 +17,7 @@ _player setskill 0;
 	_player disableAI _x;
 } forEach ["move", "anim", "target", "autotarget"];
 
-_player setVariable ["BIS_noCoreConversations", true];
+_player setVariable["BIS_noCoreConversations", true];
 
 enableSentences false;
 
@@ -32,10 +32,11 @@ _player addMagazine "17Rnd_9x19_glock17";
 _player addMagazine "17Rnd_9x19_glock17";
 _player addMagazine "17Rnd_9x19_glock17";
 _player addWeapon "glock17_EP1";
-_player selectWeapon "glock17_EP1";
 
 _player addWeapon "ItemGPS";
 _player addWeapon "Binocular";
+
+_player selectWeapon "glock17_EP1";
 
 _player addrating 1000000;
 
