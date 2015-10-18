@@ -46,7 +46,7 @@ else {
 
 if(_invalidArgument) exitWith { };
 
-if(isNil "_weaponCrateType") then {
+if(isNil { _weaponCrateType }) then {
     _weaponCrateType = [_weaponCrateCategory] call randomObject;
 };
 

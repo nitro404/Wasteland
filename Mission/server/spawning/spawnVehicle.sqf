@@ -104,7 +104,7 @@ else {
 
 if(_invalidArgument) exitWith { };
 
-if(isNil "_vehicleClassName") then {
+if(isNil { _vehicleClassName }) then {
     _vehicleClassName = [_vehicleCategory] call randomObject;
 };
 
@@ -167,10 +167,10 @@ if(_vehicle isKindOf "Plane") then {
 };
 
 if(_respawnVehicle && _respawnDelay >= 0) then {
-    _vehicleInit = format["%1 veh = [this, %2] execVM ""server\functions\respawnVehicle.sqf"";", if(isNil "_vehicleInit") then { "" } else { _vehicleInit }, _respawnDelay]
+    _vehicleInit = format["%1 veh = [this, %2] execVM ""server\functions\respawnVehicle.sqf"";", if(isNil { _vehicleInit }) then { "" } else { _vehicleInit }, _respawnDelay]
 };
 
-if(!isNil "_vehicleInit") then {
+if(!isNil { _vehicleInit }) then {
     _vehicle setVehicleInit _vehicleInit;
 
     processInitCommands;

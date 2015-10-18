@@ -38,12 +38,12 @@ if(_isBicycle) then {
 _immobileTime = _vehicle getVariable "immobileTime";
 
 if(canMove _vehicle) then {
-	if(!isNil "_immobileTime") then {
+	if(!isNil { _immobileTime }) then {
 		_vehicle setVariable["immobileTime", nil, false];
 	};
 }
 else {
-	if(isNil "_immobileTime") exitWith {
+	if(isNil { _immobileTime }) exitWith {
 		_vehicle setVariable["immobileTime", _currentTime, false];
 
 		_result = false;
@@ -56,12 +56,12 @@ else {
 	};
 };
 
-if(!isNil "_result") exitWith { _result };
+if(!isNil { _result }) exitWith { _result };
 
 if(_isBicycle) then {
 	_creationTime = _vehicle getVariable "creationTime";
 
-	if(!(isNil "_creationTime")) then {
+	if(!(isNil { _creationTime })) then {
 		if(typeName _creationTime == "SCALAR") then {
 			_lastTime = _creationTime;
 		};
@@ -71,7 +71,7 @@ if(_isBicycle) then {
 _exitTime = _vehicle getVariable "exitTime";
 
 if(_isBicycle) then {
-	if(!(isNil "_exitTime")) then {
+	if(!(isNil { _exitTime })) then {
 		if(typeName _exitTime == "SCALAR") then {
 			if(_exitTime > _lastTime) then {
 				_lastTime = _exitTime;
@@ -80,12 +80,12 @@ if(_isBicycle) then {
 	};
 }
 else {
-	if(isNil "_exitTime") exitWith { _result = false; };
+	if(isNil { _exitTime }) exitWith { _result = false; };
 
 	if(typeName _exitTime != "SCALAR") exitWith { _result = false; };
 };
 
-if(!isNil "_result") exitWith { _result };
+if(!isNil { _result }) exitWith { _result };
 
 _playerNearVehicle = false;
 
@@ -101,13 +101,13 @@ if(_playerNearVehicle) exitWith {
 	false
 };
 
-if(isNil "_lastTime") then {
+if(isNil { _lastTime }) then {
 	_lastTime = _exitTime;
 };
 
 _activityTime = _vehicle getVariable "activityTime";
 
-if(!(isNil "_activityTime")) then {
+if(!(isNil { _activityTime })) then {
 	if(typeName _activityTime == "SCALAR") then {
 		if(_activityTime > _lastTime) then {
 			_lastTime = _activityTime;

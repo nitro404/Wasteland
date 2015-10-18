@@ -11,12 +11,12 @@ _object = _this select 0;
 _lifespan = _this select 1;
 _minimumValue = _this select 2;
 
-if(!isNil "_minimumValue") then {
+if(!isNil { _minimumValue }) then {
 	if(_object isKindOf "Evmoney") then {
 		if(typeName _minimumValue == "SCALAR") then {
 			_value = _object getVariable "money";
 
-			if(!isNil "_value") then {
+			if(!isNil { _value }) then {
 				if(typeName _value == "SCALAR") then {
 					if(_value >= _minimumValue) exitWith {
 						false
@@ -36,7 +36,7 @@ if(_object isKindOf "CraterLong") then {
 _currentTime = time;
 _creationTime = _object getVariable "creationTime";
 
-if(isNil "_creationTime") exitWith {
+if(isNil { _creationTime }) exitWith {
 	_object setVariable["creationTime", _currentTime, _networkObject];
 
 	false

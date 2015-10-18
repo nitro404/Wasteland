@@ -42,7 +42,7 @@ else {
     };
 };
 
-if(isNil "_objectClassName") then {
+if(isNil { _objectClassName }) then {
     _objectClassName = [_objectCategory] call randomObject;
 };
 

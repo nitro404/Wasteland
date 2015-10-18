@@ -9,7 +9,7 @@ if(!isNil "playerMenuHandle") then {
 };
 
 playerMenuHandle = [] spawn {
-	waituntil { !isnull player };
+	waituntil { !isNull player };
 
 	private ["_veh"];
 
@@ -17,7 +17,7 @@ playerMenuHandle = [] spawn {
 
 		waituntil { vehicle player == player };
 
-		if(!isnil "_veh") then {
+		if(!isNil "_veh") then {
 			_veh removeaction playerMenuId;
 			_veh removeaction vehicleHALOJumpID;
 		};

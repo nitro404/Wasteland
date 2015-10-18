@@ -81,13 +81,6 @@ for "_iteration" from 1 to _lockDuration do {
 		mutexScriptInProgress = false;
 	};
 
-	if(!isNil "_currObject") then {
-		if(player distance _currObject > 5) exitWith {
-			2 cutText ["Spawn beacon placement interrupted...", "PLAIN DOWN", 1];
-			mutexScriptInProgress = false;
-		};
-	};
-
 	if(animationState player != "AinvPknlMstpSlayWrflDnon_medic") then {
 		player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 	};
