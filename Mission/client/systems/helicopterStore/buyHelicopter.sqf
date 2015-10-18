@@ -24,11 +24,11 @@ if(count _nearestVehicles > 0) exitWith {
 	if(_itemText == _x select 0) then {
 			_price = _x select 1;
 
-			if(player getVariable "cmoney" < _price) exitWith {
+			if(player getVariable "money" < _price) exitWith {
 				hintSilent format["You do not have enough money to purchase a %1.", _x select 0];
 			};
 
-			player setVariable["cmoney", (player getVariable "cmoney") - _price, true];
+			player setVariable["money", (player getVariable "money") - _price, true];
 
 			_helicopter = createVehicle[(_x select 2), getPosATL helicopterStoreSpawn, [], 0, "CAN_COLLIDE"];
 			_helicopter setPosATL getPosATL helicopterStoreSpawn;

@@ -25,19 +25,19 @@ _uptime = _dialog displayCtrl uptime_text;
 _groupButton = _dialog displayCtrl groupButton;
 _frameRate = _dialog displayCtrl frame_rate_text;
 
-if(isNil {player getVariable "cmoney"}) then {
+if(isNil {player getVariable "money"}) then {
 	_moneyValue ctrlSetText "0";
 }
 else {
-	_moneyValue ctrlSetText format["%1", player getVariable "cmoney"];
+	_moneyValue ctrlSetText format["%1", player getVariable "money"];
 };
 
 while {playerMenuDialogActive} do {
-	if(isNil {player getVariable "cmoney"}) then {
+	if(isNil {player getVariable "money"}) then {
 		_moneyText ctrlSetText "0";
 	}
 	else {
-		_moneyText ctrlSetText format["%1", player getVariable "cmoney"];
+		_moneyText ctrlSetText format["%1", player getVariable "money"];
 	};
 
 	_timeText = [time/60/60] call BIS_fnc_timeToString;

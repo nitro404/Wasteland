@@ -21,13 +21,13 @@ while {true} do {
     _health = round (_health * (10 ^ _decimalPlaces)) / (10 ^ _decimalPlaces);
     _health = 100 - (_health * 100);
 
-    _playerMoneyString = player getVariable "cmoney";
+    _playerMoneyString = player getVariable "money";
 
-    if(isNil {player getVariable "cmoney"}) then {
+    if(isNil {player getVariable "money"}) then {
         _playerMoneyString = "0";
     }
     else {
-        if(player getVariable "cmoney" >= 10000) then {
+        if(player getVariable "money" >= 10000) then {
         	_playerMoneyString = format["%1k", floor(_playerMoneyString / 1000)];
         };
     };

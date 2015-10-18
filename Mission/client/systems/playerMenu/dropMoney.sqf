@@ -10,8 +10,8 @@ private["_moneyAmount", "_canDropMoney", "_timeRemaining", "_droppedCash", "_pla
 
 disableSerialization;
 
-if(isNil {player getVariable "cmoney"}) then {
-	player setVariable["cmoney", 0, true];
+if(isNil {player getVariable "money"}) then {
+	player setVariable["money", 0, true];
 };
 
 _moneyAmount = floor(parseNumber(ctrlText money_value));
@@ -20,7 +20,7 @@ if(_moneyAmount < 1) exitWith {
 	player globalChat format["You must enter a valid number!"];
 };
 
-if((player getVariable "cmoney" < _moneyAmount) OR (player getVariable "cmoney" < 0)) exitwith {
+if((player getVariable "money" < _moneyAmount) OR (player getVariable "money" < 0)) exitwith {
 	player globalChat format["You don't have $%1 to drop!", _moneyAmount];
 };
 
@@ -55,7 +55,7 @@ _droppedCash setVariable["R3F_LOG_disabled", true];
 _droppedCash setVariable["owner", getPlayerUID player, true];
 _droppedCash setVariable["creationTime", time, true];
 
-player setVariable["cmoney", (player getVariable "cmoney") - _moneyAmount, true];
+player setVariable["money", (player getVariable "money") - _moneyAmount, true];
 
 player globalChat format["You have dropped $%1.", _moneyAmount];
 
@@ -65,11 +65,11 @@ if(!isNil {_playerMenuDialog}) then {
 	_playerMenuDialogMoneyValue = _playerMenuDialog displayCtrl money_value;
 
 	if(!isNil {_playerMenuDialogMoneyValue}) then {
-		if(isNil {player getVariable "cmoney"}) then {
+		if(isNil {player getVariable "money"}) then {
 			_playerMenuDialogMoneyValue ctrlSetText "0";
 		}
 		else {
-			_playerMenuDialogMoneyValue ctrlSetText format["%1", player getVariable "cmoney"];
+			_playerMenuDialogMoneyValue ctrlSetText format["%1", player getVariable "money"];
 		};
 	};
 };

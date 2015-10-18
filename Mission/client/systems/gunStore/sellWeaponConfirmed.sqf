@@ -21,13 +21,13 @@ if(_primaryWeapon == "") exitWith {};
 // Check if mutex lock is active.
 if(mutexScriptInProgress) exitWith {
 	player globalChat "ERROR: ALREADY PERFORMING ANOTHER ACTION!";
-};	
+};
 
 // Check if player is alive.
 if(!(alive player)) exitWith {
 	player globalChat "ERROR: YOU ARE CURRENTLY DEAD.";
     closeDialog 0;
-};	
+};
 
 mutexScriptInProgress = true;
 
@@ -36,7 +36,7 @@ mutexScriptInProgress = true;
 	if(_x in magazines player) then
     {
 		_magazineType = _x;
-        
+
         // Calculate the value of the magazines the player has for the gun being sold.
         {
 			if (_x == _magazineType) then {
@@ -62,7 +62,7 @@ diag_log format["mag value = %1", _magazineValue];
 diag_log format["weap value = %1", _weaponValue];
 
 player removeWeapon _primaryWeapon;
-player setVariable ["cmoney", (player getVariable ["cmoney", 0]) + _totalValue, true];
+player setVariable ["money", (player getVariable ["money", 0]) + _totalValue, true];
 hint format["Sold weapon and magazines for $%1", _totalValue];
 
-mutexScriptInProgress = false;;
+mutexScriptInProgress = false;

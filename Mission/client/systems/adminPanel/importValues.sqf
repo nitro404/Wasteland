@@ -9,8 +9,10 @@
 
 disableSerialization;
 
-private ["_index1","_type1","_dialog","_vehicleListBox","_weaponText","_userText","_damageText","_speedText","_data1"];
+private ["_index1", "_type1", "_dialog", "_vehicleListBox", "_weaponText", "_userText", "_damageText", "_speedText", "_data1"];
+
 _uid = getPlayerUID player;
+
 if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
 	_index1 = _this select 1;
 	_type1 = _this select 0;
@@ -33,43 +35,48 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 
 	_inCar = ["No Passengers"];
 	_driver = "No Driver";
-	if (_type1 == 1) then {
+
+	if(_type1 == 1) then {
 	    _data1 = _vehicleListBox lbData _index1;
 	    {
-	        if (str(_x) == _data1) exitwith {
-	           _weaponText ctrlSetText format["Weapons: %1",weapons _x];
-	           _speedText ctrlSetText format["Speed: %1",speed _x];
-	           if(!isnull driver _X) then
-	           {
+			if(str(_x) == _data1) exitwith {
+				_weaponText ctrlSetText format["Weapons: %1",weapons _x];
+				_speedText ctrlSetText format["Speed: %1",speed _x];
+				if(!isnull driver _X) then {
 					_driver = name (driver _x);
-	           };
-	           {if(_driver != name _x) then{_inCar set [_forEachIndex, name _x];};}forEach crew _x;
-	           _userText ctrlSetText format["Users: %1 %2",_driver,_inCar];
-	           _damageText ctrlSetText format["Damage: %1",damage _x];
-	        };
+				};
+				{
+					if(_driver != name _x) then {
+						_inCar set [_forEachIndex, name _x];
+					};
+				} forEach crew _x;
+				_userText ctrlSetText format["Users: %1 %2",_driver,_inCar];
+				_damageText ctrlSetText format["Damage: %1",damage _x];
+			};
 	    } foreach vehicles;
 	};
 
-	if (_type1 == 2) then {
-	    _data1 = _playerListBox lbData _index1;
-	    {
-	        if (str(_x) == _data1) exitwith {
-	            _itemsText ctrlSetText format["Items: %1",weapons _x];
-	            _currentGunText ctrlSetText format["Money: %1",_x getVariable "cmoney"];
-	            _skinText ctrlSetText format["Skin: %1",typeOf(_x)];
-	            _posText ctrlSetText format["Position: %1",position _x];
-	            _objectText ctrlSetText format["Slot: %1",_x];
+	if(_type1 == 2) then {
+		_data1 = _playerListBox lbData _index1;
+		{
+			if(str(_x) == _data1) exitwith {
+				_itemsText ctrlSetText format["Items: %1",weapons _x];
+				_currentGunText ctrlSetText format["Money: %1",_x getVariable "money"];
+				_skinText ctrlSetText format["Skin: %1",typeOf(_x)];
+				_posText ctrlSetText format["Position: %1",position _x];
+				_objectText ctrlSetText format["Slot: %1",_x];
 
-	            //Calculate Health 0 - 100
+				//Calculate Health 0 - 100
 				_decimalPlaces = 2;
 				_health = damage _x;
 				_health = round (_health * (10 ^ _decimalPlaces)) / (10 ^ _decimalPlaces);
 				_health = 100 - (_health * 100);
 
-	            _healthText ctrlSetText format["Health: %1",_health];
-	        };
-	    } foreach playableUnits;
+				_healthText ctrlSetText format["Health: %1",_health];
+			};
+		} foreach playableUnits;
 	};
-} else {
-  exit;
+}
+else {
+	exit;
 };

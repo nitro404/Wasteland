@@ -40,22 +40,22 @@ _player selectWeapon "glock17_EP1";
 
 _player addrating 1000000;
 
-if(isNil {_player getVariable "cmoney"}) then {
-	_player setVariable["cmoney", _startingMoney, false];
+if(isNil {_player getVariable "money"}) then {
+	_player setVariable["money", _startingMoney, false];
 }
 else {
-	if(_player getVariable "cmoney" < _startingMoney) then {
-		_player setVariable["cmoney", _startingMoney, false];
+	if(_player getVariable "money" < _startingMoney) then {
+		_player setVariable["money", _startingMoney, false];
 	};
 };
 
-_player setVariable["medkits", 0, false];
-_player setVariable["repairkits", 0, false];
-_player setVariable["fuelFull", 1, false];
-_player setVariable["fuelEmpty", 0, false];
-_player setVariable["spawnBeacon", 0, false];
-_player setVariable["ShowNameAllies", false, false];
-_player setVariable["camonet", 0, false];
+_player setVariable["medkits", 0, true];
+_player setVariable["repairkits", 0, true];
+_player setVariable["fuelFull", 1, true];
+_player setVariable["fuelEmpty", 0, true];
+_player setVariable["spawnBeacon", 0, true];
+_player setVariable["ShowNameAllies", false, true];
+_player setVariable["camonet", 0, true];
 
 if(isNil {_player getVariable "earplugs"}) then {
 	_player setVariable["earplugs", false, false];

@@ -13,5 +13,5 @@ genStoreCart = 0;
 
 _Dialog = findDisplay genstore_DIALOG;
 _playerMoney = _Dialog displayCtrl genstore_money;
-_money = player getVariable "cmoney";
+_money = player getVariable "money";
 _playerMoney CtrlsetText format["Cash: $%1", _money];

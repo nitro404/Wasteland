@@ -2,7 +2,7 @@
 
 disableSerialization;
 
-_playerMoney = player getVariable "cmoney";
+_playerMoney = player getVariable "money";
 _size = 0;
 _price = 0;
 _objectsInArea = [];
@@ -23,9 +23,9 @@ _complete_purchase = {
 	_price = (_this select 0) select 1;
 	_name  = (_this select 0) select 2;
 
-	if(_price <= (player getVariable "cmoney")) then {
-		player setVariable["cmoney", _playerMoney - _price, true];
-		_priceText CtrlsetText format["Money: $%1", player getVariable "cmoney"];
+	if(_price <= (player getVariable "money")) then {
+		player setVariable["money", _playerMoney - _price, true];
+		_priceText CtrlsetText format["Money: $%1", player getVariable "money"];
 		_success = true;
 	};
 

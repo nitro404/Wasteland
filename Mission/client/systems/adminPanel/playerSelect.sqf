@@ -23,19 +23,20 @@ if((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministra
 	_playerData = _playerListBox lbData _index;
 
 	{
-		if (str(_x) == _playerData) then {
+		if(str(_x) == _playerData) then {
 			_target = _x;
 			_check = 1;
 		};
-	}forEach playableUnits;
+	} forEach playableUnits;
 
-	if (_check == 0) then {exit;};
+	if(_check == 0) then { exit; };
 
-	switch (_switch) do {
-	    case 0: //Spectate
-		{
+	switch(_switch) do {
+		// Spectate
+		case 0: {
 			_spectating = ctrlText _spectateButton;
-			if (_spectating == "Spectate") then {
+
+			if(_spectating == "Spectate") then {
 				_spectateButton ctrlSetText "Spectating";
 				player commandChat format ["Viewing %1.", name _target];
 
@@ -46,113 +47,125 @@ if((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministra
 				_camadm camCommit 1;
 
 				_rnum = 0;
-				while {ctrlText _spectateButton == "Spectating"} do {
-					switch (_rnum) do
-					{
-						if (daytime > 19 || daytime < 5) then {camUseNVG true;} else {camUseNVG false;};
-						case 0: {detach _camadm; _camadm attachTo [(vehicle _target), [0,-10,4]]; _camadm setVectorUp [0, 1, 5];};
-						case 1: {detach _camadm; _camadm attachTo [(vehicle _target), [0,10,4]]; _camadm setDir 180; _camadm setVectorUp [0, 1, -5];};
-						case 2: {detach _camadm; _camadm attachTo [(vehicle _target), [0,1,50]]; _camadm setVectorUp [0, 50, 1];};
-						case 3: {detach _camadm; _camadm attachTo [(vehicle _target), [-10,0,2]]; _camadm setDir 90; _camadm setVectorUp [0, 1, 5];};
-						case 4: {detach _camadm; _camadm attachTo [(vehicle _target), [10,0,2]]; _camadm setDir -90; _camadm setVectorUp [0, 1, -5];};
+
+				while { ctrlText _spectateButton == "Spectating" } do {
+					switch(_rnum) do {
+						if(daytime > 19 || daytime < 5) then { camUseNVG true; } else { camUseNVG false; };
+						case 0: { detach _camadm; _camadm attachTo [(vehicle _target), [0,-10,4]]; _camadm setVectorUp [0, 1, 5] ;};
+						case 1: { detach _camadm; _camadm attachTo [(vehicle _target), [0,10,4]]; _camadm setDir 180; _camadm setVectorUp [0, 1, -5]; };
+						case 2: { detach _camadm; _camadm attachTo [(vehicle _target), [0,1,50]]; _camadm setVectorUp [0, 50, 1]; };
+						case 3: { detach _camadm; _camadm attachTo [(vehicle _target), [-10,0,2]]; _camadm setDir 90; _camadm setVectorUp [0, 1, 5]; };
+						case 4: { detach _camadm; _camadm attachTo [(vehicle _target), [10,0,2]]; _camadm setDir -90; _camadm setVectorUp [0, 1, -5]; };
 					};
-					player commandchat "Viewing cam " + str(_rnum) + " on " + str(name vehicle _target);
+
+					player commandChat "Viewing cam " + str(_rnum) + " on " + str(name vehicle _target);
 					_rnum = _rnum + 1;
-					if (_rnum > 4) then {_rnum = 0;};
+					if(_rnum > 4) then { _rnum = 0; };
+
 					sleep 5;
 				};
-			} else {
+			}
+			else {
 				_spectateButton ctrlSetText "Spectate";
 				player commandchat format ["No Longer Viewing.", name _target];
 				player cameraEffect ["terminate","back"];
 				camDestroy _camadm;
 			};
 		};
-		case 1: //Warn
-		{
+
+		// Warn
+		case 1: {
 			_warnText = ctrlText _warnMessage;
-	        _playerName = name player;
+			_playerName = name player;
 			_target setVehicleInit format["if (name player == ""%2"") then {titleText [""Admin %3: %1"", ""plain""]; titleFadeOut 10;};",_warnText,name _target,_playerName];
-	        processInitCommands;
-	        clearVehicleInit _target;
+			processInitCommands;
+			clearVehicleInit _target;
 		};
-	    case 2: //Slay
-	    {
+
+		// Slay
+		case 2: {
 			_target setVehicleInit format["if (name player == ""%1"") then {player setdamage 1;deletevehicle player;};",name _target];
 			processInitCommands;
 			clearVehicleInit _target;
-	    };
-	    case 3: //Unlock Team Switcher
-	    {
+		};
+
+		// Unlock Team Switcher
+		case 3: {
 			_targetUID = getPlayerUID _target;
-	        {
-			    if(_x select 0 == _targetUID) then
-			    {
-			    	pvar_teamSwitchList set [_forEachIndex, objNull];
+			{
+				if(_x select 0 == _targetUID) then {
+					pvar_teamSwitchList set [_forEachIndex, objNull];
 					pvar_teamSwitchList = pvar_teamSwitchList - [objNull];
-			        publicVariableServer "pvar_teamSwitchList";
+					publicVariableServer "pvar_teamSwitchList";
 
-	                _target setVehicleInit format["if (name player == ""%1"") then {client_firstSpawn = nil;};",name _target];
-			        processInitCommands;
-			        clearVehicleInit _target;
+					_target setVehicleInit format["if (name player == ""%1"") then {client_firstSpawn = nil;};",name _target];
+					processInitCommands;
+					clearVehicleInit _target;
 
-	                player setVehicleInit format["if isServer then {publicVariable 'pvar_teamSwitchList';};"];
-			        processInitCommands;
-			        clearVehicleInit player;
-			    };
-			}forEach pvar_teamSwitchList;
-	    };
-		case 4: //Unlock Team Killer
-	    {
+					player setVehicleInit format["if isServer then {publicVariable 'pvar_teamSwitchList';};"];
+					processInitCommands;
+					clearVehicleInit player;
+				};
+			} forEach pvar_teamSwitchList;
+		};
+
+		// Unlock Team Killer
+		case 4: {
 			_targetUID = getPlayerUID _target;
-	        {
-			    if(_x select 0 == _targetUID) then
-			    {
-			    	pvar_teamKillList set [_forEachIndex, objNull];
+
+			{
+				if(_x select 0 == _targetUID) then {
+					pvar_teamKillList set [_forEachIndex, objNull];
 					pvar_teamKillList = pvar_teamKillList - [objNull];
-			        publicVariableServer "pvar_teamKillList";
+					publicVariableServer "pvar_teamKillList";
 
-	                player setVehicleInit format["if isServer then {publicVariable 'pvar_teamKillList';};"];
-			        processInitCommands;
-			        clearVehicleInit player;
-			    };
-			}forEach pvar_teamKillList;
-	    };
-        case 5: //Remove All Money
-	    {
+					player setVehicleInit format["if isServer then {publicVariable 'pvar_teamKillList';};"];
+					processInitCommands;
+					clearVehicleInit player;
+				};
+			} forEach pvar_teamKillList;
+	    	};
+
+		// Remove All Money
+		case 5:  {
 			_targetUID = getPlayerUID _target;
-	        {
-			    if(getPlayerUID _x == _targetUID) then
-			    {
-  					_x setVariable["cmoney",0,true];
-			    };
-			}forEach playableUnits;
-	    };
-        case 6: //Remove All Weapons
-	    {
+
+			{
+				if(getPlayerUID _x == _targetUID) then {
+					_x setVariable["money", 0, true];
+				};
+			} forEach playableUnits;
+		};
+
+		//Remove All Weapons
+		case 6: {
 			_targetUID = getPlayerUID _target;
-	        {
-			    if(getPlayerUID _x == _targetUID) then
-			    {
+
+			{
+				if(getPlayerUID _x == _targetUID) then {
 					if(!(local _x)) then {
 						[nil, _x, "loc", rSPAWN, [_x], { removeAllWeapons (_this select 0) }] call RE;
-					} else {
+					}
+					else {
 						removeAllWeapons _x;
 					};
-			    };
-			}forEach playableUnits;
-	    };
-        case 7: //Check Player Gear
-	    {
+				};
+			} forEach playableUnits;
+		};
+
+		// Check Player Gear
+		case 7:
+		{
 			_targetUID = getPlayerUID _target;
-	        {
-			    if(getPlayerUID _x == _targetUID) then
-			    {
-  					createGearDialog [_x, "RscDisplayGear"];
-			    };
-			}forEach playableUnits;
-	    };
+
+			{
+				if(getPlayerUID _x == _targetUID) then {
+					createGearDialog [_x, "RscDisplayGear"];
+				};
+			} forEach playableUnits;
+		};
 	};
-} else {
-  exit;
+}
+else {
+	exit;
 };

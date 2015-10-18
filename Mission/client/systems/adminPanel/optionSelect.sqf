@@ -126,11 +126,11 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 
 				// Money
 				case 4: {
-					if(isNil {player getVariable "cmoney"}) then {
-						player setVariable["cmoney", 10000, true];
+					if(isNil { player getVariable "money" }) then {
+						player setVariable["money", 10000, true];
 					}
 					else {
-						player setVariable["cmoney", (player getVariable "cmoney") + 10000, true];
+						player setVariable["money", (player getVariable "money") + 10000, true];
 					};
 				};
 
