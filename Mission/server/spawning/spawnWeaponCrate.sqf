@@ -9,7 +9,7 @@
 
 if(!isServer) exitWith { };
 
-private["_weaponCrateType", "_weaponCrateCategory", "_weaponCratePosition", "_weaponCrate"];
+private["_weaponCrateType", "_weaponCrateCategory", "_weaponCratePosition", "_weaponCrate", "_invalidArgument"];
 
 if(count _this < 3) exitWith {
     diag_log format["spawnWeaponCrate Error: Requires minimum of 3 arguments, received %1.", count _this]
@@ -20,6 +20,7 @@ _weaponCrateDirection = _this select 1;
 _weaponCrateType = nil;
 _weaponCrateCategory = nil;
 _weaponCrate = nil;
+_invalidArgument = false;
 
 if(typeName _weaponCratePosition != "ARRAY") exitWith {
     diag_log format["spawnWeaponCrate Arg0 Error: Invalid position argument - expected array, received %1.", typeName _weaponCratePosition]
@@ -37,11 +38,13 @@ else {
         _weaponCrateType = _this select 2;
     }
     else {
-        if(true) exitWith {
-            diag_log format["spawnWeaponCrate Arg2 Error: Invalid category / type argument - expected array or string, received %1.", typeName (_this select 2)]
-        };
+        diag_log format["spawnWeaponCrate Arg2 Error: Invalid category / type argument - expected array or string, received %1.", typeName (_this select 2)];
+
+        _invalidArgument = true;
     };
 };
+
+if(_invalidArgument) exitWith { };
 
 if(isNil "_weaponCrateType") then {
     _weaponCrateType = [_weaponCrateCategory] call randomObject;
@@ -416,5 +419,3 @@ if(_weaponCrateType == "BAFSpecial") exitWith {
 
     _weaponCrate
 };
-
-_weaponCrate
