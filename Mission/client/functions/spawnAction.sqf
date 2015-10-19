@@ -4,12 +4,10 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args: [int(type of spawn)]
 
-private["_switch", "_button", "_playerUID", "_side", "_startTime", "_result", "_found", "_currTime"];
+private["_switch", "_button", "_side", "_startTime", "_result", "_found", "_currTime"];
 
 _switch = _this select 0;
 _button = _this select 1;
-
-_playerUID = getPlayerUID player;
 
 _playerSpawning = false;
 
@@ -65,13 +63,13 @@ if(isNil { client_firstSpawn }) then {
 			_found = false;
 
 			{
-				if(_x select 0 == _playerUID) then {
+				if(_x select 0 == getPlayerUID player) then {
 					_found = true;
 				};
 			} forEach pvar_teamSwitchList;
 
 			if(!_found) then {
-				pvar_teamSwitchList set [count pvar_teamSwitchList, [_playerUID, playerSide]];
+				pvar_teamSwitchList set [count pvar_teamSwitchList, [getPlayerUID player, playerSide]];
 				publicVariable "pvar_teamSwitchList";
 
 				_side = "";
