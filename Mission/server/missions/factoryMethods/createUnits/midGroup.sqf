@@ -81,13 +81,13 @@ _man7 addMagazine "1Rnd_HE_GP25";
 _man7 addWeapon "AK_74_GL";
 
 // Add event handlers for dropping items and money.
-_leader addEventHandler ["Killed", {[_this] call createLootMoney;}];
-_man2 addEventHandler ["Killed", {[_this] call createLootMoney;}];
-_man3 addEventHandler ["Killed", {[_this] call createLootMoney;}];
-_man4 addEventHandler ["Killed", {[_this] call createLootMoney;}];
-_man5 addEventHandler ["Killed", {[_this] call createLootMoney;}];
-_man6 addEventHandler ["Killed", {[_this] call createLootMoney;}];
-_man7 addEventHandler ["Killed", {[_this] call createLootMoney;}];
+_leader addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
+_man2 addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
+_man3 addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
+_man4 addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
+_man5 addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
+_man6 addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
+_man7 addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
 
 _leader = leader _group;
 [_group, _pos] call defendArea;

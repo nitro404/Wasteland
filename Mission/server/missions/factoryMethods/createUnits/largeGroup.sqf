@@ -114,16 +114,16 @@ _man10 addMagazine "30Rnd_762x39_AK47";
 _man10 addWeapon "AK_47_M";
 
 // Add event handlers for dropping items and money.
-_leader addEventHandler ["Killed", {[_this] call createLootMoney;}];
-_man2 addEventHandler ["Killed", {[_this] call createLootMoney;}];
-_man3 addEventHandler ["Killed", {[_this] call createLootMoney;}];
-_man4 addEventHandler ["Killed", {[_this] call createLootMoney;}];
-_man5 addEventHandler ["Killed", {[_this] call createLootMoney;}];
-_man6 addEventHandler ["Killed", {[_this] call createLootMoney;}];
-_man7 addEventHandler ["Killed", {[_this] call createLootMoney;}];
-_man8 addEventHandler ["Killed", {[_this] call createLootMoney;}];
-_man9 addEventHandler ["Killed", {[_this] call createLootMoney;}];
-_man10 addEventHandler ["Killed", {[_this] call createLootMoney;}];
+_leader addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
+_man2 addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
+_man3 addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
+_man4 addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
+_man5 addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
+_man6 addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
+_man7 addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
+_man8 addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
+_man9 addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
+_man10 addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
 
 _leader = leader _group;
 [_group, _pos] call defendArea;

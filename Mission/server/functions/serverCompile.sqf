@@ -38,9 +38,6 @@ respawnHelicopters = compile preprocessFileLineNumbers "server\functions\respawn
 // Player Management Scripts
 server_playerDied = compile preprocessFileLineNumbers "server\functions\serverPlayerDied.sqf";
 
-// Event Handlers
-createLootMoney = compile preprocessFileLineNumbers "server\functions\dropLoot.sqf";
-
 // ARMA2Net Scripts
 #ifdef __A2NET__
 arma2NetTime = compile preprocessFileLineNumbers "server\functions\netTime.sqf";

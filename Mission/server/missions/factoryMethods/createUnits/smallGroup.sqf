@@ -51,10 +51,10 @@ _man4 addMagazine "10Rnd_762x54_SVD";
 _man4 addWeapon "SVD";
 
 // Add event handlers for dropping items and money.
-_leader addEventHandler ["Killed", {[_this] call createLootMoney;}];
-_man2 addEventHandler ["Killed", {[_this] call createLootMoney;}];
-_man3 addEventHandler ["Killed", {[_this] call createLootMoney;}];
-_man4 addEventHandler ["Killed", {[_this] call createLootMoney;}];
+_leader addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
+_man2 addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
+_man3 addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
+_man4 addMPEventHandler ["MPKilled", {[_this] call onNPCKilled;}];
 
 _leader = leader _group;
 [_group, _pos] call defendArea;

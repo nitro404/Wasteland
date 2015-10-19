@@ -33,6 +33,7 @@ true spawn {
 
 enteredVehicle = compile preprocessFileLineNumbers "shared\enteredVehicle.sqf";
 exitedVehicle = compile preprocessFileLineNumbers "shared\exitedVehicle.sqf";
+onNPCKilled = compile preprocessFileLineNumbers "shared\onNPCKilled.sqf";
 cleanupObject = compile preprocessFileLineNumbers "shared\cleanupObject.sqf";
 
 if(!isDedicated) then {
