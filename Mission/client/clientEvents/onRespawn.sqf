@@ -4,7 +4,8 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-private["_player","_corpse","_town","_spawn","_temp"];
+private["_player", "_corpse"];
+
 playerSetupComplete = false;
 
 _player = (_this select 0) select 0;
@@ -15,15 +16,15 @@ _corpse removeAction playerMenuId;
 } forEach aActionsIDs;
 
 player call playerSetup;
-waitUntil {playerSetupComplete};
+waitUntil { playerSetupComplete };
 
 [] execVM "client\clientEvents\onMouseWheel.sqf";
 
 true spawn playerSpawn;
 
 [] spawn {
-	waitUntil{respawnDialogActive};
-	waitUntil{sleep 0.1; !respawnDialogActive};
+	waitUntil { respawnDialogActive };
+	waitUntil { sleep 0.1; !respawnDialogActive };
 
 	if(!isNull pvar_PlayerTeamKiller) then {
 		pDialogTeamkiller = pvar_PlayerTeamKiller;
