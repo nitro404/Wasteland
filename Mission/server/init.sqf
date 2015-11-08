@@ -55,4 +55,5 @@ waitUntil {
 diag_log format["WASTELAND SERVER - Starting Vehicle Respawn Scripts"];
 
 [] spawn respawnVehicles;
+[] spawn respawnBoats;
 [] spawn respawnHelicopters;

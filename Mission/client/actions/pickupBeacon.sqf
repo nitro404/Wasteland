@@ -78,9 +78,9 @@ switch (_destroyOrSteal) do {
 		        2 cutText ["", "PLAIN DOWN", 1];
 
                 _currBeaconOwnerUID = _currSpawnBeacon getVariable "owner";
-                _currBeaconTemp = (nearestObjects [getpos player, ["Satelit"],  5]);
+                _currBeaconTemp = (nearestObjects [getpos player, ["Satelit"],  5]) select 0;
 
-		        if(count _currBeaconTemp == 0) then {
+		        if(isNil { _currBeaconTemp }) then {
                 	hint "Your attempt to steal the enemy spawn beacon was unsuccessful.";
                     mutexScriptInProgress = false;
                 } else {
@@ -89,7 +89,7 @@ switch (_destroyOrSteal) do {
 	                hint "You have successfully stolen the enemy spawn beacon.";
 			        mutexScriptInProgress = false;
 
-	                [_currBeaconOwnerUID] execVM "client\functions\cleanBeaconArrays.sqf";
+			[_currBeaconOwnerUID, _currBeaconTemp getVariable "faction"] call cleanBeaconArrays;
                 };
 			};
 		};
@@ -140,9 +140,9 @@ switch (_destroyOrSteal) do {
 		        2 cutText ["", "PLAIN DOWN", 1];
 
                 _currBeaconOwnerUID = _currSpawnBeacon getVariable "owner";
-                _currBeaconTemp = (nearestObjects [getpos player, ["Satelit"],  5]);
+                _currBeaconTemp = (nearestObjects [getpos player, ["Satelit"],  5]) select 0;
 
-		        if(count _currBeaconTemp == 0) then {
+		        if(isNil { _currBeaconTemp }) then {
                 	hint "Your attempt to destroy the spawn beacon was unsuccessful.";
                     mutexScriptInProgress = false;
                 } else {
@@ -150,7 +150,7 @@ switch (_destroyOrSteal) do {
 	                hint "You have successfully destroyed the spawn beacon.";
 			        mutexScriptInProgress = false;
 
-	                [_currBeaconOwnerUID] execVM "client\functions\cleanBeaconArrays.sqf";
+			[_currBeaconOwnerUID, _currBeaconTemp getVariable "faction"] call cleanBeaconArrays;
                 };
 			};
 		};

@@ -58,10 +58,25 @@ class playerSettings {
 
 		class distanceText : w_RscText {
 			idc = view_range_text;
-			text = "View range:";
+			text = "View Distance:";
 			sizeEx = 0.025;
 			x = 0.03; y = 0.40;
 			w = 0.3; h = 0.02;
+		};
+
+		class bountyIcon : w_RscPicture {
+	  		idc = -1;
+        	text = "client\icons\bounty.paa";
+        	x = 0.31; y = 0.32;
+			w = 0.04; h = 0.04;
+		};
+
+		class bountyText : w_RscText {
+			idc = bounty_text;
+			text = "";
+			sizeEx = 0.03;
+			x = 0.35; y = 0.313;
+			w = 0.3; h = 0.05;
 		};
 	};
 

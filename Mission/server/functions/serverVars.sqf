@@ -2,7 +2,6 @@
 //	@file Name: serverVars.sqf
 //	@file Author: [404] Deadbeat, [404] Costlyy, [404] Pulse
 //	@file Created: 20/11/2012 05:19
-//	@file Args:
 
 #include "setup.sqf"
 
@@ -16,8 +15,6 @@ netTime = 0;
 #endif
 
 missionNumber = 1;
-currentVehicles = [];
-publicVariable "currentVehicles";
 pvar_teamSwitchList = [];
 publicVariable "pvar_teamSwitchList";
 pvar_teamKillList = [];
@@ -35,8 +32,7 @@ publicVariable "currentDate";
 currentInvites = [];
 publicVariable "currentInvites";
 
-"PlayerCDeath" addPublicVariableEventHandler {_id = (_this select 1) spawn server_playerDied};
-
+numberOfBoatSpawns = 24;
 numberOfHelicopterSpawns = 90;
 
 vehicleCategories = [
@@ -70,7 +66,7 @@ vehicleCategories = [
         // Ambulances
         ["HMMWV_Ambulance", "S1203_ambulance_EP1", "GAZ_Vodnik_MedEvac", "M1133_MEV_EP1", "M113Ambul_TK_EP1", "BMP2_Ambul_INS", "BMP2_Ambul_CDF"]
     ]],
-    ["Light Armored Vehicles", 50, [
+    ["Light Armored Vehicles", 54, [
         // CROWS
         ["HMMWV_M998_crows_M2_DES_EP1", "HMMWV_M998_crows_MK19_DES_EP1"],
         // Mk19 / AGS30 Technicals
@@ -92,7 +88,7 @@ vehicleCategories = [
         // BRDM2
         ["BRDM2_Gue", "BRDM2_CDF", "BRDM2_INS", "BRDM2_TK_GUE_EP1", "BRDM2_TK_EP1"]
     ]],
-    ["Medium Armored Vehicles", 15, [
+    ["Medium Armored Vehicles", 11, [
         // Light APCs
         ["BMP2_CDF", "BMP2_TK_EP1", "BMP2_INS", "BMP2_Gue", "BTR60_TK_EP1", "GAZ_Vodnik_HMG", "AAV", "M113_TK_EP1"],
         // Light Tanks
@@ -186,19 +182,19 @@ weaponCrateTypes = [
 ];
 
 weaponCrateCategories = [
-    ["Basic Weapon Crates", 75, [
+    ["Basic Weapon Crates", 85, [
         ["BasicGER", "BasicRU", "BasicUS", "GuerillaCache", "BasicTerrorist", "DemoCrate", "RUSniper"]
     ]],
-    ["Launcher Crates", 15, [
+    ["Launcher Crates", 10, [
         ["USLaunchers", "RULaunchers"]
     ]],
-    ["Special Crates", 10, [
+    ["Special Crates", 5, [
         ["USSniper", "USSpecialWeapons", "RUSpecialWeapons", "BAFSpecial"]
     ]]
 ];
 
 stationaryWeaponCategories = [
-    ["Machine Guns", 32, [
+    ["Machine Guns", 35, [
         // Tall Tripods
         ["DSHKM_CDF", "KORD_high", "BAF_L2A1_Tripod_W", "M2StaticMG"],
         // Mini-Tripods
@@ -208,17 +204,17 @@ stationaryWeaponCategories = [
         // Machine Gun Nests
         ["Fort_Nest_M240", "CDF_WarfareBMGNest_PK"]
     ]],
-    ["Grenade Launchers", 20, [
+    ["Grenade Launchers", 25, [
         // AGS-30 / Mk19 / GMG
         ["AGS_CDF", "MK19_TriPod", "BAF_GMG_Tripod_W"]
     ]],
-    ["Anti-Tank Launchers", 14, [
+    ["Anti-Tank Launchers", 10, [
         // Metis / TOW
         ["Metis", "TOW_TriPod"],
         // SPG-9
         ["SPG9_CDF"]
     ]],
-    ["Anti-Air Launchers", 14, [
+    ["Anti-Air Launchers", 10, [
         // Stinger / Igla Pod
         ["Igla_AA_pod_East", "Stinger_Pod"],
         // ZU-23
@@ -282,43 +278,65 @@ buildingCategories = [
     ]]
 ];
 
-vehicleWeapons = [
-    "M16A2",
-    "M16A2GL",
-    "M4A1",
-    "M4A1_AIM_SD_camo",
-    "M4A1_HWS_GL_SD_Camo",
-    "M4A3_CCO_EP1",
-    "AK_47_M",
-    "AK_47_S",
-    "AK_74",
-    "AKS_74_kobra",
-    "M14_EP1",
-    "Sa58V_EP1",
-    "Sa58V_CCO_EP1",
-    "Sa58V_RCO_EP1",
-    "SCAR_L_STD_HOLO",
-    "SCAR_L_STD_EGLM_RCO",
-    "SCAR_H_CQC_CCO",
-    "FN_FAL",
-    "M240",
-    "M40A3",
-    "M249",
-    "M60A4_EP1",
-    "Mk_48",
-    "RPK_74",
-    "PK",
-    "Pecheneg",
-    "AA12_PMC",
-    "huntingrifle",
-    "DMR",
-    "SVD",
-    "SVD_CAMO",
-    "KSVK",
-    "RPG7V",
-    "RPG18",
-    "M136",
-    "MAAWS"
+randomWeapons = [
+    ["Pistols", 5, [
+        ["Colt1911"],
+        ["M9", "M9SD"],
+        ["glock17_EP1"],
+        ["Makarov", "MakarovSD"],
+        ["UZI_EP1", "UZI_SD_EP1"],
+        ["Sa61_EP1"],
+        ["revolver_EP1", "revolver_gold_EP1"]
+    ]],
+    ["Sub-Machine Guns & Shotguns", 5, [
+        ["MP5A5", "MP5SD"],
+        ["bizon", "bizon_silenced"],
+        ["M1014", "Saiga12K", "AA12_PMC"]
+    ]],
+    ["Rifles", 40, [
+        ["LeeEnfield"],
+        ["M16A2", "M16A2GL", "m16a4", "M16A4_GL", "m16a4_acg", "M16A4_ACG_GL"],
+        ["M4A1", "M4A1_Aim", "M4A1_Aim_camo", "M4A1_RCO_GL", "M4A1_HWS_GL", "M4A1_HWS_GL_CAMO", "M4A1_AIM_SD_camo", "M4A1_HWS_GL_SD_Camo", "M4A3_CCO_EP1", "M4A3_RCO_GL_EP1"],
+        ["BAF_L85A2_RIS_Holo", "BAF_L85A2_UGL_Holo", "BAF_L85A2_RIS_ACOG", "BAF_L85A2_UGL_ACOG", "BAF_L85A2_RIS_CWS", "BAF_L85A2_RIS_SUSAT", "BAF_L85A2_UGL_SUSAT"],
+        ["m8_carbine", "m8_carbineGL", "m8_compact", "m8_compact_pmc", "m8_carbine_pmc", "m8_holo_sd", "m8_tws", "m8_tws_sd"],
+        ["G36A", "G36A_camo","G36C", "G36C_camo", "G36_C_SD_camo", "G36_C_SD_Eotech", "G36K", "G36K_camo"],
+        ["AK_74", "AK_74_GL", "AK_74_GL_kobra", "AKS_74", "AKS_74_kobra", "AKS_74_pso", "AKS_74_U", "AKS_74_UN_Kobra", "AKS_74_GOSHAWK", "AK_107_Kobra", "AK_107_GL_kobra", "AK_107_pso", "AK_107_GL_pso"],
+        ["AK_47_M", "AK_47_S", "AKS_GOLD", "Sa58P_EP1", "Sa58V_EP1", "Sa58V_CCO_EP1", "Sa58V_RCO_EP1"],
+        ["SCAR_L_STD_EGLM_TWS", "SCAR_L_CQC_CCO_SD", "SCAR_L_CQC", "SCAR_L_CQC_Holo", "SCAR_L_CQC_EGLM_Holo", "SCAR_L_STD_HOLO", "SCAR_L_STD_EGLM_RCO", "SCAR_H_STD_EGLM_Spect", "SCAR_L_STD_Mk4CQT"],
+        ["SCAR_H_CQC_CCO", "SCAR_H_CQC_CCO_SD", "SCAR_H_STD_TWS_SD"],
+        ["FN_FAL"],
+        ["M14_EP1"]
+    ]],
+    ["Machine Guns", 20, [
+        ["Mk_48", "Mk_48_DES_EP1", "M240", "m240_scoped_EP1", "BAF_L7A2_GPMG", "M60A4_EP1"],
+        ["M249", "M249_TWS_EP1", "M249_EP1", "M249_m145_EP1", "BAF_L110A1_Aim"],
+        ["BAF_L86A2_ACOG", "m8_SAW", "MG36", "MG36_camo"],
+        ["RPK_74"],
+        ["PK", "Pecheneg"]
+    ]],
+    ["Sniper Rifles", 14, [
+        ["VSS_vintorez"],
+        ["huntingrifle"],
+        ["M24", "M24_des_EP1", "M40A3"],
+        ["M4SPR", "m8_sharpshooter"],
+        ["SCAR_H_LNG_Sniper", "SCAR_H_LNG_Sniper_SD", "M110_TWS_EP1"],
+        ["DMR"],
+        ["SVD", "SVD_CAMO", "SVD_des_EP1"],
+        ["ksvk"],
+        ["BAF_AS50_scoped_Large", "BAF_AS50_TWS_Large"],
+        ["m107", "m107_TWS_EP1"],
+        ["BAF_LRR_scoped_W", "BAF_LRR_scoped"]
+    ]],
+    ["Anti-Tank Launchers", 14, [
+        ["RPG7V", "RPG18"],
+        ["M136"],
+        ["MAAWS"],
+        ["SMAW"],
+        ["BAF_NLAW_Launcher", "M47Launcher_EP1"]
+    ]],
+    ["Anti-Air Launchers", 2, [
+        ["Stinger", "Igla", "Strela"]
+    ]]
 ];
 
 MissionSpawnMarkers = [
@@ -375,22 +393,24 @@ MissionSpawnMarkers = [
 ];
 
 missionTypes = [
-    [1, "Main Battle Tank Mission", 0, 600, 1800, [
+    [1, "Main Battle Tank Mission", 0, 8, 600, 1800, [
         ["BAF_FV510_W", "T90", "M1A2_TUSK_MG"]
     ]],
-    [1, "Armored Personnel Carrier Mission", 0, 300, 1800, [
+    [1, "Armored Personnel Carrier Mission", 0, 4, 300, 1800, [
         ["BMP3", "M2A3_EP1", "M6_EP1"]
     ]],
-    [1, "Anti-Air Mission", 0, 900, 1800, [
+    [1, "Anti-Air Mission", 0, 10, 900, 1800, [
         ["2S6M_Tunguska"]
     ]],
-    [1, "Attack Helicopter Mission", 0, 1200, 1800, [
+    [1, "Attack Helicopter Mission", 0, 10, 1200, 1800, [
         ["Mi171Sh_rockets_CZ_EP1", "Mi17_rockets_RU"],
         ["Mi24_D", "Mi24_D_TK_EP1"],
         ["Mi24_V"],
         ["Mi24_P"]
     ]],
-    [1, "Geo Cache Mission", 1, 300, 2, 3, ["BasicGER", "BasicRU", "BasicUS", "GuerillaCache", "BasicTerrorist", "DemoCrate", "RUSniper", "USLaunchers", "RULaunchers"]]
+    [2, "Geo Cache Mission", 1, 300, 2, 3,
+        ["BasicGER", "BasicRU", "BasicUS", "GuerillaCache", "BasicTerrorist", "DemoCrate", "RUSniper", "USLaunchers", "RULaunchers"]
+    ]
 ];
 
 specialVehicles = [

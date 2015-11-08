@@ -26,36 +26,37 @@ _buttonFour = _display displayCtrl respawn_Town_Button4;
 
 _respawnPosition = [];
 
-_searchForBeacon = {
-	_button = _this select 0;
-	_allBeacons = pvar_beaconListBlu + pvar_beaconListRed + pvar_beaconListIndep;
-	_result = false;
-
-	{
-		_playerName = _x select 0;
-		if ( ( ctrlText _button ) == _playerName ) then {
-			_result = _x;
-		};
-	} forEach _allBeacons;
-
-	_result
-};
-
 _buttonClicked = false;
 
 switch(_switch) do {
-    case 0:{ _buttonClicked = _buttonZero };
-    case 1:{ _buttonClicked = _buttonOne };
-    case 2:{ _buttonClicked = _buttonTwo };
-    case 3:{ _buttonClicked = _buttonThree };
-    case 4:{ _buttonClicked = _buttonFour };
+    case 0: { _buttonClicked = _buttonZero };
+    case 1: { _buttonClicked = _buttonOne };
+    case 2: { _buttonClicked = _buttonTwo };
+    case 3: { _buttonClicked = _buttonThree };
+    case 4: { _buttonClicked = _buttonFour };
 };
 
-_beacon = [_buttonClicked] call _searchForBeacon;
+_spawnBeacons = nil;
+switch (playerSide) do {
+	case west: { _spawnBeacons = pvar_beaconListBlu; };
+	case east: { _spawnBeacons = pvar_beaconListRed; };
+	case resistance: { _spawnBeacons = pvar_beaconListIndep; };
+};
+
+_beacon = nil;
+{
+	if(ctrlText _buttonClicked == _x select 0) then {
+		_beacon = _x;
+	};
+} forEach _spawnBeacons;
+
+if(isNil { _beacon }) exitWith { };
+
 _respawnPosition = _beacon select 1;
 _respawnDir = _beacon select 4;
 
-2 cutText ["HALO jump activated. Open your chute before you hit the ground! Press E to detach chute.", "PLAIN DOWN", 5];
+2 cutText ["HALO jump initialized. Use MOUSEWHEEL to open Your parachute! Press E to detach chute.", "PLAIN DOWN", 1];
+
 [player, [_respawnPosition select 0, _respawnPosition select 1, 500], _respawnDir] execVM "client\functions\HALODir.sqf";
 
 respawnDialogActive = false;
@@ -64,9 +65,9 @@ closeDialog 0;
 sleep 0.1;
 
 while { ((getposATL player) select 2) > 1 } do {
-	hintsilent parseText format ["<t align='center' color='#00aa00' font='Zeppelin33' shadow='1' shadowColor='#000000' size='2'>Alt %1m</t>", round (getPosATL player select 2)];
+	hintSilent parseText format ["<t align='center' color='#00aa00' font='Zeppelin33' shadow='1' shadowColor='#000000' size='2'>Alt %1m</t>", round (getPosATL player select 2)];
+	sleep 0.1;
 };
 
-if(((getposATL player) select 2) <= 1) then {
-	hintsilent "";
-};
+2 cutText ["", "PLAIN DOWN", 1];
+hintSilent "";

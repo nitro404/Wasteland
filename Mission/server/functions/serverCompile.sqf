@@ -10,33 +10,29 @@ if(!isServer) exitWith { };
 
 diag_log format["WASTELAND SERVER - Compiling Server-Side Scripts..."];
 
-// Utility Scripts
 randomPosition = compile preprocessFileLineNumbers "server\functions\randomPosition.sqf";
 randomObject = compile preprocessFileLineNumbers "server\functions\randomObject.sqf";
 
-// Mission Scripts
 createMissionLocation = compile preprocessFileLineNumbers "server\missions\factoryMethods\createMissionLocation.sqf";
 createClientMarker = compile preprocessFileLineNumbers "server\missions\factoryMethods\createClientMarker.sqf";
 createWaitCondition = compile preprocessFileLineNumbers "server\missions\factoryMethods\createWaitCondition.sqf";
 deleteClientMarker = compile preprocessFileLineNumbers "server\missions\factoryMethods\deleteClientMarker.sqf";
-createSmallGroup = compile preprocessFileLineNumbers "server\missions\factoryMethods\createUnits\smallGroup.sqf";
-createMidGroup = compile preprocessFileLineNumbers "server\missions\factoryMethods\createUnits\midGroup.sqf";
-createLargeGroup = compile preprocessFileLineNumbers "server\missions\factoryMethods\createUnits\largeGroup.sqf";
+randomAIWeapon = compile preprocessFileLineNumbers "server\missions\factoryMethods\randomAIWeapon.sqf";
+randomAIWeapons = compile preprocessFileLineNumbers "server\missions\factoryMethods\randomAIWeapons.sqf";
+createAIUnit = compile preprocessFileLineNumbers "server\missions\factoryMethods\createAIUnit.sqf";
+createAIGroup = compile preprocessFileLineNumbers "server\missions\factoryMethods\createAIGroup.sqf";
 defendArea = compile preprocessFileLineNumbers "server\functions\defendArea.sqf";
 vehicleMission = compile preprocessFileLineNumbers "server\missions\vehicleMission.sqf";
 geoCacheMission = compile preprocessFileLineNumbers "server\missions\geoCacheMission.sqf";
 missionController = compile preprocessFileLineNumbers "server\missions\missionController.sqf";
 
-// Spawning Scripts
-randomWeapons = compile preprocessFileLineNumbers "server\spawning\randomWeapon.sqf";
+randomVehicleWeapons = compile preprocessFileLineNumbers "server\spawning\randomVehicleWeapons.sqf";
 spawnVehicle = compile preprocessFileLineNumbers "server\spawning\spawnVehicle.sqf";
 spawnWeaponCrate = compile preprocessFileLineNumbers "server\spawning\spawnWeaponCrate.sqf";
 spawnObject = compile preprocessFileLineNumbers "server\spawning\spawnObject.sqf";
 respawnVehicles = compile preprocessFileLineNumbers "server\functions\respawnVehicles.sqf";
+respawnBoats = compile preprocessFileLineNumbers "server\functions\respawnBoats.sqf";
 respawnHelicopters = compile preprocessFileLineNumbers "server\functions\respawnHelicopters.sqf";
-
-// Player Management Scripts
-server_playerDied = compile preprocessFileLineNumbers "server\functions\serverPlayerDied.sqf";
 
 // ARMA2Net Scripts
 #ifdef __A2NET__

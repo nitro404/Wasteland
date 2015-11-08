@@ -22,6 +22,7 @@ useMedicalKit = compile preprocessFileLineNumbers "client\systems\playerMenu\use
 togglePlayerNames = compile preprocessFileLineNumbers "client\systems\playerMenu\togglePlayerNames.sqf";
 toggleEarplugs = compile preprocessFileLineNumbers "client\systems\playerMenu\toggleEarplugs.sqf";
 flipVehicle = compile preprocessFileLineNumbers "client\systems\playerMenu\flipVehicle.sqf";
+toggleVehicleLock = compile preprocessFileLineNumbers "client\functions\toggleVehicleLock.sqf";
 
 // Sync client with server time
 timeSync = compile preprocessFileLineNumbers "client\functions\clientTimeSync.sqf";
@@ -31,6 +32,9 @@ if(!isServer) then {
 };
 
 // Update Scripts
+updateSpawnBeaconMarkers = compile preprocessFileLineNumbers "client\functions\updateSpawnBeaconMarkers.sqf";
+spawnBeaconMonitor = compile preprocessFileLineNumbers "client\functions\spawnBeaconMonitor.sqf";
+cleanBeaconArrays = compile preprocessFileLineNumbers "client\functions\cleanBeaconArrays.sqf";
 updateMissionsMarkers = compile preprocessFileLineNumbers "client\functions\updatePlayerMissionMarkers.sqf";
 updateTeamKiller = compile preprocessFileLineNumbers "client\functions\updateTeamKiller.sqf";
 
@@ -57,6 +61,7 @@ buildingItemInfo = compile preprocessFileLineNumbers "client\systems\buildingSto
 
 // Bicycle Spawn Script
 spawnBicycle = compile preprocessFileLineNumbers "client\systems\playerMenu\spawnBicycle.sqf";
+removeParachute = compile preprocessFileLineNumbers "client\functions\removeParachute.sqf";
 
 // Utility Scripts
 closestTown = compile preprocessFile "client\functions\closestTown.sqf";
@@ -64,5 +69,3 @@ azimuthToBearing = compile preprocessFile "client\functions\azimuthToBearing.sqf
 spawnInfoText = compile preprocessFileLineNumbers "client\functions\spawnInfoText.sqf";
 
 player groupChat "Client Compile Complete";
-
-playerCompiledScripts = true;

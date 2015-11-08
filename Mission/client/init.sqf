@@ -18,10 +18,9 @@ respawnDialogActive = false;
 groupManagmentActive = false;
 pvar_PlayerTeamKiller = objNull;
 doCancelAction = false;
-currentMissionsMarkers = [];
+currentMissionMarkers = [];
+currentSpawnBeaconMarkers = [];
 
-//Initialization Variables
-playerCompiledScripts = false;
 playerSetupComplete = false;
 
 waitUntil { !isNull player };
@@ -35,24 +34,24 @@ if(!(playerSide in [west, east, resistance])) then {
 	endMission "LOSER";
 };
 
-//Player setup
 player call playerSetup;
 
-//Setup player events.
 if(!isNil "client_initEH") then { player removeEventHandler["Respawn", client_initEH]; };
-player addEventHandler ["Respawn", {[_this] call onRespawn;}];
-player addEventHandler ["Killed", {[_this] call onKilled;}];
+player addEventHandler ["Respawn", { [_this] call onRespawn; } ];
+player addEventHandler ["Killed", { [_this] call onKilled; } ];
+player addMPEventHandler ["MPKilled", { [_this] call onMultiplayerKilled; } ];
 
-//Setup player menu scroll action.
 [] execVM "client\clientEvents\onMouseWheel.sqf";
 
-//Setup Key Handler
-waituntil { !(IsNull (findDisplay 46)) };
+waitUntil { !(isNull (findDisplay 46)) };
 (findDisplay 46) displaySetEventHandler["KeyDown", "_this call onKeyPress"];
 
-"currentDate" addPublicVariableEventHandler { [] call timeSync };
-"clientMissionMarkers" addPublicVariableEventHandler { [] call updateMissionsMarkers };
-"pvar_teamKillList" addPublicVariableEventHandler { [] call updateTeamKiller };
+"currentDate" addPublicVariableEventHandler { [] call timeSync; };
+"clientMissionMarkers" addPublicVariableEventHandler { [] call updateMissionsMarkers; };
+"pvar_beaconListBlu" addPublicVariableEventHandler { [] call updateSpawnBeaconMarkers; };
+"pvar_beaconListRed" addPublicVariableEventHandler { [] call updateSpawnBeaconMarkers; };
+"pvar_beaconListIndep" addPublicVariableEventHandler { [] call updateSpawnBeaconMarkers; };
+"pvar_teamKillList" addPublicVariableEventHandler { [] call updateTeamKiller; };
 "publicVar_teamkillMessage" addPublicVariableEventHandler { if(local(_this select 1)) then { [] spawn teamkillMessage; }; };
 
 [] execVM "client\systems\hud\playerHud.sqf";
@@ -72,6 +71,7 @@ if(!isServer) then {
 };
 
 [] call updateMissionsMarkers;
+[] spawn spawnBeaconMonitor;
 
 if(isNil "FZF_IC_INIT") then {
 	call compile preprocessFileLineNumbers "client\functions\newPlayerIcons.sqf";

@@ -4,7 +4,7 @@
 //	@file Author: [404] Costlyy
 //	@file Created: 7/12/2012 23:30
 
-private["_totalDuration", "_lockDuration", "_iteration", "_iterationPercentage", "_playerPos", "_placedBeacon", "_lockDuration", "_beaconOwner", "_placedBeaconPos", "_playerSide", "_playerUID", "_activeBeacon", "_playerDirVector", "_beaconOffset", "_beaconOffsetPos"];
+private["_totalDuration", "_lockDuration", "_iteration", "_iterationPercentage", "_playerPos", "_placedBeacon", "_lockDuration", "_beaconOwner", "_placedBeaconPos", "_playerSide", "_playerUID", "_activeBeacon", "_playerDirVector", "_beaconOffset", "_beaconOffsetPos", "_announce", "_beaconData"];
 
 if(mutexScriptInProgress) exitWith {
 	player globalChat localize "STR_WL_Errors_InProgress";
@@ -35,31 +35,7 @@ if(surfaceIsWater getPos player) exitWith {
 	player globalChat localize "STR_WL_Errors_BeaconOverWater";
 };
 
-{
-	if(str(_playerUID) == str(_x select 3)) then {
-    		_activeBeacon = true;
-	};
-}	forEach pvar_beaconListBlu;
-
-{
-	if(str(_playerUID) == str(_x select 3)) then {
-		_activeBeacon = true;
-	};
-} forEach pvar_beaconListRed;
-
-{
-	if(str(_playerUID) == str(_x select 3)) then {
-		_activeBeacon = true;
-	};
-} forEach pvar_beaconListIndep;
-
-// Remove active beacon so you can deploy new
-if(_activeBeacon) then {
-	hint "Deactivating existing active spawn beacon.";
-	[_playerUID] execVM "client\functions\cleanBeaconArrays.sqf";
-};
-
-player switchMove "AinvPknlMstpSlayWrflDnon_medic"; // Begin the full medic animation...
+player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 
 mutexScriptInProgress = true;
 
@@ -91,7 +67,6 @@ for "_iteration" from 1 to _lockDuration do {
 	2 cutText [format["Placing Spawn Beacon (%1%2)", _iterationPercentage, "%"], "PLAIN DOWN", 1];
 	sleep 1;
 
-	// Sleep a little extra to show that place has completed.
 	if(_iteration >= _totalDuration) exitWith {
 		sleep 1;
 		2 cutText ["", "PLAIN DOWN", 1];
@@ -115,24 +90,29 @@ for "_iteration" from 1 to _lockDuration do {
 		_announce = [nil, _placedBeacon, "per", rENABLESIMULATION, false] call RE;
 
 		_placedBeaconPos = getPos _placedBeacon;
-		_closestTown = [_placedBeaconPos] call compile preprocessFile "client\functions\closestTown.sqf";
+		_closestTown = [_placedBeaconPos] call closestTown;
 		_directionToTown = [getMarkerPos (_closestTown select 0), _placedBeaconPos] call BIS_fnc_dirTo;
-		_directionToTownStr = [_directionToTown, false] call compile preprocessFile "client\functions\azimuthToBearing.sqf";
-		_goingDirStr = [_playerDir, false] call compile preprocessFile "client\functions\azimuthToBearing.sqf";
+		_directionToTownStr = [_directionToTown, false] call azimuthToBearing;
+		_goingDirStr = [_playerDir, false] call azimuthToBearing;
 		_relativePosition = format['%1 of %2 facing %3', _directionToTownStr, _closestTown select 2, _goingDirStr];
+		_beaconData = [_beaconOwner, _placedBeaconPos, 100, _playerUID, _playerDir, _relativePosition, _playerSide];
+
+		if([_playerUID, _playerSide] call cleanBeaconArrays) then {
+			hint "Deactivating existing active spawn beacon.";
+		};
 
 		if(_playerSide == "WEST") then {
-			pvar_beaconListBlu set [count pvar_beaconListBlu, [_beaconOwner, _placedBeaconPos, 100, _playerUID, _playerDir, _relativePosition, _playerSide]];
+			pvar_beaconListBlu set [count pvar_beaconListBlu, _beaconData];
 			publicVariable "pvar_beaconListBlu";
 		};
 
 		if(_playerSide == "EAST") then {
-			pvar_beaconListRed set [count pvar_beaconListRed, [_beaconOwner, _placedBeaconPos, 100, _playerUID, _playerDir, _relativePosition, _playerSide]];
+			pvar_beaconListRed set [count pvar_beaconListRed, _beaconData];
 			publicVariable "pvar_beaconListRed";
 		};
 
 		if(_playerSide == "GUER") then {
-			pvar_beaconListIndep set [count pvar_beaconListIndep, [_beaconOwner, _placedBeaconPos, 100, _playerUID, _playerDir, _relativePosition, _playerSide]];
+			pvar_beaconListIndep set [count pvar_beaconListIndep, _beaconData];
 			publicVariable "pvar_beaconListIndep";
 		};
 

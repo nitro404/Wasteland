@@ -2,8 +2,8 @@ private["_marker"];
 
 {
 	deleteMarkerLocal _x;
-} forEach currentMissionsMarkers;
-currentMissionsMarkers = [];
+} forEach currentMissionMarkers;
+currentMissionMarkers = [];
 
 {
 	_marker = createMarkerLocal [_x select 0, _x select 1];
@@ -12,5 +12,5 @@ currentMissionsMarkers = [];
 	_marker setMarkerColorLocal "ColorRed";
 	_marker setMarkerTextLocal (_x select 2);
 
-	currentMissionsMarkers = currentMissionsMarkers + [_x select 0];
+	currentMissionMarkers = currentMissionMarkers + [_x select 0];
 } forEach clientMissionMarkers;

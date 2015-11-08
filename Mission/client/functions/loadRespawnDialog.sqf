@@ -31,18 +31,19 @@ _respawnText = _display displayCtrl respawn_Content_Text;
 _missionUptimeText = _display displayCtrl respawn_MissionUptime_Text;
 _beaconBlockDistance = 300;
 
-if(playerSide in [west]) then {_side = "Blufor"};
-if(playerSide in [east]) then {_side = "Opfor"};
-if(str(playerSide) == "GUER") then {_side = "Independent"};
+if(playerSide == west) then { _side = "Blufor" };
+if(playerSide == east) then { _side = "Opfor" };
+if(playerSide == resistance) then { _side = "Independent" };
 _respawnText ctrlSetStructuredText parseText (format["You are on %1.<br/>Please select a spawn point.",_side]);
 respawnDialogActive = true;
 
 _dynamicControlsArray = [
 	[respawn_Town_Button0,respawn_PlayersInTown_Text0],
-    [respawn_Town_Button1,respawn_PlayersInTown_Text1],
-    [respawn_Town_Button2,respawn_PlayersInTown_Text2],
-    [respawn_Town_Button3,respawn_PlayersInTown_Text3],
-    [respawn_Town_Button4,respawn_PlayersInTown_Text4]];
+	[respawn_Town_Button1,respawn_PlayersInTown_Text1],
+	[respawn_Town_Button2,respawn_PlayersInTown_Text2],
+	[respawn_Town_Button3,respawn_PlayersInTown_Text3],
+	[respawn_Town_Button4,respawn_PlayersInTown_Text4]
+];
 
 {
     _button = _display displayCtrl (_x select 0);
@@ -68,18 +69,17 @@ _find_occupied_towns = {
 
 		{
 
-			if((getPosATL _x distance _pos) < _rad) then
-			{
-				if(side _x == playerSide AND alive _x) then
-				{
-					if ( str playerSide == "GUER" && group _x != group player ) then {
+			if((getPosATL _x distance _pos) < _rad) then {
+				if(side _x == playerSide AND alive _x) then {
+					if(playerSide == resistance && group _x != group player) then {
 						_enemyCount = _enemyCount + 1;
 					}
 					else {
 						_friendlyCount = _friendlyCount + 1;
 						_playerArray set [count _playerArray, name _x];
 					};
-				} else {
+				}
+				else {
 					_enemyCount = _enemyCount + 1;
 				};
 			};
@@ -107,7 +107,7 @@ _find_beacons = {
 		_ownerId = _x select 3;
 		_squadIds = [];
 
-		if(str playerSide == "GUER") then {
+		if(playerSide == resistance) then {
 			{
 				_squadIds set [count _squadIds, (getPlayerUID _x)];
 			} forEach (units group player);
@@ -116,7 +116,7 @@ _find_beacons = {
 		{
 			if((getPosATL _x distance _centrePos) < _beaconBlockDistance) then {
 				if(side _x == playerSide) then {
-					if(str playerSide == "GUER" && group _x != group player) then {
+					if(playerSide == resistance && group _x != group player) then {
 						_enemyCount = _enemyCount + 1;
 					};
 				}
@@ -126,7 +126,14 @@ _find_beacons = {
 			};
 		} forEach allUnits;
 
-		if(str playerSide == _beaconSide && (str playerSide != "GUER" || (_ownerId in _squadIds || (getPlayerUID player) == _ownerId))) then {
+		_ownerSide = "";
+		{
+			if(getPlayerUID _x == _ownerId) exitWith {
+				_ownerSide = str side group _x;
+			};
+		} forEach playableUnits;
+
+		if(str playerSide == _beaconSide && _ownerSide == _beaconSide && (playerSide != resistance || (_ownerId in _squadIds || getPlayerUID player == _ownerId))) then {
 			_result set [count _result, [_beacon, (_enemyCount > 0)]];
 		};
 	} forEach _beacons;
@@ -153,7 +160,7 @@ _reset_buttons = {
 	_item_count = _this;
 	// Hide all buttons/text that won't be used
 	{
-		if ( _forEachIndex >= _item_count ) then {
+		if(_forEachIndex >= _item_count) then {
 			_button = _display displayCtrl (_x select 0);
 			_text = _display displayCtrl (_x select 1);
 			_button ctrlShow false;
@@ -170,7 +177,7 @@ _sort_items = {
 	_blocked = [];
 
 	{
-		if ( _x select 2 ) then {
+		if(_x select 2) then {
 			_blocked set [count _blocked, _x];
 		}
 		else {
@@ -187,12 +194,12 @@ _show_buttons = {
 	_page = _this select 2;
 	_possible_pages = ceil (count _items / _items_per_page) - 1;
 
-	if ( _possible_pages < _page ) then {
+	if(_possible_pages < _page) then {
 		_page = 0;
 	};
 
 	_more_button = _display displayCtrl respawn_More_Button;
-	if ( _possible_pages > 0 ) then {
+	if(_possible_pages > 0) then {
 		_more_button ctrlShow true;
 	}
 	else {
@@ -221,28 +228,27 @@ _show_buttons = {
 	_page
 };
 
-while {respawnDialogActive} do
-{
+while { respawnDialogActive } do {
     _timeText = [time/60/60] call BIS_fnc_timeToString;
-    _missionUptimeText ctrlSetText format["Mission Uptime: %1", _timeText];
+    _missionUptimeText ctrlSetText format["Uptime: %1", _timeText];
 
 	if(!showBeacons) then {
 		_occupiedTowns = [] call _find_occupied_towns;
 
-		// Format the text
 		{
 			_x set [1, [_x select 1] call _format_players];
 		} forEach _occupiedTowns;
 
 		respawnPage = [_occupiedTowns, 5, respawnPage] call _show_buttons;
 
-	} else {
+	}
+	else {
 		_beacon_array = nil;
 		_players_array = nil;
-		switch (str playerSide) do {
-			case "WEST": { _beacon_array = pvar_beaconListBlu; };
-			case "EAST": { _beacon_array = pvar_beaconListRed; };
-			case "GUER": { _beacon_array = pvar_beaconListIndep; };
+		switch (playerSide) do {
+			case west: { _beacon_array = pvar_beaconListBlu; };
+			case east: { _beacon_array = pvar_beaconListRed; };
+			case resistance: { _beacon_array = pvar_beaconListIndep; };
 		};
 
 		_beacons = [_beacon_array] call _find_beacons;
@@ -257,5 +263,6 @@ while {respawnDialogActive} do
 		} forEach _beacons;
 		respawnPage = [_result, 5, respawnPage] call _show_buttons;
 	};
-    sleep 0.1;
+
+	sleep 0.1;
 };

@@ -192,6 +192,6 @@ if(!_missionVehicle && (_vehicle isKindOf "Car" || _vehicle isKindOf "Tank")) th
 _vehicle setDir _vehicleDirection;
 _vehicle setVelocity[0, 0, 1];
 
-[_vehicle] call randomWeapons;
+[_vehicle] call randomVehicleWeapons;
 
 _vehicle

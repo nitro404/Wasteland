@@ -12,21 +12,18 @@ private["_missionType", "_vehicleClass", "_missionDelay", "_missionTimeout", "_m
 
 _missionType = _this select 0;
 _vehicleClass = _this select 1;
-_missionDelay = _this select 2;
-_missionTimeout = _this select 3;
-_missionNumber = _this select 4;
+_aiCount = _this select 2;
+_missionDelay = _this select 3;
+_missionTimeout = _this select 4;
+_missionNumber = _this select 5;
 _missionResult = 0;
 _vehicleName = getText (configFile >> "cfgVehicles" >> _vehicleClass >> "displayName");
 _vehiclePicture = getText (configFile >> "cfgVehicles" >> _vehicleClass >> "picture");
 _missionMarkerName = format["ActiveMission_%1", _missionNumber];
 
-diag_log format["WASTELAND SERVER - %1 Started (%2)", _missionType, _vehicleName];
-
 _missionLocationData = call createMissionLocation;
 _missionPosition = _missionLocationData select 0;
 _missionSpawnMarkerIndex = _missionLocationData select 1;
-
-diag_log format["WASTELAND SERVER - %1 Waiting to Run (%2)", _missionType, _vehicleName];
 
 [_missionDelay] call createWaitCondition;
 
@@ -36,16 +33,15 @@ _startTime = floor(netTime);
 _startTime = floor(time);
 #endif
 
-diag_log format["WASTELAND SERVER - %1 Resumed (%1)", _missionType, _vehicleName];
+diag_log format["WASTELAND SERVER - %1 Started (%1)", _missionType, _vehicleName];
 
 [_missionMarkerName, _missionPosition, format["%1 Mission", _vehicleName]] call createClientMarker;
 
 [nil, nil, rHINT, parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>%1</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A <t color='%4'>%3</t> has been immobilized; go get it for your team!</t>", _missionType, _vehiclePicture, _vehicleName, "#52bf90", "#FFFFFF"]] call RE;
 
-_missionGroup = createGroup civilian;
-[_missionGroup, _missionPosition] spawn createMidGroup;
+_missionGroup = [_missionPosition, 25, _aiCount] call createAIGroup;
 
-diag_log format["WASTELAND SERVER - %1 Waiting to Be Finished (%2)", _missionType, _vehicleName];
+[_missionGroup, _missionPosition] spawn defendArea;
 
 waitUntil {
     sleep 3;
@@ -80,7 +76,7 @@ else {
 
 	[nil, nil, rHINT, parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Objective Complete</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The <t color='%4'>%3</t> has been captured.</t>", _missionType, _vehiclePicture, _vehicleName, "#17FF41", "#FFFFFF"]] call RE;
 
-    diag_log format["WASTELAND SERVER - %1 Success (%2)", _missionType, _vehicleName];
+    diag_log format["WASTELAND SERVER - %1 Completed (%2)", _missionType, _vehicleName];
 
     sleep 3;
 

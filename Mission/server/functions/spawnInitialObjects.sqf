@@ -67,4 +67,11 @@ while { _currentObjectIndex < numberOfHelicopterSpawns } do {
 	_currentObjectIndex = _currentObjectIndex + 1;
 };
 
-diag_log format["Spawning finished! Spawned %1 Vehicles, %2 Weapon Crates, %3 Buildings, %4 Stationary Weapons and %5 Helicopters.", _totalVehicles, _totalWeaponCrates, _totalBuildings, _totalStationaryWeapons, numberOfHelicopterSpawns];
+_currentObjectIndex = 0;
+while { _currentObjectIndex < numberOfBoatSpawns } do {
+	_boat = [getMarkerPos format["boatSpawn_%1", _currentObjectIndex + 1], random 360.0, boatCategories] call spawnVehicle;
+
+	_currentObjectIndex = _currentObjectIndex + 1;
+};
+
+diag_log format["Spawning finished! Spawned %1 Vehicles, %2 Weapon Crates, %3 Buildings, %4 Stationary Weapons, %5 Boats and %6 Helicopters.", _totalVehicles, _totalWeaponCrates, _totalBuildings, _totalStationaryWeapons, numberOfBoatSpawns, numberOfHelicopterSpawns];

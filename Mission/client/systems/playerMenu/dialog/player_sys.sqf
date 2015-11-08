@@ -7,4 +7,5 @@
 #define distance_text 2007
 #define uptime_text 2008
 #define groupButton 2009
+#define bounty_text 2010
 #define frame_rate_text 2023

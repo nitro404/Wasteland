@@ -1,12 +1,12 @@
 //	@file Version: 1.0
-//	@file Name: randomWeapon.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy
-//	@file Created: 20/11/2012 05:19
-//	@file Args: Element 0 = Vehicle.
+//	@file Name: randomVehicleWeapons.sqf
+//	@file Author: nitro glycerine
+//	@file Created: 30/08/2015 05:19
+//	@file Args: [vehicle] call randomVehicleWeapons;
 
 if(!isServer) exitWith { };
 
-private["_vehicle", "_maxMagazines", "_maxWeapons", "_randomGear", "_weapon", "_magazineArray", "_magazine", "_numberOfRandomWeapons", "_currentMagazine", "_numberOfMagazines", "_totalMagazines"];
+private["_vehicle", "_maxMagazines", "_maxWeapons", "_weapon", "_magazineArray", "_magazine", "_numberOfRandomWeapons", "_currentMagazine", "_numberOfMagazines", "_totalMagazines"];
 
 _vehicle = _this select 0;
 
@@ -22,7 +22,7 @@ if(_numberOfRandomWeapons > _maxWeapons) then {
 };
 
 while { _totalWeapons < _numberOfRandomWeapons } do {
-	_weapon = vehicleWeapons select (random (count vehicleWeapons - 1));
+	_weapon = [randomWeapons] call randomObject;
 	_magazineArray = getArray (configFile >> "Cfgweapons" >> _weapon >> "magazines");
 
 	_numberOfMagazines = floor((random 2) + 4);
@@ -48,10 +48,8 @@ while { _totalWeapons < _numberOfRandomWeapons } do {
 	_totalWeapons = _totalWeapons + 1;
 };
 
-_randomGear = floor(random 100);
-
 if(_totalWeapons < _maxWeapons) then {
-	if(_randomGear < 50) then {
+	if(floor(random 100) < 50) then {
 		_vehicle addWeaponCargoGlobal ["Binocular_Vector", 1];
 
 		_totalWeapons = _totalWeapons + 1;
@@ -59,15 +57,15 @@ if(_totalWeapons < _maxWeapons) then {
 };
 
 if(_totalWeapons < _maxWeapons) then {
-	if(_randomGear < 15) then {
+	if(floor(random 100) < 15) then {
 		_vehicle addWeaponCargoGlobal ["NVgoggles", 1];
 
 		_totalWeapons = _totalWeapons + 1;
 	};
 };
 
-if(_totalWeapons < _maxWeapons) then {
-	if(_randomGear < 2) then {
+if(_totalWeapons < _maxWeapons && _totalMagazines < _maxMagazines) then {
+	if(floor(random 100) < 2) then {
 		_vehicle addWeaponCargoGlobal ["Laserdesignator", 1];
 		_vehicle addMagazineCargoGlobal ["Laserbatteries", 1];
 
