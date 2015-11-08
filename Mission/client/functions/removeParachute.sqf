@@ -1,5 +1,9 @@
-_veh = vehicle player;
+if(!alive player) exitWith { };
 
-deleteVehicle _veh;
+if(vehicle player == player) exitWith { };
 
-player switchmove "aidlpercmstpsraswrfldnon_idlesteady01";
+if(vehicle player isKindOf "ParachuteBase") then {
+	deleteVehicle vehicle player;
+
+	player switchmove "aidlpercmstpsraswrfldnon_idlesteady01";
+};
