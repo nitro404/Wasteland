@@ -15,7 +15,7 @@ _pos = [_pos,1,(_randomLoc select 1), 1, 0, 0, 0] call BIS_fnc_findSafePos;
 _pos = [_pos select 0, _pos select 1, (_pos select 2) + 10];
 _pos = [_pos, 1, 75, 1, 0, 0, 0] call BIS_fnc_findSafePos;
 player setPos _pos;
-2 cutText ["HALO jump initialized. Use MOUSEWHEEL to open Your parachute! Press E to detach chute.", "PLAIN DOWN", 5];
+2 cutText ["HALO jump initialized. Use MOUSEWHEEL to open Your parachute! Press E to detach chute.", "PLAIN DOWN", 1];
 player setPos [_pos select 0, _pos select 1, 1000]; // Stop the player appearing on the ground for a split second before the HALO
 [player, 1000] exec "ca\air2\halo\data\Scripts\HALO_init.sqs";
 
@@ -36,10 +36,10 @@ while { not firstperson_allowed } do {
 
 [_randomLoc select 2] spawn spawnInfoText;
 
-while {((getposATL player) select 2) > 1} do {
-	hintsilent parseText format ["<t align='center' color='#00aa00' font='Zeppelin33' shadow='1' shadowColor='#000000' size='2'>Alt %1m</t>", round (getPosATL player select 2)];
+while { ((getposATL player) select 2) > 1 } do {
+	hintSilent parseText format ["<t align='center' color='#00aa00' font='Zeppelin33' shadow='1' shadowColor='#000000' size='2'>Alt %1m</t>", round (getPosATL player select 2)];
+	sleep 0.1;
 };
 
-if(((getposATL player) select 2) <= 1) then {
-	hintsilent "";
-};
+2 cutText ["", "PLAIN DOWN", 1];
+hintSilent "";
