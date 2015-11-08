@@ -29,6 +29,12 @@ if(_specialVehicle) exitWith { false };
 
 if(count crew _vehicle > 0) exitWith { false };
 
+if(_vehicle isKindOf "ParachuteBase") exitWith {
+	deleteVehicle _vehicle;
+
+	true
+};
+
 _isBicycle = _vehicle isKindof "Bicycle";
 
 if(_isBicycle) then {
