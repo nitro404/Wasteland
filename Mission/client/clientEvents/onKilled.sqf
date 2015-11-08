@@ -11,13 +11,6 @@ _killer = (_this select 0) select 1;
 
 closeDialog 0;
 
-PlayerCDeath = [_player, _killer];
-publicVariable "PlayerCDeath";
-
-if (isServer) then {
-	_id = PlayerCDeath spawn serverPlayerDied;
-};
-
 if(!local _player) exitwith { };
 
 if((_player != _killer) && (vehicle _player != vehicle _killer) && (playerSide == side _killer) && (str(playerSide) in ["WEST", "EAST"])) then {
@@ -61,11 +54,11 @@ if((_player != _killer) && (vehicle _player != vehicle _killer) && (playerSide =
 };
 
 if(isNull(pvar_PlayerTeamKiller) && (_player == _killer)) then {
-	_vehiclesNear = nearestObjects [_player, ["Car", "Tank"], 10];
+	_vehiclesNear = nearestObjects [_player, ["LandVehicle"], 20];
 	if(count _vehiclesNear > 0) then {
 		_vehicle = _vehiclesNear select 0;
 		_driver = driver _vehicle;
-		if((side _driver) != Resistance) then {
+		if((side group _driver) != resistance) then {
 			if(speed _vehicle > 0 && !isNull _driver && {isPlayer _driver} && {side group _driver == side group _player}) then {
 				pvar_playerTeamKiller = _driver;
 			};
@@ -111,10 +104,11 @@ if((_player getVariable "spawnBeacon") > 0) then {
 		_newObject setVariable["R3F_LOG_disabled", true];
 		_newObject setVariable["owner", getPlayerUID player, true];
 		_newObject setVariable["creationTime", time, true];
+		_newObject setVariable["faction", "WORLD", true];
 	};
 };
 
 true spawn {
-	waitUntil {playerRespawnTime < 2};
+	waitUntil { playerRespawnTime < 2 };
 	titleText ["", "BLACK OUT", 1];
 };
