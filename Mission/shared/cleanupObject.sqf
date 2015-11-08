@@ -5,11 +5,13 @@
 //	@file Args: [object, lifespan] call cleanupObject;
 //	@file Args: [object, lifespan, minValue] call cleanupObject; // for money
 
-private["_object", "_lifespan", "_minimumValue", "_value", "_currentTime", "_creationTime"];
+private["_object", "_lifespan", "_minimumValue", "_value", "_currentTime", "_creationTime", "_loadsOfMoney", "_deleted"];
 
 _object = _this select 0;
 _lifespan = _this select 1;
 _minimumValue = _this select 2;
+_loadsOfMoney = false;
+_deleted = false;
 
 if(!isNil { _minimumValue }) then {
 	if(_object isKindOf "Evmoney") then {
@@ -18,13 +20,17 @@ if(!isNil { _minimumValue }) then {
 
 			if(!isNil { _value }) then {
 				if(typeName _value == "SCALAR") then {
-					if(_value >= _minimumValue) exitWith {
-						false
+					if(_value >= _minimumValue) then {
+						_loadsOfMoney = true;
 					};
 				};
 			};
 		};
 	};
+};
+
+if(_loadsOfMoney) exitWith {
+	false
 };
 
 _networkObject = false;
@@ -55,7 +61,7 @@ if(_currentTime - _creationTime > _lifespan) then {
 
 	deleteVehicle _object;
 
-	if(true) exitWith { true };
+	_deleted = true;
 };
 
-false
+_deleted
