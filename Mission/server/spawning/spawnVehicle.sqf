@@ -109,7 +109,12 @@ if(isNil { _vehicleClassName }) then {
 };
 
 _vehicle = createVehicle [_vehicleClassName, _vehiclePosition, [], 0, "NONE"];
-_vehicle setPos[getPos _vehicle select 0, getpos _vehicle select 1, 0];
+if(_vehicle isKindOf "Ship") then {
+    _vehicle setPosASL[_vehiclePosition select 0, _vehiclePosition select 1, 0];
+}
+else {
+    _vehicle setPos[getPos _vehicle select 0, getPos _vehicle select 1, 0];
+};
 _vehicle addEventHandler["GetIn", { [_this] call enteredVehicle; } ];
 _vehicle addEventHandler["GetOut", { [_this] call exitedVehicle; } ];
 
