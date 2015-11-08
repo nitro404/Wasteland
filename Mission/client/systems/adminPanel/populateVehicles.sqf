@@ -12,7 +12,7 @@ private["_uid", "_category", "_allVehicles", "_vehicleType", "_vehicleIndex", "_
 
 _uid = getPlayerUID player;
 
-if((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
+if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministrators)) then {
 	_category = _this select 0;
 	_allVehicles = vehicles;
 
@@ -78,7 +78,4 @@ if((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministra
 			};
 		} forEach _allVehicles;
 	};
-}
-else {
-	exit;
 };

@@ -11,11 +11,11 @@
 
 disableSerialization;
 
-private ["_panelType","_displayAdmin","_displayMod","_displayServerAdmin","_displayDebug","_modSelect","_adminSelect","_serverAdminSelect","_debugSelect"];
+private["_panelType","_displayAdmin","_displayMod","_displayServerAdmin","_displayDebug","_modSelect","_adminSelect","_serverAdminSelect","_debugSelect"];
 
 _uid = getPlayerUID player;
 
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
+if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministrators)) then {
 	_panelType = _this select 0;
 
 	_displayAdmin = uiNamespace getVariable "AdminMenu";
@@ -205,7 +205,4 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 			};
 		};
 	};
-}
-else {
-	exit;
 };

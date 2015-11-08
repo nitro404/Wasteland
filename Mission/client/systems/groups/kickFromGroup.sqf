@@ -24,13 +24,13 @@ _check = 0;
 } forEach playableUnits;
 
 if(_target == player) exitWith {
-	player globalChat "You can't kick yourself";
+	player globalChat "You can't kick yourself.";
 };
 
 if(_check == 0) exitWith {
-	player globalChat "Tou must select someone to kick first";
+	player globalChat "You must select someone to kick first.";
 };
 
 [_target] join grpNull;
 
-player globalChat format["you have kicked %1 from the group", name _target];
+player globalChat format["You have kicked %1 from the group.", name _target];

@@ -9,11 +9,11 @@
 
 disableSerialization;
 
-private ["_index1", "_type1", "_dialog", "_vehicleListBox", "_weaponText", "_userText", "_damageText", "_speedText", "_data1"];
+private["_index1", "_type1", "_dialog", "_vehicleListBox", "_weaponText", "_userText", "_damageText", "_speedText", "_data1"];
 
 _uid = getPlayerUID player;
 
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
+if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministrators)) then {
 	_index1 = _this select 1;
 	_type1 = _this select 0;
 
@@ -76,7 +76,4 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 			};
 		} foreach playableUnits;
 	};
-}
-else {
-	exit;
 };

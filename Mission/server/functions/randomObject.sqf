@@ -35,4 +35,4 @@ while { _currentCategoryIndex >= 0 } do {
 
 _selectedCollection = (_category select _selectedCategoryIndex) select 2;
 _selectedList = _selectedCollection select floor(random count _selectedCollection);
-_selectedList select floor(random count _selectedList);
+_selectedList select floor(random count _selectedList)

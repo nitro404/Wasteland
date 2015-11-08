@@ -38,7 +38,7 @@ _invalidPosition = true;
 while { _invalidPosition } do {
 	_positionOffset = floor(_baseRadius * 0.15) + floor(random (_baseRadius * 0.85));
 	_positionRotation = floor(random 360);
-	_randomPosition = [(_basePosition select 0) + (_positionOffset * cos(_positionRotation)), (_basePosition select 1) + (_positionOffset * sin(_positionRotation)) , _basePosition select 2];
+	_randomPosition = [(_basePosition select 0) + (_positionOffset * cos(_positionRotation)), (_basePosition select 1) + (_positionOffset * sin(_positionRotation)), _basePosition select 2];
 
 	_invalidPosition = _checkWater && surfaceIsWater _randomPosition;
 };

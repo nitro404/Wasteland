@@ -96,7 +96,6 @@ switch(_switch) do {
 			case "spawnBeacon": {
 				player setVariable["spawnBeacon", (player getVariable "spawnBeacon")-1,true];
 				_item = "Satelit" createVehicle (position player);
-				_item setVariable["spawnsRemaining", 100, true];
 				_item setVariable["faction", "WORLD", true];
 				_item setVariable["R3F_LOG_disabled", true];
 				_item setVariable["owner", getPlayerUID player, true];

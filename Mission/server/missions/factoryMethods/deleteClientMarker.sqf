@@ -2,7 +2,7 @@
 //	@file Name: deleteClientMarker.sqf
 //	@file Author: [404] Deadbeat
 //	@file Created: 26/1/2013 15:19
-//	@file Args: [missionMarkerName] call createClientMarker;
+//	@file Args: [missionMarkerName] call deleteClientMarker;
 
 if(!isServer) exitWith { };
 

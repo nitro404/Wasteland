@@ -4,11 +4,13 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-private ["_uid","_handle"];
+private["_uid","_handle"];
 
 _uid = getPlayerUID player;
 
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
+if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministrators)) then {
+    closeDialog 0;
+
     if((_uid in moderators)) then {
         execVM "client\systems\adminPanel\loadModeratorMenu.sqf";
     };
@@ -19,7 +21,6 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 
     if((_uid in serverAdministrators)) then {
         if((_this select 0) == 1) then {
-            closeDialog 0;
             createDialog "balca_debug_main";
         }
         else {

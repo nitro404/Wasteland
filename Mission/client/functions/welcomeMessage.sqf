@@ -1,5 +1,7 @@
 #define welcomeText 3200
 
+private["_teamRules", "_teamIcon", "_teamColour"];
+
 10 cutrsc["WelcomeMessage", "PLAIN"];
 
 disableSerialization;
@@ -7,38 +9,37 @@ disableSerialization;
 _display = uiNamespace getVariable "WelcomeMessage";
 _control = _display displayCtrl welcomeText;
 
-private ["_teamrules", "_teamicon", "_teamcol"];
 switch(str(side player)) do {
 	case "WEST": {
-		_teamrules = "STR_WL_YouAreInTeam";
-		_teamicon = "\ca\ui\data\igui_side_blufor_ca.paa";
-		_teamcol = "#3333ff";
+		_teamRules = "STR_WL_YouAreInTeam";
+		_teamIcon = "\ca\ui\data\igui_side_blufor_ca.paa";
+		_teamColour = "#3333ff";
 	};
 	case "EAST": {
-		_teamrules = "STR_WL_YouAreInTeam";
-		_teamicon = "\ca\ui\data\igui_side_opfor_ca.paa";
-		_teamcol = "#cc0000";
+		_teamRules = "STR_WL_YouAreInTeam";
+		_teamIcon = "\ca\ui\data\igui_side_opfor_ca.paa";
+		_teamColour = "#cc0000";
 	};
 	case "GUER": {
-		_teamrules = "STR_WL_YouAreInFFA";
-		_teamicon = "\ca\ui\data\igui_side_indep_ca.paa";
-		_teamcol = "#00cc00";
+		_teamRules = "STR_WL_YouAreInFFA";
+		_teamIcon = "\ca\ui\data\igui_side_indep_ca.paa";
+		_teamColour = "#00cc00";
 	};
 };
 
-_message = format ["<t shadow=""1""><t size=""2"">%1</t> (%2)<br/>%4<br/>%3</t>",
+_control ctrlSetStructuredText (parseText format[
+	"<t shadow=""1""><t size=""2"">%1</t> (%2)<br/>%4<br/>%3</t>",
 	localize "STR_WL_WelcomeToWasteland",
 	versionName,
-	format [localize _teamrules, 
-		_teamicon,
-		_teamcol,
+	format[
+		localize _teamRules,
+		_teamIcon,
+		_teamColour,
 		localize format ["STR_WL_Gen_Team%1", str(side player)],
 		localize format ["STR_WL_Gen_Team%1_2", str(side player)]
 	],
 	localize "STR_WL_MapMoreInfo"
-];
-
-_control ctrlSetStructuredText (parseText _message);
+]);
 
 sleep 10;
 

@@ -26,8 +26,8 @@ _groupExists = false;
 
 if(_groupExists) then {
 	[player] join (group _inviter);
-    player globalChat format["You have accepted the group invite"];
+    player globalChat format["You have accepted the group invite."];
 }
 else {
-	player globalChat format["The group no longer exists"];
+	player globalChat format["The group no longer exists."];
 };

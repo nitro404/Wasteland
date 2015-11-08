@@ -12,7 +12,7 @@ private["_uid", "_dialog", "_vehicleListBox", "_selectedItemData", "_allVehicles
 
 _uid = getPlayerUID player;
 
-if((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
+if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministrators)) then {
 	_allVehicles = vehicles;
 
 	_dialog = findDisplay vehicleManagementDialog;
@@ -38,7 +38,4 @@ if((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministra
 	closeDialog 0;
 
 	execVM "client\systems\adminPanel\vehicleManagement.sqf";
-}
-else {
-	exit;
 };

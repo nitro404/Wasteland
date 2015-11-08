@@ -8,11 +8,13 @@
 
 disableSerialization;
 
-private ["_start", "_panelOptions", "_debugSelect", "_displayDebug"];
+private["_start", "_panelOptions", "_debugSelect", "_displayDebug"];
 
 _uid = getPlayerUID player;
 
-if((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
+if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministrators)) then {
+	closeDialog 0;
+
 	_start = createDialog "DebugMenu";
 
 	_displayDebug = uiNamespace getVariable "DebugMenu";
@@ -32,7 +34,4 @@ if((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministra
 	{
 		_debugSelect lbAdd _x;
 	} forEach _panelOptions;
-}
-else {
-  exit;
 };

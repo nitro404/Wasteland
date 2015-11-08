@@ -8,11 +8,11 @@
 
 disableSerialization;
 
-private ["_dialog", "_playerListBox", "_spectateButton", "_switch", "_index", "_modSelect", "_playerData", "_target", "_check", "_spectating", "_camadm", "_rnum", "_warnText", "_targetUID", "_playerName"];
+private["_dialog", "_playerListBox", "_spectateButton", "_switch", "_index", "_modSelect", "_playerData", "_target", "_check", "_spectating", "_camadm", "_rnum", "_warnText", "_targetUID", "_playerName"];
 
 _uid = getPlayerUID player;
 
-if((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
+if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministrators)) then {
 	_dialog = findDisplay playerMenuDialog;
 	_playerListBox = _dialog displayCtrl playerMenuPlayerList;
 	_spectateButton = _dialog displayCtrl playerMenuSpectateButton;
@@ -29,7 +29,7 @@ if((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministra
 		};
 	} forEach playableUnits;
 
-	if(_check == 0) then { exit; };
+	if(_check == 0) exitWith { };
 
 	switch(_switch) do {
 		// Spectate
@@ -98,11 +98,11 @@ if((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministra
 					pvar_teamSwitchList = pvar_teamSwitchList - [objNull];
 					publicVariableServer "pvar_teamSwitchList";
 
-					_target setVehicleInit format["if (name player == ""%1"") then {client_firstSpawn = nil;};",name _target];
+					_target setVehicleInit format["if (name player == ""%1"") then { firstSpawn = true; };", name _target];
 					processInitCommands;
 					clearVehicleInit _target;
 
-					player setVehicleInit format["if isServer then {publicVariable 'pvar_teamSwitchList';};"];
+					player setVehicleInit format["if isServer then { publicVariable 'pvar_teamSwitchList'; };"];
 					processInitCommands;
 					clearVehicleInit player;
 				};
@@ -165,7 +165,4 @@ if((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministra
 			} forEach playableUnits;
 		};
 	};
-}
-else {
-	exit;
 };

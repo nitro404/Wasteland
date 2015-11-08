@@ -12,9 +12,7 @@ _button = _this select 1;
 _playerSpawning = false;
 
 if(!isNil "playerSpawning") then {
-	if(playerSpawning) then {
-		_playerSpawning = true;
-	}
+	_playerSpawning = playerSpawning;
 };
 
 if(_playerSpawning) exitWith { };
@@ -40,8 +38,14 @@ switch(_switch) do {
 
 playerSpawning = false;
 
-if(isNil { client_firstSpawn }) then {
-	client_firstSpawn = true;
+player selectWeapon secondaryWeapon player;
+
+if(isNil "firstSpawn") then {
+	firstSpawn = true;
+};
+
+if(firstSpawn) then {
+	firstSpawn = false;
 
 	[] execVM "client\functions\welcomeMessage.sqf";
 
@@ -74,32 +78,16 @@ if(isNil { client_firstSpawn }) then {
 
 				_side = "";
 
-				if(str(playerSide) == "WEST") then {
+				if(playerSide == west) then {
 					_side = "Blufor";
 				};
 
-				if(str(playerSide) == "EAST") then {
+				if(playerSide == east) then {
 					_side = "Opfor";
 				};
 
 				titleText [format["You have been locked to %1", _side], "PLAIN", 0];
 			};
-		};
-	};
-}
-else {
-	[] spawn {
-		_startTime = floor(time);
-		_result = 0;
-
-		waitUntil {
-			_currTime = floor(time);
-
-			if(_currTime - _startTime >= 200) then {
-				_result = 1;
-			};
-
-			(_result == 1)
 		};
 	};
 };
