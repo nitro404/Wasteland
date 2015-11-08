@@ -192,6 +192,7 @@ vehicleBlacklist = [
 	"GRAD_INS",
 	"GRAD_RU",
 	"MLRS",
+	"MLRS_DES_EP1",
 	"M1129_MC_EP1",
 	"D30_TK_EP1",
 	"D30_CDF",
@@ -211,14 +212,6 @@ vehicleBlacklist = [
 	"2b14_82mm_TK_INS_EP1",
 	"M252",
 	"M252_US_EP1",
-	// Desert Camouflage
-	"HMMWV_Avenger_DES_EP1",
-	"HMMWV_MK19_DES_EP1",
-	"HMMWV_TOW_DES_EP1",
-	"BAF_FV510_D",
-	"M1A1_US_DES_EP1",
-	"M1A2_US_TUSK_MG_EP1",
-	"MLRS_DES_EP1",
 	// Army of the Czech Republic
 	"Dingo_GL_DST_ACR",
 	"Dingo_GL_Wdl_ACR",
