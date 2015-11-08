@@ -47,5 +47,21 @@ while { true } do {
 		[_x] call cleanupVehicle;
 	} forEach (allMissionObjects "Plane");
 
+	sleep 1;
+
+	{
+		[_x] call cleanupVehicle;
+	} forEach (allMissionObjects "Ship");
+
+	sleep 1;
+
+	{
+		{
+			deleteVehicle _x;
+		} forEach allMissionObjects _x;
+
+		sleep 0.1;
+	} forEach vehicleBlacklist;
+
 	sleep 60;
 };
