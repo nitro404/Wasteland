@@ -22,7 +22,8 @@ while { true } do {
 
 	//To broadcast clientRaderMarkers to clients from the server due to clients not being able to broadcast server wide variables with eventhandlers.
 	publicVariable "currentInvites";
-	serverFPS = str(diag_fpsmin);
+
+	serverFPS = diag_fpsmin;
 	publicVariable "serverFPS";
 
 	sleep 1;
