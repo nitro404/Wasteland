@@ -30,7 +30,6 @@ class Header {
 #include "client\systems\helicopterStore\dialog\helicopterStore_settings.hpp"
 #include "client\systems\buildingStore\dialog\buildingStore_settings.hpp"
 #include "addons\proving_ground\PG_config.hpp"
-#include "addons\gcam\gcam_component.hpp"
 
 class RscTitles {
 	#include "addons\proving_ground\PG_rsctitles.hpp"

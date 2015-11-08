@@ -53,12 +53,6 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 					closeDialog 0;
 					execVM "client\systems\adminPanel\vehicleManagement.sqf";
 				};
-
-				// GCam
-				case 2: {
-					closeDialog 0;
-					execVM "addons\gcam\gcam.sqf";
-				};
 			};
 		};
 
@@ -81,12 +75,6 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 				// Tags
 				case 2:{
 					execVM "client\systems\adminPanel\playerTags.sqf";
-				};
-
-				// GCam
-				case 3: {
-					closeDialog 0;
-					execVM "addons\gcam\gcam.sqf";
 				};
 			};
 		};
@@ -134,14 +122,8 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 					};
 				};
 
-				// GCam
-				case 5: {
-					closeDialog 0;
-					execVM "addons\gcam\gcam.sqf";
-				};
-
 				// Debug Menu
-				case 6: {
+				case 5: {
 					closeDialog 0;
 					execVM "client\systems\adminPanel\loadDebugMenu.sqf";
 				};

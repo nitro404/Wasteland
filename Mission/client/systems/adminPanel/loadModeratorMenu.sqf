@@ -20,8 +20,7 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 
 	_panelOptions = [
 		"Player Menu",
-		"Vehicle Management",
-		"GCam"
+		"Vehicle Management"
 	];
 
 	{

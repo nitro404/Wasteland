@@ -24,7 +24,6 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 		"Tags",
 		"Teleport",
 		"Money",
-		"GCam",
 		"Debug Menu"
 	];
 
