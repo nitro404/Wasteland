@@ -13,6 +13,10 @@ _lastTime = nil;
 _result = nil;
 _lifeSpan = 600;
 
+if(isNil { _missionVehicle }) then {
+	_missionVehicle = false;
+};
+
 if(_missionVehicle) exitWith { false };
 
 if(!(alive _vehicle)) exitWith { false };
