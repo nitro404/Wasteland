@@ -393,16 +393,16 @@ MissionSpawnMarkers = [
 ];
 
 missionTypes = [
-    [1, "Main Battle Tank Mission", 0, 8, 600, 1800, [
+    [1, "Main Battle Tank Mission", 0, [4, 1, 1, 2, 2], 600, 1800, [
         ["BAF_FV510_W", "T90", "M1A2_TUSK_MG"]
     ]],
-    [1, "Armored Personnel Carrier Mission", 0, 4, 300, 1800, [
+    [1, "Armored Personnel Carrier Mission", 0, [4, 1, 1, 1, 1], 300, 1800, [
         ["BMP3", "M2A3_EP1", "M6_EP1"]
     ]],
-    [1, "Anti-Air Mission", 0, 10, 900, 1800, [
+    [1, "Anti-Air Mission", 0, [4, 1, 1, 2, 2], 900, 1800, [
         ["2S6M_Tunguska"]
     ]],
-    [1, "Attack Helicopter Mission", 0, 10, 1200, 1800, [
+    [1, "Attack Helicopter Mission", 0, [2, 4, 2, 2, 2], 1200, 1800, [
         ["Mi171Sh_rockets_CZ_EP1", "Mi17_rockets_RU"],
         ["Mi24_D", "Mi24_D_TK_EP1"],
         ["Mi24_V"],
@@ -411,6 +411,19 @@ missionTypes = [
     [2, "Geo Cache Mission", 1, 300, 2, 3,
         ["BasicGER", "BasicRU", "BasicUS", "GuerillaCache", "BasicTerrorist", "DemoCrate", "RUSniper", "USLaunchers", "RULaunchers"]
     ]
+];
+
+aiClasses = [
+    // Rifleman
+    "Woodlander3",
+    // Machine Gunner
+    "Woodlander1",
+    // Sniper
+    "Woodlander4",
+    // Anti-Tank
+    "Citizen1",
+    // Anti-Air
+    "Pilot"
 ];
 
 specialVehicles = [

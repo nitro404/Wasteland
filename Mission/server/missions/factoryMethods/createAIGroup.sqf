@@ -4,7 +4,7 @@
 //	@file Created: 07/11/2015 11:52 PM
 //	@file Args: [position, radius, groupSize] call createAIGroup;
 
-private["_position", "_radius", "_groupSize", "_aiGroup", "_unit"];
+private["_position", "_radius", "_unitTypes", "_aiGroup", "_unit", "_numberOfUnitTypes", "_numberOfUnits"];
 
 if(!isServer) exitWith { };
 
@@ -12,7 +12,7 @@ if(count _this < 3) exitWith { };
 
 _position = _this select 0;
 _radius = _this select 1;
-_groupSize = _this select 2;
+_unitTypes = _this select 2;
 _aiGroup = createGroup civilian;
 _unit = nil;
 
@@ -28,21 +28,22 @@ if(_radius < 5) then {
 	_radius = floor(random 5) + 5;
 };
 
-if(isNil { _groupSize }) then {
-	_groupSize = floor(random 2) + 2;
+if(isNil { _unitTypes }) then {
+	_unitTypes = [1, 0, 0, 0, 0];
 };
 
-if(typeName _groupSize != "SCALAR") then {
-	_groupSize = floor(random 2) + 2;
+if(typeName _unitTypes != "ARRAY") then {
+	_unitTypes = [1, 0, 0, 0, 0];
 };
 
-if(_groupSize < 1) then {
-	_groupSize = floor(random 2) + 2;
-};
+_numberOfUnitTypes = count _unitTypes;
+for "_unitType" from 1 to _numberOfUnitTypes do {
+	_numberOfUnits = _unitTypes select _unitType - 1;
 
-for "_unitIndex" from 1 to _groupSize do {
-	_unit = [_aiGroup, [_position, _radius, true] call randomPosition, "Woodlander4", floor(random 5) + 1] call createAIUnit;
-	_unit addMPEventHandler["MPKilled", { [_this] call onAIKilled; } ];
+	for "_unitIndex" from 1 to _numberOfUnits do {
+		_unit = [_aiGroup, [_position, _radius, true] call randomPosition, _unitType] call createAIUnit;
+		_unit addMPEventHandler["MPKilled", { [_this] call onAIKilled; } ];
+	};
 };
 
 _aiGroup
