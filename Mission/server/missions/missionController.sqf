@@ -28,7 +28,7 @@ while { true } do {
 
 		diag_log format["WASTELAND SERVER - Spawning New %1 (%2)", _missionTypeInfo select 1, getText (configFile >> "cfgVehicles" >> _vehicleClass >> "displayName")];
 
-		[nil, nil, rHINT, parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>%1</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t color='%5' size='1.0'>Starting in %3 Minutes</t>", _missionTypeInfo select 1, _missionRewardPicture, floor((_missionTypeInfo select 3) / 60), "#52bf90", "#FFFFFF"]] call RE;
+		[nil, nil, rHINT, parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>%1</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t color='%5' size='1.0'>Starting in %3 Minutes</t>", _missionTypeInfo select 1, _missionRewardPicture, floor((_missionTypeInfo select 4) / 60), "#52bf90", "#FFFFFF"]] call RE;
 	};
 
 	if(_missionFunctionType == 1) then {
