@@ -33,12 +33,14 @@ _player addMagazine "17Rnd_9x19_glock17";
 _player addMagazine "17Rnd_9x19_glock17";
 _player addWeapon "glock17_EP1";
 
+_player selectWeapon "glock17_EP1";
+
 _player addWeapon "ItemGPS";
 _player addWeapon "Binocular";
 
-_player selectWeapon "glock17_EP1";
-
 _player addrating 1000000;
+
+_player switchMove "amovpknlmstpsraswpstdnon_gear";
 
 _money = _player getVariable "money";
 
