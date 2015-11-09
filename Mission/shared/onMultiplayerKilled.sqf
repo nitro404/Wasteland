@@ -75,9 +75,9 @@ if(_teamKill) exitWith { };
 
 if(_victimInGroup) exitWith { };
 
-if(player != _actualKiller) exitWith { };
+if(getPlayerUID player != getPlayerUID _actualKiller) exitWith { };
 
-_money = _actualKiller getVariable "money";
+_money = player getVariable "money";
 
 if(isNil { _money }) then {
 	_money = 0;
@@ -87,7 +87,7 @@ if(typeName _money != "SCALAR") then {
 	_money = 0;
 };
 
-_killerBounty = _actualKiller getVariable "bounty";
+_killerBounty = player getVariable "bounty";
 
 if(isNil { _killerBounty }) then {
 	_killerBounty = 0;
@@ -111,7 +111,7 @@ _reward = _victimBounty + 100;
 
 _victim setVariable["bounty", 0, true];
 
-_actualKiller setVariable["money", _money + _reward, true];
-_actualKiller setVariable["bounty", _killerBounty + 100, true];
+player setVariable["money", _money + _reward, true];
+player setVariable["bounty", _killerBounty + 100, true];
 
 player globalChat format["You received $%1 for killing %2!", _reward, name _victim];

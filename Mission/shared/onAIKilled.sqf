@@ -42,10 +42,10 @@ if(isServer) then {
 	};
 };
 
-if(player != _actualKiller) exitWith { };
+if(getPlayerUID player != getPlayerUID _actualKiller) exitWith { };
 
 _reward = 100;
-_money = _actualKiller getVariable "money";
+_money = player getVariable "money";
 
 if(isNil { _money }) then {
 	_money = 0;
@@ -55,7 +55,7 @@ if(typeName _money != "SCALAR") then {
 	_money = 0;
 };
 
-_bounty = _actualKiller getVariable "bounty";
+_bounty = player getVariable "bounty";
 
 if(isNil { _bounty }) then {
 	_bounty = 0;
@@ -65,7 +65,7 @@ if(typeName _bounty != "SCALAR") then {
 	_bounty = 0;
 };
 
-_actualKiller setVariable["money", _money + _reward, true];
-_actualKiller setVariable["bounty", _bounty + 50, true];
+player setVariable["money", _money + _reward, true];
+player setVariable["bounty", _bounty + 50, true];
 
 player globalChat format["You received $%1.", _reward];
