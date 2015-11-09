@@ -14,7 +14,20 @@ _unit = _this select 0;
 _weaponLists = _this select 1;
 _weaponList = _weaponLists select floor(random count _weaponLists);
 _weaponClass =_weaponList select floor(random count _weaponList);
-_magazineArray = getArray (configFile >> "Cfgweapons" >> _weaponClass >> "magazines");
+
+_magazineArray = [];
+
+if(_weaponClass == "BAF_NLAW_Launcher") then {
+	_magazineArray = ["NLAW"]
+};
+
+if(_weaponClass == "SMAW") then {
+	_magazineArray = ["SMAW_HEAA", "SMAW_HEDP"];
+};
+
+if(count _magazineArray == 0) then {
+	_magazineArray = getArray (configFile >> "Cfgweapons" >> _weaponClass >> "magazines");
+};
 
 _numberOfMagazines = floor((random 2) + 2);
 

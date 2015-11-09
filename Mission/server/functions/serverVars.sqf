@@ -323,7 +323,7 @@ randomWeapons = [
         ["DMR"],
         ["SVD", "SVD_CAMO", "SVD_des_EP1"],
         ["ksvk"],
-        ["BAF_AS50_scoped_Large", "BAF_AS50_TWS_Large"],
+        ["BAF_AS50_scoped", "BAF_AS50_TWS"],
         ["m107", "m107_TWS_EP1"],
         ["BAF_LRR_scoped_W", "BAF_LRR_scoped"]
     ]],

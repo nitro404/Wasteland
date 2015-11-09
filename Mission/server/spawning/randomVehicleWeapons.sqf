@@ -23,7 +23,20 @@ if(_numberOfRandomWeapons > _maxWeapons) then {
 
 while { _totalWeapons < _numberOfRandomWeapons } do {
 	_weapon = [randomWeapons] call randomObject;
-	_magazineArray = getArray (configFile >> "Cfgweapons" >> _weapon >> "magazines");
+
+	_magazineArray = [];
+
+	if(_weapon == "BAF_NLAW_Launcher") then {
+		_magazineArray = ["NLAW"]
+	};
+
+	if(_weapon == "SMAW") then {
+		_magazineArray = ["SMAW_HEAA", "SMAW_HEDP"];
+	};
+
+	if(count _magazineArray == 0) then {
+		_magazineArray = getArray (configFile >> "Cfgweapons" >> _weapon >> "magazines");
+	};
 
 	_numberOfMagazines = floor((random 2) + 4);
 
