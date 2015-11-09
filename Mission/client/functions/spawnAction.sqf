@@ -38,7 +38,10 @@ switch(_switch) do {
 
 playerSpawning = false;
 
-player selectWeapon secondaryWeapon player;
+[] spawn {
+	sleep 1;
+	player selectWeapon "glock17_EP1";
+};
 
 if(isNil "firstSpawn") then {
 	firstSpawn = true;
