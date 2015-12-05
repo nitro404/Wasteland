@@ -10,4 +10,4 @@ _helicopterStores = [
 	["helicopterStore3", 200, "Helicopter Store"]
 ];
 
-[_helicopterStores, "Grid", "ColorBlue", 0.5, "ELLIPSE", "helicopter", ["Helicopter Store", "ColorYellow"]] execVM 'client\functions\createMarkers.sqf';
+[_helicopterStores, "Grid", "ColorBlue", 0.5, "ELLIPSE", "helicopter", ["Helicopter Store", "ColorYellow"]] call createMarkers;

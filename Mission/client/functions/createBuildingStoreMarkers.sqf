@@ -13,4 +13,4 @@ _buildingStores = [
 	["buildingStore6", 200, "Building Store"]
 ];
 
-[_buildingStores, "Grid", "ColorBlue", 0.5, "ELLIPSE", "buildingStore", ["Building Store", "ColorGreen"]] execVM "client\functions\createMarkers.sqf";
+[_buildingStores, "Grid", "ColorBlue", 0.5, "ELLIPSE", "buildingStore", ["Building Store", "ColorGreen"]] call createMarkers;

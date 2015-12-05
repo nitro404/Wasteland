@@ -14,4 +14,4 @@ _gunStores = [
 	["gs7", 200, "Gun Store"]
 ];
 
-[_gunStores, "Grid", "ColorBlue", 0.5, "ELLIPSE", "gs", ["Gun Store", "ColorRed"]] execVM "client\functions\createMarkers.sqf";
+[_gunStores, "Grid", "ColorBlue", 0.5, "ELLIPSE", "gs", ["Gun Store", "ColorRed"]] call createMarkers;

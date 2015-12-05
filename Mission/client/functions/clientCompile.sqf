@@ -42,6 +42,9 @@ updateTeamKiller = compile preprocessFileLineNumbers "client\functions\updateTea
 teamkillAction = compile preprocessFileLineNumbers "client\functions\doTeamKillAction.sqf";
 teamkillMessage = compile preprocessFileLineNumbers "client\functions\showTeamKillMessage.sqf";
 
+// Markers
+createMarkers = compile preprocessFileLineNumbers "client\functions\createMarkers.sqf";
+
 // General & Gun Store Dialog
 client_respawnDialog = compile preprocessFileLineNumbers "client\functions\loadRespawnDialog.sqf";
 loadGeneralStore = compile preprocessFileLineNumbers "client\systems\generalStore\loadGenStore.sqf";
