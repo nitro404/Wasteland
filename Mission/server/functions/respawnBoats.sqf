@@ -15,7 +15,7 @@ while { true } do {
 	while { _boatIndex < numberOfBoatSpawns } do {
 		_boatPosition = getMarkerPos format["boatSpawn_%1", _boatIndex + 1];
 
-		if(count nearestObjects[_boatPosition, ["Ship"], 50] == 0) then {
+		if(count (_boatPosition nearEntities ["Ship", 50]) == 0) then {
 			_boat = [_boatPosition, random 360.0, boatCategories] call spawnVehicle;
 		};
 

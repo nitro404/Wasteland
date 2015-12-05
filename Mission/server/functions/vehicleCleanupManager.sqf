@@ -5,63 +5,36 @@
 
 if(!isServer) exitWith { };
 
+private["_vehicles", "_cleanup"];
+
 while { true } do {
+	_vehicles = vehicles;
+
+	sleep 0.1;
 
 	{
-		[_x] call cleanupVehicle;
-	} forEach (allMissionObjects "Motorcycle");
+		_cleanup = false;
 
-	sleep 1;
+		if(_x isKindOf "LandVehicle") then {
+			_cleanup = true;
+		}
+		else {
+			if(_x isKindOf "Air") then {
+				_cleanup = true;
+			}
+			else {
+				if(_x isKindOf "Ship") then {
+					_cleanup = true;
+				};
+			};
+		};
 
-	{
-		[_x] call cleanupVehicle;
-	} forEach (allMissionObjects "Car");
+		if(_cleanup) then {
+			[_x] call cleanupVehicle;
 
-	sleep 1;
-
-	{
-		[_x] call cleanupVehicle;
-	} forEach (allMissionObjects "Truck");
-
-	sleep 1;
-
-	{
-		[_x] call cleanupVehicle;
-	} forEach (allMissionObjects "APC");
-
-	sleep 1;
-
-	{
-		[_x] call cleanupVehicle;
-	} forEach (allMissionObjects "Tank");
-
-	sleep 1;
-
-	{
-		[_x] call cleanupVehicle;
-	} forEach (allMissionObjects "Helicopter");
-
-	sleep 1;
-
-	{
-		[_x] call cleanupVehicle;
-	} forEach (allMissionObjects "Plane");
-
-	sleep 1;
-
-	{
-		[_x] call cleanupVehicle;
-	} forEach (allMissionObjects "Ship");
-
-	sleep 1;
-
-	{
-		{
-			deleteVehicle _x;
-		} forEach allMissionObjects _x;
-
-		sleep 0.1;
-	} forEach vehicleBlacklist;
+			sleep 0.05;
+		};
+	} forEach _vehicles;
 
 	sleep 60;
 };

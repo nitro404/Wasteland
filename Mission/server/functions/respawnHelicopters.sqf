@@ -15,7 +15,7 @@ while { true } do {
 	while { _helicopterIndex < numberOfHelicopterSpawns } do {
 		_helicopterPosition = getMarkerPos format["heliSpawn_%1", _helicopterIndex + 1];
 
-		if(count nearestObjects[_helicopterPosition, ["Helicopter", "Plane"], 50] == 0) then {
+		if(count (_helicopterPosition nearEntities ["Air", 50]) == 0) then {
 			[_helicopterPosition, random 360.0, helicopterCategories] call spawnVehicle;
 		};
 

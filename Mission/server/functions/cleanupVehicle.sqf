@@ -4,7 +4,7 @@
 //	@file Created: 16/10/2015 10:19 AM
 //	@file Args: [vehicle] call cleanupVehicle;
 
-private["_vehicle", "_missionVehicle", "_specialVehicle", "_playerNearVehicle", "_currentTime", "_creationTime", "_lastTime", "_exitTime", "_immobileTime", "_activityTime", "_result", "_isBicycle"];
+private["_vehicle", "_missionVehicle", "_playerNearVehicle", "_currentTime", "_creationTime", "_lastTime", "_exitTime", "_immobileTime", "_activityTime", "_result", "_isBicycle"];
 
 _vehicle = _this select 0;
 _missionVehicle = _vehicle getVariable["missionVehicle", false];
@@ -21,23 +21,9 @@ if(_missionVehicle) exitWith { false };
 
 if(!(alive _vehicle)) exitWith { false };
 
-_specialVehicle = false;
-
-{
-	if(_vehicle isKindOf _x) exitWith {
-		_specialVehicle = true;
-	};
-} forEach specialVehicles;
-
-if(_specialVehicle) exitWith { false };
+if(typeOf _vehicle in specialVehicles) exitWith { false };
 
 if(count crew _vehicle > 0) exitWith { false };
-
-if(_vehicle isKindOf "ParachuteBase") exitWith {
-	deleteVehicle _vehicle;
-
-	true
-};
 
 _isBicycle = _vehicle isKindof "Bicycle";
 

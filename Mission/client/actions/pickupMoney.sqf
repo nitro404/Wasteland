@@ -6,7 +6,7 @@
 
 private["_moneyObject", "_moneyValue"];
 
-_moneyObject = nearestObjects [getPos player, ["EvMoney"],  5] select 0;
+_moneyObject = player nearEntities ["EvMoney",  5] select 0;
 
 if(isNil { _moneyObject }) exitWith { };
 

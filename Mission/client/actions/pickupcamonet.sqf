@@ -3,15 +3,23 @@
 //	@file Author: Sixty8 Pulse
 //	@file Date modified: 17/12/2012 20:19
 
+private["_camoNet"];
+
 if(mutexScriptInProgress) exitWith { };
 
 mutexScriptInProgress = true;
 
-_camonet = nearestobjects [getpos player, ["Land_CamoNet_NATO"],  5] select 0;
+_camoNet = nil;
 
-if(isNil { _camonet }) exitWith { };
+{
+	if(player distance _x <= 5) exitWith {
+		_camoNet = _x;
+	};
+} forEach allMissionObjects "Land_CamoNet_NATO";
 
-deleteVehicle _camonet;
+if(isNil { _camoNet }) exitWith { };
+
+deleteVehicle _camoNet;
 
 player setVariable ["camonet", 1, true];
 

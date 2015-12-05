@@ -9,15 +9,16 @@ if(mutexScriptInProgress) exitWith {
 
 private["_vehicle", "_vehicleType", "_fuelAmount", "_playerState", "_iteration", "_loopSpeed", "_iterationAmount", "_iterationPercentage"];
 
-_vehicle = nearestObjects[player, ["LandVehicle", "Air", "Ship"], 10] select 0;
+_vehicle = player nearEntities[["LandVehicle", "Air", "Ship"], 10] select 0;
+
+if(isNil {_vehicle}) exitWith {
+	player globalChat "No vehicle within range.";
+};
+
 _vehicleType = typeOf _vehicle;
 
 if(vehicle player != player) exitWith {
 	player globalChat localize "STR_WL_Errors_InVehicle";
-};
-
-if(isNil {_vehicle}) exitWith {
-	player globalChat "No vehicle within range.";
 };
 
 if(_vehicle isKindOf "Bicycle") exitWith {

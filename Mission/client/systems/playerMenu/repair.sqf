@@ -4,21 +4,22 @@
 //	@file Created: 29/01/2013 00:00
 //	@file Args:
 
+private["_vehicle", "_vehicleType", "_playerState", "_iteration", "_totalDuration", "_iterationAmount", "_iterationPercentage"];
+
 if(mutexScriptInProgress) exitWith {
 	player globalChat localize "STR_WL_Errors_InProgress";
 };
 
-private["_vehicle", "_vehicleType", "_playerState", "_iteration", "_totalDuration", "_iterationAmount", "_iterationPercentage"];
+_vehicle = player nearEntities [["LandVehicle", "Air", "Ship"], 10] select 0;
 
-_vehicle = nearestObjects[player, ["LandVehicle", "Air", "Ship"], 10] select 0;
+if(isNil { _vehicle }) exitWith {
+	player globalChat "No vehicle within range.";
+};
+
 _vehicleType = typeOf _vehicle;
 
 if(vehicle player != player) exitWith {
 	player globalChat localize "STR_WL_Errors_InVehicle";
-};
-
-if(isNil { _vehicle }) exitWith {
-	player globalChat "No vehicle within range.";
 };
 
 if(((damage _vehicle) > 0.05) || !(canMove _vehicle) || (_vehicle isKindOf "Air") || ((count crew _vehicle > 0) && (count(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "Turrets") > 0) && !(canFire _vehicle))) then {

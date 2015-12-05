@@ -54,7 +54,7 @@ if((_player != _killer) && (vehicle _player != vehicle _killer) && (playerSide =
 };
 
 if(isNull(pvar_PlayerTeamKiller) && (_player == _killer)) then {
-	_vehiclesNear = nearestObjects [_player, ["LandVehicle"], 20];
+	_vehiclesNear = _player nearEntities ["LandVehicle", 20];
 	if(count _vehiclesNear > 0) then {
 		_vehicle = _vehiclesNear select 0;
 		_driver = driver _vehicle;

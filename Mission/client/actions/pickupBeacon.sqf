@@ -9,19 +9,22 @@ if(mutexScriptInProgress) exitWith {
 	player globalChat localize "STR_WL_Errors_InProgress";
 };
 
-private["_totalDuration", "_lockDuration", "_iteration", "_iterationPercentage", "_currSpawnBeaconFaction", "_destroyOrSteal", "_currBeaconOwnerUID", "_currBeaconTemp"];
+private["_totalDuration", "_lockDuration", "_iteration", "_iterationPercentage", "_destroyOrSteal", "_currBeaconOwnerUID", "_currBeaconTemp"];
 
 if(vehicle player != player) exitWith {
 	player globalChat localize "STR_WL_Errors_InVehicle";
 };
 
-_currSpawnBeaconFaction = ((nearestobjects [getpos player, ["Satelit"],  5] select 0) getVariable "faction");
+_currSpawnBeacon = player nearEntities ["Satelit", 5] select 0;
 
-if(isNil{_currSpawnBeaconFaction}) exitWith {
+if(isNil { _currSpawnBeacon }) exitWith {
 	diag_log "There was a problem finding a spawn beacon.";
 };
 
-_currSpawnBeacon = (nearestobjects [getpos player, ["Satelit"],  5] select 0);
+if(isNil { _currSpawnBeacon getVariable "faction" }) exitWith {
+	diag_log "There was a problem finding a spawn beacon.";
+};
+
 _destroyOrSteal = _this select 3;
 _iteration = 0;
 
@@ -78,13 +81,13 @@ switch (_destroyOrSteal) do {
 		        2 cutText ["", "PLAIN DOWN", 1];
 
                 _currBeaconOwnerUID = _currSpawnBeacon getVariable "owner";
-                _currBeaconTemp = (nearestObjects [getpos player, ["Satelit"],  5]) select 0;
+                _currBeaconTemp = player nearEntities ["Satelit", 5] select 0;
 
 		        if(isNil { _currBeaconTemp }) then {
                 	hint "Your attempt to steal the enemy spawn beacon was unsuccessful.";
                     mutexScriptInProgress = false;
                 } else {
-	               	deleteVehicle (nearestobjects [getpos player, ["Satelit"],  5] select 0);
+	               	deleteVehicle _currBeaconTemp;
 	                player setVariable["spawnBeacon",1,true];
 	                hint "You have successfully stolen the enemy spawn beacon.";
 			        mutexScriptInProgress = false;
@@ -140,13 +143,13 @@ switch (_destroyOrSteal) do {
 		        2 cutText ["", "PLAIN DOWN", 1];
 
                 _currBeaconOwnerUID = _currSpawnBeacon getVariable "owner";
-                _currBeaconTemp = (nearestObjects [getpos player, ["Satelit"],  5]) select 0;
+                _currBeaconTemp = player nearEntities ["Satelit", 5] select 0;
 
 		        if(isNil { _currBeaconTemp }) then {
                 	hint "Your attempt to destroy the spawn beacon was unsuccessful.";
                     mutexScriptInProgress = false;
                 } else {
-	               	deleteVehicle (nearestobjects [getpos player, ["Satelit"],  5] select 0);
+	               	deleteVehicle _currBeaconTemp;
 	                hint "You have successfully destroyed the spawn beacon.";
 			        mutexScriptInProgress = false;
 

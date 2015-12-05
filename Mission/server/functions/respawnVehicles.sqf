@@ -15,7 +15,7 @@ while { true } do {
 		_townRadius = _x select 1;
 		_townName = _x select 2;
 
-		if(floor(_townRadius * 0.05) - count nearestObjects[_townPosition, ["Car", "Motorcycle", "Tank"], _townRadius] > 0) then {
+		if(floor(_townRadius * 0.05) - count (_townPosition nearEntities ["LandVehicle", _townRadius]) > 0) then {
 			[[_townPosition, _townRadius, true] call randomPosition, random 360.0, vehicleCategories] call spawnVehicle;
 		};
 

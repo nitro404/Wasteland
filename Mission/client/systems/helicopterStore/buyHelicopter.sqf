@@ -2,18 +2,20 @@
 
 disableSerialization;
 
+private["_price", "_dialog", "_itemList", "_selectedItem", "_itemText", "_nearestVehicles", "_helicopter"];
+
 _price = 0;
 
 _dialog = findDisplay helicopterStore_DIALOG;
 
-_itemlist = _dialog displayCtrl helicopterStore_item_list;
+_itemList = _dialog displayCtrl helicopterStore_item_list;
 
 closeDialog helicopterStore_DIALOG;
 
-_selectedItem = lbCurSel _itemlist;
-_itemText = _itemlist lbText _selectedItem;
+_selectedItem = lbCurSel _itemList;
+_itemText = _itemList lbText _selectedItem;
 
-_nearestVehicles = nearestObjects[getPos helicopterStoreSpawn, ["Car", "Motorcycle", "Tank", "Helicopter", "Plane", "Ship", "StaticWeapon"], 8];
+_nearestVehicles = getPos helicopterStoreSpawn nearEntities [["LandVehicle", "Air"], 8];
 
 if(count _nearestVehicles > 0) exitWith {
 	titleText[format["Helicopter purchase failed, spawn is currently blocked by %1!", typeOf (_nearestVehicles select 0)], "PLAIN"];
@@ -44,7 +46,7 @@ if(count _nearestVehicles > 0) exitWith {
 				_helicopter addWeapon "CMFlareLauncher";
 			};
 
-			if(_helicopter isKindOf "AH64D" || _vehicle isKindOf "AH64D_EP1") then {
+			if(_helicopter isKindOf "AH64D" || _helicopter isKindOf "AH64D_EP1") then {
 				_helicopter removeMagazineTurret["60Rnd_CMFlareMagazine", [-1]];
 				_helicopter addMagazineTurret["120Rnd_CMFlareMagazine", [-1]];
 			};

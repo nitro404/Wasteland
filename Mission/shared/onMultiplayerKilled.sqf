@@ -17,7 +17,7 @@ _actualKiller = _killer;
 _roadKill = false;
 
 if(_victim == _killer) then {
-	_vehiclesNear = nearestObjects [_victim, ["LandVehicle"], 20];
+	_vehiclesNear = _victim nearEntities ["LandVehicle", 20];
 
 	if(count _vehiclesNear > 0) then {
 		_vehicle = _vehiclesNear select 0;
