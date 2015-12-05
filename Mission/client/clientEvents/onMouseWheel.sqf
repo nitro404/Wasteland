@@ -4,33 +4,30 @@
 //	@file Created: 03/05/13
 //	@file Args:
 
+
 if(!isNil "playerMenuHandle") then {
 	terminate playerMenuHandle;
 };
 
 playerMenuHandle = [] spawn {
-	waituntil { !isNull player };
+	private ["_vehicle", "_playerMenuID", "_vehicleHALOJumpID"];
 
-	private ["_veh"];
+	waitUntil { !isNull player };
 
 	while { true } do {
+		waitUntil { sleep 0.5; vehicle player == player };
 
-		waituntil { vehicle player == player };
-
-		if(!isNil "_veh") then {
-			_veh removeaction playerMenuId;
-			_veh removeaction vehicleHALOJumpID;
+		if(!isNil "_vehicle") then {
+			_vehicle removeAction _playerMenuID;
+			_vehicle removeAction _vehicleHALOJumpID;
 		};
 
-		playerMenuId = player addAction ["<t color='#BE6300'>Player Menu</t>", "client\systems\playerMenu\init.sqf", [], -10, false, true, "", "local player"];
+		waitUntil { sleep 0.5; vehicle player != player };
 
-		waituntil { vehicle player != player };
+		_vehicle = vehicle player;
 
-		player removeaction playerMenuId;
-		_veh = vehicle player;
+		_playerMenuID = _vehicle addAction["<t color='#BE6300'>Player Menu</t>", "client\systems\playerMenu\init.sqf", [], -10, false, true, "", "local player"];
 
-		playerMenuId = _veh addAction ["<t color='#BE6300'>Player Menu</t>", "client\systems\playerMenu\init.sqf", [], -10, false, true, "", "local player"];
-
-		vehicleHALOJumpID = _veh addAction["<t color=""#0099FF"">HALO Jump</t>", "client\functions\vehicleHALOJump.sqf", [], -11, false, true, "", "(getPosATL player select 2) > 25"];
+		_vehicleHALOJumpID = _vehicle addAction["<t color=""#0099FF"">HALO Jump</t>", "client\functions\vehicleHALOJump.sqf", [], -11, false, true, "", "getPosATL player select 2 > 25"];
 	};
 };
