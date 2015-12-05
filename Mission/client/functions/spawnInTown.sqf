@@ -1,8 +1,9 @@
 //	@file Version: 1.0
 //	@file Name: spawnInTown.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy
+//	@file Author: [404] Deadbeat, [404] Costlyy, nitro glycerine
 //	@file Created: 20/11/2012 05:19
-//	@file Args: [int(which button)]
+//	@file Modified: 2/12/2015 9:19 AM
+//	@file Args: [buttonIndex]
 
 #define respawn_Town_Button0 3403
 #define respawn_Town_Button1 3404
@@ -12,100 +13,32 @@
 
 disableSerialization;
 
-private["_townNameSelected", "_townName"];
+private["_switch", "_display", "_townName", "_spawnButtons", "_pos", "_rad"];
 
 _switch = _this select 0;
 
 _display = uiNamespace getVariable "RespawnSelectionDialog";
-_buttonZero = _display displayCtrl respawn_Town_Button0;
-_buttonOne = _display displayCtrl respawn_Town_Button1;
-_buttonTwo = _display displayCtrl respawn_Town_Button2;
-_buttonThree = _display displayCtrl respawn_Town_Button3;
-_buttonFour = _display displayCtrl respawn_Town_Button4;
 
-switch(_switch) do
+_spawnButtons = [
+	_display displayCtrl respawn_Town_Button0,
+	_display displayCtrl respawn_Town_Button1,
+	_display displayCtrl respawn_Town_Button2,
+	_display displayCtrl respawn_Town_Button3,
+	_display displayCtrl respawn_Town_Button4
+];
+
 {
-    case 0:
-    {
-        {
-			_name = _x select 2;
-			if(ctrlText _buttonZero == _name) then
-			{
-                _townName = _name;
-				_pos = getMarkerPos (_x select 0);
-				_rad = _x select 1;
-				_pos = [_pos,5,_rad,1,0,0,0] call BIS_fnc_findSafePos;
-				_pos = [_pos select 0, _pos select 1, 0];
-				player setPosATL _pos;
-				respawnDialogActive = false;
-				closeDialog 0;
-			};
-		} forEach townList;
-    };
-    case 1: {
-        {
-			_name = _x select 2;
-			if(ctrlText _buttonOne == _name) then
-			{
-                _townName = _name;
-				_pos = getMarkerPos (_x select 0);
-				_rad = _x select 1;
-				_pos = [_pos,5,_rad,1,0,0,0] call BIS_fnc_findSafePos;
-				_pos = [_pos select 0, _pos select 1, 0];
-				player setPosATL _pos;
-				respawnDialogActive = false;
-				closeDialog 0;
-			};
-		} forEach townList;
-    };
-    case 2: {
-        {
-			_name = _x select 2;
-			if(ctrlText _buttonTwo == _name) then
-			{
-                _townName = _name;
-				_pos = getMarkerPos (_x select 0);
-				_rad = _x select 1;
-				_pos = [_pos,5,_rad,1,0,0,0] call BIS_fnc_findSafePos;
-				_pos = [_pos select 0, _pos select 1, 0];
-				player setPosATL _pos;
-				respawnDialogActive = false;
-				closeDialog 0;
-			};
-		} forEach townList;
-    };
-    case 3: {
-        {
-			_name = _x select 2;
-			if(ctrlText _buttonThree == _name) then
-			{
-                _townName = _name;
-				_pos = getMarkerPos (_x select 0);
-				_rad = _x select 1;
-				_pos = [_pos,5,_rad,1,0,0,0] call BIS_fnc_findSafePos;
-				_pos = [_pos select 0, _pos select 1, 0];
-				player setPosATL _pos;
-				respawnDialogActive = false;
-				closeDialog 0;
-			};
-		} forEach townList;
-    };
-    case 4: {
-        {
-			_name = _x select 2;
-			if(ctrlText _buttonFour == _name) then
-			{
-                _townName = _name;
-				_pos = getMarkerPos (_x select 0);
-				_rad = _x select 1;
-				_pos = [_pos,5,_rad,1,0,0,0] call BIS_fnc_findSafePos;
-				_pos = [_pos select 0, _pos select 1, 0];
-				player setPosATL _pos;
-				respawnDialogActive = false;
-				closeDialog 0;
-			};
-		} forEach townList;
-    };
-};
+	_name = _x select 2;
+	if(ctrlText _spawnButtons select _switch == _name) exitWith {
+		_townName = _name;
+		_pos = getMarkerPos (_x select 0);
+		_rad = _x select 1;
+		_pos = [_pos,5,_rad,1,0,0,0] call BIS_fnc_findSafePos;
+		_pos = [_pos select 0, _pos select 1, 0];
+		player setPosATL _pos;
+		respawnDialogActive = false;
+		closeDialog 0;
+	};
+} forEach townList;
 
 [_townName] spawn spawnInfoText;
