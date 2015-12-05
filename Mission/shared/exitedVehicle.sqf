@@ -13,4 +13,6 @@ _player = _args select 2;
 
 _vehicle setVariable["exitTime", time, false];
 
-diag_log format["%1 exited %2 from position %3.", name _player, typeof _vehicle, _position];
+if(alive _player) then {
+	diag_log format["%1 exited %2 from position %3.", name _player, typeof _vehicle, _position];
+};

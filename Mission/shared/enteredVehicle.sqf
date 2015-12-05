@@ -13,4 +13,6 @@ _player = _args select 2;
 
 _vehicle setVariable["enterTime", time, false];
 
-diag_log format["%1 entered %2 in position %3.", name _player, typeof _vehicle, _position];
+if(alive _player) then {
+	diag_log format["%1 entered %2 in position %3.", name _player, typeof _vehicle, _position];
+};
