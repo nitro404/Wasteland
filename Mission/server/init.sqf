@@ -24,9 +24,16 @@ waitUntil {
 	scriptDone _serverCompiledScripts
 };
 
-diag_log format["WASTELAND SERVER - Server Compile Finished"];
+diag_log format["Server Compile Finished!"];
 
-diag_log format["WASTELAND SERVER - Initializing Mission Controllers"];
+_makeBuildingsIndestructible = [] execVM "shared\makeBuildingsIndestructible.sqf";
+
+waitUntil {
+	sleep 0.1;
+	scriptDone _makeBuildingsIndestructible
+};
+
+diag_log format["Initializing Mission Controllers..."];
 
 {
 	_numberOfControllers = (missionTypes select _forEachIndex) select 0;
@@ -37,13 +44,13 @@ diag_log format["WASTELAND SERVER - Initializing Mission Controllers"];
 } forEach missionTypes;
 
 if(isDedicated) then {
-	diag_log format["WASTELAND SERVER - Starting Cleanup Managers"];
+	diag_log format["Starting Cleanup Managers..."];
 
 	[] spawn objectCleanupManager;
 	[] spawn vehicleCleanupManager;
 };
 
-diag_log format["WASTELAND SERVER - Spawning Initial Objects in Towns"];
+diag_log format["Spawning Initial Objects in Towns..."];
 
 _spawnInitialObjects = [] execVM "server\functions\spawnInitialObjects.sqf";
 
@@ -52,8 +59,9 @@ waitUntil {
 	scriptDone _spawnInitialObjects
 };
 
-diag_log format["WASTELAND SERVER - Starting Vehicle Respawn Scripts"];
+diag_log format["Starting Vehicle Respawn Scripts..."];
 
 [] spawn respawnVehicles;
 [] spawn respawnBoats;
 [] spawn respawnHelicopters;
+

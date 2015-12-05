@@ -6,11 +6,9 @@
 
 if(isDedicated) exitWith { };
 
-// Disable player from killing in the spawn area.
 player enableSimulation false;
 removeAllWeapons player;
 
-// Start the loading screen ASAP.
 titleText ["Loading...", "BLACK OUT", 0];
 
 mutexScriptInProgress = false;
@@ -26,12 +24,19 @@ playerSetupComplete = false;
 waitUntil { !isNull player };
 waitUntil { time > 2 };
 
-//Call client compile list.
 player call compile preprocessFileLineNumbers "client\functions\clientCompile.sqf";
 
-//Stop people being civ's.
 if(!(playerSide in [west, east, resistance])) then {
 	endMission "LOSER";
+};
+
+[] execVM "briefing.sqf";
+
+_makeBuildingsIndestructible = [] execVM "shared\makeBuildingsIndestructible.sqf";
+
+waitUntil {
+	sleep 0.1;
+	scriptDone _makeBuildingsIndestructible
 };
 
 player call playerSetup;

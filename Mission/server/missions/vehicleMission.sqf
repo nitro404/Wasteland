@@ -33,7 +33,7 @@ _startTime = floor(netTime);
 _startTime = floor(time);
 #endif
 
-diag_log format["WASTELAND SERVER - %1 Started (%1)", _missionType, _vehicleName];
+diag_log format["%1 Started (%2)", _missionType, _vehicleName];
 
 [_missionMarkerName, _missionPosition, format["%1 Mission", _vehicleName]] call createClientMarker;
 
@@ -69,14 +69,14 @@ if(_missionResult == 1) then {
 
 	[nil, nil, rHINT, parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>Objective failed, better luck next time.</t>", _missionType, _vehiclePicture, _vehicleName, "#FF1717", "#FFFFFF"]] call RE;
 
-    diag_log format["WASTELAND SERVER - %1 Failed (%2)", _missionType, _vehicleName];
+    diag_log format["%1 Failed (%2)", _missionType, _vehicleName];
 }
 else {
     deleteGroup _missionGroup;
 
 	[nil, nil, rHINT, parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Objective Complete</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The <t color='%4'>%3</t> has been captured.</t>", _missionType, _vehiclePicture, _vehicleName, "#17FF41", "#FFFFFF"]] call RE;
 
-    diag_log format["WASTELAND SERVER - %1 Completed (%2)", _missionType, _vehicleName];
+    diag_log format["%1 Completed (%2)", _missionType, _vehicleName];
 
     sleep 3;
 
