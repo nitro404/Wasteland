@@ -3,8 +3,6 @@
 //	@file Author: [404] Deadbeat, [404] Costlyy, [404] Pulse
 //	@file Created: 20/11/2012 05:19
 
-#include "setup.sqf"
-
 if(!isServer) exitWith { };
 
 diag_log format["Initializing Server Variables..."];

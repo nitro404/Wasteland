@@ -6,8 +6,6 @@
 
 if(!isServer) exitWith { };
 
-#include "setup.sqf"
-
 diag_log format["Compiling Server-Side Scripts..."];
 
 randomPosition = compile preprocessFileLineNumbers "server\functions\randomPosition.sqf";

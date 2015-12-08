@@ -4,8 +4,6 @@
 //  @file Created: 12/10/2015 2:33 PM
 //  @file Args: [weaponCrateList, spawnLocations, delay, missionNumber] spawn geoCacheMission;
 
-#include "setup.sqf"
-
 private["_weaponCrateList", "_weaponCrates", "_missionNumber", "_missionMarkerName", "_missionLocationData", "_missionPosition", "_missionSpawnMarkerIndex", "_playerPresent"];
 
 if(!isServer) exitWith { };

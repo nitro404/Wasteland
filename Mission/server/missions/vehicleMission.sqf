@@ -6,8 +6,6 @@
 
 if(!isServer) exitWith { };
 
-#include "setup.sqf"
-
 private["_missionType", "_missionSpawnLocations", "_vehicleClass", "_missionDelay", "_missionTimeout", "_missionNumber", "_missionResult", "_vehicleName", "_vehiclePicture", "_missionMarkerName", "_startTime", "_currTime", "_missionLocationData", "_missionPosition", "_missionSpawnMarkerIndex", "_missionGroup", "_vehicle", "_unitsAlive"];
 
 _missionType = _this select 0;

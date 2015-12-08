@@ -12,8 +12,6 @@ if(count _this < 1) exitWith {
     diag_log format["respawnVehicle Error: Requires minimum of 1 arguments, received %1.", count _this]
 };
 
-#include "setup.sqf"
-
 _vehicle = _this select 0;
 _respawnDelay = 0;
 _desertedTime = 0;

@@ -6,8 +6,6 @@
 
 if(!isServer) exitWith {};
 
-#include "setup.sqf"
-
 #ifdef __A2NET__
 call arma2NetTime;
 waituntil{ netTime > 0 };

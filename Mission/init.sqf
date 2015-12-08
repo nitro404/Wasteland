@@ -3,9 +3,6 @@
 //	@file Author: [404] Deadbeat, [404] Costlyy
 //	@file Created: 20/11/2012 05:13
 //	@file Description: The main init.
-//	@file Args:
-
-#include "setup.sqf"
 
 if(isnil "RE") then {
 	[] execVM "\ca\Modules\MP\data\scripts\MPframework.sqf"
@@ -46,10 +43,6 @@ if(!isDedicated) then {
 
 if(isServer) then {
 	diag_log format ["Starting Mission: %1", missionName];
-
-	#ifdef __DEBUG__
-	diag_log format ["T%1,DT%2,F%3", time, diag_tickTime, diag_frameno];
-	#endif
 
 	diag_log "Initializing Server!";
 

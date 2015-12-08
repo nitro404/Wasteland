@@ -4,8 +4,6 @@
 //  @file Created: 10/10/2015 4:30 PM
 //  @file Args: [missionTypeInfo] spawn missionController;
 
-#include "setup.sqf"
-
 if(!isServer) exitWith { };
 
 private["_missionTypeInfo", "_missionFunctionType", "_missionFunction", "_vehicleList", "_vehicleClass", "_missionRewardPicture", "_minWeaponCrates", "_maxWeaponCrates", "_fullWeaponCrateList", "_missionSpawnLocations", "_numberOfWeaponCrates", "_weaponCrateSpawnList", "_activeMission"];

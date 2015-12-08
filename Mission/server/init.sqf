@@ -5,8 +5,6 @@
 //	@file Description: The server init.
 //	@file Args:
 
-#include "setup.sqf"
-
 if(!isServer) exitWith { };
 
 private["_serverCompiledScripts", "_numberOfControllers", "_spawnInitialObjects"];

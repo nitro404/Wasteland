@@ -5,8 +5,6 @@
 
 if(!isServer) exitWith { };
 
-#include "setup.sqf"
-
 private["_dateStamp", "_startTime"];
 
 _dateStamp = Date;
@@ -21,21 +19,20 @@ _startTime = time;
 
 while { true } do {
 	#ifdef __A2NET__
-	if(netTime - _startTime > 900) then
+	if(netTime - _startTime > 900) then {
 	#else
-	if(time - _startTime > 900) then
+	if(time - _startTime > 900) then {
 	#endif
-    {
-    	_dateStamp = Date;
-        _dateStamp set [4, _dateStamp select 4];
-        setDate _dateStamp;
-        currentDate = _dateStamp;
+		_dateStamp = Date;
+		_dateStamp set [4, _dateStamp select 4];
+		setDate _dateStamp;
+		currentDate = _dateStamp;
 		publicVariable "currentDate";
 		#ifdef __A2NET__
 		_startTime = netTime;
 		#else
 		_startTime = time;
 		#endif
-    };
+	};
 	sleep 10;
 };
