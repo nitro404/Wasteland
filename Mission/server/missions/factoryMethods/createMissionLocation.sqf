@@ -2,7 +2,7 @@
 //	@file Name: createMissionLocation.sqf
 //	@file Author: [404] Deadbeat
 //	@file Created: 26/1/2013 15:19
-//	@file Args: [] call createMissionLocation;
+//	@file Args: spawnLocations call createMissionLocation;
 //      @file Return: [missionPosition, missionSpawnMarkerIndex]
 
 if(!isServer) exitWith { };
@@ -12,8 +12,8 @@ private["_validMarker", "_missionSpawnMarkerIndex", "_missionSpawnMarkerInfo", "
 _validMarker = false;
 
 while { !_validMarker } do {
-	_missionSpawnMarkerIndex = floor (random count MissionSpawnMarkers);
-	_missionSpawnMarkerInfo = MissionSpawnMarkers select _missionSpawnMarkerIndex;
+	_missionSpawnMarkerIndex = floor (random count _this);
+	_missionSpawnMarkerInfo = _this select _missionSpawnMarkerIndex;
 
 	if(!(_missionSpawnMarkerInfo select 1)) then {
 		_selectedMarker = _missionSpawnMarkerInfo select 0;

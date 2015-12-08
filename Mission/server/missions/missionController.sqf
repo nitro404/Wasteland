@@ -8,7 +8,7 @@
 
 if(!isServer) exitWith { };
 
-private["_missionTypeInfo", "_missionFunctionType", "_missionFunction", "_vehicleList", "_vehicleClass", "_missionRewardPicture", "_minWeaponCrates", "_maxWeaponCrates", "_fullWeaponCrateList", "_numberOfWeaponCrates", "_weaponCrateSpawnList", "_activeMission"];
+private["_missionTypeInfo", "_missionFunctionType", "_missionFunction", "_vehicleList", "_vehicleClass", "_missionRewardPicture", "_minWeaponCrates", "_maxWeaponCrates", "_fullWeaponCrateList", "_missionSpawnLocations", "_numberOfWeaponCrates", "_weaponCrateSpawnList", "_activeMission"];
 
 _missionTypeInfo = _this select 0;
 _missionFunctionType = _missionTypeInfo select 2;
@@ -21,10 +21,11 @@ diag_log format["Delaying %1 Controller Initialization by %2 Minutes", _missionT
 
 while { true } do {
 	if(_missionFunctionType == 0) then {
-		_vehicleList = (_missionTypeInfo select 6) select (floor (random count (_missionTypeInfo select 6)));
+		_missionSpawnLocations = _missionTypeInfo select 6;
+		_vehicleList = (_missionTypeInfo select 7) select (floor (random count (_missionTypeInfo select 7)));
 		_vehicleClass = _vehicleList select (floor (random count _vehicleList));
 		_missionRewardPicture = getText (configFile >> "cfgVehicles" >> _vehicleClass >> "picture");
-		_activeMission = [_missionTypeInfo select 1, _vehicleClass, _missionTypeInfo select 3, _missionTypeInfo select 4, _missionTypeInfo select 5, missionNumber] spawn vehicleMission;
+		_activeMission = [_missionTypeInfo select 1, _vehicleClass, _missionSpawnLocations, _missionTypeInfo select 3, _missionTypeInfo select 4, _missionTypeInfo select 5, missionNumber] spawn vehicleMission;
 
 		diag_log format["Creating New %1 (%2)", _missionTypeInfo select 1, getText (configFile >> "cfgVehicles" >> _vehicleClass >> "displayName")];
 
@@ -34,7 +35,8 @@ while { true } do {
 	if(_missionFunctionType == 1) then {
 		_minWeaponCrates = _missionTypeInfo select 4;
 		_maxWeaponCrates = _missionTypeInfo select 5;
-		_fullWeaponCrateList = _missionTypeInfo select 6;
+		_missionSpawnLocations = _missionTypeInfo select 6;
+		_fullWeaponCrateList = _missionTypeInfo select 7;
 		_numberOfWeaponCrates = floor (random (_maxWeaponCrates - _minWeaponCrates + 1) + _minWeaponCrates);
 		_weaponCrateSpawnList = [];
 
@@ -42,7 +44,7 @@ while { true } do {
 			[_weaponCrateSpawnList, _fullWeaponCrateList select (floor (random count _fullWeaponCrateList))] call BIS_fnc_arrayPush;
 		};
 
-		_activeMission = [_weaponCrateSpawnList, _missionTypeInfo select 3, missionNumber] spawn geoCacheMission;
+		_activeMission = [_weaponCrateSpawnList, _missionSpawnLocations, _missionTypeInfo select 3, missionNumber] spawn geoCacheMission;
 
 		diag_log format["Creating New Geo Cache Mission (%1)", _weaponCrateSpawnList];
 

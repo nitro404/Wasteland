@@ -2,7 +2,7 @@
 //  @file Name: geoCacheMission.sqf
 //  @file Author: nitro glycerine
 //  @file Created: 12/10/2015 2:33 PM
-//  @file Args: [weaponCrateList, missionNumber] spawn geoCacheMission;
+//  @file Args: [weaponCrateList, spawnLocations, delay, missionNumber] spawn geoCacheMission;
 
 #include "setup.sqf"
 
@@ -11,11 +11,12 @@ private["_weaponCrateList", "_weaponCrates", "_missionNumber", "_missionMarkerNa
 if(!isServer) exitWith { };
 
 _weaponCrateList = _this select 0;
-_missionDelay = _this select 1;
-_missionNumber = _this select 2;
+_missionSpawnLocations = _this select 1;
+_missionDelay = _this select 2;
+_missionNumber = _this select 3;
 _missionMarkerName = format["ActiveMission_%1", _missionNumber];
 
-_missionLocationData = call createMissionLocation;
+_missionLocationData = _missionSpawnLocations call createMissionLocation;
 _missionPosition = _missionLocationData select 0;
 _missionSpawnMarkerIndex = _missionLocationData select 1;
 
@@ -38,8 +39,9 @@ waitUntil {
     sleep 3;
 
     _playerPresent = false;
+
     {
-        if((isPlayer _x) AND (_x distance _missionPosition <= 50)) then {
+        if((isPlayer _x) AND (_x distance _missionPosition <= 50)) exitWith {
             _playerPresent = true
         };
     } forEach playableUnits;
@@ -53,5 +55,5 @@ diag_log format["Geo Cache Mission Completed (%1)", _weaponCrateList];
 
 sleep 10;
 
-MissionSpawnMarkers select _missionSpawnMarkerIndex set[1, false];
+_missionSpawnLocations select _missionSpawnMarkerIndex set[1, false];
 [_missionMarkerName] call deleteClientMarker;

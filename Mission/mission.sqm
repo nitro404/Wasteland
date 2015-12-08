@@ -3722,7 +3722,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=227;
+		items=252;
 		class Item0
 		{
 			position[]={6704.1572,6,2619.647};
@@ -5335,6 +5335,181 @@ class Mission
 			name="boatSpawn_24";
 			type="Empty";
 			colorName="ColorBlue";
+		};
+		class Item227
+		{
+			position[]={4436.873,339.33044,8073.3364};
+			name="GeoCache_1";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item228
+		{
+			position[]={8394.3984,394.16345,7340.4458};
+			name="GeoCache_2";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item229
+		{
+			position[]={10894.477,294.87991,7568.2329};
+			name="GeoCache_3";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item230
+		{
+			position[]={12931.623,209.45912,12759.601};
+			name="GeoCache_4";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item231
+		{
+			position[]={9673.0254,83.884598,13551.608};
+			name="GeoCache_5";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item232
+		{
+			position[]={6890.7373,394.32632,11438.174};
+			name="GeoCache_6";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item233
+		{
+			position[]={12291.328,48.86795,8483.9531};
+			name="GeoCache_7";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item234
+		{
+			position[]={13006.241,130.41794,5965.5029};
+			name="GeoCache_8";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item235
+		{
+			position[]={11256.428,290.49136,4292.833};
+			name="GeoCache_9";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item236
+		{
+			position[]={6537.3584,391.18787,5599.9443};
+			name="GeoCache_10";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item237
+		{
+			position[]={10291.234,362.5152,12058.916};
+			name="GeoCache_11";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item238
+		{
+			position[]={4068.3496,365.66437,11672.015};
+			name="GeoCache_12";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item239
+		{
+			position[]={2197.6233,336.48312,12834.66};
+			name="GeoCache_13";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item240
+		{
+			position[]={1964.326,282.67685,9142.9033};
+			name="GeoCache_14";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item241
+		{
+			position[]={3600.4302,334,6956.186};
+			name="GeoCache_15";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item242
+		{
+			position[]={3706.4846,402,5969.5557};
+			name="GeoCache_16";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item243
+		{
+			position[]={1704.2162,153,5092.5454};
+			name="GeoCache_17";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item244
+		{
+			position[]={2781.113,134.34131,3105.5747};
+			name="GeoCache_18";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item245
+		{
+			position[]={6568.7334,81.175949,3410.5293};
+			name="GeoCache_19";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item246
+		{
+			position[]={9014.6191,323.47583,4369.272};
+			name="GeoCache_20";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item247
+		{
+			position[]={10291.822,6.0127869,1595.0132};
+			name="GeoCache_21";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item248
+		{
+			position[]={6584.3267,335,9313.0322};
+			name="GeoCache_22";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item249
+		{
+			position[]={5279.6362,307.15448,10578.991};
+			name="GeoCache_23";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item250
+		{
+			position[]={5525.2671,308.79626,7298.1406};
+			name="GeoCache_24";
+			type="Empty";
+			colorName="ColorPink";
+		};
+		class Item251
+		{
+			position[]={9149.5654,262.86826,11031.223};
+			name="GeoCache_25";
+			type="Empty";
+			colorName="ColorPink";
 		};
 	};
 	class Sensors

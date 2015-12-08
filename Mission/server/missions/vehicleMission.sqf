@@ -8,20 +8,21 @@ if(!isServer) exitWith { };
 
 #include "setup.sqf"
 
-private["_missionType", "_vehicleClass", "_missionDelay", "_missionTimeout", "_missionNumber", "_missionResult", "_vehicleName", "_vehiclePicture", "_missionMarkerName", "_startTime", "_currTime", "_missionLocationData", "_missionPosition", "_missionSpawnMarkerIndex", "_missionGroup", "_vehicle", "_unitsAlive"];
+private["_missionType", "_missionSpawnLocations", "_vehicleClass", "_missionDelay", "_missionTimeout", "_missionNumber", "_missionResult", "_vehicleName", "_vehiclePicture", "_missionMarkerName", "_startTime", "_currTime", "_missionLocationData", "_missionPosition", "_missionSpawnMarkerIndex", "_missionGroup", "_vehicle", "_unitsAlive"];
 
 _missionType = _this select 0;
 _vehicleClass = _this select 1;
-_aiCount = _this select 2;
-_missionDelay = _this select 3;
-_missionTimeout = _this select 4;
-_missionNumber = _this select 5;
+_missionSpawnLocations  = _this select 2;
+_aiCount = _this select 3;
+_missionDelay = _this select 4;
+_missionTimeout = _this select 5;
+_missionNumber = _this select 6;
 _missionResult = 0;
 _vehicleName = getText (configFile >> "cfgVehicles" >> _vehicleClass >> "displayName");
 _vehiclePicture = getText (configFile >> "cfgVehicles" >> _vehicleClass >> "picture");
 _missionMarkerName = format["ActiveMission_%1", _missionNumber];
 
-_missionLocationData = call createMissionLocation;
+_missionLocationData = _missionSpawnLocations call createMissionLocation;
 _missionPosition = _missionLocationData select 0;
 _missionSpawnMarkerIndex = _missionLocationData select 1;
 
@@ -85,5 +86,5 @@ else {
 
 sleep 10;
 
-MissionSpawnMarkers select _missionSpawnMarkerIndex set[1, false];
+_missionSpawnLocations select _missionSpawnMarkerIndex set[1, false];
 [_missionMarkerName] call deleteClientMarker;

@@ -339,7 +339,35 @@ randomWeapons = [
     ]]
 ];
 
-MissionSpawnMarkers = [
+geoCacheLocations = [
+    ["GeoCache_1", false],
+    ["GeoCache_2", false],
+    ["GeoCache_3", false],
+    ["GeoCache_4", false],
+    ["GeoCache_5", false],
+    ["GeoCache_6", false],
+    ["GeoCache_7", false],
+    ["GeoCache_8", false],
+    ["GeoCache_9", false],
+    ["GeoCache_10", false],
+    ["GeoCache_11", false],
+    ["GeoCache_12", false],
+    ["GeoCache_13", false],
+    ["GeoCache_14", false],
+    ["GeoCache_15", false],
+    ["GeoCache_16", false],
+    ["GeoCache_17", false],
+    ["GeoCache_18", false],
+    ["GeoCache_19", false],
+    ["GeoCache_20", false],
+    ["GeoCache_21", false],
+    ["GeoCache_22", false],
+    ["GeoCache_23", false],
+    ["GeoCache_24", false],
+    ["GeoCache_25", false]
+];
+
+vehicleMissionLocations = [
     ["Mission_1", false],
     ["Mission_2", false],
     ["Mission_3", false],
@@ -393,22 +421,22 @@ MissionSpawnMarkers = [
 ];
 
 missionTypes = [
-    [1, "Main Battle Tank Mission", 0, [4, 1, 1, 2, 2], 600, 1800, [
+    [1, "Main Battle Tank Mission", 0, [4, 1, 1, 2, 2], 600, 1800, vehicleMissionLocations, [
         ["BAF_FV510_W", "T90", "M1A2_TUSK_MG"]
     ]],
-    [1, "Armored Personnel Carrier Mission", 0, [4, 1, 1, 1, 1], 300, 1800, [
+    [1, "Armored Personnel Carrier Mission", 0, [4, 1, 1, 1, 1], 300, 1800, vehicleMissionLocations, [
         ["BMP3", "M2A3_EP1", "M6_EP1"]
     ]],
-    [1, "Anti-Air Mission", 0, [4, 1, 1, 2, 2], 900, 1800, [
+    [1, "Anti-Air Mission", 0, [4, 1, 1, 2, 2], 900, 1800, vehicleMissionLocations, [
         ["2S6M_Tunguska"]
     ]],
-    [1, "Attack Helicopter Mission", 0, [2, 4, 2, 2, 2], 1200, 1800, [
+    [1, "Attack Helicopter Mission", 0, [2, 4, 2, 2, 2], 1200, 1800, vehicleMissionLocations, [
         ["Mi171Sh_rockets_CZ_EP1", "Mi17_rockets_RU"],
         ["Mi24_D", "Mi24_D_TK_EP1"],
         ["Mi24_V"],
         ["Mi24_P"]
     ]],
-    [2, "Geo Cache Mission", 1, 300, 2, 3,
+    [2, "Geo Cache Mission", 1, 300, 2, 3, geoCacheLocations,
         ["BasicGER", "BasicRU", "BasicUS", "GuerillaCache", "BasicTerrorist", "DemoCrate", "RUSniper", "USLaunchers", "RULaunchers"]
     ]
 ];
