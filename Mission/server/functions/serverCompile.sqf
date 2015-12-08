@@ -8,7 +8,7 @@ if(!isServer) exitWith { };
 
 #include "setup.sqf"
 
-diag_log format["WASTELAND SERVER - Compiling Server-Side Scripts..."];
+diag_log format["Compiling Server-Side Scripts..."];
 
 randomPosition = compile preprocessFileLineNumbers "server\functions\randomPosition.sqf";
 randomObject = compile preprocessFileLineNumbers "server\functions\randomObject.sqf";
@@ -46,4 +46,4 @@ if(isDedicated) then {
 	vehicleCleanupManager = compile preprocessFileLineNumbers "server\functions\vehicleCleanupManager.sqf";
 };
 
-diag_log format["WASTELAND SERVER - Finished Compiling Server-Side Scripts!"];
+diag_log format["Finished Compiling Server-Side Scripts!"];

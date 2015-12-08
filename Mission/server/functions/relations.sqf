@@ -5,7 +5,7 @@
 
 if(!isServer) exitWith { };
 
-diag_log format["WASTELAND SERVER - Setting Server Relations"];
+diag_log format["Setting Faction Relations"];
 
 EAST setFriend [WEST, 0];
 EAST setFriend [EAST, 1];

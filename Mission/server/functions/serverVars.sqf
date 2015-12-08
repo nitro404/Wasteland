@@ -7,7 +7,7 @@
 
 if(!isServer) exitWith { };
 
-diag_log format["WASTELAND SERVER - Initializing Server Variables"];
+diag_log format["Initializing Server Variables..."];
 
 #ifdef __A2NET__
 missionStartTime = 0;
