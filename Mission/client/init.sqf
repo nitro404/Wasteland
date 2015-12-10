@@ -30,52 +30,52 @@ if(!(playerSide in [west, east, resistance])) then {
 	endMission "LOSER";
 };
 
-[] execVM "briefing.sqf";
+execVM "briefing.sqf";
 
-_makeBuildingsIndestructible = [] execVM "shared\makeBuildingsIndestructible.sqf";
+_makeBuildingsIndestructible = execVM "shared\makeBuildingsIndestructible.sqf";
 
 waitUntil {
 	sleep 0.1;
 	scriptDone _makeBuildingsIndestructible
 };
 
-player call playerSetup;
+call playerSetup;
 
 if(!isNil "client_initEH") then { player removeEventHandler["Respawn", client_initEH]; };
-player addEventHandler ["Respawn", { [_this] call onRespawn; } ];
-player addEventHandler ["Killed", { [_this] call onKilled; } ];
-player addMPEventHandler ["MPKilled", { [_this] call onMultiplayerKilled; } ];
+player addEventHandler ["Respawn", { _this call onRespawn; } ];
+player addEventHandler ["Killed", { _this call onKilled; } ];
+player addMPEventHandler ["MPKilled", { _this call onMultiplayerKilled; } ];
 
-[] execVM "client\clientEvents\onMouseWheel.sqf";
+execVM "client\clientEvents\onMouseWheel.sqf";
 
 waitUntil { !(isNull (findDisplay 46)) };
 (findDisplay 46) displaySetEventHandler["KeyDown", "_this call onKeyPress"];
 
-"currentDate" addPublicVariableEventHandler { [] call timeSync; };
-"clientMissionMarkers" addPublicVariableEventHandler { [] call updateMissionsMarkers; };
-"pvar_beaconListBlu" addPublicVariableEventHandler { [] call updateSpawnBeaconMarkers; };
-"pvar_beaconListRed" addPublicVariableEventHandler { [] call updateSpawnBeaconMarkers; };
-"pvar_beaconListIndep" addPublicVariableEventHandler { [] call updateSpawnBeaconMarkers; };
-"pvar_teamKillList" addPublicVariableEventHandler { [] call updateTeamKiller; };
+"currentDate" addPublicVariableEventHandler { call timeSync; };
+"clientMissionMarkers" addPublicVariableEventHandler { call updateMissionsMarkers; };
+"pvar_beaconListBlu" addPublicVariableEventHandler { call updateSpawnBeaconMarkers; };
+"pvar_beaconListRed" addPublicVariableEventHandler { call updateSpawnBeaconMarkers; };
+"pvar_beaconListIndep" addPublicVariableEventHandler { call updateSpawnBeaconMarkers; };
+"pvar_teamKillList" addPublicVariableEventHandler { call updateTeamKiller; };
 "publicVar_teamkillMessage" addPublicVariableEventHandler { if(local(_this select 1)) then { [] spawn teamkillMessage; }; };
 
-[] execVM "client\systems\hud\playerHud.sqf";
+execVM "client\systems\hud\playerHud.sqf";
 
 sleep 0.1;
 
-[] execVM "client\functions\createTownMarkers.sqf";
-[] execVM "client\functions\createGunStoreMarkers.sqf";
-[] execVM "client\functions\createGeneralStoreMarkers.sqf";
-[] execVM "client\functions\createHelicopterStoreMarkers.sqf";
-[] execVM "client\functions\createBuildingStoreMarkers.sqf";
+execVM "client\functions\createTownMarkers.sqf";
+execVM "client\functions\createGunStoreMarkers.sqf";
+execVM "client\functions\createGeneralStoreMarkers.sqf";
+execVM "client\functions\createHelicopterStoreMarkers.sqf";
+execVM "client\functions\createBuildingStoreMarkers.sqf";
 
 //true execVM "client\functions\loadAtmosphere.sqf"; // Set to false to disable dust, ash and wind
 
 if(!isServer) then {
-    [] spawn craterCleanupManager;
+	[] spawn craterCleanupManager;
 };
 
-[] call updateMissionsMarkers;
+call updateMissionsMarkers;
 [] spawn spawnBeaconMonitor;
 
 if(isNil "FZF_IC_INIT") then {
@@ -86,5 +86,5 @@ sleep 1;
 
 true spawn playerSpawn;
 
-[] execVM "client\functions\antiCheatClient.sqf";
+execVM "client\functions\antiCheatClient.sqf";
 [] spawn FZF_IC_INIT;

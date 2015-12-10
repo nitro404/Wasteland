@@ -2,12 +2,12 @@
 //	@file Name: deleteClientMarker.sqf
 //	@file Author: [404] Deadbeat
 //	@file Created: 26/1/2013 15:19
-//	@file Args: [missionMarkerName] call deleteClientMarker;
+//	@file Args: missionMarkerName call deleteClientMarker;
 
 if(!isServer) exitWith { };
 
 {
-	if(_x select 0 == _this select 0) then {
+	if(_x select 0 == _this) then {
 		clientMissionMarkers set [_forEachIndex, objNull];
 		clientMissionMarkers = clientMissionMarkers - [objNull];
 		publicVariable "clientMissionMarkers";

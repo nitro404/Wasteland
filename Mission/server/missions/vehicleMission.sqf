@@ -24,7 +24,7 @@ _missionLocationData = _missionSpawnLocations call createMissionLocation;
 _missionPosition = _missionLocationData select 0;
 _missionSpawnMarkerIndex = _missionLocationData select 1;
 
-[_missionDelay] call createWaitCondition;
+_missionDelay call createWaitCondition;
 
 #ifdef __A2NET__
 _startTime = floor(netTime);
@@ -85,4 +85,4 @@ else {
 sleep 10;
 
 _missionSpawnLocations select _missionSpawnMarkerIndex set[1, false];
-[_missionMarkerName] call deleteClientMarker;
+_missionMarkerName call deleteClientMarker;

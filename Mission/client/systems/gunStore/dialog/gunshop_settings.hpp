@@ -5,10 +5,10 @@ class gunshopd {
 	idd = gunshop_DIALOG;
 	movingEnable = true;
 	enableSimulation = true;
-	onLoad = "[0] execVM 'client\systems\gunStore\populateGunStore.sqf'";
+	onLoad = "0 execVM 'client\systems\gunStore\populateGunStore.sqf'";
 
 	class controlsBackground {
-		
+
 		class MainBackground: w_RscPicture
 		{
 			idc = -1;
@@ -19,7 +19,7 @@ class gunshopd {
 			w = 0.837499 * safezoneW;
 			h = 0.661111 * safezoneH;
 		};
-		
+
 		class ItemSelectedPicture: w_RscPicture
 		{
 			idc = gunshop_gun_pic;
@@ -86,13 +86,13 @@ class gunshopd {
 			h = 0.0448148 * safezoneH;
 		};
 	};
-	
+
 	class controls {
-		
+
 		class SelectionList: w_RscListbox
 		{
 			idc = gunshop_gun_list;
-			onLBSelChanged = "[] execvm 'client\systems\gunStore\weaponInfo.sqf'";
+			onLBSelChanged = "execVM 'client\systems\gunStore\weaponInfo.sqf'";
 
 			x = 0.3125 * safezoneW + safezoneX;
 			y = 0.225 * safezoneH + safezoneY;
@@ -103,7 +103,7 @@ class gunshopd {
 		class CartList: w_RscListbox
 		{
 			idc = gunshop_cart;
-			onLBSelChanged = "[] execvm 'client\systems\gunStore\weaponInfo.sqf'";
+			onLBSelChanged = "execVM 'client\systems\gunStore\weaponInfo.sqf'";
 
 			x = 0.690104 * safezoneW + safezoneX;
 			y = 0.225 * safezoneH + safezoneY;
@@ -114,7 +114,7 @@ class gunshopd {
 		class QuickAddAmmo: w_RscButton
 		{
 			idc = gunshop_btn_quickAddAmmo;
-			onButtonClick = "[] execVM 'client\systems\gunStore\quickAddAmmo.sqf'";
+			onButtonClick = "execVM 'client\systems\gunStore\quickAddAmmo.sqf'";
 			text = "+ Ammo";
 
 			x = 0.590 * safezoneW + safezoneX;
@@ -127,7 +127,7 @@ class gunshopd {
 		class AddToCart: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "[] execVM 'client\systems\gunStore\addToCart.sqf'";
+			onButtonClick = "execVM 'client\systems\gunStore\addToCart.sqf'";
 			text = "Add";
 
 			x = 0.515625 * safezoneW + safezoneX;
@@ -140,7 +140,7 @@ class gunshopd {
 		class RemoveFromCart: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "[] execVM 'client\systems\gunStore\removeFromCart.sqf'";
+			onButtonClick = "execVM 'client\systems\gunStore\removeFromCart.sqf'";
 			text = "Remove";
 
 			x = 0.515625 * safezoneW + safezoneX;
@@ -153,7 +153,7 @@ class gunshopd {
 		class BuyToPlayer: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "[0] execVM 'client\systems\gunStore\buyGuns.sqf'";
+			onButtonClick = "0 execVM 'client\systems\gunStore\buyGuns.sqf'";
 			text = "Buy to Player";
 
 			x = 0.703125 * safezoneW + safezoneX;
@@ -167,7 +167,7 @@ class gunshopd {
 		class BuySellEquipment: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "[] execVM 'client\systems\gunStore\sellWeapon.sqf'";
+			onButtonClick = "execVM 'client\systems\gunStore\sellWeapon.sqf'";
 			text = "Sell Current Weapon";
 
 			x = 0.40625 * safezoneW + safezoneX;
@@ -196,20 +196,20 @@ class gunshopd {
 		class WeaponsButton: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "[0] execVM 'client\systems\gunStore\populateGunStore.sqf'";
+			onButtonClick = "0 execVM 'client\systems\gunStore\populateGunStore.sqf'";
 			text = "Weapons";
 
 			x = 0.203125 * safezoneW + safezoneX;
 			y = 0.225 * safezoneH + safezoneY;
 			w = 0.088 * safezoneW;
 			h = 0.040 * safezoneH;
-	
+
 		};
 
 		class WeaponsButton_1: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "[1] execVM 'client\systems\gunStore\populateGunStore.sqf'";
+			onButtonClick = "1 execVM 'client\systems\gunStore\populateGunStore.sqf'";
 			text = "Pistols";
 
 			x = 0.218 * safezoneW + safezoneX;
@@ -221,7 +221,7 @@ class gunshopd {
 		class WeaponsButton_2: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "[2] execVM 'client\systems\gunStore\populateGunStore.sqf'";
+			onButtonClick = "2 execVM 'client\systems\gunStore\populateGunStore.sqf'";
 			text = "Rifles";
 
 			x = 0.218 * safezoneW + safezoneX;
@@ -233,7 +233,7 @@ class gunshopd {
 		class WeaponsButton_3: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "[3] execVM 'client\systems\gunStore\populateGunStore.sqf'";
+			onButtonClick = "3 execVM 'client\systems\gunStore\populateGunStore.sqf'";
 			text = "Snipers";
 
 			x = 0.218 * safezoneW + safezoneX;
@@ -245,7 +245,7 @@ class gunshopd {
 		class WeaponsButton_4: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "[4] execVM 'client\systems\gunStore\populateGunStore.sqf'";
+			onButtonClick = "4 execVM 'client\systems\gunStore\populateGunStore.sqf'";
 			text = "Machineguns";
 
 			x = 0.218 * safezoneW + safezoneX;
@@ -257,20 +257,20 @@ class gunshopd {
 		class WeaponsButton_5: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "[5] execVM 'client\systems\gunStore\populateGunStore.sqf'";
+			onButtonClick = "5 execVM 'client\systems\gunStore\populateGunStore.sqf'";
 			text = "RPGs";
 
 			x = 0.218 * safezoneW + safezoneX;
 			y = 0.400 * safezoneH + safezoneY;
 			w = 0.060 * safezoneW;
 			h = 0.040 * safezoneH;
-	
+
 		};
 
 		class AmmoButton: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "[6] execVM 'client\systems\gunStore\populateGunStore.sqf'";
+			onButtonClick = "6 execVM 'client\systems\gunStore\populateGunStore.sqf'";
 			text = "Ammunition";
 
 			x = 0.203125 * safezoneW + safezoneX;
@@ -283,7 +283,7 @@ class gunshopd {
 		class EquipButton: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "[7] execVM 'client\systems\gunStore\populateGunStore.sqf'";
+			onButtonClick = "7 execVM 'client\systems\gunStore\populateGunStore.sqf'";
 			text = "Equipment";
 
 			x = 0.203125 * safezoneW + safezoneX;

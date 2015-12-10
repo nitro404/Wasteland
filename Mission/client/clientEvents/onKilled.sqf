@@ -4,10 +4,10 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-private ["_player", "_killer"];
+private["_player", "_killer"];
 
-_player = (_this select 0) select 0;
-_killer = (_this select 0) select 1;
+_player = _this select 0;
+_killer = _this select 1;
 
 closeDialog 0;
 

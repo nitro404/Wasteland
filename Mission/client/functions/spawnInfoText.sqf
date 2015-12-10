@@ -37,7 +37,7 @@ if(_delay > 0) then {
 
 _townNameLength = count (toArray _townName);
 if(_townNameLength <= 0) then {
-	_closestTown = [getPos player] call closestTown;
+	_closestTown = (getPos player) call closestTown;
 	_directionFromTownAzimuth = [getMarkerPos(_closestTown select 0), getPos player] call BIS_fnc_dirTo;
 	_directionFromTownBearing = [_directionFromTownAzimuth, true] call azimuthToBearing;
 };

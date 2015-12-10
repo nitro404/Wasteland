@@ -5,7 +5,7 @@ class helicopterStoreDialog {
 	idd = helicopterStore_DIALOG;
 	movingEnable = true;
 	enableSimulation = true;
-	onLoad = "[] execVM 'client\systems\helicopterStore\populateHelicopterStore.sqf'";
+	onLoad = "execVM 'client\systems\helicopterStore\populateHelicopterStore.sqf'";
 
 	class controlsBackground {
 
@@ -51,7 +51,7 @@ class helicopterStoreDialog {
 
 		class BuyHelicopterButton: w_RscButton {
 			idc = -1;
-			onButtonClick = "[] execVM 'client\systems\helicopterStore\buyHelicopter.sqf'";
+			onButtonClick = "execVM 'client\systems\helicopterStore\buyHelicopter.sqf'";
 			text = "Buy";
 			x = 0.440 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;

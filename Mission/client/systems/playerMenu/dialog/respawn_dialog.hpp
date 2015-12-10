@@ -177,7 +177,7 @@ class RespawnSelectionDialog {
 
 		class LoadTownsButton: w_RscButton {
 			idc = -1;
-			onButtonClick = "[0] execVM 'client\functions\switchButtonNames.sqf'";
+			onButtonClick = "0 execVM 'client\functions\switchButtonNames.sqf'";
 			text = "Towns";
 
 			x = 0.406 * safezoneW + safezoneX;
@@ -188,7 +188,7 @@ class RespawnSelectionDialog {
 
 		class LoadBeaconsButton: w_RscButton {
 			idc = -1;
-			onButtonClick = "[1] execVM 'client\functions\switchButtonNames.sqf'";
+			onButtonClick = "1 execVM 'client\functions\switchButtonNames.sqf'";
 			text = "Beacons";
 
 			x = 0.515 * safezoneW + safezoneX;
@@ -254,7 +254,7 @@ class RespawnSelectionDialog {
 
 		class MoreButton: w_RscButton {
 			idc = respawn_More_Button;
-			onButtonClick = "[2] execVM 'client\functions\switchButtonNames.sqf'";
+			onButtonClick = "2 execVM 'client\functions\switchButtonNames.sqf'";
 			text = "More";
 
 			x = 0.461 * safezoneW + safezoneX;

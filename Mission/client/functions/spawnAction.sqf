@@ -25,10 +25,10 @@ switch(_switch) do {
 	};
 	case 1: {
 		if(showBeacons) then {
-			[_button] execVM "client\functions\spawnOnBeacon.sqf"
+			_button execVM "client\functions\spawnOnBeacon.sqf"
 		}
 		else {
-			[_button] execVM "client\functions\spawnInTown.sqf"
+			_button execVM "client\functions\spawnInTown.sqf"
 		};
 	};
 	case 2: {
@@ -45,7 +45,7 @@ if(isNil "firstSpawn") then {
 if(firstSpawn) then {
 	firstSpawn = false;
 
-	[] execVM "client\functions\welcomeMessage.sqf";
+	execVM "client\functions\welcomeMessage.sqf";
 
 	true spawn {
 		_startTime = floor(time);

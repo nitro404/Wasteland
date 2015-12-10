@@ -2,18 +2,17 @@
 //	@file Name: populateVehicles.sqf
 //	@file Author: [404] Deadbeat
 //	@file Created: 20/11/2012 05:19
-//	@file Args: [int _category]
+//	@file Args: int
 
 #include "dialog\vehicleManagementDefines.sqf";
 
 disableSerialization;
 
-private["_uid", "_category", "_allVehicles", "_vehicleType", "_vehicleIndex", "_dialog", "_vehicleListBox", "_weaponText", "_userText", "_damageText", "_speedText"];
+private["_uid", "_allVehicles", "_vehicleType", "_vehicleIndex", "_dialog", "_vehicleListBox", "_weaponText", "_userText", "_damageText", "_speedText"];
 
 _uid = getPlayerUID player;
 
 if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministrators)) then {
-	_category = _this select 0;
 	_allVehicles = vehicles;
 
 	_dialog = findDisplay vehicleManagementDialog;
@@ -29,7 +28,7 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 	_userText ctrlSetText format["Users:"];
 	_damageText ctrlSetText format["Damage:"];
 
-	if(_category == 0) then {
+	if(_this == 0) then {
 		{
 			_vehicleType = typeOf _x;
 			if(_vehicleType isKindOf "Car" && !(_vehicleType isKindOf "Wheeled_APC")) then {
@@ -39,7 +38,7 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 		} forEach _allVehicles;
 	};
 
-	if(_category == 1) then {
+	if(_this == 1) then {
 		{
 			_vehicleType = typeOf _x;
 			if(_vehicleType isKindOf "Helicopter") then {
@@ -49,7 +48,7 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 		} forEach _allVehicles;
 	};
 
-	if(_category == 2) then {
+	if(_this == 2) then {
 		{
 			_vehicleType = typeOf _x;
 			if(_vehicleType isKindOf "Plane") then {
@@ -59,7 +58,7 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 		} forEach _allVehicles;
 	};
 
-	if(_category == 3) then {
+	if(_this == 3) then {
 		{
 			_vehicleType = typeOf _x;
 			if(_vehicleType isKindOf "Tank" || _vehicleType isKindOf "Wheeled_APC") then {
@@ -69,7 +68,7 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 		} forEach _allVehicles;
 	};
 
-	if(_category == 4) then {
+	if(_this == 4) then {
 		{
 			_vehicleType = typeOf _x;
 			if(_vehicleType in vehicleBlacklist) then {

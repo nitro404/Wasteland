@@ -43,7 +43,7 @@ else {
 };
 
 if(isNil { _objectClassName }) then {
-    _objectClassName = [_objectCategory] call randomObject;
+    _objectClassName = _objectCategory call randomObject;
 };
 
 _object = createVehicle [_objectClassName, _objectPosition, [], 0, "NONE"];

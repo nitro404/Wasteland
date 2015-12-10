@@ -4,7 +4,7 @@
 //	@file Created: 20/11/2012 05:13
 //	@file Description: The main init.
 
-if(isnil "RE") then {
+if(isNil "RE") then {
 	[] execVM "\ca\Modules\MP\data\scripts\MPframework.sqf"
 };
 
@@ -13,7 +13,9 @@ enableSaving[false, false];
 X_JIP = false;
 versionName = "0.0.1";
 
-if(isNull player) then { X_JIP = true; };
+if(isNull player) then {
+	X_JIP = true;
+};
 
 true spawn {
 	if(!isDedicated) then {
@@ -23,7 +25,7 @@ true spawn {
 	};
 };
 
-[] execVM "config.sqf";
+execVM "config.sqf";
 
 enteredVehicle = compile preprocessFileLineNumbers "shared\enteredVehicle.sqf";
 exitedVehicle = compile preprocessFileLineNumbers "shared\exitedVehicle.sqf";
@@ -38,7 +40,7 @@ if(!isDedicated) then {
 		[player] join grpNull;
 	};
 
-	[] execVM "client\init.sqf";
+	execVM "client\init.sqf";
 };
 
 if(isServer) then {
@@ -46,9 +48,9 @@ if(isServer) then {
 
 	diag_log "Initializing Server!";
 
-	[] execVM "server\init.sqf";
+	execVM "server\init.sqf";
 };
 
-[] execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
-[] execVM "addons\proving_Ground\init.sqf";
+execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
+execVM "addons\proving_Ground\init.sqf";
 // [0.1, 0.5, 0.5] execVM "addons\scripts\DynamicWeatherEffects.sqf";

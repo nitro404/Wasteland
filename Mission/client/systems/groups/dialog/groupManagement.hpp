@@ -58,7 +58,7 @@ class GroupManagement {
 
 		class PlayerListBox : w_Rsclist {
 			idc = groupManagementPlayerList;
-			onLBSelChanged = "[] execVM 'client\systems\groups\playerSelectChange.sqf'";
+			onLBSelChanged = "execVM 'client\systems\groups\playerSelectChange.sqf'";
 			x = 0.020; y = 0.200;
 			w = 0.235; h = 0.425;
 		};
@@ -81,7 +81,7 @@ class GroupManagement {
 		class InviteButton : w_RscButton {
 			idc = groupManagementInviteButton;
 			text = "Invite";
-			onButtonClick = "[] execVM 'client\systems\groups\inviteToGroup.sqf'";
+			onButtonClick = "execVM 'client\systems\groups\inviteToGroup.sqf'";
 			x = 0.3075; y = 0.200;
 			w = 0.125; h = 0.033 * safezoneH;
 			color[] = {0.1,0.95,0.1,1};
@@ -90,7 +90,7 @@ class GroupManagement {
 		class KickButton : w_RscButton {
 			idc = groupManagementKickButton;
 			text = "Kick";
-			onButtonClick = "[] execVM 'client\systems\groups\kickFromGroup.sqf'";
+			onButtonClick = "execVM 'client\systems\groups\kickFromGroup.sqf'";
 			x = 0.3075; y = 0.250;
 			w = 0.125; h = 0.033 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};
@@ -99,7 +99,7 @@ class GroupManagement {
 		class DisbandButton : w_RscButton {
 			idc = groupManagementDisbandButton;
 			text = "Disband";
-			onButtonClick = "[] execVM 'client\systems\groups\disbandGroup.sqf'";
+			onButtonClick = "execVM 'client\systems\groups\disbandGroup.sqf'";
 			x = 0.3075; y = 0.300;
 			w = 0.125; h = 0.033 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};
@@ -108,7 +108,7 @@ class GroupManagement {
 		class PromoteButton : w_RscButton {
 			idc = groupManagementPromoteButton;
 			text = "Promote";
-			onButtonClick = "[] execVM 'client\systems\groups\promotePlayer.sqf'";
+			onButtonClick = "execVM 'client\systems\groups\promotePlayer.sqf'";
 			x = 0.3075; y = 0.400;
 			w = 0.125; h = 0.033 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};
@@ -117,7 +117,7 @@ class GroupManagement {
 		class LeaveButton : w_RscButton {
 			idc = groupManagementLeaveButton;
 			text = "Leave Group";
-			onButtonClick = "[] execVM 'client\systems\groups\leaveGroup.sqf'";
+			onButtonClick = "execVM 'client\systems\groups\leaveGroup.sqf'";
 			x = 0.3075; y = 0.350;
 			w = 0.125; h = 0.033 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};
@@ -126,7 +126,7 @@ class GroupManagement {
 		class AcceptInviteButton : w_RscButton {
 			idc = groupManagementAcceptButton;
 			text = "Accept";
-			onButtonClick = "[] execVM 'client\systems\groups\acceptGroupInvite.sqf'";
+			onButtonClick = "execVM 'client\systems\groups\acceptGroupInvite.sqf'";
 			x = 0.275; y = 0.625 - 0.0255 * safezoneH;
 			w = 0.100; h = 0.033 * safezoneH;
 			color[] = {0.1,0.95,0.1,1};
@@ -135,7 +135,7 @@ class GroupManagement {
 		class DeclineInviteButton : w_RscButton {
 			idc = groupManagementDeclineButton;
 			text = "Decline";
-			onButtonClick = "[] execVM 'client\systems\groups\declineGroupInvite.sqf'";
+			onButtonClick = "execVM 'client\systems\groups\declineGroupInvite.sqf'";
 			x = 0.375; y = 0.625 - 0.0255 * safezoneH;
 			w = 0.100; h = 0.033 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};

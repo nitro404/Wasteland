@@ -1,5 +1,5 @@
 while { true } do {
-	[] call updateSpawnBeaconMarkers;
+	call updateSpawnBeaconMarkers;
 
 	sleep 3;
 };

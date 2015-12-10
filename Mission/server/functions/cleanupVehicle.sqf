@@ -2,12 +2,11 @@
 //	@file Name: cleanupVehicle.sqf
 //	@file Author: nitro glycerine
 //	@file Created: 16/10/2015 10:19 AM
-//	@file Args: [vehicle] call cleanupVehicle;
+//	@file Args: vehicle call cleanupVehicle;
 
-private["_vehicle", "_missionVehicle", "_playerNearVehicle", "_currentTime", "_creationTime", "_lastTime", "_exitTime", "_immobileTime", "_activityTime", "_result", "_isBicycle"];
+private["_missionVehicle", "_playerNearVehicle", "_currentTime", "_creationTime", "_lastTime", "_exitTime", "_immobileTime", "_activityTime", "_result", "_isBicycle"];
 
-_vehicle = _this select 0;
-_missionVehicle = _vehicle getVariable["missionVehicle", false];
+_missionVehicle = _this getVariable["missionVehicle", false];
 _currentTime = time;
 _lastTime = nil;
 _result = nil;
@@ -19,34 +18,34 @@ if(isNil { _missionVehicle }) then {
 
 if(_missionVehicle) exitWith { false };
 
-if(!(alive _vehicle)) exitWith { false };
+if(!(alive _this)) exitWith { false };
 
-if(typeOf _vehicle in specialVehicles) exitWith { false };
+if(typeOf _this in specialVehicles) exitWith { false };
 
-if(count crew _vehicle > 0) exitWith { false };
+if(count crew _this > 0) exitWith { false };
 
-_isBicycle = _vehicle isKindof "Bicycle";
+_isBicycle = _this isKindof "Bicycle";
 
 if(_isBicycle) then {
 	_lifeSpan = 300;
 };
 
-_immobileTime = _vehicle getVariable "immobileTime";
+_immobileTime = _this getVariable "immobileTime";
 
-if(canMove _vehicle) then {
+if(canMove _this) then {
 	if(!isNil { _immobileTime }) then {
-		_vehicle setVariable["immobileTime", nil, false];
+		_this setVariable["immobileTime", nil, false];
 	};
 }
 else {
 	if(isNil { _immobileTime }) exitWith {
-		_vehicle setVariable["immobileTime", _currentTime, false];
+		_this setVariable["immobileTime", _currentTime, false];
 
 		_result = false;
 	};
 
 	if(_currentTime - _immobileTime > _lifeSpan) exitWith {
-		deleteVehicle _vehicle;
+		deleteVehicle _this;
 
 		_result = true;
 	};
@@ -55,7 +54,7 @@ else {
 if(!isNil { _result }) exitWith { _result };
 
 if(_isBicycle) then {
-	_creationTime = _vehicle getVariable "creationTime";
+	_creationTime = _this getVariable "creationTime";
 
 	if(!(isNil { _creationTime })) then {
 		if(typeName _creationTime == "SCALAR") then {
@@ -64,7 +63,7 @@ if(_isBicycle) then {
 	};
 };
 
-_exitTime = _vehicle getVariable "exitTime";
+_exitTime = _this getVariable "exitTime";
 
 if(_isBicycle) then {
 	if(!(isNil { _exitTime })) then {
@@ -86,13 +85,13 @@ if(!isNil { _result }) exitWith { _result };
 _playerNearVehicle = false;
 
 {
-	if(_x distance _vehicle <= 150) exitWith {
+	if(_x distance _this <= 150) exitWith {
 		_playerNearVehicle = true;
 	};
 } forEach playableUnits;
 
 if(_playerNearVehicle) exitWith {
-	_vehicle setVariable["activityTime", _currentTime, false];
+	_this setVariable["activityTime", _currentTime, false];
 
 	false
 };
@@ -101,7 +100,7 @@ if(isNil { _lastTime }) then {
 	_lastTime = _exitTime;
 };
 
-_activityTime = _vehicle getVariable "activityTime";
+_activityTime = _this getVariable "activityTime";
 
 if(!(isNil { _activityTime })) then {
 	if(typeName _activityTime == "SCALAR") then {
@@ -112,7 +111,7 @@ if(!(isNil { _activityTime })) then {
 };
 
 if(_currentTime - _lastTime > _lifeSpan) exitWith {
-	deleteVehicle _vehicle;
+	deleteVehicle _this;
 
 	true
 };

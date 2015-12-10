@@ -110,7 +110,7 @@ class PlayersMenu
 		class PlayerListBox: w_RscListbox
 		{
 			idc = playerMenuPlayerList;
-			onLBSelChanged="[2,_this select 1] execVM ""client\systems\adminPanel\importvalues.sqf"";";
+			onLBSelChanged="[2, _this select 1] execVM ""client\systems\adminPanel\importvalues.sqf"";";
 			x = 0.22 * safezoneW + safezoneX;
 			y = 0.25 * safezoneH + safezoneY;
 			w = 0.30 * safezoneW;
@@ -121,7 +121,7 @@ class PlayersMenu
 		{
 			idc = playerMenuSpectateButton;
 			text = "Spectate";
-			onButtonClick = "[0] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			onButtonClick = "0 execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.2 * safezoneW + safezoneX;
 			y = 0.730 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
@@ -132,7 +132,7 @@ class PlayersMenu
 		{
 			idc = -1;
 			text = "Slay";
-			onButtonClick = "[2] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			onButtonClick = "2 execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.2 * safezoneW + safezoneX;
 			y = 0.760 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
@@ -144,7 +144,7 @@ class PlayersMenu
 		{
 			idc = -1;
 			text = "Unlock Team Switch";
-			onButtonClick = "[3] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			onButtonClick = "3 execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.250 * safezoneW + safezoneX;
 			y = 0.730 * safezoneH + safezoneY;
 			w = 0.080 * safezoneW;
@@ -156,7 +156,7 @@ class PlayersMenu
 		{
 			idc = -1;
 			text = "Unlock Team Kill";
-			onButtonClick = "[4] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			onButtonClick = "4 execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.250 * safezoneW + safezoneX;
 			y = 0.760 * safezoneH + safezoneY;
 			w = 0.080 * safezoneW;
@@ -168,7 +168,7 @@ class PlayersMenu
 		{
 			idc = -1;
 			text = "Remove All Money";
-			onButtonClick = "[5] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			onButtonClick = "5 execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.330 * safezoneW + safezoneX;
 			y = 0.730 * safezoneH + safezoneY;
 			w = 0.080 * safezoneW;
@@ -180,7 +180,7 @@ class PlayersMenu
 		{
 			idc = -1;
 			text = "Remove All Weapons";
-			onButtonClick = "[6] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			onButtonClick = "6 execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.330 * safezoneW + safezoneX;
 			y = 0.760 * safezoneH + safezoneY;
 			w = 0.080 * safezoneW;
@@ -192,7 +192,7 @@ class PlayersMenu
 		{
 			idc = -1;
 			text = "Check Gear";
-			onButtonClick = "[7] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			onButtonClick = "7 execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.485 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
@@ -203,7 +203,7 @@ class PlayersMenu
 		{
 			idc = -1;
 			text = "Warn";
-			onButtonClick = "[1] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			onButtonClick = "1 execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.535 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;

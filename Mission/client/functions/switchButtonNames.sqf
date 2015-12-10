@@ -3,9 +3,7 @@
 //	@file Name: switchButtonNames.sqf
 //	@file Author: [404] Costlyy
 //	@file Created: 08/12/2012 18:30
-//	@file Args: [int(0 = show towns | 1 = show beacons)]
-
-_selectedButton = _this select 0;
+//	@file Args: int(0 = show towns | 1 = show beacons)
 
 #define respawn_PlayersInTown_Text0 3408
 #define respawn_PlayersInTown_Text1 3409
@@ -22,12 +20,12 @@ _textTwo = _display displayCtrl respawn_PlayersInTown_Text2;
 _textThree = _display displayCtrl respawn_PlayersInTown_Text3;
 _textFour = _display displayCtrl respawn_PlayersInTown_Text4;
 
-if(_selectedButton == 0) then {
+if(_this == 0) then {
 	// Spawn in town buttons show
 	showBeacons = false;
 }
 else {
-	if(_selectedButton == 1) then {
+	if(_this == 1) then {
 		// Spawn at beacon buttons show
 		showBeacons = true;
 

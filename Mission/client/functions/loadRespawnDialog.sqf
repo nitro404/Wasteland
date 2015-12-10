@@ -96,7 +96,6 @@ _find_occupied_towns = {
 };
 
 _find_beacons = {
-	_beacons = _this select 0;
 	_result = [];
 
 	{
@@ -136,17 +135,16 @@ _find_beacons = {
 		if(str playerSide == _beaconSide && _ownerSide == _beaconSide && (playerSide != resistance || (_ownerId in _squadIds || getPlayerUID player == _ownerId))) then {
 			_result set [count _result, [_beacon, (_enemyCount > 0)]];
 		};
-	} forEach _beacons;
+	} forEach _this;
 
 	_result
 };
 
 _format_players = {
-	_players = _this select 0;
 	_str = '';
 	{
 		_str = _str + _x + ', ';
-	} forEach _players;
+	} forEach _this;
 
 	_a = toArray _str;
 	_a set [( count _a - 2 ), 32];
@@ -233,10 +231,10 @@ while { respawnDialogActive } do {
     _missionUptimeText ctrlSetText format["Uptime: %1", _timeText];
 
 	if(!showBeacons) then {
-		_occupiedTowns = [] call _find_occupied_towns;
+		_occupiedTowns = call _find_occupied_towns;
 
 		{
-			_x set [1, [_x select 1] call _format_players];
+			_x set [1, _x select 1 call _format_players];
 		} forEach _occupiedTowns;
 
 		respawnPage = [_occupiedTowns, 5, respawnPage] call _show_buttons;
@@ -251,7 +249,7 @@ while { respawnDialogActive } do {
 			case resistance: { _beacon_array = pvar_beaconListIndep; };
 		};
 
-		_beacons = [_beacon_array] call _find_beacons;
+		_beacons = _beacon_array call _find_beacons;
 
 		_result = [];
 		{

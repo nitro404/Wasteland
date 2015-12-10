@@ -47,7 +47,7 @@ else {
 if(_invalidArgument) exitWith { };
 
 if(isNil { _weaponCrateType }) then {
-    _weaponCrateType = [_weaponCrateCategory] call randomObject;
+    _weaponCrateType = _weaponCrateCategory call randomObject;
 };
 
 if(_weaponCrateType == "USLaunchers") exitWith {

@@ -2,17 +2,13 @@
 //	@file Name: onMultiplayerKilled.sqf
 //	@file Author: nitro glycerine
 //	@file Created: 18/10/2015 8:34 PM
-//	@file Args: [[unit, killer]] spawn onMultiplayerKilled;
+//	@file Args: [unit, killer] spawn onMultiplayerKilled;
 
-if(count _this < 1) exitWith { };
+if(count _this < 2) exitWith { };
 
-_args = _this select 0;
-
-if(count _args < 2) exitWith { };
-
-_victim = _args select 0;
+_victim = _this select 0;
 _victimSide = side group _victim;
-_killer = _args select 1;
+_killer = _this select 1;
 _actualKiller = _killer;
 _roadKill = false;
 

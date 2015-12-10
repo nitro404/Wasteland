@@ -5526,7 +5526,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			expCond="this && ((getpos (thislist select 0)) select 2 < 16.0) && speed vehicle player < 100 && ((""helicopter"" countType thislist  > 0) || (""plane"" countType thislist  > 0) || (""tank"" countType thislist  > 0) || (""car"" countType thislist  > 0) || (""boat"" countType thislist  > 0))";
-			expActiv="_xhandle= [(thislist select 0)] execVM ""client\functions\reloadVehicle.sqf"";";
+			expActiv="_xhandle = thislist select 0 execVM ""client\functions\reloadVehicle.sqf"";";
 			class Effects
 			{
 			};
@@ -5542,7 +5542,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			expCond="this && ((getpos (thislist select 0)) select 2 < 16.0) && speed vehicle player < 100 && ((""helicopter"" countType thislist  > 0) || (""plane"" countType thislist  > 0) || (""tank"" countType thislist  > 0) || (""car"" countType thislist  > 0) || (""boat"" countType thislist  > 0))";
-			expActiv="_xhandle= [(thislist select 0)] execVM ""client\functions\reloadVehicle.sqf"";";
+			expActiv="_xhandle = thislist select 0 execVM ""client\functions\reloadVehicle.sqf"";";
 			class Effects
 			{
 			};
@@ -5558,7 +5558,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			expCond="this && ((getpos (thislist select 0)) select 2 < 16.0) && speed vehicle player < 100 && ((""helicopter"" countType thislist  > 0) || (""plane"" countType thislist  > 0) || (""tank"" countType thislist  > 0) || (""car"" countType thislist  > 0) || (""boat"" countType thislist  > 0))";
-			expActiv="_xhandle= [(thislist select 0)] execVM ""client\functions\reloadVehicle.sqf"";";
+			expActiv="_xhandle = thislist select 0 execVM ""client\functions\reloadVehicle.sqf"";";
 			class Effects
 			{
 			};
@@ -5574,7 +5574,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			expCond="this && ((getpos (thislist select 0)) select 2 < 16.0) && speed vehicle player < 100 && ((""helicopter"" countType thislist  > 0) || (""plane"" countType thislist  > 0) || (""tank"" countType thislist  > 0) || (""car"" countType thislist  > 0) || (""boat"" countType thislist  > 0))";
-			expActiv="_xhandle= [(thislist select 0)] execVM ""client\functions\reloadVehicle.sqf"";";
+			expActiv="_xhandle = thislist select 0 execVM ""client\functions\reloadVehicle.sqf"";";
 			class Effects
 			{
 			};
@@ -5590,7 +5590,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			expCond="this && ((getpos (thislist select 0)) select 2 < 16.0) && speed vehicle player < 100 && ((""helicopter"" countType thislist  > 0) || (""plane"" countType thislist  > 0) || (""tank"" countType thislist  > 0) || (""car"" countType thislist  > 0) || (""boat"" countType thislist  > 0))";
-			expActiv="_xhandle= [(thislist select 0)] execVM ""client\functions\reloadVehicle.sqf"";";
+			expActiv="_xhandle = thislist select 0 execVM ""client\functions\reloadVehicle.sqf"";";
 			class Effects
 			{
 			};
@@ -5606,7 +5606,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			expCond="this && ((getpos (thislist select 0)) select 2 < 16.0) && speed vehicle player < 100 && ((""helicopter"" countType thislist  > 0) || (""plane"" countType thislist  > 0) || (""tank"" countType thislist  > 0) || (""car"" countType thislist  > 0) || (""boat"" countType thislist  > 0))";
-			expActiv="_xhandle= [(thislist select 0)] execVM ""client\functions\reloadVehicle.sqf"";";
+			expActiv="_xhandle = thislist select 0 execVM ""client\functions\reloadVehicle.sqf"";";
 			class Effects
 			{
 			};
@@ -5622,7 +5622,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			expCond="this && ((getpos (thislist select 0)) select 2 < 16.0) && speed vehicle player< 100 && ((""helicopter"" countType thislist  > 0) || (""plane"" countType thislist  > 0) || (""tank"" countType thislist  > 0) || (""car"" countType thislist  > 0) || (""boat"" countType thislist  > 0))";
-			expActiv="_xhandle= [(thislist select 0)] execVM ""client\functions\reloadVehicle.sqf"";";
+			expActiv="_xhandle = thislist select 0 execVM ""client\functions\reloadVehicle.sqf"";";
 			class Effects
 			{
 			};
@@ -5638,7 +5638,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			expCond="this && ((getpos (thislist select 0)) select 2 < 16.0) && speed vehicle player < 100 && ((""helicopter"" countType thislist  > 0) || (""plane"" countType thislist  > 0) || (""tank"" countType thislist  > 0) || (""car"" countType thislist  > 0) || (""boat"" countType thislist  > 0))";
-			expActiv="_xhandle= [(thislist select 0)] execVM ""client\functions\reloadVehicle.sqf"";";
+			expActiv="_xhandle = thislist select 0 execVM ""client\functions\reloadVehicle.sqf"";";
 			class Effects
 			{
 			};

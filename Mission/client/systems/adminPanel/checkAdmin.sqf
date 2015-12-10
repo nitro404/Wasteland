@@ -2,9 +2,8 @@
 //	@file Name: checkAdmin.sqf
 //	@file Author: [404] Deadbeat, [404] Costlyy
 //	@file Created: 20/11/2012 05:19
-//	@file Args:
 
-private["_uid","_handle"];
+private["_uid", "_handle"];
 
 _uid = getPlayerUID player;
 
@@ -16,11 +15,11 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
     };
 
     if((_uid in administrators)) then {
-        [] execVM "client\systems\adminPanel\loadAdministratorMenu.sqf";
+        execVM "client\systems\adminPanel\loadAdministratorMenu.sqf";
     };
 
     if((_uid in serverAdministrators)) then {
-        if((_this select 0) == 1) then {
+        if(_this == 1) then {
             createDialog "balca_debug_main";
         }
         else {
@@ -30,6 +29,8 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 }
 else {
     sleep 1;
+
     _handle = player execVM "client\systems\adminPanel\checkAdmin2.sqf";
+
     waitUntil { scriptDone _handle };
 };

@@ -19,5 +19,5 @@ bicycle setDir _spawnDir;
 bicycle setPosATL _spawnPos;
 bicycle setVariable["owner", getPlayerUID player, true];
 bicycle setVariable["creationTime", time, true];
-bicycle addEventHandler["GetIn", { [_this] call enteredVehicle; } ];
-bicycle addEventHandler["GetOut", { [_this] call exitedVehicle; } ];
+bicycle addEventHandler["GetIn", { _this call enteredVehicle; } ];
+bicycle addEventHandler["GetOut", { _this call exitedVehicle; } ];

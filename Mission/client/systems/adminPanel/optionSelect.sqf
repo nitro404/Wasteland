@@ -11,13 +11,11 @@
 
 disableSerialization;
 
-private["_panelType","_displayAdmin","_displayMod","_displayServerAdmin","_displayDebug","_modSelect","_adminSelect","_serverAdminSelect","_debugSelect"];
+private["_displayAdmin", "_displayMod", "_displayServerAdmin", "_displayDebug", "_modSelect", "_adminSelect", "_serverAdminSelect", "_debugSelect"];
 
 _uid = getPlayerUID player;
 
 if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministrators)) then {
-	_panelType = _this select 0;
-
 	_displayAdmin = uiNamespace getVariable "AdminMenu";
 	_displayMod = uiNamespace getVariable "ModMenu";
 	_displayServerAdmin = uiNamespace getVariable "ServerAdminMenu";
@@ -36,7 +34,7 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 		_debugSelect = _displayDebug displayCtrl debugMenu_option;
 	};
 
-	switch(_panelType) do {
+	switch(_this) do {
 
 		// Moderator Panel
 		case 0: {

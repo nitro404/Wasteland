@@ -13,18 +13,17 @@ _handled = false;
 switch _key do {
     // U
     case 22: {
-        [0] execVM "client\systems\adminPanel\checkAdmin.sqf";
-
+        0 execVM "client\systems\adminPanel\checkAdmin.sqf";
     };
 
     // Y
     case 21: {
-        [1] execVM "client\systems\adminPanel\checkAdmin.sqf";
+        1 execVM "client\systems\adminPanel\checkAdmin.sqf";
     };
 
     // Left Windows Key
     case 219: {
-        [] call togglePlayerNames;
+        call togglePlayerNames;
     };
 
     // Tilde
@@ -34,12 +33,12 @@ switch _key do {
 
     // E
 	case 18: {
-        [] call removeParachute;
+        call removeParachute;
     };
 
     // F11
     case 87: {
-        [] call toggleVehicleLock;
+        call toggleVehicleLock;
     };
 };
 

@@ -30,7 +30,7 @@ while { true } do {
 		};
 
 		if(_cleanup) then {
-			[_x] call cleanupVehicle;
+			_x call cleanupVehicle;
 
 			sleep 0.05;
 		};

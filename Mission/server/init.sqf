@@ -9,13 +9,13 @@ if(!isServer) exitWith { };
 
 private["_serverCompiledScripts", "_numberOfControllers", "_spawnInitialObjects"];
 
-[] execVM "server\admins.sqf";
-[] execVM "server\functions\serverVars.sqf";
-_serverCompiledScripts = [] execVM "server\functions\serverCompile.sqf";
-[] execVM "server\functions\broadcaster.sqf";
-[] execVM "server\functions\relations.sqf";
-[] execVM "server\functions\serverTimeSync.sqf";
-[] execVM "server\functions\antiCheatServer.sqf";
+execVM "server\admins.sqf";
+execVM "server\functions\serverVars.sqf";
+_serverCompiledScripts = execVM "server\functions\serverCompile.sqf";
+execVM "server\functions\broadcaster.sqf";
+execVM "server\functions\relations.sqf";
+execVM "server\functions\serverTimeSync.sqf";
+execVM "server\functions\antiCheatServer.sqf";
 
 waitUntil {
 	sleep 0.1;
@@ -24,7 +24,7 @@ waitUntil {
 
 diag_log format["Server Compile Finished!"];
 
-_makeBuildingsIndestructible = [] execVM "shared\makeBuildingsIndestructible.sqf";
+_makeBuildingsIndestructible = execVM "shared\makeBuildingsIndestructible.sqf";
 
 waitUntil {
 	sleep 0.1;
@@ -37,7 +37,7 @@ diag_log format["Initializing Mission Controllers..."];
 	_numberOfControllers = (missionTypes select _forEachIndex) select 0;
 
 	for "_controllerIndex" from 1 to _numberOfControllers do {
-		[missionTypes select _forEachIndex] spawn missionController;
+		(missionTypes select _forEachIndex) spawn missionController;
 	};
 } forEach missionTypes;
 
@@ -50,7 +50,7 @@ if(isDedicated) then {
 
 diag_log format["Spawning Initial Objects in Towns..."];
 
-_spawnInitialObjects = [] execVM "server\functions\spawnInitialObjects.sqf";
+_spawnInitialObjects = execVM "server\functions\spawnInitialObjects.sqf";
 
 waitUntil {
 	sleep 0.5;
@@ -62,4 +62,3 @@ diag_log format["Starting Vehicle Respawn Scripts..."];
 [] spawn respawnVehicles;
 [] spawn respawnBoats;
 [] spawn respawnHelicopters;
-

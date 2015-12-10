@@ -42,7 +42,6 @@ for "_unitType" from 1 to _numberOfUnitTypes do {
 
 	for "_unitIndex" from 1 to _numberOfUnits do {
 		_unit = [_aiGroup, [_position, _radius, true] call randomPosition, _unitType] call createAIUnit;
-		_unit addMPEventHandler["MPKilled", { [_this] call onAIKilled; } ];
 	};
 };
 

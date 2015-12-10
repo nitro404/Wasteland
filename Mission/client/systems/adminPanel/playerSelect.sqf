@@ -2,13 +2,13 @@
 //	@file Name: playerSelect.sqf
 //	@file Author: [404] Deadbeat
 //	@file Created: 20/11/2012 05:19
-//	@file Args:
+//	@file Args: int
 
 #include "dialog\playerMenuDefines.sqf"
 
 disableSerialization;
 
-private["_dialog", "_playerListBox", "_spectateButton", "_switch", "_index", "_modSelect", "_playerData", "_target", "_check", "_spectating", "_camadm", "_rnum", "_warnText", "_targetUID", "_playerName"];
+private["_dialog", "_playerListBox", "_spectateButton", "_index", "_modSelect", "_playerData", "_target", "_check", "_spectating", "_camadm", "_rnum", "_warnText", "_targetUID", "_playerName"];
 
 _uid = getPlayerUID player;
 
@@ -18,7 +18,6 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 	_spectateButton = _dialog displayCtrl playerMenuSpectateButton;
 	_warnMessage = _dialog displayCtrl playerMenuWarnMessage;
 
-	_switch = _this select 0;
 	_index = lbCurSel _playerListBox;
 	_playerData = _playerListBox lbData _index;
 
@@ -31,7 +30,7 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 
 	if(_check == 0) exitWith { };
 
-	switch(_switch) do {
+	switch(_this) do {
 		// Spectate
 		case 0: {
 			_spectating = ctrlText _spectateButton;
@@ -144,7 +143,7 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 			{
 				if(getPlayerUID _x == _targetUID) then {
 					if(!(local _x)) then {
-						[nil, _x, "loc", rSPAWN, [_x], { removeAllWeapons (_this select 0) }] call RE;
+						[nil, _x, "loc", rSPAWN, [_x], { removeAllWeapons _this }] call RE;
 					}
 					else {
 						removeAllWeapons _x;

@@ -13,9 +13,7 @@
 
 disableSerialization;
 
-private["_switch", "_display", "_townName", "_spawnButtons", "_pos", "_rad"];
-
-_switch = _this select 0;
+private["_display", "_townName", "_spawnButtons", "_pos", "_rad"];
 
 _display = uiNamespace getVariable "RespawnSelectionDialog";
 
@@ -29,7 +27,7 @@ _spawnButtons = [
 
 {
 	_name = _x select 2;
-	if(ctrlText _spawnButtons select _switch == _name) exitWith {
+	if(ctrlText _spawnButtons select _this == _name) exitWith {
 		_townName = _name;
 		_pos = getMarkerPos (_x select 0);
 		_rad = _x select 1;

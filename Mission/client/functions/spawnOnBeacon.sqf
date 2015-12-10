@@ -1,9 +1,8 @@
-
 //	@file Version: 1.0
 //	@file Name: spawnOnBeacons.sqf
 //	@file Author: [404] Costlyy
 //	@file Created: 08/12/2012 18:30
-//	@file Args: [int(0 = button 0 etc)]
+//	@file Args: int(0 = button 0 etc)
 
 #define respawn_Town_Button0 3403
 #define respawn_Town_Button1 3404
@@ -13,9 +12,7 @@
 
 disableSerialization;
 
-private ["_respawnPosition", "_switch", "_display", "_buttonZero", "_buttonOne", "_buttonTwo", "_buttonThree", "_buttonFour"];
-
-_switch = _this select 0;
+private ["_respawnPosition", "_display", "_buttonZero", "_buttonOne", "_buttonTwo", "_buttonThree", "_buttonFour"];
 
 _display = uiNamespace getVariable "RespawnSelectionDialog";
 _buttonZero = _display displayCtrl respawn_Town_Button0;
@@ -28,7 +25,7 @@ _respawnPosition = [];
 
 _buttonClicked = false;
 
-switch(_switch) do {
+switch(_this) do {
     case 0: { _buttonClicked = _buttonZero };
     case 1: { _buttonClicked = _buttonOne };
     case 2: { _buttonClicked = _buttonTwo };

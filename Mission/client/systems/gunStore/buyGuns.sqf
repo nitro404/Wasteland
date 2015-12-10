@@ -26,11 +26,6 @@ if(!(alive player)) exitWith {
 
 mutexScriptInProgress = true;
 
-private ["_name"];
-
-//Initialize Values
-_switch = _this select 0;
-
 _playerMoney = player getVariable "money";
 _size = 0;
 _price = 0;
@@ -41,7 +36,7 @@ _totalText = _dialog displayCtrl gunshop_total;
 _playerMoneyText = _Dialog displayCtrl gunshop_money;
 _size = lbSize _cartlist;
 
-switch(_switch) do
+switch(_this) do
 {
 	//Buy To Player
 	case 0:

@@ -18,7 +18,7 @@ _missionLocationData = _missionSpawnLocations call createMissionLocation;
 _missionPosition = _missionLocationData select 0;
 _missionSpawnMarkerIndex = _missionLocationData select 1;
 
-[_missionDelay] call createWaitCondition;
+_missionDelay call createWaitCondition;
 
 diag_log format["Geo Cache Mission Started (%1)", _weaponCrateList];
 
@@ -54,4 +54,4 @@ diag_log format["Geo Cache Mission Completed (%1)", _weaponCrateList];
 sleep 10;
 
 _missionSpawnLocations select _missionSpawnMarkerIndex set[1, false];
-[_missionMarkerName] call deleteClientMarker;
+_missionMarkerName call deleteClientMarker;

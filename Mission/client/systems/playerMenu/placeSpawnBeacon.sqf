@@ -90,7 +90,7 @@ for "_iteration" from 1 to _lockDuration do {
 		_announce = [nil, _placedBeacon, "per", rENABLESIMULATION, false] call RE;
 
 		_placedBeaconPos = getPos _placedBeacon;
-		_closestTown = [_placedBeaconPos] call closestTown;
+		_closestTown = _placedBeaconPos call closestTown;
 		_directionToTown = [getMarkerPos (_closestTown select 0), _placedBeaconPos] call BIS_fnc_dirTo;
 		_directionToTownStr = [_directionToTown, false] call azimuthToBearing;
 		_goingDirStr = [_playerDir, false] call azimuthToBearing;

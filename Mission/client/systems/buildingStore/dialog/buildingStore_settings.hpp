@@ -5,7 +5,7 @@ class buildingStoreDialog {
 	idd = buildingStore_DIALOG;
 	movingEnable = true;
 	enableSimulation = true;
-	onLoad = "[] execVM 'client\systems\buildingStore\populateBuildingStore.sqf'";
+	onLoad = "execVM 'client\systems\buildingStore\populateBuildingStore.sqf'";
 
 	class controlsBackground {
 
@@ -51,7 +51,7 @@ class buildingStoreDialog {
 
 		class BuyBuildingButton: w_RscButton {
 			idc = buildingStore_buy_button;
-			onButtonClick = "ctrlEnable[buildingStore_buy_button, false]; [] execVM 'client\systems\buildingStore\buyBuilding.sqf';";
+			onButtonClick = "ctrlEnable[buildingStore_buy_button, false]; execVM 'client\systems\buildingStore\buyBuilding.sqf';";
 			text = "Buy";
 			x = 0.52 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;

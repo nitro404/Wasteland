@@ -20,6 +20,7 @@ _position = _this select 1;
 _unitType = _this select 2;
 
 _unit = _aiGroup createUnit[aiClasses select (_unitType - 1), _position, [], 0.5, "Form"];
+_unit addMPEventHandler["MPKilled", { _this call onAIKilled; } ];
 
 removeAllWeapons _unit;
 removeBackpack _unit;

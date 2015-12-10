@@ -11,35 +11,34 @@
 #define GET_CTRL(a) (GET_DISPLAY displayCtrl ##a)
 #define GET_SELECTED_DATA(a) ([##a] call {_idc = _this select 0; _selection = (lbSelection GET_CTRL(_idc) select 0); if(isNil {_selection}) then {_selection = 0}; (GET_CTRL(_idc) lbData _selection)})
 
-private["_switch", "_data", "_item", "_vehicle_type", "_pos"];
+private["_data", "_item", "_vehicle_type", "_pos"];
 
 disableSerialization;
 
-_switch = _this select 0;
 _data = GET_SELECTED_DATA(item_list);
 
-switch(_switch) do {
+switch(_this) do {
 	case 0: {
 		closeDialog 0;
 
 		switch(_data) do {
 			case "fuelFull": {
-				[] call refuelVehicle;
+				call refuelVehicle;
 			};
 			case "fuelEmpty": {
 				hint "You can refuel Fuel Can at gas station through action menu";
 			};
 			case "repairkits": {
-				[] call repairVehicle;
+				call repairVehicle;
 			};
 			case "medkit": {
-               			[] call useMedicalKit;
+               			call useMedicalKit;
 			};
 			case "camonet": {
-				[] call placeCamoNet;
+				call placeCamoNet;
 			};
 			case "spawnBeacon": {
-				[] call placeSpawnBeacon;
+				call placeSpawnBeacon;
 			};
 		};
 	};

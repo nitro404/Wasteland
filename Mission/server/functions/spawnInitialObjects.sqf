@@ -2,7 +2,7 @@
 //	@file Name: spawnInitialObjects.sqf
 //	@file Author: nitro glycerine
 //	@file Created: 26/08/2015 5:21 PM
-//	@file Args: [] call spawnInitialObjects;
+//	@file Args: call spawnInitialObjects;
 
 if(!isServer) exitWith { };
 

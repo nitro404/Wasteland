@@ -5,10 +5,10 @@ class genstored {
 	idd = genstore_DIALOG;
 	movingEnable = true;
 	enableSimulation = true;
-	onLoad = "[] execVM 'client\systems\generalStore\populateGenStore.sqf'";
+	onLoad = "execVM 'client\systems\generalStore\populateGenStore.sqf'";
 
 	class controlsBackground {
-		
+
 		class MainBackground: w_RscPicture
 		{
 			idc = -1;
@@ -19,7 +19,7 @@ class genstored {
 			w = 0.837499 * safezoneW;
 			h = 0.661111 * safezoneH;
 		};
-		
+
 		class ItemSelectedPicture: w_RscPicture
 		{
 			idc = genstore_item_pic;
@@ -85,15 +85,15 @@ class genstored {
 			w = 0.0844792 * safezoneW;
 			h = 0.0448148 * safezoneH;
 		};
-		
+
 	};
-	
+
 	class controls {
-		
+
 		class SelectionList: w_RscListbox
 		{
 			idc = genstore_item_list;
-			onLBSelChanged = "[] execvm 'client\systems\generalStore\itemInfo.sqf'";
+			onLBSelChanged = "execVM 'client\systems\generalStore\itemInfo.sqf'";
 
 			x = 0.3125 * safezoneW + safezoneX;
 			y = 0.225 * safezoneH + safezoneY;
@@ -104,7 +104,7 @@ class genstored {
 		class CartList: w_RscListbox
 		{
 			idc = genstore_cart;
-			onLBSelChanged = "[] execvm 'client\systems\generalStore\itemInfo.sqf'";
+			onLBSelChanged = "execVM 'client\systems\generalStore\itemInfo.sqf'";
 
 			x = 0.690104 * safezoneW + safezoneX;
 			y = 0.225 * safezoneH + safezoneY;
@@ -113,12 +113,12 @@ class genstored {
 		};
 
 		class StoreButton0: w_RscButton
-		{	
+		{
 			idc = genstore_iteminventory;
 
 			text = "Items";
-			onButtonClick = "[] execVM 'client\systems\generalStore\populateSwitch.sqf'";
-			
+			onButtonClick = "execVM 'client\systems\generalStore\populateSwitch.sqf'";
+
 			x = 0.203125 * safezoneW + safezoneX;
 			y = 0.225 * safezoneH + safezoneY;
 			w = 0.088 * safezoneW;
@@ -126,10 +126,10 @@ class genstored {
 		};
 
 		class AddToCart : w_RscButton {
-			
+
 			text = "Add";
-			onButtonClick = "[] execVM 'client\systems\generalStore\addToCart.sqf'";
-			
+			onButtonClick = "execVM 'client\systems\generalStore\addToCart.sqf'";
+
 			x = 0.515625 * safezoneW + safezoneX;
 			y = 0.375 * safezoneH + safezoneY;
 			w = 0.065 * safezoneW;
@@ -139,7 +139,7 @@ class genstored {
 		class RemoveFromCart : w_RscButton {
 
 			text = "Remove";
-			onButtonClick = "[] execVM 'client\systems\generalStore\removeFromCart.sqf'";
+			onButtonClick = "execVM 'client\systems\generalStore\removeFromCart.sqf'";
 
 			x = 0.515625 * safezoneW + safezoneX;
 			y = 0.425 * safezoneH + safezoneY;
@@ -148,7 +148,7 @@ class genstored {
 		};
 
 		class CancelButton : w_RscButton {
-			
+
 			idc = -1;
 			text = "Cancel";
 			onButtonClick = "closeDialog 0;";
@@ -161,11 +161,11 @@ class genstored {
 		};
 
 		class SaleBuy : w_RscButton {
-			
+
 			idc = genstore_switch;
 
 			text = "Sell Items";
-			onButtonClick = "[] execVM 'client\systems\generalStore\switchMode.sqf'";
+			onButtonClick = "execVM 'client\systems\generalStore\switchMode.sqf'";
 
 			x = 0.450 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
@@ -174,11 +174,11 @@ class genstored {
 		};
 
 		class BuyToPlayer : w_RscButton {
-			
+
 			idc = genstore_buysell;
 
 			text = "Buy";
-			onButtonClick = "[0] execVM 'client\systems\generalStore\buysellSwitch.sqf'";
+			onButtonClick = "execVM 'client\systems\generalStore\buySellSwitch.sqf'";
 
 			x = 0.703125 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;

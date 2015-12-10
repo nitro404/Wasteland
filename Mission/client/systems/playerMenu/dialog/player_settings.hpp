@@ -5,7 +5,7 @@ class playerSettings {
 	idd = playersys_DIALOG;
 	movingEnable = true;
 	enableSimulation = true;
-	onLoad = "[] execVM 'client\systems\playerMenu\item_list.sqf'";
+	onLoad = "execVM 'client\systems\playerMenu\item_list.sqf'";
 
 	class controlsBackground {
 		class MainBG : w_RscPicture {
@@ -89,28 +89,28 @@ class playerSettings {
 
 		class DropButton : w_RscButton {
 			text = "Drop";
-			onButtonClick = "[1] execVM 'client\systems\playerMenu\itemfnc.sqf'";
+			onButtonClick = "1 execVM 'client\systems\playerMenu\itemfnc.sqf'";
 			x = 0.610; y = 0.54;
 			w = 0.125; h = 0.033 * safezoneH;
 		};
 
 		class UseButton : w_RscButton {
 			text = "Use";
-			onButtonClick = "[0] execVM 'client\systems\playerMenu\itemfnc.sqf'";
+			onButtonClick = "0 execVM 'client\systems\playerMenu\itemfnc.sqf'";
 			x = 0.48; y = 0.54;
 			w = 0.125; h = 0.033 * safezoneH;
 		};
 
 		class EarplugsButton : w_RscButton {
 			text = "Earplugs";
-			onButtonClick = "[] call toggleEarplugs;";
+			onButtonClick = "call toggleEarplugs;";
 			x = 0.35; y = 0.42;
 			w = 0.125; h = 0.033 * safezoneH;
 		};
 
 		class PlayerNamesButton : w_RscButton {
 			text = "Player Names";
-			onButtonClick = "[] call togglePlayerNames;";
+			onButtonClick = "call togglePlayerNames;";
 			x = 0.35; y = 0.48;
 			w = 0.125; h = 0.033 * safezoneH;
 		};
@@ -124,7 +124,7 @@ class playerSettings {
 
 		class FlipVehicleButton : w_RscButton {
 			text = "Flip Vehicle";
-			onButtonClick = "[] call flipVehicle;";
+			onButtonClick = "call flipVehicle;";
 			x = 0.35; y = 0.60;
 			w = 0.125; h = 0.033 * safezoneH;
 		};
@@ -138,7 +138,7 @@ class playerSettings {
 
 		class DropcButton : w_RscButton {
 			text = "Drop Money";
-			onButtonClick = "[] execVM 'client\systems\playerMenu\dropMoney.sqf'";
+			onButtonClick = "execVM 'client\systems\playerMenu\dropMoney.sqf'";
 			x = 0.48; y = 0.60;
 			w = 0.135; h = 0.033 * safezoneH;
 		};
@@ -154,7 +154,7 @@ class playerSettings {
 		class GroupsButton : w_RscButton {
 			idc = groupButton;
 			text = "Group Management";
-			onButtonClick = "[] execVM 'client\systems\groups\loadGroupManagement.sqf'";
+			onButtonClick = "execVM 'client\systems\groups\loadGroupManagement.sqf'";
 			x = 0.150; y = 0.68;
 			w = 0.225; h = 0.033 * safezoneH;
 		};

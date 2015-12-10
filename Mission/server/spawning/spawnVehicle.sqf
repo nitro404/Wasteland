@@ -105,7 +105,7 @@ else {
 if(_invalidArgument) exitWith { };
 
 if(isNil { _vehicleClassName }) then {
-    _vehicleClassName = [_vehicleCategory] call randomObject;
+    _vehicleClassName = _vehicleCategory call randomObject;
 };
 
 _vehicle = createVehicle [_vehicleClassName, _vehiclePosition, [], 0, "NONE"];
@@ -115,8 +115,8 @@ if(_vehicle isKindOf "Ship") then {
 else {
     _vehicle setPos[getPos _vehicle select 0, getPos _vehicle select 1, 0];
 };
-_vehicle addEventHandler["GetIn", { [_this] call enteredVehicle; } ];
-_vehicle addEventHandler["GetOut", { [_this] call exitedVehicle; } ];
+_vehicle addEventHandler["GetIn", { _this call enteredVehicle; } ];
+_vehicle addEventHandler["GetOut", { _this call exitedVehicle; } ];
 
 if(_missionVehicle) then {
     _vehicle setVariable["missionVehicle", true, true];
@@ -192,6 +192,6 @@ if(!_missionVehicle && (_vehicle isKindOf "Car" || _vehicle isKindOf "Tank")) th
 _vehicle setDir _vehicleDirection;
 _vehicle setVelocity[0, 0, 1];
 
-[_vehicle] call randomVehicleWeapons;
+_vehicle call randomVehicleWeapons;
 
 _vehicle

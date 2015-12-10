@@ -4,19 +4,17 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-private["_corpse"];
-
 playerSetupComplete = false;
 
-_corpse = (_this select 0) select 1;
 {
-	_corpse removeAction _x;
+	_this select 1 removeAction _x;
 } forEach playerActions;
 
-player call playerSetup;
+call playerSetup;
+
 waitUntil { playerSetupComplete };
 
-[] execVM "client\clientEvents\onMouseWheel.sqf";
+execVM "client\clientEvents\onMouseWheel.sqf";
 
 true spawn playerSpawn;
 
@@ -28,6 +26,6 @@ true spawn playerSpawn;
 		pDialogTeamkiller = pvar_PlayerTeamKiller;
 		pvar_PlayerTeamKiller = objNull;
 
-		[] execVM "client\functions\createTeamKillDialog.sqf";
+		execVM "client\functions\createTeamKillDialog.sqf";
 	};
 };

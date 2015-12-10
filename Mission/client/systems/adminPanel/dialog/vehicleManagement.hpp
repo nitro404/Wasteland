@@ -5,7 +5,7 @@ class VehicleManagement {
 	idd = vehicleManagementDialog;
 	movingEnable = false;
 	enableSimulation = true;
-	onLoad = "[4] execVM 'client\systems\adminPanel\populateVehicles.sqf'";
+	onLoad = "4 execVM 'client\systems\adminPanel\populateVehicles.sqf'";
 
 	class controlsBackground {
 
@@ -89,7 +89,7 @@ class VehicleManagement {
 		class vehicleListBox: w_RscListbox
 		{
 			idc = vehicleManagementListBox;
-			onLBSelChanged="[1,_this select 1] execVM ""client\systems\adminPanel\importvalues.sqf"";";
+			onLBSelChanged="[1, _this select 1] execVM ""client\systems\adminPanel\importvalues.sqf"";";
 			x = 0.335938 * safezoneW + safezoneX;
 			y = 0.337963 * safezoneH + safezoneY;
 			w = 0.32875 * safezoneW;
@@ -99,7 +99,7 @@ class VehicleManagement {
 		class civButton: w_RscButton
 		{
 			idc = vehicleManagementCivButton;
-			onButtonClick = "[0] execVM 'client\systems\adminPanel\populateVehicles.sqf'";
+			onButtonClick = "0 execVM 'client\systems\adminPanel\populateVehicles.sqf'";
 			text = "Cars/Trucks";
 			x = 0.305 * safezoneW + safezoneX;
 			y = 0.700 * safezoneH + safezoneY;
@@ -110,7 +110,7 @@ class VehicleManagement {
 		class heliButton: w_RscButton
 		{
 			idc = vehicleManagementHeliButton;
-			onButtonClick = "[1] execVM 'client\systems\adminPanel\populateVehicles.sqf'";
+			onButtonClick = "1 execVM 'client\systems\adminPanel\populateVehicles.sqf'";
 			text = "Helicopters";
 			x = 0.38 * safezoneW + safezoneX;
 			y = 0.700 * safezoneH + safezoneY;
@@ -121,7 +121,7 @@ class VehicleManagement {
 		class planeButton: w_RscButton
 		{
 			idc = vehicleManagementPlaneButton;
-			onButtonClick = "[2] execVM 'client\systems\adminPanel\populateVehicles.sqf'";
+			onButtonClick = "2 execVM 'client\systems\adminPanel\populateVehicles.sqf'";
 			text = "Planes";
 			x = 0.305 * safezoneW + safezoneX;
 			y = 0.730 * safezoneH + safezoneY;
@@ -132,7 +132,7 @@ class VehicleManagement {
 		class tankButton: w_RscButton
 		{
 			idc = vehicleManagementTankButton;
-			onButtonClick = "[3] execVM 'client\systems\adminPanel\populateVehicles.sqf'";
+			onButtonClick = "3 execVM 'client\systems\adminPanel\populateVehicles.sqf'";
 			text = "Tanks";
 			x = 0.38 * safezoneW + safezoneX;
 			y = 0.730 * safezoneH + safezoneY;
@@ -143,7 +143,7 @@ class VehicleManagement {
 		class hackedVehiclesButton: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "[4] execVM 'client\systems\adminPanel\populateVehicles.sqf'";
+			onButtonClick = "4 execVM 'client\systems\adminPanel\populateVehicles.sqf'";
 			text = "Hacked Vehicles";
 			x = 0.455 * safezoneW + safezoneX;
 			y = 0.72 * safezoneH + safezoneY;
