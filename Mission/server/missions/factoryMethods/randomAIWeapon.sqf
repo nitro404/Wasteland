@@ -4,16 +4,14 @@
 //	@file Created: 05/11/2015 9:26 AM
 //	@file Args: [unit, weaponList] call randomAIWeapon;
 
-private["_unit", "_weaponLists", "_weaponList", "_weaponClass", "_magazineArray", "_currentMagazine", "_numberOfMagazines"];
+private["_unit", "_weaponClass", "_magazineArray", "_currentMagazine", "_numberOfMagazines"];
 
 if(!isServer) exitWith { };
 
 if(count _this < 2) exitWith { };
 
 _unit = _this select 0;
-_weaponLists = _this select 1;
-_weaponList = _weaponLists select floor(random count _weaponLists);
-_weaponClass =_weaponList select floor(random count _weaponList);
+_weaponClass = ((_this select 1) call BIS_fnc_selectRandom) call BIS_fnc_selectRandom;
 
 _magazineArray = [];
 
@@ -34,7 +32,7 @@ _numberOfMagazines = floor((random 2) + 2);
 _currentMagazine = 0;
 
 while { _currentMagazine < _numberOfMagazines } do {
-	_unit addMagazine (_magazineArray select (floor (random count _magazineArray)));
+	_unit addMagazine (_magazineArray call BIS_fnc_selectRandom);
 
 	_currentMagazine = _currentMagazine + 1;
 };

@@ -12,7 +12,7 @@ private["_validMarker", "_missionSpawnMarkerIndex", "_missionSpawnMarkerInfo", "
 _validMarker = false;
 
 while { !_validMarker } do {
-	_missionSpawnMarkerIndex = floor (random count _this);
+	_missionSpawnMarkerIndex = _this call BIS_fnc_randomIndex;
 	_missionSpawnMarkerInfo = _this select _missionSpawnMarkerIndex;
 
 	if(!(_missionSpawnMarkerInfo select 1)) then {

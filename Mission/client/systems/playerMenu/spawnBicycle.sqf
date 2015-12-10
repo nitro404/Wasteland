@@ -12,9 +12,9 @@ if(!isNull bicycle) then {
 
 _spawnDir = getDir player;
 _spawnPos = player modelToWorld [0, 3, 0];
-_spawnPos set [2, 0];
+_spawnPos set[2, 0];
 
-bicycle = createVehicle [bicycleList select floor(random count bicycleList), _spawnPos, [], 0, "NONE"];
+bicycle = createVehicle [bicycleList call BIS_fnc_selectRandom, _spawnPos, [], 0, "NONE"];
 bicycle setDir _spawnDir;
 bicycle setPosATL _spawnPos;
 bicycle setVariable["owner", getPlayerUID player, true];

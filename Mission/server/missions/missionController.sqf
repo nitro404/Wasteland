@@ -19,8 +19,8 @@ _controllerDelay call createWaitCondition;
 while { true } do {
 	if(_missionFunctionType == 0) then {
 		_missionSpawnLocations = _this select 6;
-		_vehicleList = (_this select 7) select (floor (random count (_this select 7)));
-		_vehicleClass = _vehicleList select (floor (random count _vehicleList));
+		_vehicleList = (_this select 7) call BIS_fnc_selectRandom;
+		_vehicleClass = _vehicleList call BIS_fnc_selectRandom;
 		_missionRewardPicture = getText (configFile >> "cfgVehicles" >> _vehicleClass >> "picture");
 		_activeMission = [_this select 1, _vehicleClass, _missionSpawnLocations, _this select 3, _this select 4, _this select 5, missionNumber] spawn vehicleMission;
 
@@ -38,7 +38,7 @@ while { true } do {
 		_weaponCrateSpawnList = [];
 
 		while { count _weaponCrateSpawnList < _numberOfWeaponCrates } do {
-			[_weaponCrateSpawnList, _fullWeaponCrateList select (floor (random count _fullWeaponCrateList))] call BIS_fnc_arrayPush;
+			[_weaponCrateSpawnList, _fullWeaponCrateList call BIS_fnc_selectRandom] call BIS_fnc_arrayPush;
 		};
 
 		_activeMission = [_weaponCrateSpawnList, _missionSpawnLocations, _this select 3, missionNumber] spawn geoCacheMission;

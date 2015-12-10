@@ -2,20 +2,17 @@
 //	@file Name: spawnRandom.sqf
 //	@file Author: [404] Deadbeat, [404] Costlyy
 //	@file Created: 28/11/2012 05:19
-//	@file Args:
 
 waitUntil { !isNil "bis_fnc_init" };
 
-private["_townName", "_randomLoc", "_pos"];
+private["_town", "_townName"];
 
-_randomLoc = townList select(random(count townList - 1));
+_town = townList call BIS_fnc_selectRandom;
 
-_pos = getMarkerPos (_randomLoc select 0);
-_pos = [_pos, 1, (_randomLoc select 1), 1, 0, 0, 0] call BIS_fnc_findSafePos;
-_pos = [_pos select 0, _pos select 1, 0];
-player setPosATL _pos;
+_position = [getMarkerPos (_town select 0), 1, _town select 1, 1, 0, 0, 0] call BIS_fnc_findSafePos;
+player setPosATL [_position select 0, _position select 1, 0];
 
 respawnDialogActive = false;
 closeDialog 0;
 
-[_randomLoc select 2] spawn spawnInfoText;
+[_town select 2] spawn spawnInfoText;

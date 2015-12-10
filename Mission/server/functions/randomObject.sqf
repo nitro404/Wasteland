@@ -4,7 +4,7 @@
 //	@file Created: 26/08/2015 4:54 PM
 //	@file Args: category call randomObject;
 
-private["_randomNumber", "_categoryWeight", "_currentCategoryIndex", "_currentCategory", "_selectedCategoryIndex", "_selectedCollection", "_selectedList"];
+private["_randomNumber", "_categoryWeight", "_currentCategoryIndex", "_currentCategory", "_selectedCategoryIndex", "_selectedCollection"];
 
 if(typeName _this != "ARRAY") exitWith {
 	diag_log format["randomObject Arg Error: Invalid category argument - expected array, received %1.", typeName _this]
@@ -28,5 +28,5 @@ while { _currentCategoryIndex >= 0 } do {
 };
 
 _selectedCollection = (_this select _selectedCategoryIndex) select 2;
-_selectedList = _selectedCollection select floor(random count _selectedCollection);
-_selectedList select floor(random count _selectedList)
+
+(_selectedCollection call BIS_fnc_selectRandom) call BIS_fnc_selectRandom

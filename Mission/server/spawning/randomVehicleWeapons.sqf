@@ -46,7 +46,7 @@ while { _totalWeapons < _numberOfRandomWeapons } do {
 		_currentMagazine = 0;
 
 		while { _currentMagazine < _numberOfMagazines } do {
-			_this addMagazineCargoGlobal[_magazineArray select (floor (random count _magazineArray)), 1];
+			_this addMagazineCargoGlobal[_magazineArray call BIS_fnc_selectRandom, 1];
 
 			_currentMagazine = _currentMagazine + 1;
 		};
