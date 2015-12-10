@@ -63,7 +63,7 @@ if(count _magazines > 0) then {
 	{
 		if(!(_x in _removedMagazines)) then {
 			_this removeMagazines _x;
-			_removedMagazines set[count _removedMagazines, _x];
+			[_removedMagazines, _x] call BIS_fnc_arrayPush;
 		};
 	} forEach _magazines;
 
@@ -93,7 +93,7 @@ if(_turretCount > 0) then {
 		{
 			if(!(_x in _removedTurretMagazines)) then {
 				_this removeMagazines _x;
-				_removedTurretMagazines set[count _removedTurretMagazines, _x];
+				[_removedTurretMagazines, _x] call BIS_fnc_arrayPush;
 			};
 		} forEach _turretMagazines;
 
@@ -122,7 +122,7 @@ if(_turretCount > 0) then {
 				{
 					if (!(_x in _removedDriverMagazines)) then {
 						_this removeMagazines _x;
-						_removedDriverMagazines set[count _removedDriverMagazines, _x];
+						[_removedDriverMagazines, _x] call BIS_fnc_arrayPush;
 					};
 				} forEach _driverTurretMagazines;
 

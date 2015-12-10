@@ -18,7 +18,7 @@ _totalDuration = 30;
 _lockDuration = _totalDuration;
 _iteration = 0;
 _beaconOwner = name vehicle player;
-_playerSide = str(playerSide);
+_playerSide = str(side group player);
 _playerUID = getPlayerUID player;
 _activeBeacon = false;
 _playerDir = getDir player;
@@ -101,18 +101,18 @@ for "_iteration" from 1 to _lockDuration do {
 			hint "Deactivating existing active spawn beacon.";
 		};
 
-		if(_playerSide == "WEST") then {
-			pvar_beaconListBlu set [count pvar_beaconListBlu, _beaconData];
+		if(side group player == west) then {
+			[pvar_beaconListBlu, _beaconData] call BIS_fnc_arrayPush;
 			publicVariable "pvar_beaconListBlu";
 		};
 
-		if(_playerSide == "EAST") then {
-			pvar_beaconListRed set [count pvar_beaconListRed, _beaconData];
+		if(side group player == east) then {
+			[pvar_beaconListRed, _beaconData] call BIS_fnc_arrayPush;
 			publicVariable "pvar_beaconListRed";
 		};
 
-		if(_playerSide == "GUER") then {
-			pvar_beaconListIndep set [count pvar_beaconListIndep, _beaconData];
+		if(side group player == resistance) then {
+			[pvar_beaconListIndep, _beaconData] call BIS_fnc_arrayPush;
 			publicVariable "pvar_beaconListIndep";
 		};
 

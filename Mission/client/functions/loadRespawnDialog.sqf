@@ -75,8 +75,8 @@ _find_occupied_towns = {
 						_enemyCount = _enemyCount + 1;
 					}
 					else {
-						_friendlyCount = _friendlyCount + 1;
-						_playerArray set [count _playerArray, name _x];
+						_friendlyCount = _friendlyCount + 1;\
+						[_playerArray, name _x] call BIS_fnc_arrayPush;
 					};
 				}
 				else {
@@ -87,7 +87,7 @@ _find_occupied_towns = {
 		} forEach allUnits;
 
 		if(_friendlyCount > 0) then {
-			_towns set [count _towns, [_name, _playerArray, (_enemyCount > 0)]];
+			[_towns, [_name, _playerArray, (_enemyCount > 0)]] call BIS_fnc_arrayPush;
 		};
 
 	} forEach townList;
@@ -108,7 +108,7 @@ _find_beacons = {
 
 		if(playerSide == resistance) then {
 			{
-				_squadIds set [count _squadIds, (getPlayerUID _x)];
+				[_squadIds, getPlayerUID _x] call BIS_fnc_arrayPush;
 			} forEach (units group player);
 		};
 
@@ -133,7 +133,7 @@ _find_beacons = {
 		} forEach playableUnits;
 
 		if(str playerSide == _beaconSide && _ownerSide == _beaconSide && (playerSide != resistance || (_ownerId in _squadIds || getPlayerUID player == _ownerId))) then {
-			_result set [count _result, [_beacon, (_enemyCount > 0)]];
+			[_result, [_beacon, (_enemyCount > 0)]] call BIS_fnc_arrayPush;
 		};
 	} forEach _this;
 
@@ -176,10 +176,10 @@ _sort_items = {
 
 	{
 		if(_x select 2) then {
-			_blocked set [count _blocked, _x];
+			[_blocked, _x] call BIS_fnc_arrayPush;
 		}
 		else {
-			_unblocked set [count _unblocked, _x];
+			[_unblocked, _x] call BIS_fnc_arrayPush;
 		};
 	} forEach _items;
 
@@ -257,7 +257,7 @@ while { respawnDialogActive } do {
 			_town = _x select 0 select 5;
 			_blocked = _x select 1;
 
-			_result set [count _result, [_name, _town, _blocked]];
+			[_result, [_name, _town, _blocked]] call BIS_fnc_arrayPush;
 		} forEach _beacons;
 		respawnPage = [_result, 5, respawnPage] call _show_buttons;
 	};

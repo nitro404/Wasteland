@@ -61,7 +61,7 @@ if(firstSpawn) then {
 			(_result == 1)
 		};
 
-		if(playerSide in [west, east]) then {
+		if(side group player in [west, east]) then {
 			_found = false;
 
 			{
@@ -71,16 +71,16 @@ if(firstSpawn) then {
 			} forEach pvar_teamSwitchList;
 
 			if(!_found) then {
-				pvar_teamSwitchList set [count pvar_teamSwitchList, [getPlayerUID player, playerSide]];
+				[pvar_teamSwitchList, [getPlayerUID player, side group player]] call BIS_fnc_arrayPush;
 				publicVariable "pvar_teamSwitchList";
 
 				_side = "";
 
-				if(playerSide == west) then {
+				if(side group player == west) then {
 					_side = "Blufor";
 				};
 
-				if(playerSide == east) then {
+				if(side group player == east) then {
 					_side = "Opfor";
 				};
 

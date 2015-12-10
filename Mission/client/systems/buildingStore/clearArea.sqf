@@ -9,7 +9,7 @@ _objs     = [];
 	_real_distance = _pos distance _0z_pos;
 
 	if(_real_distance <= 10) then {
-		_objs set [count _objs, _x];
+		[_objs, _x] call BIS_fnc_arrayPush;
 	};
 } forEach _all_objs;
 

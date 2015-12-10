@@ -23,7 +23,7 @@ _friendlyBeacons = [];
 
 	if(str playerSide == "GUER") then {
 		{
-			_squadIds set [count _squadIds, (getPlayerUID _x)];
+			[_squadIds, getPlayerUID _x] call BIS_fnc_arrayPush;
 		} forEach (units group player);
 	};
 
@@ -35,7 +35,7 @@ _friendlyBeacons = [];
 	} forEach playableUnits;
 
 	if(str playerSide == _x select 6 && _ownerSide == _x select 6 && (str playerSide != "GUER" || (_ownerId in _squadIds || getPlayerUID player == _ownerId))) then {
-		_friendlyBeacons set [count _friendlyBeacons, _x];
+		[_friendlyBeacons, _x] call BIS_fnc_arrayPush;
 	};
 } forEach _spawnBeacons;
 
@@ -59,5 +59,5 @@ _friendlyBeacons = [];
 		_marker setMarkerColorLocal "ColorRed";
 	};
 
-	currentSpawnBeaconMarkers set [count currentSpawnBeaconMarkers, _markerName];
+	[currentSpawnBeaconMarkers, _markerName] call BIS_fnc_arrayPush;
 } forEach _friendlyBeacons;

@@ -48,7 +48,7 @@ if(_hasInvite) exitWith {
 	player globalChat "This player already has a pending invite";
 };
 
-currentInvites set [count currentInvites,[getPlayerUID player,getPlayerUID _target]];
+[currentInvites, [getPlayerUID player, getPlayerUID _target]] call BIS_fnc_arrayPush;
 publicVariableServer "currentInvites";
 
 [nil,_target,"loc", rTITLETEXT, format["You have been invited to join %1's group", name player], "PLAIN", 0] call RE;

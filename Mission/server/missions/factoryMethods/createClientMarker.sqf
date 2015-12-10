@@ -6,5 +6,5 @@
 
 if(!isServer) exitwith { };
 
-clientMissionMarkers set [count clientMissionMarkers, [_this select 0, _this select 1, _this select 2]];
+[clientMissionMarkers, [_this select 0, _this select 1, _this select 2]] call BIS_fnc_arrayPush;
 publicVariable "clientMissionMarkers";
