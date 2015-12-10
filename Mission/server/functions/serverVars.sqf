@@ -13,16 +13,16 @@ netTime = 0;
 #endif
 
 missionNumber = 1;
-pvar_teamSwitchList = [];
-publicVariable "pvar_teamSwitchList";
-pvar_teamKillList = [];
-publicVariable "pvar_teamKillList";
-pvar_beaconListBlu = [];
-publicVariable "pvar_beaconListBlu";
-pvar_beaconListRed = [];
-publicVariable "pvar_beaconListRed";
-pvar_beaconListIndep = [];
-publicVariable "pvar_beaconListIndep";
+teamSwitchList = [];
+publicVariable "teamSwitchList";
+teamKillList = [];
+publicVariable "teamKillList";
+spawnBeaconsBluFor = [];
+publicVariable "spawnBeaconsBluFor";
+spawnBeaconsOpFor = [];
+publicVariable "spawnBeaconsOpFor";
+spawnBeaconsIndependent = [];
+publicVariable "spawnBeaconsIndependent";
 clientMissionMarkers = [];
 publicVariable "clientMissionMarkers";
 currentDate = [];

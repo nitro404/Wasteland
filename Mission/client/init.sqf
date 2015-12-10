@@ -53,10 +53,10 @@ waitUntil { !(isNull (findDisplay 46)) };
 
 "currentDate" addPublicVariableEventHandler { call timeSync; };
 "clientMissionMarkers" addPublicVariableEventHandler { call updateMissionsMarkers; };
-"pvar_beaconListBlu" addPublicVariableEventHandler { call updateSpawnBeaconMarkers; };
-"pvar_beaconListRed" addPublicVariableEventHandler { call updateSpawnBeaconMarkers; };
-"pvar_beaconListIndep" addPublicVariableEventHandler { call updateSpawnBeaconMarkers; };
-"pvar_teamKillList" addPublicVariableEventHandler { call updateTeamKiller; };
+"spawnBeaconsBluFor" addPublicVariableEventHandler { call updateSpawnBeaconMarkers; };
+"spawnBeaconsOpFor" addPublicVariableEventHandler { call updateSpawnBeaconMarkers; };
+"spawnBeaconsIndependent" addPublicVariableEventHandler { call updateSpawnBeaconMarkers; };
+"teamKillList" addPublicVariableEventHandler { call updateTeamKiller; };
 "publicVar_teamkillMessage" addPublicVariableEventHandler { if(local(_this select 1)) then { [] spawn teamkillMessage; }; };
 
 execVM "client\systems\hud\playerHud.sqf";

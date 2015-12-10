@@ -68,11 +68,11 @@ if(firstSpawn) then {
 				if(_x select 0 == getPlayerUID player) then {
 					_found = true;
 				};
-			} forEach pvar_teamSwitchList;
+			} forEach teamSwitchList;
 
 			if(!_found) then {
-				[pvar_teamSwitchList, [getPlayerUID player, side group player]] call BIS_fnc_arrayPush;
-				publicVariable "pvar_teamSwitchList";
+				[teamSwitchList, [getPlayerUID player, side group player]] call BIS_fnc_arrayPush;
+				publicVariable "teamSwitchList";
 
 				_side = "";
 

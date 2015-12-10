@@ -244,9 +244,9 @@ while { respawnDialogActive } do {
 		_beacon_array = nil;
 		_players_array = nil;
 		switch (playerSide) do {
-			case west: { _beacon_array = pvar_beaconListBlu; };
-			case east: { _beacon_array = pvar_beaconListRed; };
-			case resistance: { _beacon_array = pvar_beaconListIndep; };
+			case west: { _beacon_array = spawnBeaconsBluFor; };
+			case east: { _beacon_array = spawnBeaconsOpFor; };
+			case resistance: { _beacon_array = spawnBeaconsIndependent; };
 		};
 
 		_beacons = _beacon_array call _find_beacons;

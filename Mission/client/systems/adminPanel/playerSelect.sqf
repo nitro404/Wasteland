@@ -93,18 +93,18 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 			_targetUID = getPlayerUID _target;
 			{
 				if(_x select 0 == _targetUID) then {
-					pvar_teamSwitchList = [pvar_teamSwitchList, _forEachIndex] call BIS_fnc_removeIndex;
-					publicVariableServer "pvar_teamSwitchList";
+					teamSwitchList = [teamSwitchList, _forEachIndex] call BIS_fnc_removeIndex;
+					publicVariableServer "teamSwitchList";
 
 					_target setVehicleInit format["if (name player == ""%1"") then { firstSpawn = true; };", name _target];
 					processInitCommands;
 					clearVehicleInit _target;
 
-					player setVehicleInit format["if isServer then { publicVariable 'pvar_teamSwitchList'; };"];
+					player setVehicleInit format["if isServer then { publicVariable 'teamSwitchList'; };"];
 					processInitCommands;
 					clearVehicleInit player;
 				};
-			} forEach pvar_teamSwitchList;
+			} forEach teamSwitchList;
 		};
 
 		// Unlock Team Killer
@@ -113,14 +113,14 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 
 			{
 				if(_x select 0 == _targetUID) then {
-					pvar_teamKillList = [pvar_teamKillList, _forEachIndex] call BIS_fnc_removeIndex;
-					publicVariableServer "pvar_teamKillList";
+					teamKillList = [teamKillList, _forEachIndex] call BIS_fnc_removeIndex;
+					publicVariableServer "teamKillList";
 
-					player setVehicleInit format["if isServer then {publicVariable 'pvar_teamKillList';};"];
+					player setVehicleInit format["if isServer then {publicVariable 'teamKillList';};"];
 					processInitCommands;
 					clearVehicleInit player;
 				};
-			} forEach pvar_teamKillList;
+			} forEach teamKillList;
 	    	};
 
 		// Remove All Money

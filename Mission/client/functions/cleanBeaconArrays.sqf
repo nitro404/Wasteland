@@ -13,31 +13,31 @@ _result = false;
 if(_playerSide == "WEST") then {
 	{
 		if(str(_playerUID) == str(_x select 3)) then {
-			pvar_beaconListBlu = [pvar_beaconListBlu, _forEachIndex] call BIS_fnc_removeIndex;
-			publicVariable "pvar_beaconListBlu";
+			spawnBeaconsBluFor = [spawnBeaconsBluFor, _forEachIndex] call BIS_fnc_removeIndex;
+			publicVariable "spawnBeaconsBluFor";
 			_result = true;
 		};
-	} forEach pvar_beaconListBlu;
+	} forEach spawnBeaconsBluFor;
 };
 
 if(_playerSide == "EAST") then {
 	{
 		if(str(_playerUID) == str(_x select 3)) then {
-			pvar_beaconListRed = [pvar_beaconListRed, _forEachIndex] call BIS_fnc_removeIndex;
-			publicVariable "pvar_beaconListRed";
+			spawnBeaconsOpFor = [spawnBeaconsOpFor, _forEachIndex] call BIS_fnc_removeIndex;
+			publicVariable "spawnBeaconsOpFor";
 			_result = true;
 		};
-	} forEach pvar_beaconListRed;
+	} forEach spawnBeaconsOpFor;
 };
 
 if(_playerSide == "GUER") then {
 	{
 		if(str(_playerUID) == str(_x select 3)) then {
-			pvar_beaconListIndep = [pvar_beaconListIndep, _forEachIndex] call BIS_fnc_removeIndex;
-			publicVariable "pvar_beaconListIndep";
+			spawnBeaconsIndependent = [spawnBeaconsIndependent, _forEachIndex] call BIS_fnc_removeIndex;
+			publicVariable "spawnBeaconsIndependent";
 			_result = true;
 		};
-	} forEach pvar_beaconListIndep;
+	} forEach spawnBeaconsIndependent;
 };
 
 _result

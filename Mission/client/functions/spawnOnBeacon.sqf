@@ -35,9 +35,9 @@ switch(_this) do {
 
 _spawnBeacons = nil;
 switch (playerSide) do {
-	case west: { _spawnBeacons = pvar_beaconListBlu; };
-	case east: { _spawnBeacons = pvar_beaconListRed; };
-	case resistance: { _spawnBeacons = pvar_beaconListIndep; };
+	case west: { _spawnBeacons = spawnBeaconsBluFor; };
+	case east: { _spawnBeacons = spawnBeaconsOpFor; };
+	case resistance: { _spawnBeacons = spawnBeaconsIndependent; };
 };
 
 _beacon = nil;

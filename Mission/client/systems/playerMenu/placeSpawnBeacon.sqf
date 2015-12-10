@@ -102,18 +102,18 @@ for "_iteration" from 1 to _lockDuration do {
 		};
 
 		if(side group player == west) then {
-			[pvar_beaconListBlu, _beaconData] call BIS_fnc_arrayPush;
-			publicVariable "pvar_beaconListBlu";
+			[spawnBeaconsBluFor, _beaconData] call BIS_fnc_arrayPush;
+			publicVariable "spawnBeaconsBluFor";
 		};
 
 		if(side group player == east) then {
-			[pvar_beaconListRed, _beaconData] call BIS_fnc_arrayPush;
-			publicVariable "pvar_beaconListRed";
+			[spawnBeaconsOpFor, _beaconData] call BIS_fnc_arrayPush;
+			publicVariable "spawnBeaconsOpFor";
 		};
 
 		if(side group player == resistance) then {
-			[pvar_beaconListIndep, _beaconData] call BIS_fnc_arrayPush;
-			publicVariable "pvar_beaconListIndep";
+			[spawnBeaconsIndependent, _beaconData] call BIS_fnc_arrayPush;
+			publicVariable "spawnBeaconsIndependent";
 		};
 
 		mutexScriptInProgress = false;

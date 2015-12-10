@@ -21,8 +21,8 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 
 	{
         _uid = getPlayerUID _x;
-        {if((_x select 0) == _uid) then {_punishCount = (_x select 1);};}forEach pvar_teamKillList;
-        {if((_x select 0) == _uid) then {if(_x select 1 == WEST) then {_lockedSide = "Blufor";};if(_x select 1 == EAST) then {_lockedSide = "Opfor";};};}forEach pvar_teamSwitchList;
+        {if((_x select 0) == _uid) then {_punishCount = (_x select 1);};}forEach teamKillList;
+        {if((_x select 0) == _uid) then {if(_x select 1 == WEST) then {_lockedSide = "Blufor";};if(_x select 1 == EAST) then {_lockedSide = "Opfor";};};}forEach teamSwitchList;
         if(side _x == west) then {_side = "Blufor";};
         if(side _x == east) then {_side = "Opfor";};
         if(side _x == resistance) then {_side = "Indep";};

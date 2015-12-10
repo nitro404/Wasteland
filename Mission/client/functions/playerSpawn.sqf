@@ -18,7 +18,7 @@ if(!((_playerUID in moderators) || (_playerUID in administrators) || (_playerUID
 				_side = str(_x select 1);
 			};
 		};
-	} forEach pvar_teamSwitchList;
+	} forEach teamSwitchList;
 
 	if(_kickTeamSwitcher) exitWith {
 		titleText ["", "BLACK IN", 0];
@@ -40,7 +40,7 @@ if(!((_playerUID in moderators) || (_playerUID in administrators) || (_playerUID
 			};
 		};
 	};
-} forEach pvar_teamKillList;
+} forEach teamKillList;
 
 if(_kickTeamKiller) exitWith {
 	titleText ["", "BLACK IN", 0];

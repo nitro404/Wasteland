@@ -12,16 +12,16 @@ if(!isPlayer pDialogTeamkiller) exitWith { };
 if(_this) then {
 	_uid = getPlayerUID pDialogTeamkiller;
 	_added = false;
-	for "_i" from 0 to (count pvar_teamKillList - 1) do {
-		if((pvar_teamKillList select _i select 0) == _uid) then {
-			pvar_teamKillList set [_i, [_uid, (pvar_teamKillList select _i select 1) + 1]];
+	for "_i" from 0 to (count teamKillList - 1) do {
+		if((teamKillList select _i select 0) == _uid) then {
+			teamKillList set [_i, [_uid, (teamKillList select _i select 1) + 1]];
 			_added = true;
 		};
 	};
 
 	if(!_added) then {
-		[pvar_teamKillList, [_uid, 1]] call BIS_fnc_arrayPush;
+		[teamKillList, [_uid, 1]] call BIS_fnc_arrayPush;
 		_added = true;
 	};
-	publicVariable "pvar_teamKillList";
+	publicVariable "teamKillList";
 }

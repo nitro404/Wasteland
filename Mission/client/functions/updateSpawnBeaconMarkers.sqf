@@ -8,9 +8,9 @@ currentSpawnBeaconMarkers = [];
 _spawnBeacons = nil;
 
 switch (str playerSide) do {
-	case "WEST": { _spawnBeacons = pvar_beaconListBlu; };
-	case "EAST": { _spawnBeacons = pvar_beaconListRed; };
-	case "GUER": { _spawnBeacons = pvar_beaconListIndep; };
+	case "WEST": { _spawnBeacons = spawnBeaconsBluFor; };
+	case "EAST": { _spawnBeacons = spawnBeaconsOpFor; };
+	case "GUER": { _spawnBeacons = spawnBeaconsIndependent; };
 };
 
 if(isNil "_spawnBeacons") exitWith { };

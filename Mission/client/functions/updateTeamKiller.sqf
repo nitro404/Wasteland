@@ -19,5 +19,5 @@ if(side group player == east || side group player == west) then {
 				};
 			};
 		};
-	} forEach pvar_teamKillList;
+	} forEach teamKillList;
 };
