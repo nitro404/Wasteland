@@ -11,8 +11,7 @@ _groupExists = false;
 {
 	if(getPlayerUID player == _x select 1) then {
     	_inviterUID = _x select 0;
-        currentInvites set [_forEachIndex, objNull];
-        currentInvites = currentInvites - [objNull];
+        currentInvites = [currentInvites, _forEachIndex] call BIS_fnc_removeIndex;
         publicVariableServer "currentInvites";
 	};
 } forEach currentInvites;

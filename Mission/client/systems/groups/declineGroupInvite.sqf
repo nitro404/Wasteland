@@ -7,9 +7,8 @@
 
 {
 	if(getPlayerUID player == _x select 1) then {
-	        currentInvites set [_forEachIndex, objNull];
-	        currentInvites = currentInvites - [objNull];
-	        publicVariableServer "currentInvites";
+		currentInvites = [currentInvites, _forEachIndex] call BIS_fnc_removeIndex;
+		publicVariableServer "currentInvites";
 	};
 } forEach currentInvites;
 

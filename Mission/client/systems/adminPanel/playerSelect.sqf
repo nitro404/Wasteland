@@ -93,8 +93,7 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 			_targetUID = getPlayerUID _target;
 			{
 				if(_x select 0 == _targetUID) then {
-					pvar_teamSwitchList set [_forEachIndex, objNull];
-					pvar_teamSwitchList = pvar_teamSwitchList - [objNull];
+					pvar_teamSwitchList = [pvar_teamSwitchList, _forEachIndex] call BIS_fnc_removeIndex;
 					publicVariableServer "pvar_teamSwitchList";
 
 					_target setVehicleInit format["if (name player == ""%1"") then { firstSpawn = true; };", name _target];
@@ -114,8 +113,7 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 
 			{
 				if(_x select 0 == _targetUID) then {
-					pvar_teamKillList set [_forEachIndex, objNull];
-					pvar_teamKillList = pvar_teamKillList - [objNull];
+					pvar_teamKillList = [pvar_teamKillList, _forEachIndex] call BIS_fnc_removeIndex;
 					publicVariableServer "pvar_teamKillList";
 
 					player setVehicleInit format["if isServer then {publicVariable 'pvar_teamKillList';};"];

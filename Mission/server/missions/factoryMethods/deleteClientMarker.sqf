@@ -8,8 +8,7 @@ if(!isServer) exitWith { };
 
 {
 	if(_x select 0 == _this) then {
-		clientMissionMarkers set [_forEachIndex, objNull];
-		clientMissionMarkers = clientMissionMarkers - [objNull];
+		clientMissionMarkers = [clientMissionMarkers, _forEachIndex] call BIS_fnc_removeIndex;
 		publicVariable "clientMissionMarkers";
 	};
 } forEach clientMissionMarkers;
