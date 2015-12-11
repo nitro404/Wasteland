@@ -14,9 +14,9 @@ closeDialog 0;
 if(!local _player) exitwith { };
 
 if((_player != _killer) && (vehicle _player != vehicle _killer) && (playerSide == side _killer) && (str(playerSide) in ["WEST", "EAST"])) then {
-	pvar_PlayerTeamKiller = objNull;
+	playerTeamKiller = objNull;
 	if(_killer isKindOf "CAManBase") then {
-		pvar_PlayerTeamKiller = _killer;
+		playerTeamKiller = _killer;
 	}
 	else {
 		_veh = (_killer);
@@ -48,27 +48,27 @@ if((_player != _killer) && (vehicle _player != vehicle _killer) && (playerSide =
 		} forEach _paths;
 
 		if(count _suspects == 1) then {
-			pvar_PlayerTeamKiller = _suspects select 0;
+			playerTeamKiller = _suspects select 0;
 		};
 	};
 };
 
-if(isNull(pvar_PlayerTeamKiller) && (_player == _killer)) then {
+if(isNull(playerTeamKiller) && (_player == _killer)) then {
 	_vehiclesNear = _player nearEntities ["LandVehicle", 20];
 	if(count _vehiclesNear > 0) then {
 		_vehicle = _vehiclesNear select 0;
 		_driver = driver _vehicle;
 		if((side group _driver) != resistance) then {
 			if(speed _vehicle > 0 && !isNull _driver && {isPlayer _driver} && {side group _driver == side group _player}) then {
-				pvar_playerTeamKiller = _driver;
+				playerTeamKiller = _driver;
 			};
 		};
 	};
 };
 
-if(!isNull(pvar_PlayerTeamKiller)) then {
-	publicVar_teamkillMessage = pvar_PlayerTeamKiller;
-	publicVariable "publicVar_teamkillMessage";
+if(!isNull(playerTeamKiller)) then {
+	teamkillMessage = playerTeamKiller;
+	publicVariable "teamkillMessage";
 };
 
 if((_player getVariable "medkits") > 0) then {

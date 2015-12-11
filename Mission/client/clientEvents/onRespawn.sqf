@@ -22,9 +22,9 @@ true spawn playerSpawn;
 	waitUntil { respawnDialogActive };
 	waitUntil { sleep 0.1; !respawnDialogActive };
 
-	if(!isNull pvar_PlayerTeamKiller) then {
-		pDialogTeamkiller = pvar_PlayerTeamKiller;
-		pvar_PlayerTeamKiller = objNull;
+	if(!isNull playerTeamKiller) then {
+		pDialogTeamkiller = playerTeamKiller;
+		playerTeamKiller = objNull;
 
 		execVM "client\functions\createTeamKillDialog.sqf";
 	};

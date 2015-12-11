@@ -14,7 +14,7 @@ titleText ["Loading...", "BLACK OUT", 0];
 mutexScriptInProgress = false;
 respawnDialogActive = false;
 groupManagmentActive = false;
-pvar_PlayerTeamKiller = objNull;
+playerTeamKiller = objNull;
 doCancelAction = false;
 currentMissionMarkers = [];
 currentSpawnBeaconMarkers = [];
@@ -57,7 +57,7 @@ waitUntil { !(isNull (findDisplay 46)) };
 "spawnBeaconsOpFor" addPublicVariableEventHandler { call updateSpawnBeaconMarkers; };
 "spawnBeaconsIndependent" addPublicVariableEventHandler { call updateSpawnBeaconMarkers; };
 "teamKillList" addPublicVariableEventHandler { call updateTeamKiller; };
-"publicVar_teamkillMessage" addPublicVariableEventHandler { if(local(_this select 1)) then { [] spawn teamkillMessage; }; };
+"teamkillMessage" addPublicVariableEventHandler { if(local(_this select 1)) then { [] spawn showTeamkillMessage; }; };
 
 execVM "client\systems\hud\playerHud.sqf";
 

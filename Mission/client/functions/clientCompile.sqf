@@ -40,7 +40,7 @@ updateTeamKiller = compile preprocessFileLineNumbers "client\functions\updateTea
 
 // Team-Kill System
 teamkillAction = compile preprocessFileLineNumbers "client\functions\doTeamKillAction.sqf";
-teamkillMessage = compile preprocessFileLineNumbers "client\functions\showTeamKillMessage.sqf";
+showTeamkillMessage = compile preprocessFileLineNumbers "client\functions\showTeamKillMessage.sqf";
 
 // Markers
 createMarkers = compile preprocessFileLineNumbers "client\functions\createMarkers.sqf";
