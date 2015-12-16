@@ -107,7 +107,7 @@ playerActions = [
 
 	player addAction["Unlock Vehicle", "client\actions\unlockVehicle.sqf", [], 0, false, false, "", 'alive cursorTarget && count crew cursorTarget == 0 && locked cursorTarget'],
 
-	player addAction["Pack Bicycle", "client\actions\packBicycle.sqf", [], 0, false, false, "", 'cursorTarget isKindOf "Bicycle"'];
+	player addAction["Pack Bicycle", "client\actions\packBicycle.sqf", [], 0, false, false, "", 'cursorTarget isKindOf "Bicycle"'],
 
 	player addAction["<t color=""#FFFFFF"">Cancel Action</t>", "noscript.sqf", 'doCancelAction = true;', 7, false, false, "", 'mutexScriptInProgress'],
 
