@@ -7,10 +7,16 @@ currentSpawnBeaconMarkers = [];
 
 _spawnBeacons = nil;
 
-switch (str playerSide) do {
-	case "WEST": { _spawnBeacons = spawnBeaconsBluFor; };
-	case "EAST": { _spawnBeacons = spawnBeaconsOpFor; };
-	case "GUER": { _spawnBeacons = spawnBeaconsIndependent; };
+if(side group player == resistance) then {
+	_spawnBeacons = spawnBeaconsIndependent;
+};
+
+if(side group player == west) then {
+	_spawnBeacons = spawnBeaconsBluFor;
+};
+
+if(side group player == east) then {
+	_spawnBeacons = spawnBeaconsOpFor;
 };
 
 if(isNil "_spawnBeacons") exitWith { };
@@ -21,7 +27,7 @@ _friendlyBeacons = [];
 	_ownerId = _x select 3;
 	_squadIds = [];
 
-	if(str playerSide == "GUER") then {
+	if(side group player == resistance) then {
 		{
 			[_squadIds, getPlayerUID _x] call BIS_fnc_arrayPush;
 		} forEach (units group player);
@@ -30,11 +36,11 @@ _friendlyBeacons = [];
 	_ownerSide = "";
 	{
 		if(getPlayerUID _x == _ownerId) exitWith {
-			_ownerSide = str side _x;
+			_ownerSide = str side group _x;
 		};
 	} forEach playableUnits;
 
-	if(str playerSide == _x select 6 && _ownerSide == _x select 6 && (str playerSide != "GUER" || (_ownerId in _squadIds || getPlayerUID player == _ownerId))) then {
+	if(str side group player == _x select 6 && _ownerSide == _x select 6 && (side group player != resistance || (_ownerId in _squadIds || getPlayerUID player == _ownerId))) then {
 		[_friendlyBeacons, _x] call BIS_fnc_arrayPush;
 	};
 } forEach _spawnBeacons;
@@ -47,15 +53,15 @@ _friendlyBeacons = [];
 	_marker setMarkerSizeLocal [1.25, 1.25];
 	_marker setMarkerTextLocal (format["%1 Spawn Beacon", _x select 0]);
 
-	if(str playerSide == "GUER") then {
+	if(side group player == resistance) then {
 		_marker setMarkerColorLocal "ColorGreen";
 	};
 
-	if(str playerSide == "WEST") then {
+	if(side group player == west) then {
 		_marker setMarkerColorLocal "ColorBlue";
 	};
 
-	if(str playerSide == "EAST") then {
+	if(side group player == east) then {
 		_marker setMarkerColorLocal "ColorRed";
 	};
 
