@@ -77,7 +77,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=143;
+		items=144;
 		class Item0
 		{
 			side="WEST";
@@ -2817,10 +2817,29 @@ class Mission
 				};
 			};
 		};
+		class Item143
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={7538.356,214.24684,5103.3223};
+					id=223;
+					side="LOGIC";
+					vehicle="TK_CIV_Takistani04_EP1";
+					leader=1;
+					skill=0.60000002;
+					text="generalStore7";
+					init="this allowDamage false; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""client\systems\generalStore\loadGenStore.sqf""]; this attachTo[fp23,[0,1,0]]; removeAllWeapons this;";
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
-		items=82;
+		items=83;
 		class Item0
 		{
 			position[]={8343.0654,26.779518,3340.9795};
@@ -3718,6 +3737,19 @@ class Mission
 			vehicle="MASH";
 			skill=0.60000002;
 			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
+		};
+		class Item82
+		{
+			position[]={7539.5195,214.24812,5101.5923};
+			azimut=-53.868099;
+			special="NONE";
+			id=222;
+			side="EMPTY";
+			vehicle="Land_Campfire_burning";
+			leader=1;
+			skill=0.60000002;
+			text="fp23";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this setVectorUp [0,-0.1,1];";
 		};
 	};
 	class Markers
