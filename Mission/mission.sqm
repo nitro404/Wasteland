@@ -5138,7 +5138,7 @@ class Mission
 		};
 		class Item195
 		{
-			position[]={13368.001,6,5447.4204};
+			position[]={13332.94,5.9972544,5444.166};
 			name="Town_47";
 			text="Three Valleys";
 			type="x_art";
