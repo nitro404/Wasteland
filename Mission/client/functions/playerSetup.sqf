@@ -112,6 +112,4 @@ playerActions = [
 	player addAction["<t color='#BE6300'>Player Menu</t>", "client\systems\playerMenu\init.sqf", [], -10, false, true, "", "alive player"]
 ];
 
-player groupChat format["Player Initialization Complete"];
-
 playerSetupComplete = true;

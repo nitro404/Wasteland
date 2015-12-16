@@ -70,5 +70,3 @@ removeParachute = compile preprocessFileLineNumbers "client\functions\removePara
 closestTown = compile preprocessFile "client\functions\closestTown.sqf";
 azimuthToBearing = compile preprocessFile "client\functions\azimuthToBearing.sqf";
 spawnInfoText = compile preprocessFileLineNumbers "client\functions\spawnInfoText.sqf";
-
-player groupChat "Client Compile Complete";
