@@ -47,8 +47,8 @@ if(isNil { _objectClassName }) then {
 };
 
 _object = createVehicle [_objectClassName, _objectPosition, [], 0, "NONE"];
-_object setPosATL[getPosATL _object select 0, getPosATL _object select 1, 0];
 _object setDir _objectDirection;
 _object setVelocity[0, 0, 1];
+_object setPosATL[getPosATL _object select 0, getPosATL _object select 1, 0];
 
 _object
