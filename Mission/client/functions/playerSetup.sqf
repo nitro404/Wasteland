@@ -99,15 +99,17 @@ playerActions = [
 
 	player addAction["Pickup Money", "client\actions\pickupMoney.sqf", [], 1, false, false, "", 'count nearestObjects [player, ["EvMoney"],  5] > 0'],
 
-	player addAction[("<t color=""#E01B1B"">Destroy Spawn Beacon</t>"), "client\actions\pickupBeacon.sqf", 1, 1, false, false, "", 'cursorTarget isKindOf "Satelit" && player distance cursorTarget <= 5 && (cursorTarget getVariable "owner" == getPlayerUID player || str(playerSide) == "GUER" || str(playerSide) != cursorTarget getVariable "faction") && cursorTarget getVariable "faction" != "WORLD"'],
+	player addAction["<t color=""#E01B1B"">Destroy Spawn Beacon</t>", "client\actions\pickupBeacon.sqf", 1, 1, false, false, "", 'cursorTarget isKindOf "Satelit" && player distance cursorTarget <= 5 && (cursorTarget getVariable "owner" == getPlayerUID player || str(playerSide) == "GUER" || str(playerSide) != cursorTarget getVariable "faction") && cursorTarget getVariable "faction" != "WORLD"'],
 
-	player addAction[("<t color=""#21DE31"">Repack Spawn Beacon</t>"), "client\actions\pickupBeacon.sqf", 0, 1, false, false, "", 'cursorTarget isKindOf "Satelit" && player distance cursorTarget <= 5 && (cursorTarget getVariable "owner" == getPlayerUID player || str(playerSide) == "GUER" || str(playerSide) != cursorTarget getVariable "faction") && cursorTarget getVariable "faction" != "WORLD"'],
+	player addAction["<t color=""#21DE31"">Repack Spawn Beacon</t>", "client\actions\pickupBeacon.sqf", 0, 1, false, false, "", 'cursorTarget isKindOf "Satelit" && player distance cursorTarget <= 5 && (cursorTarget getVariable "owner" == getPlayerUID player || str(playerSide) == "GUER" || str(playerSide) != cursorTarget getVariable "faction") && cursorTarget getVariable "faction" != "WORLD"'],
 
 	player addAction["Pickup Camo Net", "client\actions\pickupcamonet.sqf", [], 1, false, false, "", 'if(player getVariable "camonet" > 0) exitWith { false }; count nearestObjects [player, ["Land_CamoNet_NATO"], 5] > 0'],
 
 	player addAction["Unlock Vehicle", "client\actions\unlockVehicle.sqf", [], 0, false, false, "", 'alive cursorTarget && count crew cursorTarget == 0 && locked cursorTarget'],
 
-	player addAction[("<t color=""#FFFFFF"">Cancel Action</t>"), "noscript.sqf", 'doCancelAction = true;', 7, false, false, "", 'mutexScriptInProgress'],
+	player addAction["Pack Bicycle", "client\actions\packBicycle.sqf", [], 0, false, false, "", 'cursorTarget isKindOf "Bicycle"'];
+
+	player addAction["<t color=""#FFFFFF"">Cancel Action</t>", "noscript.sqf", 'doCancelAction = true;', 7, false, false, "", 'mutexScriptInProgress'],
 
 	player addAction["<t color='#BE6300'>Player Menu</t>", "client\systems\playerMenu\init.sqf", [], -10, false, true, "", "alive player"]
 ];

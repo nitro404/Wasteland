@@ -116,7 +116,7 @@ class playerSettings {
 		};
 
 		class SpawnBicyleButton : w_RscButton {
-			text = "Spawn Bicycle";
+			text = "Deploy Bicycle";
 			onButtonClick = "[] spawn spawnBicycle;";
 			x = 0.35; y = 0.54;
 			w = 0.125; h = 0.033 * safezoneH;
