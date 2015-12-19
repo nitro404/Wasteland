@@ -23,8 +23,6 @@ spawnBeaconsOpFor = [];
 publicVariable "spawnBeaconsOpFor";
 spawnBeaconsIndependent = [];
 publicVariable "spawnBeaconsIndependent";
-clientMissionMarkers = [];
-publicVariable "clientMissionMarkers";
 currentDate = [];
 publicVariable "currentDate";
 currentInvites = [];

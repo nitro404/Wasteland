@@ -6,7 +6,7 @@
 
 if(!isServer) exitWith { };
 
-private["_missionType", "_missionSpawnLocations", "_vehicleClass", "_missionDelay", "_missionTimeout", "_missionNumber", "_missionResult", "_vehicleName", "_vehiclePicture", "_missionMarkerName", "_startTime", "_currTime", "_missionLocationData", "_missionPosition", "_missionSpawnMarkerIndex", "_missionGroup", "_vehicle", "_unitsAlive"];
+private["_missionType", "_missionSpawnLocations", "_vehicleClass", "_missionDelay", "_missionTimeout", "_missionNumber", "_missionResult", "_vehicleName", "_vehiclePicture", "_missionMarkerName", "_missionMarker", "_missionAIMarkerName", "_missionAIMarker", "_startTime", "_currTime", "_missionLocationData", "_missionPosition", "_missionSpawnMarkerIndex", "_missionGroup", "_totalNumberOfAI", "_vehicle", "_unitsAlive"];
 
 _missionType = _this select 0;
 _vehicleClass = _this select 1;
@@ -19,6 +19,7 @@ _missionResult = 0;
 _vehicleName = getText (configFile >> "cfgVehicles" >> _vehicleClass >> "displayName");
 _vehiclePicture = getText (configFile >> "cfgVehicles" >> _vehicleClass >> "picture");
 _missionMarkerName = format["ActiveMission_%1", _missionNumber];
+_missionMarkerText = format["%1 Mission", _vehicleName];
 
 _missionLocationData = _missionSpawnLocations call createMissionLocation;
 _missionPosition = _missionLocationData select 0;
@@ -34,13 +35,27 @@ _startTime = floor(time);
 
 diag_log format["%1 Started (%2)", _missionType, _vehicleName];
 
-[_missionMarkerName, _missionPosition, format["%1 Mission", _vehicleName]] call createClientMarker;
-
 [nil, nil, rHINT, parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>%1</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A <t color='%4'>%3</t> has been immobilized; go get it for your team!</t>", _missionType, _vehiclePicture, _vehicleName, "#52bf90", "#FFFFFF"]] call RE;
 
 _missionGroup = [_missionPosition, 25, _aiCount] call createAIGroup;
 
 [_missionGroup, _missionPosition] spawn defendArea;
+
+_totalNumberOfAI = count units _missionGroup;
+
+_missionMarker = createMarker [_missionMarkerName, _missionPosition];
+_missionMarker setMarkerType "mil_destroy";
+_missionMarker setMarkerSize [1.25, 1.25];
+_missionMarker setMarkerColor "ColorRed";
+_missionMarker setMarkerText _missionMarkerText;
+
+_missionAIMarkerName = format ["%1_AI", _missionMarkerName];
+_missionAIMarker = createMarker [_missionAIMarkerName, [_missionPosition select 0, (_missionPosition select 1) - 100]];
+_missionAIMarker setMarkerShape "ICON";
+_missionAIMarker setMarkerColor "ColorRed";
+_missionAIMarker setMarkerSize [1, 1];
+_missionAIMarker setMarkerType "dot";
+_missionAIMarker setMarkerText format ["%1 of %1 AI", _totalNumberOfAI];
 
 waitUntil {
     sleep 3;
@@ -55,9 +70,12 @@ waitUntil {
         _missionResult = 1;
     };
 
-    _unitsAlive = ({alive _x} count units _missionGroup);
+    _unitsAlive = {alive _x} count units _missionGroup;
 
-    (_missionResult == 1) OR (_unitsAlive < 1)
+    _missionMarker setMarkerColor markerColor _missionMarker;
+    _missionAIMarker setMarkerText format ["%1 of %2 AI", _unitsAlive, _totalNumberOfAI];
+
+    _missionResult == 1 || _unitsAlive < 1
 };
 
 if(_missionResult == 1) then {
@@ -77,12 +95,17 @@ else {
 
     diag_log format["%1 Completed (%2)", _missionType, _vehicleName];
 
+    _missionMarker setMarkerColor "ColorGreen";
+
     sleep 3;
 
     _vehicle = [_missionPosition, random 360, _vehicleClass, true, false, -1] call spawnVehicle;
 };
 
+deleteMarker _missionAIMarker;
+
 sleep 10;
 
+deleteMarker _missionMarker;
+
 _missionSpawnLocations select _missionSpawnMarkerIndex set[1, false];
-_missionMarkerName call deleteClientMarker;

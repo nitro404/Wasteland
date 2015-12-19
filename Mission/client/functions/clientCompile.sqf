@@ -35,7 +35,6 @@ if(!isServer) then {
 updateSpawnBeaconMarkers = compile preprocessFileLineNumbers "client\functions\updateSpawnBeaconMarkers.sqf";
 spawnBeaconMonitor = compile preprocessFileLineNumbers "client\functions\spawnBeaconMonitor.sqf";
 cleanBeaconArrays = compile preprocessFileLineNumbers "client\functions\cleanBeaconArrays.sqf";
-updateMissionsMarkers = compile preprocessFileLineNumbers "client\functions\updatePlayerMissionMarkers.sqf";
 updateTeamKiller = compile preprocessFileLineNumbers "client\functions\updateTeamKiller.sqf";
 
 // Team-Kill System

@@ -16,7 +16,6 @@ respawnDialogActive = false;
 groupManagmentActive = false;
 playerTeamKiller = objNull;
 doCancelAction = false;
-currentMissionMarkers = [];
 currentSpawnBeaconMarkers = [];
 
 playerSetupComplete = false;
@@ -52,7 +51,6 @@ waitUntil { !(isNull (findDisplay 46)) };
 (findDisplay 46) displaySetEventHandler["KeyDown", "_this call onKeyPress"];
 
 "currentDate" addPublicVariableEventHandler { call timeSync; };
-"clientMissionMarkers" addPublicVariableEventHandler { call updateMissionsMarkers; };
 "spawnBeaconsBluFor" addPublicVariableEventHandler { call updateSpawnBeaconMarkers; };
 "spawnBeaconsOpFor" addPublicVariableEventHandler { call updateSpawnBeaconMarkers; };
 "spawnBeaconsIndependent" addPublicVariableEventHandler { call updateSpawnBeaconMarkers; };
@@ -75,7 +73,6 @@ if(!isServer) then {
 	[] spawn craterCleanupManager;
 };
 
-call updateMissionsMarkers;
 [] spawn spawnBeaconMonitor;
 
 if(isNil "FZF_IC_INIT") then {
