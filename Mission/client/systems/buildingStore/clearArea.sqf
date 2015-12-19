@@ -14,8 +14,7 @@ _objs     = [];
 } forEach _all_objs;
 
 {
-	_r3f_disabled = _x getVariable['R3F_LOG_disabled', false];
-	if(!_r3f_disabled) then {
+	if(!(_x getVariable['R3F_LOG_disabled', false]) && !(_x isKindOf "worker3")) then {
 		deleteVehicle _x;
 	};
 } forEach _objs;

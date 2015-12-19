@@ -62,16 +62,21 @@ General:<br/>
 		7. Windy Valley (South Kozlovka)<br/>
 		8. Moglievka Pass (South-East Moglievka)<br/>
 	+ Added lock so players cannot spawn multiple times before the dialog is dismissed.<br/>
+	+ Player scores now increment properly when AI and enemy independent players (while on independent) are killed with a hand-held weapon or are road killed.<br/>
+	+ Player scores now decrement when friendly units are road killed (including independent group members).<br/>
 <br/>
 Interface:<br/>
 	+ Added new loading splash screen.<br/>
 	+ Added background image to respawn screen.<br/>
 	+ Added icons for camo nets and spawn beacons in general store.<br/>
 	+ Adjusted player health / money info position on hud.<br/>
+	+ Friendly spawn beacons now show up in the map.<br/>
+	+ Added ability to lock and unlock vehicles.<br/>
 <br/>
 Player Menu:<br/>
-	+ Added button to spawn a random bicycle.<br/>
-	+ Added button to flip a ground vehicle rightside up that is within 10m of the player.<br/>
+	+ Added button to deploy a random bicycle (has a 10 second cooldown).<br/>
+	+ Added context menu options to pack up bicycles.<br/>
+	+ Added button to flip a ground vehicle rightside up that is within 10m of the player (has a 10 second cooldown).<br/>
 	+ Added text field to allow the player to type the amount of money to drop.<br/>
 		- Money text input field contains the player’s total money by default.<br/>
 		- Money info label and input text field now update as money is dropped.<br/>
@@ -89,6 +94,7 @@ Player Spawn System:<br/>
 	+ Spawn beacons now indicate their relative position &amp; the direction they are facing.<br/>
 	+ Players can now place new spawn beacons (old ones are de-activated, but not removed from the world).<br/>
 	+ Spawn beacons are now placed in front of the player and no longer cause damage.<br/>
+	+ Players are now allowed to have one active spawn beacon per faction (although it can't be used unless the player is currently on that team).<br/>
 	+ Added checks so spawn beacons cannot be placed over water or out of map boundaries.<br/>
 	+ Added E hotkey to remove parachute while HALO jumping or parachuting out of a vehicle.<br/>
 <br/>
@@ -127,6 +133,8 @@ Stores:<br/>
 <br/>
 Static Spawns:<br/>
 	+ Replaced old static spawn scripts with new and improved scripts.<br/>
+	+ Added random boat spawning and re-spawning scripts.<br/>
+		- Bonus boats spawn at Black Lake, Pobeda Dam, Topolka Dam and Prud.<br/>
 	+ Added new, more efficient scripts for respawning vehicles in towns as well as helicopters and boats at their custom spawn locations.<br/>
 	+ Added weighed categorized lists for land vehicle, helicopter, boat, weapon crate, static weapon and building part spawns.<br/>
 		- Land vehicle weights: 25% for civilian, 8% for utility, 54% light armor, 11% for medium armor and 2% for heavy armor vehicles.<br/>
@@ -139,6 +147,7 @@ Static Spawns:<br/>
 	+ Updated static vehicle spawn lists to include new vehicles.<br/>
 	+ Added weapon crate static spawns in towns.<br/>
 	+ Ground vehicles now spawn with 2-6 random weapons, with 4-6 magazines for each.<br/>
+	+ Added new and improved random weapon list with weighted categories and more weapons for use with AI and vehicles.<br/>
 	+ Vehicles also have a chance to spawn night vision goggles, rangefinders and laser designators (with a battery pack).<br/>
 	+ Added An2 bi-planes to airfields.<br/>
 		- Bi-planes have (2x) 500 Vickers machine gun rounds and 16 SPG-9 HE rockets.<br/>
@@ -154,6 +163,20 @@ Vehicle Improvements:<br/>
 	+ Ka60 (without M32) now has a flare launcher with a 120 round magazine.<br/>
 	+ AH64D now has a 120 round flare magazine instead of 60.<br/>
 <br/>
+AI:<br/>
+	+ Replaced old AI spawn scripts with new and improved system.<br/>
+	+ AI are now spawned randomly within a specified radius with random weapons corresponding to their specified class type.<br/>
+	+ There are now 5 different AI classes which are assigned from a list of class types:<br/>
+		1. Rifleman<br/>
+		2. Machine Gunner<br/>
+		3. Sniper<br/>
+		4. Anti-Tank<br/>
+		5. Anti-Air<br/>
+	+ Each AI class type has its own unique skin.<br/>
+	+ AI now have a chance to spawn with binoculars, rangefinders or a laser designator and night vision goggles.<br/>
+	+ All AI now also spawn with a random secondary weapon.<br/>
+	+ Anti-Tank and Anti-Air AI also spawn with a random rifle.<br/>
+<br/>
 Missions:<br/>
 	+ Removed mobile radar and VIP missions.<br/>
 	+ Added new and improved mission controllers and mission scripts.<br/>
@@ -163,6 +186,18 @@ Missions:<br/>
 		3. Anti-Air Vehicle Mission: 2S6M Tunguska<br/>
 		4. Attack Helicopter Mission: Mi-24P, Mi-24V, Mi-24D<br/>
 		5. Geo Cache Mission: 2-3 random weapon crates<br/>
+	+ There is up to 1 of each mission type active at any given time, except for geo caches which can be up to 2.<br/>
+	+ Different mission types now use different lists when choosing a spawn location.<br/>
+	+ Updated missions to use new randomized AI spawning scripts.<br/>
+<br/>
+Bounty System:<br/>
+	+ Added preliminary simplified version of bounty system.<br/>
+	+ Current bounty value is displayed in player menu with custom icon.<br/>
+	+ Bounties always start with a value of 0.<br/>
+	+ Player bounty increases by 50 for killing AI and 100 for killing enemy players.<br/>
+	+ Player bounties are only claimed when they are killed by an enemy (they persist through team killing and suicide).<br/>
+	+ An additional $100 is added to the claimed bounty when you kill an enemy player.<br/>
+<br/>
 Cleanup Manager:<br/>
 	+ Replaced old FSM cleanup script with new and improved cleanup manager.<br/>
 	+ Vehicles and objects are cleaned up with different conditions:<br/>
@@ -178,7 +213,9 @@ Cleanup Manager:<br/>
 		- Abandoned and immobile vehicles: 10 minutes<br/>
 <br/>
 Bug Fixes:<br/>
-	+ Fixed tons of script errors and bugs.<br/>"
+	+ Fixed tons of script errors and bugs.<br/>
+	+ Cleaned up lots of unused and duplicated code.<br/>
+	+ Fixed old spawn beacons being deactivated before new beacon is placed.<br/>"
 ]];
 
 player createDiaryRecord["Event Horizon Gaming", [
