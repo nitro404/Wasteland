@@ -12,9 +12,7 @@ randomPosition = compile preprocessFileLineNumbers "server\functions\randomPosit
 randomObject = compile preprocessFileLineNumbers "server\functions\randomObject.sqf";
 
 createMissionLocation = compile preprocessFileLineNumbers "server\missions\factoryMethods\createMissionLocation.sqf";
-createClientMarker = compile preprocessFileLineNumbers "server\missions\factoryMethods\createClientMarker.sqf";
 createWaitCondition = compile preprocessFileLineNumbers "server\missions\factoryMethods\createWaitCondition.sqf";
-deleteClientMarker = compile preprocessFileLineNumbers "server\missions\factoryMethods\deleteClientMarker.sqf";
 randomAIWeapon = compile preprocessFileLineNumbers "server\missions\factoryMethods\randomAIWeapon.sqf";
 randomAIWeapons = compile preprocessFileLineNumbers "server\missions\factoryMethods\randomAIWeapons.sqf";
 createAIUnit = compile preprocessFileLineNumbers "server\missions\factoryMethods\createAIUnit.sqf";
