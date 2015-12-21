@@ -416,17 +416,94 @@ vehicleMissionLocations = [
     ["Mission_50", false]
 ];
 
+landVehicleBases = [
+    [
+        ["Land_HBarrier_large", [-12.0669, -9.49805, 0.00149536], 270],
+        ["Land_HBarrier_large", [12.2791, -9.93359, 0.00238037], 269.505],
+        ["Land_HBarrier_large", [-12.0813, 10.0981, 0.00143433], 270],
+        ["Land_HBarrier_large", [11.9231, 10.7837, 0.00201416], 269.695],
+        ["Land_Fort_Watchtower", [-5.6106, -10.7915, 0.00268555], 269.367],
+        ["Land_Fort_Watchtower", [7.20654, -10.8916, 0.00387573], 270.173],
+        ["Land_Fort_Watchtower", [-7.63696, 11.4741, 0.00274658], 90],
+        ["Land_Fort_Watchtower", [5.36841, 12.0073, -0.00100708], 89.8651],
+        ["Land_GuardShed", [-12.1875, -3.84131, 0.00363159], 90],
+        ["Land_GuardShed", [-12.1724, 4.27295, 0.00363159], 90],
+        ["WarfareBMGNest_M240_US_EP1", [0.18457, -11.3022, -0.0971069], 179.561],
+        ["WarfareBMGNest_M240_US_EP1", [-0.376953, 11.8047, -0.0629883], 359.903],
+        ["WarfareBMGNest_M240_US_EP1", [10.812, 4.87842, -0.0845032], 90.1233],
+        ["WarfareBMGNest_M240_US_EP1", [11.2024, -3.99365, -0.0837097], 89.4875],
+        ["MASH", [12.5146, 1.17773, 0.0177002], 271.985],
+        ["Concrete_Wall_EP1", [13.2925, -1.28223, 0.00332642], 90],
+        ["Land_WoodenRamp", [11.8823, -1.30566, 0.00372314], 270],
+        ["Hedgehog", [-14.9685, 1.40674, -0.00152588], 270.878, true],
+        ["Hedgehog", [-14.9827, -1.63037, -0.00146484], 269.382, true],
+        ["Land_BagFenceRound", [-9.40698, -4.52832, 0.00878906], 189.723],
+        ["Land_BagFenceRound", [7.31812, 8.18701, 0.00564575], 125.757],
+        ["Land_BagFenceRound", [9.30664, 5.75586, -0.00531006], 339.055],
+        ["Land_BagFenceRound", [-9.13184, -7.74463, -0.00665283], 343.933],
+        ["Land_BagFenceRound", [9.93896, 8.1543, 0.00689697], 230.596],
+        ["Land_BagFenceRound", [-11.2109, -6.18555, 0.00289917], 86.256],
+        ["KORD_high", [-12.7454, 4.19922, 0.00308228], 269.757],
+        ["KORD_high", [-12.929, -3.896, 0.00305176], 268.329],
+        ["SPG9_CDF", [6.89722, 11.8086, 2.78159], 89.7227],
+        ["SPG9_CDF", [-8.36035, -10.9028, 2.78403], 270.874],
+//        ["ZU23_CDF", [-4.80737, 11.4146, -0.0751343], 90.2042],
+//        ["ZU23_CDF", [4.55225, -10.9497, -0.039978], 270.59],
+        ["Igla_AA_pod_East", [9.06909, 7.22852, -0.0674133], 56.1507],
+        ["DSHKM_CDF", [-9.72559, -6.81006, -0.0556641], 33.8583]
+    ]
+];
+
+helicopterBases = [
+    [
+        ["WarfareBCamp", [0.294922, -14.9102, 0.00143433], 359.813],
+        ["Land_Fort_Watchtower", [-1.01563, 18.2139, 0.00143433], 89.8896],
+        ["Land_GuardShed", [6.01221, 16.3662, 0.00143433], 180.086],
+        ["Land_GuardShed", [-6.58008, 16.3838, 0.00143433], 180.22],
+        ["Hhedgehog_concreteBig", [-15.0952, -13.7871, 0.00143433], 269.619],
+        ["Hhedgehog_concreteBig", [16.3081, -13.5488, 0.00143433], 90.1458],
+        ["Hhedgehog_concreteBig", [-15.4604, -1.66992, 0.00143433], 269.907],
+        ["Hhedgehog_concreteBig", [16.479, -1.38379, 0.00143433], 90.4502],
+        ["Hhedgehog_concrete", [12.064, 12.7861, 0.00143433], 39.8229],
+        ["Hhedgehog_concrete", [-12.5337, 13.1016, 0.00143433], 309.516],
+        ["Hedgehog", [-9.36084, -22.4434, 0.00143433], 189.445],
+        ["Hedgehog", [10.0913, -22.5625, 0.00143433], 173.172],
+        ["Hedgehog", [0.446777, -24.9873, 0.169708], 182.458],
+        ["Hedgehog", [-9.11816, 16.9707, 0.00143433], 345.657],
+        ["Hedgehog", [8.25781, 15.0771, 0.00143433], 28.4228],
+        ["Land_fort_bagfence_round", [-15.6772, 9.3916, 0.00143433], 0.163675],
+        ["Land_fort_bagfence_round", [16.957, 9.35352, 0.00143433], 0.322077],
+        ["Land_fort_bagfence_round", [16.707, 3.24512, 0.00143433], 180.225],
+        ["Land_fort_bagfence_round", [-15.5034, 3.23633, 0.00143433], 179.615],
+        ["Land_fort_bagfence_round", [-11.9058, -22.6377, 0.00143433], 89.5058],
+        ["Land_fort_bagfence_round", [12.5435, -22.6348, 0.00143433], 270.219],
+        ["Land_fort_bagfence_round", [-18.2827, -22.6631, 0.00143433], 270.326],
+        ["Land_fort_bagfence_round", [19.0259, -22.4824, 0.00143433], 89.6078],
+        ["Stinger_Pod", [-15.6074, 6.36914, -0.0753479], 270.096],
+        ["Stinger_Pod", [15.9214, -22.6689, -0.0753479], 178.359],
+        ["ZU23_CDF", [17.3809 ,6.57227, -0.0737305], 81.8351],
+        ["ZU23_CDF", [-14.8452, -22.9893, -0.0737305], 173.275],
+        ["KORD_high", [6.03516, 17.2451, -0.0735779], 359.775],
+        ["KORD_high", [-6.5415, 17.1436, -0.0735779], 359.826],
+        ["DSHKM_CDF", [6.29785, -21.7627, -0.0700378], 179.713],
+        ["DSHKM_CDF", [-5.70117, -21.9404, -0.0713196], 179.908],
+        ["WarfareBMGNest_M240_US_EP1", [-14.8999, -7.79492, -0.0842285], 269.84],
+        ["WarfareBMGNest_M240_US_EP1", [15.5825, -7.51172, -0.0842285], 90.2476],
+        ["SPG9_CDF", [0.672852, 18.0508, 2.70581], 90.7899]
+    ]
+];
+
 missionTypes = [
-    [1, "Main Battle Tank Mission", 0, [4, 1, 1, 2, 2], 600, 1800, vehicleMissionLocations, [
+    [1, "Main Battle Tank Mission", 0, [4, 1, 1, 2, 2], 600, 1800, vehicleMissionLocations, landVehicleBases, [
         ["BAF_FV510_W", "T90", "M1A2_TUSK_MG"]
     ]],
-    [1, "Armored Personnel Carrier Mission", 0, [4, 1, 1, 1, 1], 300, 1800, vehicleMissionLocations, [
+    [1, "Armored Personnel Carrier Mission", 0, [4, 1, 1, 1, 1], 300, 1800, vehicleMissionLocations, landVehicleBases, [
         ["BMP3", "M2A3_EP1", "M6_EP1"]
     ]],
-    [1, "Anti-Air Mission", 0, [4, 1, 1, 2, 2], 900, 1800, vehicleMissionLocations, [
+    [1, "Anti-Air Mission", 0, [4, 1, 1, 2, 2], 900, 1800, vehicleMissionLocations, landVehicleBases, [
         ["2S6M_Tunguska"]
     ]],
-    [1, "Attack Helicopter Mission", 0, [2, 4, 2, 2, 2], 1200, 1800, vehicleMissionLocations, [
+    [1, "Attack Helicopter Mission", 0, [2, 4, 2, 2, 2], 1200, 1800, vehicleMissionLocations, helicopterBases, [
         ["Mi171Sh_rockets_CZ_EP1", "Mi17_rockets_RU"],
         ["Mi24_D", "Mi24_D_TK_EP1"],
         ["Mi24_V"],

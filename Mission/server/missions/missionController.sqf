@@ -19,10 +19,10 @@ _controllerDelay call createWaitCondition;
 while { true } do {
 	if(_missionFunctionType == 0) then {
 		_missionSpawnLocations = _this select 6;
-		_vehicleList = (_this select 7) call BIS_fnc_selectRandom;
+		_vehicleList = (_this select 8) call BIS_fnc_selectRandom;
 		_vehicleClass = _vehicleList call BIS_fnc_selectRandom;
 		_missionRewardPicture = getText (configFile >> "cfgVehicles" >> _vehicleClass >> "picture");
-		_activeMission = [_this select 1, _vehicleClass, _missionSpawnLocations, _this select 3, _this select 4, _this select 5, missionNumber] spawn vehicleMission;
+		_activeMission = [_this select 1, _vehicleClass, _missionSpawnLocations, _this select 3, _this select 4, _this select 5, (_this select 7) call BIS_fnc_selectRandom, missionNumber] spawn vehicleMission;
 
 		diag_log format["Creating New %1 (%2)", _this select 1, getText (configFile >> "cfgVehicles" >> _vehicleClass >> "displayName")];
 
