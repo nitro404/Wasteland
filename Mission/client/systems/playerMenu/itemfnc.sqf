@@ -48,7 +48,7 @@ switch(_this) do {
         	};
 
 		if(vehicle player != player) exitwith {
-        		player globalChat "YOU ARE CURRENTLY BUSY!";
+        		player globalChat "CANNOT DROP ITEMS FROM INSIDE OF A VEHICLE!";
        		};
 
 		switch(_data) do {

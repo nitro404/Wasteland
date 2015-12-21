@@ -24,8 +24,8 @@ if((player getVariable "money" < _moneyAmount) OR (player getVariable "money" < 
 	player globalChat format["You don't have $%1 to drop!", _moneyAmount];
 };
 
-if((vehicle player) != player) exitWith {
-	player globalChat "You can't drop money while in a vehicle.";
+if(vehicle player != player) exitWith {
+	player globalChat "You can't drop money while in a vehicle!";
 };
 
 _canDropMoney = true;
