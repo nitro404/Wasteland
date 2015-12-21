@@ -49,6 +49,7 @@ execVM "client\clientEvents\onMouseWheel.sqf";
 
 waitUntil { !(isNull (findDisplay 46)) };
 (findDisplay 46) displaySetEventHandler["KeyDown", "_this call onKeyPress"];
+(findDisplay 46) displaySetEventHandler["KeyUp", "_this call onKeyRelease"];
 
 "currentDate" addPublicVariableEventHandler { call timeSync; };
 "spawnBeaconsBluFor" addPublicVariableEventHandler { call updateSpawnBeaconMarkers; };

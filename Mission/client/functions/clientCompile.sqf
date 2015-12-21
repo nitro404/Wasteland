@@ -8,6 +8,7 @@
 onRespawn = compile preprocessfile "client\clientEvents\onRespawn.sqf";
 onKilled = compile preprocessfile "client\clientEvents\onKilled.sqf";
 onKeyPress = compile preprocessFile "client\clientEvents\onKeyPress.sqf";
+onKeyRelease = compile preprocessFile "client\clientEvents\onKeyRelease.sqf";
 
 // Player details and actions
 loadPlayerMenu = compile preprocessFile "client\systems\playerMenu\init.sqf";

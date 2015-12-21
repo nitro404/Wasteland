@@ -4,7 +4,7 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-private["_handled"];
+private["_key", "_shift", "_handled"];
 
 _key = _this select 1;
 _shift = _this select 2;
@@ -23,7 +23,17 @@ switch _key do {
 
     // Left Windows Key
     case 219: {
-        call togglePlayerNames;
+        if(isNil { togglingPlayerNames }) then {
+            togglingPlayerNames = true;
+
+            call togglePlayerNames;
+        };
+
+        if(!togglingPlayerNames) then {
+            togglingPlayerNames = true;
+
+            call togglePlayerNames;
+        };
     };
 
     // Tilde
