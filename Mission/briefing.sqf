@@ -9,7 +9,7 @@ player createDiarySubject ["Wasteland", "What Is Wasteland?"];
 
 player createDiaryRecord["Changelog", [
 "0.0.1",
-"Date: November 1, 2015<br/>
+"Date: December 21, 2015<br/>
 <br/>
 General:<br/>
 	+ Removed food and water / hunger &amp; thirst system.<br/>
@@ -230,15 +230,14 @@ player createDiaryRecord["Event Horizon Gaming", [
 "Event Horizon Developers:<br/>
 	- nitro glycerine<br/>
 	- Skipwich<br/>
-	- Tesla<br/>
 	- BRPC<br/>
 <br/>
 Event Horizon Artists:<br/>
 	- with_milk<br/>
+	- Nash<br/>
 <br/>
 Event Horizon Testers &amp; Administrators:<br/>
 	- Mawson<br/>
-	- Dropy<br/>
 	- U_T<br/>
 	- Bat Manning<br/>
 	- Sponty<br/>
@@ -248,14 +247,17 @@ Event Horizon Testers &amp; Administrators:<br/>
 	- jaeger<br/>
 	- Xinova<br/>
 	- Corpsegrinder<br/>
-	- Alpha Wing<br/>"
+	- Alpha Wing<br/>
+<br/>
+Special Thanks:<br/>
+	- Dropy<br/>"
 ]];
 
 player createDiaryRecord["Event Horizon Gaming", [
 "Bug and Cheat Reporting",
-"Found a bug? Please report it at: www.eventhorizongaming.net<br/>
+"Found a bug? Please report it at: http://www.eventhorizongaming.net<br/>
 <br/>
-Suspect a player is hacking or exploiting? Please report it at: www.eventhorizongaming.net"
+Suspect a player is hacking or exploiting? Please report it at: http://www.eventhorizongaming.net"
 ]];
 
 player createDiaryRecord["Event Horizon Gaming", [
@@ -280,7 +282,7 @@ There are very aggressive AI characters that spawn with most side missions and w
 
 player CreateDiaryRecord["Wasteland", [
 "Welcome to Wasteland!",
-"Wasteland is a team versus team versus team sandbox survival experience. The objective of this mission is to rally your faction, scavenge supplies, weapons, and vehicles, and destroy the other factions. It is survival at its best! Keep in mind this is a work in progress.
+"Wasteland is a team versus team versus team sandbox survival experience. The objective of this mission is to rally your faction / group members, scavenge weapons, base parts and vehicles, and use them destroy other groups / factions. This server is armor focused, so expect to encounter a lot of tanks and armored personel carriers! It is survival of the fittest! Please keep in mind that this is a work in progress. Have fun!
 <br/><br/>
 FAQ<br/>
 Q. Where can I get a gun?<br/>
@@ -297,5 +299,5 @@ Q. Is it ok for me to shoot my team mates?<br/>
 A. If you are member of BLUFOR or OPFOR teams, then you are not allowed to shoot or steam items and vehicles from other players. If you play as Independent, you are free to engage anyone as well as team up with anyone you want.<br/>
 <br/>
 Q. I saw someone breaking a rule, what do I do?<br/>
-A. If you wish to report an incident or concern, please join our TeamSpeak server at ts.eventhorizongaming.net and report it to a server administrator / moderator. If no admins are available, please visit our website at www.eventhorizongaming.net and submit a report. Please provide as much evidence as you can to enforce your report, whether it be screenshots, recorded video footage, chat logs, etc.<br/>"
+A. If you wish to report an incident or concern, please join our TeamSpeak server at ts.eventhorizongaming.net and report it to a server administrator / moderator. If no admins are available, please visit our website at http://www.eventhorizongaming.net and submit a report. Please provide as much evidence as you can to enforce your report, whether it be screenshots, recorded video footage, chat logs, etc.<br/>"
 ]];
