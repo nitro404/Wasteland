@@ -13,7 +13,7 @@
 
 disableSerialization;
 
-private["_display", "_townName", "_spawnButtons", "_pos", "_rad"];
+private["_display", "_townName", "_spawnButtons", "_position"];
 
 _display = uiNamespace getVariable "RespawnSelectionDialog";
 
@@ -27,13 +27,10 @@ _spawnButtons = [
 
 {
 	_name = _x select 2;
-	if(ctrlText _spawnButtons select _this == _name) exitWith {
+	if(ctrlText (_spawnButtons select _this) == _name) exitWith {
 		_townName = _name;
-		_pos = getMarkerPos (_x select 0);
-		_rad = _x select 1;
-		_pos = [_pos,5,_rad,1,0,0,0] call BIS_fnc_findSafePos;
-		_pos = [_pos select 0, _pos select 1, 0];
-		player setPosATL _pos;
+		_position = [getMarkerPos (_x select 0), 5, _x select 1, 1, 0, 0, 0] call BIS_fnc_findSafePos;
+		player setPosATL [_position select 0, _position select 1, 0];
 		respawnDialogActive = false;
 		closeDialog 0;
 	};
