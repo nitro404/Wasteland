@@ -48,7 +48,6 @@ General:<br/>
 	+ Other group members can now be promoted to leader.<br/>
 	+ Fixed kick, disband and promote buttons not disabling after promoting a new leader.<br/>
 	+ Any member of a group can invite new players.<br/>
-	+ Player names / markers are now toggled when the windows key is pressed.<br/>
 	+ Player markers now display from up to 5km away.<br/>
 	+ Removed player graves.<br/>
 	+ Added vehicle hit-n-run teamkill check.<br/>
@@ -68,6 +67,8 @@ General:<br/>
 Interface:<br/>
 	+ Added new loading splash screen.<br/>
 	+ Added background image to respawn screen.<br/>
+	+ Player names / markers are now toggled when the windows key is pressed.<br/>
+	+ Added lock to player name toggle to prevent flickering when held.<br/>
 	+ Added icons for camo nets and spawn beacons in general store.<br/>
 	+ Adjusted player health / money info position on hud.<br/>
 	+ Friendly spawn beacons now show up in the map.<br/>
@@ -130,6 +131,7 @@ Stores:<br/>
 	+ Stores now show when friendly and / or enemy players are present.<br/>
 	+ Stores are now exclusively scroll to interact instead of pressing E.<br/>
 	+ Cleaned up random building parts around some gun stores.<br/>
+	+ Added structures around stores.<br/>
 <br/>
 Static Spawns:<br/>
 	+ Replaced old static spawn scripts with new and improved scripts.<br/>
@@ -186,6 +188,11 @@ Missions:<br/>
 		3. Anti-Air Vehicle Mission: 2S6M Tunguska<br/>
 		4. Attack Helicopter Mission: Mi-24P, Mi-24V, Mi-24D<br/>
 		5. Geo Cache Mission: 2-3 random weapon crates<br/>
+	+ Added AI count to mission markers.<br/>
+	+ Mission markers now turn green when mission is completed.<br/>
+	+ Fixed and simplified mission marker synchronizing.<br/>
+	+ Added simple bases to missions.<br/>
+	+ Leftover base parts are cleaned up 2 minutes after mission is completed.<br/>
 	+ There is up to 1 of each mission type active at any given time, except for geo caches which can be up to 2.<br/>
 	+ Different mission types now use different lists when choosing a spawn location.<br/>
 	+ Updated missions to use new randomized AI spawning scripts.<br/>
