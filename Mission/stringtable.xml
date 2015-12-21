@@ -25,7 +25,7 @@
 	</Package>
 	<Package name="Loading">
 		<Key ID="STR_WL_Loading_Teamkiller">
-			<English>You are considered team-killer and therefore not allowed in BLUFOR or OPFOR teams. You will shortly be kicked back to the lobby where you can only join Independent and killing anyone is allowed.</English>
+			<English>You are no longer allowed to play on BLUFOR or OPFOR due to excessive teamkilling. You will be kicked back to lobby and forced to play on Independent for the remainder of this session. </English>
 		</Key>
 		<Key ID="STR_WL_Loading_Teamswitched">
 			<English>You have played as %1 for too long and cannot switch to the other team. You can still play as Independent.</English>
@@ -41,71 +41,71 @@
 			<English>&lt;t color='#FF9E9E' size='2.5' &gt;Welcome to Rolling Thunder Wasteland by Event Horizon Gaming&lt;t color='#FFFFFF' size='1' &gt;</English>
 		</Key>
 		<Key ID="STR_WL_YouAreInTeam">
-			<English>&lt;t color='#FF9E9E' size='2.5' &gt;Instructions&lt;br/&gt;&lt;t color='#FFFFFF' size='1.5' &gt;&#127;You are in &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;&#127;Attacking or stealing from other %4 players is &lt;t color="#aa0000"&gt;FORBIDDEN.&lt;/t&gt;&lt;br/&gt;&#127;No VOIP/VON in GLOBAL&lt;br/&gt;&#127;The server does restart unexpectedly.&lt;br/&gt;&#127;You will be locked to your team after 3 minutes.&lt;/t&gt;</English>
+			<English>&lt;t color='#FF9E9E' size='2.5' &gt;Instructions&lt;br/&gt;&lt;t color='#FFFFFF' size='1.5' &gt;&#127;You are on &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt;.&lt;br/&gt;&#127;Attacking or stealing from other %4 players is &lt;t color="#aa0000"&gt;not allowed.&lt;/t&gt;&lt;br/&gt;&#127;&#127;The server restarts at regular intervals with multiple warnings.&lt;br/&gt;&#127;You will be locked to %4 after 3 minutes.&lt;/t&gt;</English>
 		</Key>
 		<Key ID="STR_WL_YouAreInFFA">
-			<English>&lt;t color='#FF9E9E' size='2.5' &gt;Instructions&lt;br/&gt;&lt;t color='#FFFFFF' size='1.5' &gt;&#127;You are in &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;&#127;You are &lt;t color="#00aa00"&gt;FREE TO ATTACK ANYONE.&lt;/t&gt;&lt;br/&gt;&#127;No VOIP/VON in GLOBAL&lt;br/&gt;&#127;The server does restart unexpectedly.&lt;/t&gt;</English>
+			<English>&lt;t color='#FF9E9E' size='2.5' &gt;Instructions&lt;br/&gt;&lt;t color='#FFFFFF' size='1.5' &gt;&#127;You are on &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;&#127;You are &lt;t color="#00aa00"&gt;free to attack and kill anyone.&lt;/t&gt;&lt;br/&gt;&#127;No voice communication in side chat.&lt;br/&gt;&#127;The server restarts at regular intervals with multiple warnings.&lt;/t&gt;</English>
 		</Key>
 		<Key ID="STR_WL_MapMoreInfo">
-			<English>&lt;t color='#FFFFFF' size='1.5' &gt;Welcome to Rolling Thunder Wasteland by Event Horizon Gaming.&lt;br/&gt;Please report all bugs/problems to www.eventhorizongaming.net&lt;br/&gt;Server restart times: 6AM/6PM (GMT)&lt;br/&gt;For more info please see the map&lt;br/&gt;Spawn beacons are now available at the general store&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</English>
+			<English>&lt;t color='#FFFFFF' size='1.5' &gt;Welcome to Rolling Thunder Wasteland by Event Horizon Gaming!&lt;br/&gt;Please report all bugs / issues / comments / suggestions to our forum at http://www.eventhorizongaming.net&lt;br/&gt;Server restart times: 6:00 AM / 6:00 PM (EST)&lt;br/&gt;For more info please see the diary entries at the top left corner of the map screen or visit our website!&lt;br/&gt;&lt;/t&gt;</English>
 		</Key>
 	</Package>
 	<Package name="TeamKillWarningMessage">
 		<Key ID="STR_TK_MESSAGE">
-			<English>&lt;t size='2' color='#ff0000'&gt;Team killing is against the rules!&lt;/t&gt;&lt;br/&gt;If this was a mistake then you must explain yourself and say sorry, otherwise they will mark you as team-killer and you will get kicked.</English>
+			<English>&lt;t size='2' color='#ff0000'&gt;Team killing is against the rules!&lt;/t&gt;&lt;br/&gt;If this was accidental, apologize and explain yourself or else you will be marked as a teamkiller and kicked to lobby where you will be forced to play on Independent.</English>
 		</Key>
 	</Package>
 	<Package name="Diary">
 		<Key ID="STR_WL_Diary_RulesContent">
-			<English>&lt;br/&gt;    1. Keep bad language to a minimum. If you have a problem with another player, take it to direct.&lt;br/&gt;    2. NO VOIP IN GLOBAL. We have a public TeamSpeak for players to use.&lt;br/&gt;    3. Team killing or stealing from team mates when you BLUFOR or OPFOR is forbidden and punishable. Play as Independent if you want to be free for all.&lt;br/&gt;    4. Revealing information about your (ex)team to other teams is strictly forbidden&lt;br/&gt;    5. Do not exploit R3F or any other add-ons or you will be banned.&lt;br/&gt;    6. Using or spamming with loud\long custom sound commands will cause punishment up to permanent ban</English>
+			<English>&lt;br/&gt;    1. No cheating / scripting / hacking / exploiting.&lt;br/&gt;    2. No intentional team killing / damaging / intentional griefing or stealing of vehicles / assets on BLUFOR or OPFOR.&lt;br/&gt;    3. No voice communication on Independent in side chat. We have a public TeamSpeak for players to use at ts.eventhorizongaming.net!&lt;br/&gt;    4. Be respectful towards your fellow players and administrators / moderators.&lt;br/&gt;    5. Do not exploit R3F or any other add-ons or you will be banned.&lt;br/&gt;    6. DON'T BE AN IDIOT.</English>
 		</Key>
 	</Package>
 	<Package name="Shop">
 		<Key ID="STR_WL_Shop_Marker_GunStore">
-			<English>Gun store</English>
+			<English>Gun Store</English>
 		</Key>
 		<Key ID="STR_WL_Shop_Marker_GenStore">
-			<English>General store</English>
+			<English>General Store</English>
 		</Key>
 		<Key ID="STR_WL_Shop_Marker_Empty">
 			<English>Unoccupied</English>
 		</Key>
 		<Key ID="STR_WL_Shop_Marker_Enemy">
-			<English>Enemy players here</English>
+			<English>Enemy Players Present</English>
 		</Key>
 		<Key ID="STR_WL_Shop_Marker_Friendly">
-			<English>Friendly players</English>
+			<English>Friendly Players</English>
 		</Key>
 		<Key ID="STR_WL_Shop_Marker_Mixed">
-			<English>Enemy and friendly players</English>
+			<English>Enemy and Friendly Players</English>
 		</Key>
 		<Key ID="STR_WL_Shop_Message_EnemyApproaching">
-			<English>Enemy player just entered the area</English>
+			<English>An enemy player just entered the area!</English>
 		</Key>
 	</Package>
 	<Package name="ShopDescriptions">
 		<Key ID="STR_WL_ShopDescriptions_Camo">
-			<English>Become a ninja, hide yourself while camping. Warning this does not make you invisible</English>
+			<English>A perfect accessory for setting up sneaky road-side ambushes! Warning: This does not make you invisible or hide you from thermal vision.</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_RepairKit">
-			<English>This magic box will repair any mechanical device to its former glory. Warning: Does not guarantee compatibility with wives/spouses/partners.</English>
+			<English>This wonderful toolbox will repair any mechanical device to a fully functional state.</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_MedKit">
-			<English>Restore your health back to full. Disclaimer: This product was tested on animals and at least 5 bunnies, 3 cows and 1 make-up wearing pig died as a result.</English>
+			<English>A first aid medical kit to patch your wounds and restore your health back up to full.</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_fuelFull">
-			<English>Top quality imported Russian petroleum, now with 10% less Stalin!</English>
+			<English>Top quality imported Russian petroleum!</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_fuelEmpty">
-			<English>Straight off the back of a lorry, this 'can will last a lifetime.</English>
+			<English>Straight off the back of a lorry, this can will last a lifetime.</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_spawnBeacon">
-			<English>Choose your spawn location. Disclaimer: This product does not guarantee safe delivery of goods.</English>
+			<English>Allows you to paradrop reinforcements to the beacon's deployment location. Disclaimer: This product does not guarantee safe delivery of goods.</English>
 		</Key>
 	</Package>
 	<Package name="Dialogs">
 		<Key ID="STR_WL_dialog_TeamkillText">
-			<English>You have been team-killed by %2 player %1.&lt;br/&gt;&lt;br/&gt;If this was an accident then forgive them, otherwise they should explain their actions.&lt;br/&gt;&lt;br/&gt;If the player does not explain why then select Punish or Announce.</English>
+			<English>You have been team-killed by %2 player %1.&lt;br/&gt;&lt;br/&gt;If this was an accident, please forgive them, otherwise ask them to explain their actions and consider reporting the incident to an admin.&lt;br/&gt;&lt;br/&gt;If the player does not apologize or respond, punish them to discourage / prevent further teamkilling.</English>
 		</Key>
 	</Package>
 	<Package name="Actions">
