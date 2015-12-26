@@ -57,7 +57,7 @@
 	</Package>
 	<Package name="Diary">
 		<Key ID="STR_WL_Diary_RulesContent">
-			<English>&lt;br/&gt;    1. No cheating / scripting / hacking / exploiting.&lt;br/&gt;    2. No intentional team killing / damaging / intentional griefing or stealing of vehicles / assets on BLUFOR or OPFOR.&lt;br/&gt;    3. No voice communication on Independent in side chat. We have a public TeamSpeak for players to use at ts.eventhorizongaming.net!&lt;br/&gt;    4. Be respectful towards your fellow players and administrators / moderators.&lt;br/&gt;    5. Do not exploit R3F or any other add-ons or you will be banned.&lt;br/&gt;    6. DON'T BE AN IDIOT.</English>
+			<English>&lt;br/&gt;    1. No cheating / scripting / hacking / exploiting.&lt;br/&gt;    2. No intentional team killing / damaging / intentional griefing or stealing of vehicles / assets on BLUFOR or OPFOR.&lt;br/&gt;    3. No voice communication on Independent in side chat. We have a public TeamSpeak for players to use at ts.eventhorizongaming.net!&lt;br/&gt;    4. No racism.&lt;br/&gt;    5. Be respectful towards your fellow players and administrators / moderators.&lt;br/&gt;    6. DON'T BE AN IDIOT.</English>
 		</Key>
 	</Package>
 	<Package name="Shop">
