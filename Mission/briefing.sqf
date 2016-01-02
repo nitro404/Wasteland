@@ -22,7 +22,6 @@ General:<br/>
 		- GPS<br/>
 		- Full Jerry Can<br/>
 		- Minimum $800<br/>
-	+ Players no longer spawn in crouching when random ground spawn is selected.<br/>
 	+ Fixed players being able to spawn on top trees when spawning in towns and falling to their death.<br/>
 	+ Added script to make all default / initial buildings indestructible.<br/>
 	+ Simplified money dropping / pickup to reduce exploits, no more animation or delay.<br/>

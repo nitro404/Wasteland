@@ -184,8 +184,8 @@ if(!isNil { _vehicleInit }) then {
 clearMagazineCargoGlobal _vehicle;
 clearWeaponCargoGlobal _vehicle;
 
-if(!_missionVehicle && (_vehicle isKindOf "Car" || _vehicle isKindOf "Tank")) then {
-    _vehicle setFuel((random 0.50) + 0.50);
+if(!_missionVehicle && (_vehicle isKindOf "LandVehicle" || _vehicle isKindOf "Ship")) then {
+    _vehicle setFuel((random 0.75) + 0.25);
     _vehicle setDamage((random 0.50));
 };
 
