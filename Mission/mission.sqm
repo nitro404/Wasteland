@@ -5709,7 +5709,7 @@ class Mission
 		};
 		class Item248
 		{
-			position[]={6584.3267,335,9313.0322};
+			position[]={6594.9229,336.44672,9328.5176};
 			name="GeoCache_22";
 			type="Empty";
 			colorName="ColorPink";
