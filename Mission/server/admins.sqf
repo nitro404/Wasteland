@@ -20,7 +20,6 @@ serverAdministrators = [
 	"76561197983361980", // nitro glycerine
 	"76561198025070008", // nitro glycerine (Alt)
 	"76561198085238045", // Sponty
-	"76561197962166875", // Dropy
 	"76561198067915453", // Mobley
 	"76561198041126769", // Mawson
 	"76561198087899783", // Xinova
@@ -30,7 +29,6 @@ serverAdministrators = [
 	"76561197960440011", // Spangler
 	"76561198041279329", // Drew
 	"76561198090673661", // Drew (Alt)
-	"76561197992556451", // Tesla
 	"76561198011088596", // Skipwich
 	"76561197961014283", // Yams
 	"76561197980727745", // Northern Petrol
