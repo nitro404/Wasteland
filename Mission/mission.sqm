@@ -3946,7 +3946,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=368;
+		items=377;
 		class Item0
 		{
 			position[]={6704.1572,6,2619.647};
@@ -6544,6 +6544,69 @@ class Mission
 		{
 			position[]={5290.52,307.61673,10566.061};
 			name="Spawn_116";
+			type="Empty";
+			colorName="ColorYellow";
+		};
+		class Item368
+		{
+			position[]={5182.1865,6,2083.845};
+			name="Spawn_0";
+			type="Empty";
+			colorName="ColorYellow";
+		};
+		class Item369
+		{
+			position[]={9312.2148,5.7785668,2032.5256};
+			name="Spawn_117";
+			type="Empty";
+			colorName="ColorYellow";
+		};
+		class Item370
+		{
+			position[]={9613.0254,6,1961.7059};
+			name="Spawn_118";
+			type="Empty";
+			colorName="ColorYellow";
+		};
+		class Item371
+		{
+			position[]={12791.315,27.031561,5675.5264};
+			name="Spawn_119";
+			type="Empty";
+			colorName="ColorYellow";
+		};
+		class Item372
+		{
+			position[]={8505.9922,167.49153,12037.659};
+			name="Spawn_120";
+			type="Empty";
+			colorName="ColorYellow";
+		};
+		class Item373
+		{
+			position[]={4543.9648,230.14177,4492.3198};
+			name="Spawn_121";
+			type="Empty";
+			colorName="ColorYellow";
+		};
+		class Item374
+		{
+			position[]={6266.0005,79.288071,3754.1101};
+			name="Spawn_122";
+			type="Empty";
+			colorName="ColorYellow";
+		};
+		class Item375
+		{
+			position[]={6506.5215,67.769753,3620.8359};
+			name="Spawn_123";
+			type="Empty";
+			colorName="ColorYellow";
+		};
+		class Item376
+		{
+			position[]={2700.5068,256.86334,5991.6167};
+			name="Spawn_124";
 			type="Empty";
 			colorName="ColorYellow";
 		};

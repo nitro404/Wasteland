@@ -14,7 +14,7 @@ _totalBuildings = 0;
 _totalStationaryWeapons = 0;
 
 {
-	_spawnPosition = getMarkerPos format["Spawn_%1", _forEachIndex + 1];
+	_spawnPosition = getMarkerPos format["Spawn_%1", _forEachIndex];
 	_spawnRadius = _x;
 
 	_numberOfVehicles = floor(_spawnRadius * 0.06125);
@@ -54,7 +54,7 @@ _totalStationaryWeapons = 0;
 		_currentObjectIndex = _currentObjectIndex + 1;
 	};
 
-	diag_log format["Spawn %1: Spawned %2 Vehicles, %3 Buildings, %4 Stationary Weapons and %5 Weapon Crates.", _forEachIndex + 1, _numberOfVehicles, _numberOfBuildings, _numberOfStationaryWeapons, _numberOfWeaponCrates];
+	diag_log format["Spawn %1: Spawned %2 Vehicles, %3 Buildings, %4 Stationary Weapons and %5 Weapon Crates.", _forEachIndex, _numberOfVehicles, _numberOfBuildings, _numberOfStationaryWeapons, _numberOfWeaponCrates];
 
 	sleep 0.05;
 } forEach spawnLocations;
