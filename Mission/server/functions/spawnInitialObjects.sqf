@@ -6,7 +6,7 @@
 
 if(!isServer) exitWith { };
 
-private["_townPosition", "_townRadius", "_townName", "_numberOfVehicles", "_numberOfBuildings", "_numberOfStationaryWeapons", "_numberOfWeaponCrates", "_totalVehicles", "_totalWeaponCrates", "_totalBuildings", "_totalStationaryWeapons", "_currentObjectIndex"];
+private["_spawnMarkerName", "_spawnPosition", "_spawnRadius", "_numberOfVehicles", "_numberOfBuildings", "_numberOfStationaryWeapons", "_numberOfWeaponCrates", "_totalVehicles", "_totalWeaponCrates", "_totalBuildings", "_totalStationaryWeapons", "_currentObjectIndex"];
 
 _totalVehicles = 0;
 _totalWeaponCrates = 0;
@@ -14,18 +14,17 @@ _totalBuildings = 0;
 _totalStationaryWeapons = 0;
 
 {
-	_townPosition = getMarkerPos (_x select 0);
-	_townRadius = _x select 1;
-	_townName = _x select 2;
+	_spawnPosition = getMarkerPos format["Spawn_%1", _forEachIndex + 1];
+	_spawnRadius = _x;
 
-	_numberOfVehicles = floor(_townRadius * 0.05);
-	_numberOfWeaponCrates = floor(_townRadius * 0.03125);
-	_numberOfBuildings = floor(_townRadius * 0.04);
-	_numberOfStationaryWeapons = floor(_townRadius * 0.0225);
+	_numberOfVehicles = floor(_spawnRadius * 0.06125);
+	_numberOfWeaponCrates = floor(_spawnRadius * 0.03125);
+	_numberOfBuildings = floor(_spawnRadius * 0.0385);
+	_numberOfStationaryWeapons = floor(_spawnRadius * 0.02125);
 
 	_currentObjectIndex = 0;
 	while { _currentObjectIndex < _numberOfVehicles } do {
-		[[_townPosition, _townRadius, true] call randomPosition, random 360.0, vehicleCategories] call spawnVehicle;
+		[[_spawnPosition, _spawnRadius, true] call randomPosition, random 360.0, vehicleCategories] call spawnVehicle;
 
 		_totalVehicles = _totalVehicles + 1;
 		_currentObjectIndex = _currentObjectIndex + 1;
@@ -33,7 +32,7 @@ _totalStationaryWeapons = 0;
 
 	_currentObjectIndex = 0;
 	while { _currentObjectIndex < _numberOfWeaponCrates } do {
-		[[_townPosition, _townRadius, true] call randomPosition, random 360.0, weaponCrateCategories] call spawnWeaponCrate;
+		[[_spawnPosition, _spawnRadius, true] call randomPosition, random 360.0, weaponCrateCategories] call spawnWeaponCrate;
 
 		_totalWeaponCrates = _totalWeaponCrates + 1;
 		_currentObjectIndex = _currentObjectIndex + 1;
@@ -41,7 +40,7 @@ _totalStationaryWeapons = 0;
 
 	_currentObjectIndex = 0;
 	while { _currentObjectIndex < _numberOfBuildings } do {
-		[[_townPosition, _townRadius, true] call randomPosition, random 360.0, buildingCategories] call spawnObject;
+		[[_spawnPosition, _spawnRadius, true] call randomPosition, random 360.0, buildingCategories] call spawnObject;
 
 		_totalBuildings = _totalBuildings + 1;
 		_currentObjectIndex = _currentObjectIndex + 1;
@@ -49,16 +48,16 @@ _totalStationaryWeapons = 0;
 
 	_currentObjectIndex = 0;
 	while { _currentObjectIndex < _numberOfStationaryWeapons } do {
-		[[_townPosition, _townRadius, true] call randomPosition, random 360.0, stationaryWeaponCategories] call spawnObject;
+		[[_spawnPosition, _spawnRadius, true] call randomPosition, random 360.0, stationaryWeaponCategories] call spawnObject;
 
 		_totalStationaryWeapons = _totalStationaryWeapons + 1;
 		_currentObjectIndex = _currentObjectIndex + 1;
 	};
 
-	diag_log format["%1: Spawned %2 Vehicles, %3 Buildings, %4 Stationary Weapons and %5 Weapon Crates.", _townName, _numberOfVehicles, _numberOfBuildings, _numberOfStationaryWeapons, _numberOfWeaponCrates];
+	diag_log format["Spawn %1: Spawned %2 Vehicles, %3 Buildings, %4 Stationary Weapons and %5 Weapon Crates.", _forEachIndex + 1, _numberOfVehicles, _numberOfBuildings, _numberOfStationaryWeapons, _numberOfWeaponCrates];
 
-	sleep 0.1;
-} forEach townList;
+	sleep 0.05;
+} forEach spawnLocations;
 
 _currentObjectIndex = 0;
 while { _currentObjectIndex < numberOfHelicopterSpawns } do {
