@@ -16,7 +16,7 @@ _check = 0;
 _target = objNull;
 
 {
-	if(str(_x) == _playerData) then {
+	if(str _x == _playerData) then {
 		_target = _x;
 		_check = 1;
 	};

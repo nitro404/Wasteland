@@ -3,8 +3,6 @@
 //	@file Author: [404] Deadbeat
 //	@file Created: 20/11/2012 05:19
 
-// if(player != leader group player) exitWith { player globalChat format["You are not the leader and can't invite people"]; };
-
 #include "dialog\groupManagementDefines.sqf";
 
 disableSerialization;
@@ -20,7 +18,7 @@ _hasInvite = false;
 _check = 0;
 
 {
-	if(str(_x) == _playerData) then {
+	if(str _x == _playerData) then {
 		_target = _x;
 		_check = 1;
 	};
@@ -51,6 +49,6 @@ if(_hasInvite) exitWith {
 [currentInvites, [getPlayerUID player, getPlayerUID _target]] call BIS_fnc_arrayPush;
 publicVariableServer "currentInvites";
 
-[nil,_target,"loc", rTITLETEXT, format["You have been invited to join %1's group", name player], "PLAIN", 0] call RE;
+[nil, _target, "loc", rTITLETEXT, format["You have been invited to join %1's group", name player], "PLAIN", 0] call RE;
 
 player globalChat format["You have invited %1 to join the group", name _target];

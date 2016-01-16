@@ -8,7 +8,7 @@
 
 disableSerialization;
 
-private["_start", "_dialog", "_myGroup", "_playerListBox", "_groupListBox", "_uid", "_namestr", "_index", "_groupCreate", "_groupInvite", "_groupKick", "_groupDisband", "_groupLeaveButton", "_inGroup", "_isLeader", "_name"];
+private["_start", "_dialog", "_myGroup", "_playerListBox", "_groupListBox", "_uid", "_index", "_groupCreate", "_groupInvite", "_groupKick", "_groupDisband", "_groupLeaveButton", "_inGroup", "_isLeader", "_name"];
 
 closeDialog 0;
 _start = createDialog "GroupManagement";
@@ -68,19 +68,20 @@ while { groupManagmentActive } do {
 		_groupPromote ctrlShow false;
     };
 
-    // sort invite controls
+	// sort invite controls
     if(_hasInvite) then {
         _groupInviteText ctrlShow true;
         _groupAcceptInvite ctrlShow true;
         _groupDeclineInvite ctrlShow true;
 
-        // get invite text and set it
+		// get invite text and set it
         {
             _invite = _x;
+
             if(_invite select 1 == getPlayerUID player) then {
                 {
                     if(_invite select 0 == getPlayerUID _x) then {
-                        _name = name(_x);
+                        _name = name _x;
                     };
                 } forEach playableUnits;
             };
@@ -94,23 +95,20 @@ while { groupManagmentActive } do {
         _groupInviteText ctrlShow false;
     };
 
-    // update player list
+	// update player list
 	{
-		if(str(side _x) == str(playerSide)) then {
+		if(side group _x == side group player) then {
 	        if(getPlayerUID _x != getPlayerUID player) then {
-			    // add to list
-			    _namestr = name(_x);
-				_index = _playerListBox lbAdd _namestr;
-				_playerListBox lbSetData[_index, str(_x)];
+				_index = _playerListBox lbAdd (name _x);
+				_playerListBox lbSetData[_index, str _x];
 	        };
 	    };
-	} forEach playableUnits;
+	} forEach playableUnits - units group player;
 
-    // update group player list
+	// update group player list
     {
-    	_namestr = name(_x);
-		_index = _groupListBox lbAdd _namestr;
-		_groupListBox lbSetData [_index, str(_x)];
+		_index = _groupListBox lbAdd (name _x);
+		_groupListBox lbSetData [_index, str _x];
     } forEach units group player;
 
 	sleep 0.5;

@@ -17,7 +17,7 @@ _playerData = _groupListBox lbData _index;
 _check = 0;
 
 {
-	if(str(_x) == _playerData) then {
+	if(str _x == _playerData) then {
 		_target = _x;
 		_check = 1;
 	};
