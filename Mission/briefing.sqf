@@ -292,10 +292,10 @@ A. Weapons are found in a number of different places:<br/>
 	- On the corpses of dead players or AI at missions.<br/>
 <br/>
 Q. What are the circles on the map?<br/>
-A. The circles represent town limits. The circle will appear green if friendly units are in a town, red if enemies are present and orange if both enemy and friendly units are present. If friendly soldiers are in a town, you can spawn there from the re-spawn menu; however if there is an enemy presence, you will not be able to spawn there.<br/>
+A. The circles represent town and store limits. The circle will appear green if friendly units are present, red if enemies are present and orange if both enemy and friendly units are present. If friendly soldiers are in range of a town, you can spawn there from the re-spawn menu; however if there is an enemy presence, you will not be able to spawn there.<br/>
 <br/>
 Q. Is it ok for me to shoot my team mates?<br/>
-A. If you are member of BLUFOR or OPFOR teams, then you are not allowed to shoot or steam items and vehicles from other players. If you play as Independent, you are free to engage anyone as well as team up with anyone you want.<br/>
+A. If you are member of BLUFOR or OPFOR teams, then you are not allowed to shoot or steam items and vehicles from your teammates. If you play as Independent, you are free to engage anyone as well as team up with anyone you want.<br/>
 <br/>
 Q. I saw someone breaking a rule, what do I do?<br/>
 A. If you wish to report an incident or concern, please join our TeamSpeak server at ts.eventhorizongaming.net and report it to a server administrator / moderator. If no admins are available, please visit our website at http://www.eventhorizongaming.net and submit a report. Please provide as much evidence as you can to enforce your report, whether it be screenshots, recorded video footage, chat logs, etc.<br/>"
