@@ -21,7 +21,7 @@ true spawn {
 	if(!isDedicated) then {
 		titleText ["Initializing Player...", "BLACK", 0];
 		waitUntil { player == player };
-		client_initEH = player addEventHandler ["Respawn", { removeAllWeapons (_this select 0); }];
+		onFirstSpawn = player addEventHandler ["Respawn", { removeAllWeapons (_this select 0); }];
 	};
 };
 

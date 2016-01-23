@@ -14,10 +14,6 @@ while { true } do {
 	player removeAllEventHandlers "Respawn";
 	player removeAllEventHandlers "handleDamage";
 
-	if(!isNil "client_initEH") then {
-		player removeEventHandler ["Respawn", client_initEH];
-	};
-
 	player addEventHandler["Respawn", { _this call onRespawn; }];
 	player addEventHandler["Killed", { _this call onKilled; }];
 	player addEventHandler["handleDamage", { _this select 2 }];

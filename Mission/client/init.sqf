@@ -40,7 +40,11 @@ waitUntil {
 
 call playerSetup;
 
-if(!isNil "client_initEH") then { player removeEventHandler["Respawn", client_initEH]; };
+if(!isNil "onFirstSpawn") then {
+	player removeEventHandler["Respawn", onFirstSpawn];
+	onFirstSpawn = nil;
+};
+
 player addEventHandler ["Respawn", { _this call onRespawn; } ];
 player addEventHandler ["Killed", { _this call onKilled; } ];
 player addMPEventHandler ["MPKilled", { _this call onMultiplayerKilled; } ];
