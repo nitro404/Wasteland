@@ -33,13 +33,17 @@ numberOfHelicopterSpawns = 90;
 
 vehicleCategories = [
 	["Civilian", 25, [
-		// ATV / Motorbikes / Tractors
-		["ATV_US_EP1", "Old_moto_TK_Civ_EP1", "TT650_Ins", "TT650_Civ", "M1030", "TT650_TK_EP1", "Tractor", "tractorOld", "TowingTractor"],
+		// ATV
+		["ATV_US_EP1"],
+		// Motorbikes
+		["Old_moto_TK_Civ_EP1", "TT650_Ins", "TT650_Civ", "M1030", "TT650_TK_EP1"],
+		// Tractors
+		["Tractor", "tractorOld", "TowingTractor"],
 		// Cars
 		["S1203_TK_CIV_EP1", "car_hatchback", "VWGolf", "Skoda", "SkodaBlue", "SkodaGreen", "SkodaRed", "Lada1_TK_CIV_EP1", "Lada2_TK_CIV_EP1", "Volha_1_TK_CIV_EP1", "Volha_2_TK_CIV_EP1", "VolhaLimo_TK_CIV_EP1", "car_sedan", "LadaLM", "Lada1", "Lada2"],
 		// Busses
 		["Ikarus", "Ikarus_TK_CIV_EP1"],
-		// Humvees
+		// Humvee
 		["HMMWV"],
 		// Offroads
 		["BAF_Offroad_W", "LandRover_TK_CIV_EP1", "hilux1_civil_1_open", "hilux1_civil_2_covered", "hilux1_civil_3_open", "datsun1_civil_1_open", "datsun1_civil_2_covered", "datsun1_civil_3_open"],
@@ -50,7 +54,7 @@ vehicleCategories = [
 		// Urals
 		["Ural_UN_EP1", "Ural_TK_CIV_EP1", "UralCivil2", "UralCivil", "Ural_Ins", "Ural_CDF", "UralOpen_INS", "UralOpen_CDF", "Kamaz", "KamazOpen", "V3S_Civ", "V3S_TK_EP1", "V3S_TK_GUE_EP1", "V3S_Open_TK_EP1", "V3S_Open_TK_CIV_EP1", "MTVR"],
 		// Armored Vehicles
-		["GAZ_Vodnik","BTR40_TK_GUE_EP1", "BTR40_TK_INS_EP1"]
+		["GAZ_Vodnik", "BTR40_TK_GUE_EP1", "BTR40_TK_INS_EP1"]
 	]],
 	["Utility Vehicles", 8, [
 		// Ammo Trucks
@@ -63,34 +67,48 @@ vehicleCategories = [
 		["HMMWV_Ambulance", "S1203_ambulance_EP1", "GAZ_Vodnik_MedEvac", "M1133_MEV_EP1", "M113Ambul_TK_EP1", "BMP2_Ambul_INS", "BMP2_Ambul_CDF"]
 	]],
 	["Light Armored Vehicles", 54, [
-		// CROWS
+		// CROWS Hummer
 		["HMMWV_M998_crows_M2_DES_EP1", "HMMWV_M998_crows_MK19_DES_EP1"],
 		// Mk19 / AGS30 Technicals
 		["M1126_ICV_mk19_EP1", "HMMWV_MK19", "UAZ_AGS30_CDF", "UAZ_AGS30_INS", "UAZ_AGS30_RU", "UAZ_AGS30_TK_EP1"],
-		//  Armored SUV / PKT / DShKM Technicals
-		["ArmoredSUV_PMC", "Pickup_PK_INS", "Pickup_PK_GUE", "UAZ_MG_INS", "UAZ_MG_TK_EP1", "UAZ_MG_CDF", "Offroad_DSHKM_TK_GUE_EP1", "Offroad_DSHKM_INS", "Offroad_DSHKM_GUE", "BTR40_MG_TK_GUE_EP1", "BTR40_MG_TK_INS_EP1"],
+		// Armored SUV
+		["ArmoredSUV_PMC"],
+		// PKT / DShKM Technicals
+		["Pickup_PK_INS", "Pickup_PK_GUE", "UAZ_MG_INS", "UAZ_MG_TK_EP1", "UAZ_MG_CDF", "Offroad_DSHKM_TK_GUE_EP1", "Offroad_DSHKM_INS", "Offroad_DSHKM_GUE", "BTR40_MG_TK_GUE_EP1", "BTR40_MG_TK_INS_EP1"],
 		// SPG-9 Technicals
 		["UAZ_SPG9_INS", "LandRover_SPG9_TK_EP1", "LandRover_SPG9_TK_INS_EP1", "Offroad_SPG9_Gue", "Offroad_SPG9_TK_GUE_EP1"],
 		// M2 / M240 Technicals
 		["M1126_ICV_M2_EP1", "HMMWV_M2", "HMMWV_Armored", "LandRover_MG_TK_INS_EP1", "LandRover_MG_TK_EP1"],
 		// Multi-Purpose Technicals
 		["LandRover_Special_CZ_EP1", "BAF_Jackal2_L2A1_W", "BAF_Jackal2_GMG_W"],
+		// BRDM2
+		["BRDM2_Gue", "BRDM2_CDF", "BRDM2_INS", "BRDM2_TK_GUE_EP1", "BRDM2_TK_EP1"],
+		// BTR-60
+		["BTR60_TK_EP1"],
+		// Vodnik BPPU
+ 		["GAZ_Vodnik_HMG"],
+		// M113
+		["M113_TK_EP1"],
 		// Anti-Air Vehicles
 		["HMMWV_Avenger"],
-		// Anti-Tank Vehicles
+		// Anti-Tank Guided Missile Vehicles
 		["HMMWV_TOW", "M1135_ATGMV_EP1", "BRDM2_ATGM_TK_EP1", "BRDM2_ATGM_CDF", "BRDM2_ATGM_INS"],
 		// ZU-23 Urals
-		["Ural_ZU23_Gue", "Ural_ZU23_INS", "Ural_ZU23_TK_GUE_EP1", "Ural_ZU23_CDF", "Ural_ZU23_TK_EP1"],
-		// BRDM2
-		["BRDM2_Gue", "BRDM2_CDF", "BRDM2_INS", "BRDM2_TK_GUE_EP1", "BRDM2_TK_EP1"]
+		["Ural_ZU23_Gue", "Ural_ZU23_INS", "Ural_ZU23_TK_GUE_EP1", "Ural_ZU23_CDF", "Ural_ZU23_TK_EP1"]
 	]],
 	["Medium Armored Vehicles", 11, [
-		// Light APCs
-		["BMP2_CDF", "BMP2_TK_EP1", "BMP2_INS", "BMP2_Gue", "BTR60_TK_EP1", "GAZ_Vodnik_HMG", "AAV", "M113_TK_EP1"],
-		// Light Tanks
-		["T34", "T34_TK_EP1", "T55_TK_EP1", "T55_TK_GUE_EP1"],
-		// Medium Tanks
-		["T72_TK_EP1", "T72_Gue", "T72_CDF", "T72_RU", "T72_INS", "M1128_MGS_EP1"],
+		//
+		["AAV"],
+		// BMP2
+		["BMP2_CDF", "BMP2_TK_EP1", "BMP2_INS", "BMP2_Gue"],
+		// T34
+		["T34", "T34_TK_EP1"],
+		// T55
+		["T55_TK_EP1", "T55_TK_GUE_EP1"],
+		// T72
+		["T72_TK_EP1", "T72_Gue", "T72_CDF", "T72_RU", "T72_INS"],
+		// Stryker MGS
+		["M1128_MGS_EP1"],
 		// Anti-Air Tanks
 		["ZSU_TK_EP1", "ZSU_CDF", "ZSU_INS"],
 		// LAV-25
