@@ -69,11 +69,6 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 					closeDialog 0;
 					execVM "client\systems\adminPanel\vehicleManagement.sqf";
 				};
-
-				// Tags
-				case 2:{
-					execVM "client\systems\adminPanel\playerTags.sqf";
-				};
 			};
 		};
 
@@ -90,97 +85,6 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
 				case 1: {
 					closeDialog 0;
 					execVM "client\systems\adminPanel\vehicleManagement.sqf";
-				};
-
-				// Tags
-				case 2: {
-					execVM "client\systems\adminPanel\playerTags.sqf";
-				};
-
-				// Teleport
-				case 3: {
-					closeDialog 0;
-					hint "Click on map to teleport";
-					if(vehicle player isKindOf "Air") then {
-						onMapSingleClick "vehicle player setPosATL [_pos select 0, _pos select 1, getPosATL player select 2]; onMapSingleClick ''; true;";
-					}
-					else {
-						onMapSingleClick "vehicle player setPos _pos; onMapSingleClick ''; true;";
-					};
-					openMap true;
-				};
-
-				// Money
-				case 4: {
-					if(isNil { player getVariable "money" }) then {
-						player setVariable["money", 10000, true];
-					}
-					else {
-						player setVariable["money", (player getVariable "money") + 10000, true];
-					};
-				};
-
-				// Debug Menu
-				case 5: {
-					closeDialog 0;
-					execVM "client\systems\adminPanel\loadDebugMenu.sqf";
-				};
-			};
-		};
-
-		// Debug Panel
-		case 3: {
-			switch (lbCurSel _debugSelect) do {
-
-				// Access Gun Store
-				case 0: {
-					closeDialog 0;
-					execVM "client\systems\gunStore\loadGunStore.sqf";
-				};
-
-				// Access General Store
-				case 1: {
-					closeDialog 0;
-					execVM "client\systems\generalStore\loadGenStore.sqf";
-				};
-
-				// Access Respawn Dialog
-				case 2: {
-					closeDialog 0;
-					true spawn client_respawnDialog;
-				};
-
-				// Access Proving Grounds
-				case 3:  {
-					closeDialog 0;
-					createDialog "balca_debug_main";
-				};
-
-				// Restart Function
-				case 4: {
-					hint format["Server FPS: %1", serverFPS];
-				};
-
-				// Spawn Gun Crates
-				case 5: {
-					hint format["Spawning %1 Weapon Crates at %2.", count weaponCrateTypes, str getPos player];
-
-					{
-						[getPos player, _x] execVM "server\spawning\spawnWeaponCrate.sqf";
-					} forEach weaponCrateTypes;
-				};
-
-				// Player Position
-				case 6: {
-					hint format["Player Position: %1", str getPos player];
-				};
-
-				// Object Information
-				case 7: {
-					_cursortarget = cursorTarget;
-					if(alive _cursortarget) then {
-						2 cutText [format["%1\nPosition: %2\nDirection: %3", typeOf _cursortarget, getPos _cursortarget, getDir _cursortarget], "PLAIN DOWN", 5];
-					}
 				};
 			};
 		};
