@@ -60,7 +60,9 @@ if(isServer) then {
 			}
 			else {
 				if(_killerSide == resistance && _victimSide == resistance && !_victimInGroup) then {
-					_actualKiller addScore 2;
+					if(!(vehicle _actualKiller != _actualKiller && count crew vehicle _actualKiller > 1)) then {
+						_actualKiller addScore 2;
+					};
 				};
 			};
 		};
