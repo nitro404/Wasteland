@@ -1,9 +1,0 @@
-1 "" !="BoltSteel" !="5x_22_LR_17_HMR" !="10x_303" !="Binocular" !"item" !"trash" !"food" !"hand" !"part" !"rnd_" !"swing" !"skin" !"smoke" !="1rnd_" !="pg7v"
-1 "Item" !="ItemWatch" !="ItemCompass" !="ItemJerrycan" !="ItemMap"
-1 "Skin"
-5 "tester2" !="raz_tester2_m"
-1 "30Rnd_545x39_AKSD"
-5 "BAF_ied_v1"
-1 "rnd" !="30Rnd_556x45_Stanag" !="30Rnd_556x45_StanagSD" !="30Rnd_545x39_AK" !="20Rnd_762x51_DMR" !="30Rnd_556x45_G36" !="20Rnd_762x51_FNFAL" !="8Rnd_9x18_Makarov" !="100Rnd_" !="200Rnd_" !="1Rnd_" !="20Rnd_762" !="30Rnd_" !="7Rnd_45ACP_1911" !="6Rnd_45ACP" !="8Rnd_B_" !="2Rnd_shotgun_74Slug" !="2Rnd_shotgun_74Pellets" !="15Rnd_9x19_M9" !="15Rnd_"!="17Rnd_9x19_glock17"
-1 "PipeBomb" //!!!!!!!!!!!!!!!!!will cause fake bans, so don't forget to monitor logs!!!!!!!!!!!!!!!!!!!!
-//1 "ItemBloodbag"

@@ -1,3 +1,5 @@
+5 "" !" \[a-z]{4}$\" !"bis_effects_gepv"
+4 "jipexec"
 1 "draw"
 1 "hint" !"hintC" !"hintS"
 1 "create"
@@ -64,4 +66,3 @@
 1 "remoteControl"
 1 "rsay"
 1 "_YakB"
-5 "usecEpi"

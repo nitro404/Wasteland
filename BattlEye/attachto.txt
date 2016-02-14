@@ -1,5 +1,0 @@
-1 "USMC_SoldierS_Engineer"
-1 "GUE_Soldier_AT"
-1 "Soldier_Medic_PMC"
-1 "RU_Soldier_Sniper"
-1 "USMC_Soldier_AT"
