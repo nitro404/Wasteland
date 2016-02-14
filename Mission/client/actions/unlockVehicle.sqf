@@ -14,3 +14,5 @@ if(count crew cursorTarget > 0) exitWith { };
 if(!locked cursorTarget) exitWith { };
 
 cursorTarget setVehicleLock "UNLOCKED";
+
+player globalChat format["%1 is now unlocked.", typeOf cursorTarget];
