@@ -11,14 +11,9 @@ _shift = _this select 2;
 _handled = false;
 
 switch _key do {
-    // U
-    case 22: {
-        0 execVM "client\systems\adminPanel\checkAdmin.sqf";
-    };
-
     // Y
     case 21: {
-        1 execVM "client\systems\adminPanel\checkAdmin.sqf";
+        0 execVM "client\systems\adminPanel\checkAdmin.sqf";
     };
 
     // Left Windows Key
@@ -46,8 +41,8 @@ switch _key do {
         call removeParachute;
     };
 
-    // F11
-    case 87: {
+    // U
+    case 22: {
         call toggleVehicleLock;
     };
 };

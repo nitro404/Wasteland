@@ -52,5 +52,4 @@ if(isServer) then {
 };
 
 execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
-execVM "addons\proving_Ground\init.sqf";
 // [0.1, 0.5, 0.5] execVM "addons\scripts\DynamicWeatherEffects.sqf";

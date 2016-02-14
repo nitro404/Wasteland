@@ -19,12 +19,7 @@ if((_uid in moderators) || (_uid in administrators) || (_uid in serverAdministra
     };
 
     if((_uid in serverAdministrators)) then {
-        if(_this == 1) then {
-            createDialog "balca_debug_main";
-        }
-        else {
-            execVM "client\systems\adminPanel\loadServerAdministratorMenu.sqf";
-        };
+        execVM "client\systems\adminPanel\loadServerAdministratorMenu.sqf";
     };
 }
 else {
