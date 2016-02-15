@@ -3048,7 +3048,7 @@ class Mission
 			side="EMPTY";
 			vehicle="An2_TK_EP1";
 			skill=0.60000002;
-			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; if(isServer) { veh = [this, 600] execVM ""server\functions\respawnVehicle.sqf""; }";
+			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";";
 		};
 		class Item18
 		{
@@ -3058,7 +3058,7 @@ class Mission
 			side="EMPTY";
 			vehicle="An2_1_TK_CIV_EP1";
 			skill=0.60000002;
-			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; if(isServer) { veh = [this, 600] execVM ""server\functions\respawnVehicle.sqf""; }";
+			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";";
 		};
 		class Item19
 		{
@@ -3068,7 +3068,7 @@ class Mission
 			side="EMPTY";
 			vehicle="An2_2_TK_CIV_EP1";
 			skill=0.60000002;
-			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; if(isServer) { veh = [this, 600] execVM ""server\functions\respawnVehicle.sqf""; }";
+			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";";
 		};
 		class Item20
 		{
@@ -3078,7 +3078,7 @@ class Mission
 			side="EMPTY";
 			vehicle="An2_TK_EP1";
 			skill=0.60000002;
-			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; if(isServer) { veh = [this, 600] execVM ""server\functions\respawnVehicle.sqf""; }";
+			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";";
 		};
 		class Item21
 		{
@@ -3088,7 +3088,7 @@ class Mission
 			side="EMPTY";
 			vehicle="L39_TK_EP1";
 			skill=0.60000002;
-			init="this addMagazine ""150Rnd_23mm_GSh23L""; this addMagazine ""150Rnd_23mm_GSh23L""; this addMagazine ""150Rnd_23mm_GSh23L""; if(isServer) { veh = [this, 1800] execVM ""server\functions\respawnVehicle.sqf""; }";
+			init="this addMagazine ""150Rnd_23mm_GSh23L""; this addMagazine ""150Rnd_23mm_GSh23L""; this addMagazine ""150Rnd_23mm_GSh23L"";";
 		};
 		class Item22
 		{
@@ -3098,7 +3098,7 @@ class Mission
 			side="EMPTY";
 			vehicle="An2_1_TK_CIV_EP1";
 			skill=0.60000002;
-			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; if(isServer) { veh = [this, 600] execVM ""server\functions\respawnVehicle.sqf""; }";
+			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";";
 		};
 		class Item23
 		{
@@ -3108,7 +3108,7 @@ class Mission
 			side="EMPTY";
 			vehicle="An2_TK_EP1";
 			skill=0.60000002;
-			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; if(isServer) { veh = [this, 600] execVM ""server\functions\respawnVehicle.sqf""; }";
+			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";";
 		};
 		class Item24
 		{
@@ -3118,7 +3118,7 @@ class Mission
 			side="EMPTY";
 			vehicle="MQ9PredatorB";
 			skill=0.60000002;
-			init="if(isServer) { veh = [this, 1800] execVM ""server\functions\respawnVehicle.sqf""; }";
+			init="";
 		};
 		class Item25
 		{
@@ -3128,7 +3128,7 @@ class Mission
 			side="EMPTY";
 			vehicle="An2_1_TK_CIV_EP1";
 			skill=0.60000002;
-			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; if(isServer) { veh = [this, 600] execVM ""server\functions\respawnVehicle.sqf""; }";
+			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";";
 		};
 		class Item26
 		{
@@ -3138,7 +3138,7 @@ class Mission
 			side="EMPTY";
 			vehicle="An2_TK_EP1";
 			skill=0.60000002;
-			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9""; if(isServer) { veh = [this, 600] execVM ""server\functions\respawnVehicle.sqf""; }";
+			init="this addMagazine ""500Rnd_TwinVickers""; this addMagazine ""500Rnd_TwinVickers""; this addWeapon ""TwinVickers""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addMagazine ""OG9_HE""; this addWeapon ""SPG9"";";
 		};
 		class Item27
 		{
@@ -3148,7 +3148,7 @@ class Mission
 			side="EMPTY";
 			vehicle="C130J";
 			skill=0.60000002;
-			init="this addMagazine ""6Rnd_GBU12_AV8B""; this addMagazine ""6Rnd_GBU12_AV8B""; this addWeapon ""BombLauncher""; if(isServer) { veh = [this, 1800] execVM ""server\functions\respawnVehicle.sqf""; }";
+			init="this addMagazine ""6Rnd_GBU12_AV8B""; this addMagazine ""6Rnd_GBU12_AV8B""; this addWeapon ""BombLauncher"";";
 		};
 		// Nizhnoye Repair Pad
 		class Item28
