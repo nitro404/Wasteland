@@ -11,7 +11,7 @@ if(isNil "RE") then {
 enableSaving[false, false];
 
 X_JIP = false;
-versionName = "0.0.1";
+versionName = "1.0";
 
 if(isNull player) then {
 	X_JIP = true;

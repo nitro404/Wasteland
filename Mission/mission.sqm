@@ -64,7 +64,7 @@ class Mission
 	randomSeed=10079095;
 	class Intel
 	{
-		briefingName="Rolling Thunder Wasteland 0.0.1 Chernarus by Event Horizon Gaming";
+		briefingName="Rolling Thunder Wasteland 1.0 Chernarus by Event Horizon Gaming";
 		briefingDescription="Wasteland is a harsh survival sandbox.";
 		resistanceWest=0;
 		startWeather=0;

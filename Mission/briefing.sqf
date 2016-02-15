@@ -5,11 +5,12 @@
 
 player createDiarySubject ["Event Horizon Gaming", "Event Horizon Information"];
 player createDiarySubject ["Changelog", "Rolling Thunder Changelog"];
+player createDiarySubject ["Coming Soon", "Upcoming Features"];
 player createDiarySubject ["Wasteland", "What Is Wasteland?"];
 
 player createDiaryRecord["Changelog", [
-"0.0.1",
-"Date: December 21, 2015<br/>
+"1.0",
+"Date: Februrary 14, 2016<br/>
 <br/>
 General:<br/>
 	+ Removed food and water / hunger &amp; thirst system.<br/>
@@ -47,6 +48,7 @@ General:<br/>
 	+ Other group members can now be promoted to leader.<br/>
 	+ Fixed kick, disband and promote buttons not disabling after promoting a new leader.<br/>
 	+ Any member of a group can invite new players.<br/>
+	+ Invitable player list no longer shows players already in your group.<br/>
 	+ Player markers now display from up to 5km away.<br/>
 	+ Removed player graves.<br/>
 	+ Added vehicle hit-n-run teamkill check.<br/>
@@ -54,11 +56,14 @@ General:<br/>
 		1. Three Valleys<br/>
 		2. Vysota (North Chernogorsk)<br/>
 		3. Pass Sosnovy (South Pustoshka)<br/>
+	<br/>
+	Continued on next page...<br/>
 		4. East Dolina<br/>
 		5. North Dubrovka<br/>
 		6. Devil's Pit (West Ghozdno)<br/>
 		7. Windy Valley (South Kozlovka)<br/>
 		8. Moglievka Pass (South-East Moglievka)<br/>
+		9. North Balota<br/>
 	+ Added lock so players cannot spawn multiple times before the dialog is dismissed.<br/>
 	+ Player scores now increment properly when AI and enemy independent players (while on independent) are killed with a hand-held weapon or are road killed.<br/>
 	+ Player scores now decrement when friendly units are road killed (including independent group members).<br/>
@@ -98,6 +103,8 @@ Player Spawn System:<br/>
 	+ Added checks so spawn beacons cannot be placed over water or out of map boundaries.<br/>
 	+ Added E hotkey to remove parachute while HALO jumping or parachuting out of a vehicle.<br/>
 <br/>
+	<br/>
+	Continued on next page...<br/>
 Repair Centers:<br/>
 	+ Added new repair centers:<br/>
 		- West of Petrovka<br/>
@@ -143,6 +150,8 @@ Static Spawns:<br/>
 		- Boat weights: 50% RHIB, 40% PBX, 10% civilian boats.<br/>
 	+ Updated random vehicle weapon script to account for both max weapon and magazine storage capacity.<br/>
 	+ Removed static spawn map markers.<br/>
+	<br/>
+	Continued on next page...<br/>
 	+ Increased initial number of static helicopter spawns to 90.<br/>
 	+ Removed random static helicopter wreck spawns.<br/>
 	+ Updated static vehicle spawn lists to include new vehicles.<br/>
@@ -190,6 +199,8 @@ Missions:<br/>
 	+ Added AI count to mission markers.<br/>
 	+ Mission markers now turn green when mission is completed.<br/>
 	+ Fixed and simplified mission marker synchronizing.<br/>
+	<br/>
+	Continued on next page...<br/>
 	+ Added simple bases to missions.<br/>
 	+ Leftover base parts are cleaned up 2 minutes after mission is completed.<br/>
 	+ There is up to 1 of each mission type active at any given time, except for geo caches which can be up to 2.<br/>
@@ -222,6 +233,38 @@ Bug Fixes:<br/>
 	+ Fixed tons of script errors and bugs.<br/>
 	+ Cleaned up lots of unused and duplicated code.<br/>
 	+ Fixed old spawn beacons being deactivated before new beacon is placed.<br/>"
+]];
+
+player createDiaryRecord["Coming Soon", [
+"Upcoming Features",
+"We have lots of cool new features planned for the mission! Here is a brief list of items to give you an idea of what to expect in the near future:<br/>
+<br/>
+Persistence<br/>
+	+ Player inventory, gear, backpack, health, money, bounty, location, settings will be saved!<br/>
+	+ Spawn beacons, special / mission vehicles, locked base parts and their contents will also save!<br/>
+	+ Persistence currently being worked on with a custom-designed server plugin!<br/>
+<br/>
+Improved Interface<br/>
+	+ Spawn loadouts will be choosable from the respawn screen and saved to the database!<br/>
+	+ Store interfaces, functionality and contents will be overhauled!<br/>
+	+ New stores!<br/>
+	+ Improved bounty system!<br/>
+	+ Custom scoreboard!<br/>
+<br/>
+Missions<br/>
+	+ Tasks will be added to task list for active missions.<br/>
+	+ More new and improved bases will be added for missions.<br/>
+	+ New mission types and rewards!<br/>
+	+ Overhaul of towing script with bug fixes and tons of improvements!<br/>
+<br/>
+Spawning<br/>
+	+ Ability to spawn inside of friendly air vehicles!<br/>
+	+ Ground spawn beacons!<br/>
+<br/>
+Base Building<br/>
+	+ New and improved base building with features like snapping and keybinds!<br/>
+<br/>
+And may more features to come!"
 ]];
 
 player createDiaryRecord["Event Horizon Gaming", [

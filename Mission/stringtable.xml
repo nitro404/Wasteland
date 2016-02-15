@@ -38,16 +38,16 @@
 	</Package>
 	<Package name="WelcomeMessage">
 		<Key ID="STR_WL_WelcomeToWasteland">
-			<English>&lt;t color='#FF9E9E' size='2.5' &gt;Welcome to Rolling Thunder Wasteland by Event Horizon Gaming&lt;t color='#FFFFFF' size='1' &gt;</English>
+			<English>&lt;t color='#FF9E9E' size='2.5' &gt;Rolling Thunder Wasteland&lt;t color='#FFFFFF' size='1' &gt;</English>
 		</Key>
 		<Key ID="STR_WL_YouAreInTeam">
-			<English>&lt;t color='#FF9E9E' size='2.5' &gt;Instructions&lt;br/&gt;&lt;t color='#FFFFFF' size='1.5' &gt;&#127;You are on &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt;.&lt;br/&gt;&#127;Attacking or stealing from other %4 players is &lt;t color="#aa0000"&gt;not allowed.&lt;/t&gt;&lt;br/&gt;&#127;&#127;The server restarts at regular intervals with multiple warnings.&lt;br/&gt;&#127;You will be locked to %4 after 3 minutes.&lt;/t&gt;</English>
+			<English>&lt;t color='#FF9E9E' size='2.5' &gt;Instructions&lt;br/&gt;&lt;t color='#FFFFFF' size='1.5' &gt;&#127;You are on &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt;.&lt;br/&gt;&#127;Attacking or stealing from other %4 players is &lt;t color="#aa0000"&gt;not allowed.&lt;/t&gt;&lt;br/&gt;&#127;&#127;You will be locked to %4 after 3 minutes.&lt;/t&gt;</English>
 		</Key>
 		<Key ID="STR_WL_YouAreInFFA">
-			<English>&lt;t color='#FF9E9E' size='2.5' &gt;Instructions&lt;br/&gt;&lt;t color='#FFFFFF' size='1.5' &gt;&#127;You are on &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;&#127;You are &lt;t color="#00aa00"&gt;free to attack and kill anyone.&lt;/t&gt;&lt;br/&gt;&#127;No voice communication in side chat.&lt;br/&gt;&#127;The server restarts at regular intervals with multiple warnings.&lt;/t&gt;</English>
+			<English>&lt;t color='#FF9E9E' size='2.5' &gt;Instructions&lt;br/&gt;&lt;t color='#FFFFFF' size='1.5' &gt;&#127;You are on &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;&#127;You are &lt;t color="#00aa00"&gt;free to attack and kill anyone.&lt;/t&gt;&lt;br/&gt;&#127;No voice communication in side chat.&lt;/t&gt;</English>
 		</Key>
 		<Key ID="STR_WL_MapMoreInfo">
-			<English>&lt;t color='#FFFFFF' size='1.5' &gt;Welcome to Rolling Thunder Wasteland by Event Horizon Gaming!&lt;br/&gt;Please report all bugs / issues / comments / suggestions to our forum at http://www.eventhorizongaming.net&lt;br/&gt;Server restart times: 6:00 AM / 6:00 PM (EST)&lt;br/&gt;For more info please see the diary entries at the top left corner of the map screen or visit our website!&lt;br/&gt;&lt;/t&gt;</English>
+			<English>&lt;t color='#FFFFFF' size='1.5' &gt;Welcome to Rolling Thunder Wasteland by Event Horizon Gaming!&lt;br/&gt;Please report all bugs / issues / comments / suggestions to our website at http://www.eventhorizongaming.net&lt;br/&gt;For more info please see the diary entries at the top left corner of the map screen or visit our website!&lt;br/&gt;&lt;/t&gt;</English>
 		</Key>
 	</Package>
 	<Package name="TeamKillWarningMessage">
