@@ -111,7 +111,7 @@ Repair Centers:<br/>
 		- West of Gorka<br/>
 		- North of Myshkino<br/>
 		- South of Pobeda Dam<br/>
-		- North of Cap Golovav<br/>
+		- North of Cap Golova<br/>
 		- East of Vyshnoye<br/>
 	+ Repair pads do not break re-arm cycle if you move away from them.<br/>
 	+ Maximum vehicle speed of 100 km/h set for vehicle re-arm trigger.<br/>
