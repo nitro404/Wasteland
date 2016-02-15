@@ -2707,7 +2707,7 @@ class Mission
 				{
 					position[]={2658.28,117.84815,2336.2004};
 					azimut=140.64359;
-					id=196;
+					id=193;
 					side="LOGIC";
 					vehicle="worker3";
 					leader=1;
@@ -2727,7 +2727,7 @@ class Mission
 				{
 					position[]={11477.492,244.68361,5472.2793};
 					azimut=140.64359;
-					id=199;
+					id=196;
 					side="LOGIC";
 					vehicle="worker3";
 					leader=1;
@@ -2747,7 +2747,7 @@ class Mission
 				{
 					position[]={5392.4614,309.43948,5651.2065};
 					azimut=140.64359;
-					id=202;
+					id=199;
 					side="LOGIC";
 					vehicle="worker3";
 					leader=1;
@@ -2767,7 +2767,7 @@ class Mission
 				{
 					position[]={13407.838,85.681488,12977.987};
 					azimut=140.64359;
-					id=205;
+					id=202;
 					side="LOGIC";
 					vehicle="worker3";
 					leader=1;
@@ -2787,7 +2787,7 @@ class Mission
 				{
 					position[]={4078.1462,270.56168,12183.792};
 					azimut=140.64359;
-					id=208;
+					id=205;
 					side="LOGIC";
 					vehicle="worker3";
 					leader=1;
@@ -2807,7 +2807,7 @@ class Mission
 				{
 					position[]={7243.8003,374.40692,9068.7295};
 					azimut=140.64359;
-					id=211;
+					id=208;
 					side="LOGIC";
 					vehicle="worker3";
 					leader=1;
@@ -2826,7 +2826,7 @@ class Mission
 				class Item0
 				{
 					position[]={7538.356,214.24684,5103.3223};
-					id=223;
+					id=220;
 					side="LOGIC";
 					vehicle="TK_CIV_Takistani04_EP1";
 					leader=1;
@@ -2839,7 +2839,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=101;
+		items=98;
 		class Item0
 		{
 			position[]={8343.0654,26.779518,3340.9795};
@@ -3118,7 +3118,6 @@ class Mission
 			side="EMPTY";
 			vehicle="MQ9PredatorB";
 			skill=0.60000002;
-			init="";
 		};
 		class Item25
 		{
@@ -3487,163 +3486,130 @@ class Mission
 		};
 		class Item59
 		{
-			position[]={8613.333,264.22107,3916.4065};
-			azimut=100;
-			id=193;
-			side="EMPTY";
-			vehicle="Land_fort_artillery_nest";
-			leader=1;
-			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
-		};
-		class Item60
-		{
-			position[]={2395.5935,360.01721,7712.0298};
-			azimut=315;
-			id=194;
-			side="EMPTY";
-			vehicle="Land_fort_artillery_nest";
-			leader=1;
-			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
-		};
-		class Item61
-		{
-			position[]={8368.2666,322.94186,10514.592};
-			azimut=270;
-			id=195;
-			side="EMPTY";
-			vehicle="Land_fort_artillery_nest";
-			leader=1;
-			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
-		};
-		class Item62
-		{
 			position[]={2655.8298,118.00475,2336.8708};
 			azimut=310;
-			id=197;
+			id=194;
 			side="EMPTY";
 			vehicle="Land_Campfire_burning";
 			skill=0.60000002;
 			text="fp17";
 			init="this setVariable [""R3F_LOG_disabled"", true];";
 		};
-		class Item63
+		class Item60
 		{
 			position[]={2651.4465,118.73574,2350.7434};
 			azimut=200;
-			id=198;
+			id=195;
 			side="EMPTY";
 			vehicle="Sr_border";
 			skill=0.60000002;
 			text="buildingStoreSpawn1";
 			init="this setVariable[""R3F_LOG_disabled"", true];";
 		};
-		class Item64
+		class Item61
 		{
 			position[]={11476.119,244.83235,5472.7969};
 			azimut=310;
-			id=200;
+			id=197;
 			side="EMPTY";
 			vehicle="Land_Campfire_burning";
 			skill=0.60000002;
 			text="fp18";
 			init="this setVariable [""R3F_LOG_disabled"", true];";
 		};
-		class Item65
+		class Item62
 		{
 			position[]={11472.347,245.82274,5487.2412};
 			azimut=200;
-			id=201;
+			id=198;
 			side="EMPTY";
 			vehicle="Sr_border";
 			skill=0.60000002;
 			text="buildingStoreSpawn2";
 			init="this setVariable[""R3F_LOG_disabled"", true];";
 		};
-		class Item66
+		class Item63
 		{
 			position[]={5390.0103,309.41513,5651.877};
 			azimut=310;
-			id=203;
+			id=200;
 			side="EMPTY";
 			vehicle="Land_Campfire_burning";
 			skill=0.60000002;
 			text="fp19";
 			init="this setVariable [""R3F_LOG_disabled"", true];";
 		};
-		class Item67
+		class Item64
 		{
 			position[]={5385.7876,309.35464,5666.1968};
 			azimut=200;
-			id=204;
+			id=201;
 			side="EMPTY";
 			vehicle="Sr_border";
 			skill=0.60000002;
 			text="buildingStoreSpawn3";
 			init="this setVariable[""R3F_LOG_disabled"", true];";
 		};
-		class Item68
+		class Item65
 		{
 			position[]={13405.721,85.907379,12978.783};
 			azimut=310;
-			id=206;
+			id=203;
 			side="EMPTY";
 			vehicle="Land_Campfire_burning";
 			skill=0.60000002;
 			text="fp20";
 			init="this setVariable [""R3F_LOG_disabled"", true];";
 		};
-		class Item69
+		class Item66
 		{
 			position[]={13401.475,87.414543,12993.291};
 			azimut=200;
-			id=207;
+			id=204;
 			side="EMPTY";
 			vehicle="Sr_border";
 			skill=0.60000002;
 			text="buildingStoreSpawn4";
 			init="this setVariable[""R3F_LOG_disabled"", true];";
 		};
-		class Item70
+		class Item67
 		{
 			position[]={4076.457,270.56995,12184.521};
 			azimut=310;
-			id=209;
+			id=206;
 			side="EMPTY";
 			vehicle="Land_Campfire_burning";
 			skill=0.60000002;
 			text="fp21";
 			init="this setVariable [""R3F_LOG_disabled"", true];";
 		};
-		class Item71
+		class Item68
 		{
 			position[]={4072.7764,269.07056,12198.759};
 			azimut=200;
-			id=210;
+			id=207;
 			side="EMPTY";
 			vehicle="Sr_border";
 			skill=0.60000002;
 			text="buildingStoreSpawn5";
 			init="this setVariable[""R3F_LOG_disabled"", true];";
 		};
-		class Item72
+		class Item69
 		{
 			position[]={7241.3491,374.23923,9069.4004};
 			azimut=310;
-			id=212;
+			id=209;
 			side="EMPTY";
 			vehicle="Land_Campfire_burning";
 			skill=0.60000002;
 			text="fp22";
 			init="this setVariable [""R3F_LOG_disabled"", true];";
 		};
-		class Item73
+		class Item70
 		{
 			position[]={7237.4253,373.96188,9083.6113};
 			azimut=200;
-			id=213;
+			id=210;
 			side="EMPTY";
 			vehicle="Sr_border";
 			skill=0.60000002;
@@ -3651,99 +3617,99 @@ class Mission
 			init="this setVariable[""R3F_LOG_disabled"", true];";
 		};
 		// Niznoye Medical Tent
-		class Item74
+		class Item71
 		{
 			position[]={13056.1,-0.038123101,8373.7305};
 			azimut=220.52699;
-			id=214;
+			id=211;
 			side="EMPTY";
 			vehicle="MASH";
 			skill=0.60000002;
 			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		// Pobeda Dam Medical Tent
-		class Item75
+		class Item72
 		{
 			position[]={9864.0596,-0.0922089,13319.6};
 			azimut=218.255;
-			id=215;
+			id=212;
 			side="EMPTY";
 			vehicle="MASH";
 			skill=0.60000002;
 			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		// Gorka Medical Tent
-		class Item76
+		class Item73
 		{
 			position[]={9146.5303,0.0076599098,9228.0898};
 			azimut=220.394;
-			id=216;
+			id=213;
 			side="EMPTY";
 			vehicle="MASH";
 			skill=0.60000002;
 			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		// Kamenka Medical Tent
-		class Item77
+		class Item74
 		{
 			position[]={1634.8,0.0288944,2335.3899};
 			azimut=220.45;
-			id=217;
+			id=214;
 			side="EMPTY";
 			vehicle="MASH";
 			skill=0.60000002;
 			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		// Myshkino Medical Tent
-		class Item78
+		class Item75
 		{
 			position[]={1753.14,0.044250499,7813.4302};
 			azimut=221.23199;
-			id=218;
+			id=215;
 			side="EMPTY";
 			vehicle="MASH";
 			skill=0.60000002;
 			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		// Cap Golova Medical Tent
-		class Item79
+		class Item76
 		{
 			position[]={8023.0298,-0.060568299,2906.6599};
 			azimut=143.20599;
-			id=219;
+			id=216;
 			side="EMPTY";
 			vehicle="MASH";
 			skill=0.60000002;
 			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		// Petrovka Medical Tent
-		class Item80
+		class Item77
 		{
 			position[]={4700.96,-0.062560998,12392.5};
 			azimut=219.29401;
-			id=220;
+			id=217;
 			side="EMPTY";
 			vehicle="MASH";
 			skill=0.60000002;
 			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
 		// Vyshnoye Medical Tent
-		class Item81
+		class Item78
 		{
 			position[]={7331.3599,-0.047897302,5994.6802};
 			azimut=219.601;
-			id=221;
+			id=218;
 			side="EMPTY";
 			vehicle="MASH";
 			skill=0.60000002;
 			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false;";
 		};
-		class Item82
+		class Item79
 		{
 			position[]={7539.5195,214.24812,5101.5923};
 			azimut=-53.868099;
 			special="NONE";
-			id=222;
+			id=219;
 			side="EMPTY";
 			vehicle="Land_Campfire_burning";
 			leader=1;
@@ -3751,9 +3717,41 @@ class Mission
 			text="fp23";
 			init="this setVariable [""R3F_LOG_disabled"", true]; this setVectorUp [0,-0.1,1];";
 		};
-		class Item83
+		class Item80
 		{
 			position[]={2651.7683,118.75883,2351.2375};
+			azimut=20.829985;
+			id=221;
+			side="EMPTY";
+			vehicle="Land_CamoNetB_EAST";
+			leader=1;
+			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false; ";
+		};
+		class Item81
+		{
+			position[]={2656.8005,118.00974,2338.3752};
+			azimut=20.830023;
+			id=222;
+			side="EMPTY";
+			vehicle="Land_repair_center";
+			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false; ";
+		};
+		class Item82
+		{
+			position[]={2653.8152,119.00797,2356.4377};
+			azimut=20.830023;
+			id=223;
+			side="EMPTY";
+			vehicle="Land_fort_artillery_nest";
+			leader=1;
+			skill=0.60000002;
+			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false; ";
+		};
+		class Item83
+		{
+			position[]={5385.9619,309.35693,5666.1445};
 			azimut=20.829985;
 			id=224;
 			side="EMPTY";
@@ -3764,7 +3762,7 @@ class Mission
 		};
 		class Item84
 		{
-			position[]={2656.8005,118.00974,2338.3752};
+			position[]={5390.9941,309.42938,5653.2822};
 			azimut=20.830023;
 			id=225;
 			side="EMPTY";
@@ -3774,7 +3772,7 @@ class Mission
 		};
 		class Item85
 		{
-			position[]={2653.8152,119.00797,2356.4377};
+			position[]={5388.0088,309.38174,5671.3447};
 			azimut=20.830023;
 			id=226;
 			side="EMPTY";
@@ -3785,7 +3783,7 @@ class Mission
 		};
 		class Item86
 		{
-			position[]={5385.9619,309.35693,5666.1445};
+			position[]={7237.4219,373.96185,9083.4014};
 			azimut=20.829985;
 			id=227;
 			side="EMPTY";
@@ -3796,7 +3794,7 @@ class Mission
 		};
 		class Item87
 		{
-			position[]={5390.9941,309.42938,5653.2822};
+			position[]={7242.4541,374.31482,9070.5391};
 			azimut=20.830023;
 			id=228;
 			side="EMPTY";
@@ -3806,7 +3804,7 @@ class Mission
 		};
 		class Item88
 		{
-			position[]={5388.0088,309.38174,5671.3447};
+			position[]={7239.4688,374.10779,9088.6016};
 			azimut=20.830023;
 			id=229;
 			side="EMPTY";
@@ -3817,7 +3815,7 @@ class Mission
 		};
 		class Item89
 		{
-			position[]={7237.4219,373.96185,9083.4014};
+			position[]={4072.7849,269.08487,12198.643};
 			azimut=20.829985;
 			id=230;
 			side="EMPTY";
@@ -3828,7 +3826,7 @@ class Mission
 		};
 		class Item90
 		{
-			position[]={7242.4541,374.31482,9070.5391};
+			position[]={4077.8171,270.36148,12185.78};
 			azimut=20.830023;
 			id=231;
 			side="EMPTY";
@@ -3838,7 +3836,7 @@ class Mission
 		};
 		class Item91
 		{
-			position[]={7239.4688,374.10779,9088.6016};
+			position[]={4074.8318,268.30954,12203.843};
 			azimut=20.830023;
 			id=232;
 			side="EMPTY";
@@ -3849,7 +3847,7 @@ class Mission
 		};
 		class Item92
 		{
-			position[]={4072.7849,269.08487,12198.643};
+			position[]={13401.83,87.370148,12993.108};
 			azimut=20.829985;
 			id=233;
 			side="EMPTY";
@@ -3860,7 +3858,7 @@ class Mission
 		};
 		class Item93
 		{
-			position[]={4077.8171,270.36148,12185.78};
+			position[]={13406.862,85.951744,12980.246};
 			azimut=20.830023;
 			id=234;
 			side="EMPTY";
@@ -3870,7 +3868,7 @@ class Mission
 		};
 		class Item94
 		{
-			position[]={4074.8318,268.30954,12203.843};
+			position[]={13403.877,87.577888,12998.309};
 			azimut=20.830023;
 			id=235;
 			side="EMPTY";
@@ -3881,7 +3879,7 @@ class Mission
 		};
 		class Item95
 		{
-			position[]={13401.83,87.370148,12993.108};
+			position[]={11472.277,245.82982,5487.0972};
 			azimut=20.829985;
 			id=236;
 			side="EMPTY";
@@ -3892,7 +3890,7 @@ class Mission
 		};
 		class Item96
 		{
-			position[]={13406.862,85.951744,12980.246};
+			position[]={11477.309,244.74254,5474.2349};
 			azimut=20.830023;
 			id=237;
 			side="EMPTY";
@@ -3902,41 +3900,9 @@ class Mission
 		};
 		class Item97
 		{
-			position[]={13403.877,87.577888,12998.309};
-			azimut=20.830023;
-			id=238;
-			side="EMPTY";
-			vehicle="Land_fort_artillery_nest";
-			leader=1;
-			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false; ";
-		};
-		class Item98
-		{
-			position[]={11472.277,245.82982,5487.0972};
-			azimut=20.829985;
-			id=239;
-			side="EMPTY";
-			vehicle="Land_CamoNetB_EAST";
-			leader=1;
-			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false; ";
-		};
-		class Item99
-		{
-			position[]={11477.309,244.74254,5474.2349};
-			azimut=20.830023;
-			id=240;
-			side="EMPTY";
-			vehicle="Land_repair_center";
-			skill=0.60000002;
-			init="this setVariable [""R3F_LOG_disabled"", true]; this allowDamage false; ";
-		};
-		class Item100
-		{
 			position[]={11474.324,245.62975,5492.2974};
 			azimut=20.830023;
-			id=241;
+			id=238;
 			side="EMPTY";
 			vehicle="Land_fort_artillery_nest";
 			leader=1;
