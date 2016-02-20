@@ -147,5 +147,7 @@ _missionSpawnLocations select _missionSpawnMarkerIndex set[1, false];
 sleep 120;
 
 {
-    deleteVehicle _x
+    deleteVehicle _x;
+
+    sleep 0.1;
 } forEach _baseParts;
