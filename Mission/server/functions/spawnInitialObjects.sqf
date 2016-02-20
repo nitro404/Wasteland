@@ -22,9 +22,12 @@ _totalStationaryWeapons = 0;
 	_numberOfBuildings = floor(_spawnRadius * 0.0385);
 	_numberOfStationaryWeapons = floor(_spawnRadius * 0.02125);
 
+	_vehicles = [];
+	[townVehicles, [_vehicles, _numberOfVehicles]] call BIS_fnc_arrayPush;
+
 	_currentObjectIndex = 0;
 	while { _currentObjectIndex < _numberOfVehicles } do {
-		[[_spawnPosition, _spawnRadius, true] call randomPosition, random 360.0, vehicleCategories] call spawnVehicle;
+		[_vehicles, [[_spawnPosition, _spawnRadius, true] call randomPosition, random 360.0, vehicleCategories] call spawnVehicle] call BIS_fnc_arrayPush;
 
 		_totalVehicles = _totalVehicles + 1;
 		_currentObjectIndex = _currentObjectIndex + 1;

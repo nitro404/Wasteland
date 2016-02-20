@@ -28,6 +28,7 @@ publicVariable "currentDate";
 currentInvites = [];
 publicVariable "currentInvites";
 
+townVehicles = [];
 boats = [];
 helicopters = [];
 planes = [];

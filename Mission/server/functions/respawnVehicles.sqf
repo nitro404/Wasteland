@@ -6,21 +6,49 @@
 
 if(!isServer) exitWith { };
 
-private["_townPosition", "_townRadius", "_townName"];
+private["_numberOfTownVehicleLists", "_townIndex", "_townInfo", "_townPosition", "_townRadius", "_townVehicleListInfo", "_townVehicleList", "_townVehicleIndex", "_townVehicle"];
+
+_numberOfTownVehicleLists = count townVehicles;
 
 while { true } do {
 
-	{
-		_townPosition = getMarkerPos (_x select 0);
-		_townRadius = _x select 1;
-		_townName = _x select 2;
+	_townIndex = 0;
 
-		if(floor(_townRadius * 0.05) - count (_townPosition nearEntities ["LandVehicle", _townRadius]) > 0) then {
-			[[_townPosition, _townRadius, true] call randomPosition, random 360.0, vehicleCategories] call spawnVehicle;
+	while { _townIndex < _numberOfTownVehicleLists } do {
+
+		_townPosition = getMarkerPos format["Spawn_%1", _townIndex];
+		_townRadius = spawnLocations select _townIndex;
+
+		_townVehicleListInfo = townVehicles select _townIndex;
+		_townVehicleList = _townVehicleListInfo select 0;
+		_townVehicleIndex = 0;
+
+		while { _townVehicleIndex < count _townVehicleList } do {
+			_townVehicle = _townVehicleList select _townVehicleIndex;
+
+			if(isNull _townVehicle || !alive _townVehicle) then {
+				_townVehicleList = [_townVehicleList, _townVehicleIndex] call BIS_fnc_removeIndex;
+			}
+			else {
+				if(_townVehicle distance _townPosition > _townRadius) then {
+					_townVehicleList = [_townVehicleList, _townVehicleIndex] call BIS_fnc_removeIndex;
+				}
+				else {
+					_townVehicleIndex = _townVehicleIndex + 1;
+				};
+			};
 		};
 
-		sleep 0.1;
-	} forEach townList;
+		_townVehicleListInfo set[0, _townVehicleList];
 
-	sleep 60.0 - ((count townList) * 0.1);
+		if(count _townVehicleList < _townVehicleListInfo select 1) then {
+			[_townVehicleList, [[_townPosition, _townRadius, true] call randomPosition, random 360.0, vehicleCategories] call spawnVehicle] call BIS_fnc_arrayPush;
+		};
+
+		_townIndex = _townIndex + 1;
+
+		sleep 0.1;
+	};
+
+	sleep 60.0 - (_numberOfTownVehicleLists * 0.1);
 };
