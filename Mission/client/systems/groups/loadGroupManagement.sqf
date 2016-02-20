@@ -44,7 +44,7 @@ while { groupManagmentActive } do {
     // check if player has invite
     {
         if(_x select 1 == getPlayerUID player) then {
-            _hasInvite = true
+            _hasInvite = true;
         };
     } forEach currentInvites;
 
