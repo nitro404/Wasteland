@@ -6,7 +6,7 @@
 
 if(!isServer) exitWith { };
 
-private["_boatIndex", "_boatPosition"];
+private["_boatIndex", "_boatPosition", "_boatData", "_boat", "_boatTime"];
 
 while { true } do {
 
@@ -15,8 +15,21 @@ while { true } do {
 	while { _boatIndex < numberOfBoatSpawns } do {
 		_boatPosition = getMarkerPos format["boatSpawn_%1", _boatIndex + 1];
 
-		if(count (_boatPosition nearEntities ["Ship", 50]) == 0) then {
-			_boat = [_boatPosition, random 360.0, boatCategories] call spawnVehicle;
+		_boatData = boats select _boatIndex;
+		_boat = _boatData select 0;
+		_boatTime = _boatData select 1;
+
+		if(isNull _boat || !alive _boat) then {
+			if(_boatTime == 0) then {
+				_boatData set[1, time];
+			}
+			else {
+				if(time - _boatTime > 600) then {
+					deleteVehicle _boat;
+
+					boats set[_boatIndex, [[_boatPosition, random 360.0, boatCategories] call spawnVehicle, 0]];
+				};
+			};
 		};
 
 		_boatIndex = _boatIndex + 1;
@@ -24,5 +37,5 @@ while { true } do {
 		sleep 0.1;
 	};
 
-	sleep 600.0 - (numberOfBoatSpawns * 0.1);
+	sleep 60.0 - (numberOfBoatSpawns * 0.1);
 };

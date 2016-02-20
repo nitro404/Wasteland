@@ -62,3 +62,4 @@ diag_log format["Starting Vehicle Respawn Scripts..."];
 [] spawn respawnVehicles;
 [] spawn respawnBoats;
 [] spawn respawnHelicopters;
+[] spawn respawnPlanes;

@@ -29,6 +29,7 @@ spawnObject = compile preprocessFileLineNumbers "server\spawning\spawnObject.sqf
 respawnVehicles = compile preprocessFileLineNumbers "server\functions\respawnVehicles.sqf";
 respawnBoats = compile preprocessFileLineNumbers "server\functions\respawnBoats.sqf";
 respawnHelicopters = compile preprocessFileLineNumbers "server\functions\respawnHelicopters.sqf";
+respawnPlanes = compile preprocessFileLineNumbers "server\functions\respawnPlanes.sqf";
 
 // ARMA2Net Scripts
 #ifdef __A2NET__

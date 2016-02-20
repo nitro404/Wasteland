@@ -28,6 +28,10 @@ publicVariable "currentDate";
 currentInvites = [];
 publicVariable "currentInvites";
 
+boats = [];
+helicopters = [];
+planes = [];
+
 numberOfBoatSpawns = 24;
 numberOfHelicopterSpawns = 90;
 
@@ -177,6 +181,25 @@ boatCategories = [
 	["Civilian Boats", 10, [
 		["Fishing_Boat", "Smallboat_1", "smallboat_2"]
 	]]
+];
+
+biplaneTypes = ["An2_TK_EP1", "An2_1_TK_CIV_EP1", "An2_2_TK_CIV_EP1"];
+
+planeSpawns = [
+    // Northwest Airfield
+    [[4181.7612, 10882.934, -0.00680542], 150, ["L39_TK_EP1", "C130J", "MQ9PredatorB"], 1800],
+    [[4957.3633, 10058.884, -0.75531], 242, biplaneTypes, 600],
+    [[4909.3608, 10142.637, -0.75531], 242, biplaneTypes, 600],
+    [[4859.8096, 10223.537, -0.75531], 242, biplaneTypes, 600],
+    [[4533.4526, 10786.9, -0.747375], 242, biplaneTypes, 600],
+    // Northeast Airfield
+    [[11777.899, 12832.702, -0.00984192], 112, ["L39_TK_EP1"], 1800],
+    [[12051.179, 12608.107, -0.731598], 20, biplaneTypes, 600],
+    [[12005.747, 12625.435, -0.731567], 20, biplaneTypes, 600],
+    // Balota Airfield
+    [[4615.7354, 2570.6306, -0.183163], 119, ["L39_TK_EP1", "C130J"], 1800],
+    [[4764.3989, 2608.7603, -0.731559], 210, biplaneTypes, 600],
+    [[4799.6206, 2589.196, -0.731559], 210, biplaneTypes, 600]
 ];
 
 weaponCrateTypes = [

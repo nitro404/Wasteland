@@ -6,7 +6,7 @@
 
 if(!isServer) exitWith { };
 
-private["_spawnMarkerName", "_spawnPosition", "_spawnRadius", "_numberOfVehicles", "_numberOfBuildings", "_numberOfStationaryWeapons", "_numberOfWeaponCrates", "_totalVehicles", "_totalWeaponCrates", "_totalBuildings", "_totalStationaryWeapons", "_currentObjectIndex"];
+private["_spawnMarkerName", "_spawnPosition", "_spawnRadius", "_numberOfVehicles", "_numberOfBuildings", "_numberOfStationaryWeapons", "_numberOfWeaponCrates", "_numberOfPlaneSpawns", "_totalVehicles", "_totalWeaponCrates", "_totalBuildings", "_totalStationaryWeapons", "_currentObjectIndex", "_plane"];
 
 _totalVehicles = 0;
 _totalWeaponCrates = 0;
@@ -59,18 +59,37 @@ _totalStationaryWeapons = 0;
 	sleep 0.05;
 } forEach spawnLocations;
 
+sleep 0.1;
+
 _currentObjectIndex = 0;
 while { _currentObjectIndex < numberOfHelicopterSpawns } do {
-	[getMarkerPos format["heliSpawn_%1", _currentObjectIndex + 1], random 360.0, helicopterCategories] call spawnVehicle;
+	[helicopters, [[getMarkerPos format["heliSpawn_%1", _currentObjectIndex + 1], random 360.0, helicopterCategories] call spawnVehicle, 0]] call BIS_fnc_arrayPush;
 
 	_currentObjectIndex = _currentObjectIndex + 1;
 };
+
+sleep 0.1;
 
 _currentObjectIndex = 0;
 while { _currentObjectIndex < numberOfBoatSpawns } do {
-	_boat = [getMarkerPos format["boatSpawn_%1", _currentObjectIndex + 1], random 360.0, boatCategories] call spawnVehicle;
+	[boats, [[getMarkerPos format["boatSpawn_%1", _currentObjectIndex + 1], random 360.0, boatCategories] call spawnVehicle, 0]] call BIS_fnc_arrayPush;
 
 	_currentObjectIndex = _currentObjectIndex + 1;
 };
 
-diag_log format["Spawning finished! Spawned %1 Vehicles, %2 Weapon Crates, %3 Buildings, %4 Stationary Weapons, %5 Boats and %6 Helicopters.", _totalVehicles, _totalWeaponCrates, _totalBuildings, _totalStationaryWeapons, numberOfBoatSpawns, numberOfHelicopterSpawns];
+sleep 0.1;
+
+_currentObjectIndex = 0;
+_numberOfPlaneSpawns = count planeSpawns;
+while { _currentObjectIndex < _numberOfPlaneSpawns } do {
+	_planeSpawn = planeSpawns select _currentObjectIndex;
+
+	_plane = [_planeSpawn select 0, _planeSpawn select 1, (_planeSpawn select 2) call BIS_fnc_selectRandom] call spawnVehicle;
+	_plane setPos (_planeSpawn select 0);
+
+	[planes, [_plane, 0]] call BIS_fnc_arrayPush;
+
+	_currentObjectIndex = _currentObjectIndex + 1;
+};
+
+diag_log format["Spawning finished! Spawned %1 Vehicles, %2 Weapon Crates, %3 Buildings, %4 Stationary Weapons, %5 Boats, %6 Helicopters and %7 Planes.", _totalVehicles, _totalWeaponCrates, _totalBuildings, _totalStationaryWeapons, numberOfBoatSpawns, numberOfHelicopterSpawns, _numberOfPlaneSpawns];
