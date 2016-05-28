@@ -281,10 +281,11 @@ Event Horizon Artists:<br/>
 Event Horizon Testers &amp; Administrators:<br/>
 	- Mawson<br/>
 	- U_T<br/>
-	- Bat Manning<br/>
 	- Sponty<br/>
 	- Mobley<br/>
 	- Northern Petrol<br/>
+	- Alhazred<br/>
+	- PyroStalker<br/>
 	- Yams<br/>
 	- jaeger<br/>
 	- Xinova<br/>
