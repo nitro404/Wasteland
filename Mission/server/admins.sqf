@@ -27,14 +27,14 @@ serverAdministrators = [
 	"76561197973639507", // Corpsegrinder
 	"76561198026982182", // with_milk
 	"76561197960440011", // Spangler
-	"76561198041279329", // Drew
-	"76561198090673661", // Drew (Alt)
 	"76561198011088596", // Skipwich
 	"76561197961014283", // Yams
 	"76561197980727745", // Northern Petrol
 	"76561197969422593", // BRPC
 	"76561198028354532", // jaeger
 	"76561198106264272", // Nash
-	"76561197993249654"  // LeSk8trE
+	"76561197993249654", // LeSk8trE
+	"76561198013766397", // Alhazred
+	"76561198044976079"  // PyroStalker
 ];
 publicVariable "serverAdministrators";
